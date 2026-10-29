@@ -1,1 +1,2 @@
-export default function App(){return <main><h1>VerbQuest</h1><p>Preparando tu biblioteca de verbos.</p></main>;}
+import {AppProviders} from './AppProviders';import {AppRouter} from './router';import './styles/global.css';
+export default function App(){return <AppProviders><AppRouter/></AppProviders>;}

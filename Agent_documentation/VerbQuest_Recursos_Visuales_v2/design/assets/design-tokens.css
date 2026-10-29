@@ -1,0 +1,25 @@
+/* VerbQuest design tokens — draft 0.1 */
+:root {
+  --vq-navy-900: #102A56;
+  --vq-blue-600: #1976F3;
+  --vq-teal-500: #20C7B2;
+  --vq-sky-100: #EAF4FF;
+  --vq-surface: #FFFFFF;
+  --vq-background: #F5F8FC;
+  --vq-text-900: #15243B;
+  --vq-text-600: #5D6B82;
+  --vq-amber-400: #FFC857;
+  --vq-coral-500: #F45D76;
+  --vq-purple-500: #8B7CF6;
+  --vq-radius-sm: 8px;
+  --vq-radius-md: 12px;
+  --vq-radius-lg: 18px;
+  --vq-radius-xl: 24px;
+  --vq-space-1: 4px;
+  --vq-space-2: 8px;
+  --vq-space-3: 12px;
+  --vq-space-4: 16px;
+  --vq-space-6: 24px;
+  --vq-space-8: 32px;
+  --vq-font-sans: Inter, "Atkinson Hyperlegible", system-ui, sans-serif;
+}

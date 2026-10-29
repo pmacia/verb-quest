@@ -1,0 +1,20 @@
+{
+  "brand": "VerbQuest",
+  "version": "0.1.0",
+  "colors": {
+    "navy-900": "#102A56",
+    "blue-600": "#1976F3",
+    "teal-500": "#20C7B2",
+    "sky-100": "#EAF4FF",
+    "surface": "#FFFFFF",
+    "background": "#F5F8FC",
+    "text-900": "#15243B",
+    "text-600": "#5D6B82",
+    "amber-400": "#FFC857",
+    "coral-500": "#F45D76",
+    "purple-500": "#8B7CF6"
+  },
+  "radius": {"small": 8, "medium": 12, "large": 18, "xl": 24},
+  "spacingPx": {"xs": 4, "sm": 8, "md": 12, "lg": 16, "xl": 24, "2xl": 32},
+  "typography": {"fontFamily": "Inter, Atkinson Hyperlegible, system-ui, sans-serif", "bodyMinPx": 16, "captionMinPx": 13}
+}

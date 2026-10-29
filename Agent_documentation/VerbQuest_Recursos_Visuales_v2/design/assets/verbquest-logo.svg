@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 190" role="img" aria-labelledby="title desc">
+  <title id="title">VerbQuest</title><desc id="desc">Logotipo provisional de VerbQuest con libro y tarjetas de verbos.</desc>
+  <defs><linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1976F3"/><stop offset="1" stop-color="#102A56"/></linearGradient><linearGradient id="teal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#20C7B2"/><stop offset="1" stop-color="#0EA5A0"/></linearGradient></defs>
+  <g transform="translate(18 14)">
+    <rect x="0" y="0" width="158" height="158" rx="38" fill="url(#blue)"/>
+    <path d="M79 27 L94 42 L79 55 L64 42 Z" fill="#FFC857"/>
+    <path d="M33 62 Q55 52 77 67 L77 119 Q54 105 33 115 Z" fill="#FFFFFF" stroke="#D9E8FF" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M81 67 Q103 52 125 62 L125 115 Q103 105 81 119 Z" fill="#EAF4FF" stroke="#D9E8FF" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M79 66 L79 120" stroke="#1976F3" stroke-width="4"/>
+    <rect x="27" y="48" width="43" height="25" rx="8" fill="#20C7B2" stroke="#FFFFFF" stroke-width="2" transform="rotate(-10 48 60)"/>
+    <text x="48" y="65" fill="#102A56" font-size="14" text-anchor="middle" font-weight="800" transform="rotate(-10 48 60)">go</text>
+    <rect x="87" y="43" width="47" height="27" rx="8" fill="#FFC857" stroke="#FFFFFF" stroke-width="2" transform="rotate(10 110 56)"/>
+    <text x="110" y="61" fill="#102A56" font-size="13" text-anchor="middle" font-weight="800" transform="rotate(10 110 56)">went</text>
+  </g>
+  <text x="205" y="91" fill="#102A56" font-family="Inter, Arial, sans-serif" font-size="68" font-weight="800" letter-spacing="-2">Verb<tspan fill="#1976F3">Quest</tspan></text>
+  <text x="210" y="132" fill="#5D6B82" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="600">Aprende · Juega · Progresa</text>
+  <path d="M210 151 H611" stroke="#20C7B2" stroke-width="5" stroke-linecap="round"/>
+</svg>

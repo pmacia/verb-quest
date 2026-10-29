@@ -1,0 +1,42 @@
+{
+  "datasetVersion": "0.1.0",
+  "questions": [
+    {
+      "id": "q-go-past-01",
+      "type": "multiple_choice",
+      "skill": "recall",
+      "verbId": "go",
+      "prompt": "What is the past simple of go?",
+      "options": ["goed", "went", "gone", "going"],
+      "acceptedAnswers": ["went"],
+      "explanation": "The past simple form is went. Gone is the past participle.",
+      "difficulty": "introductory",
+      "contentStatus": "needs_review"
+    },
+    {
+      "id": "q-buy-participle-01",
+      "type": "sentence_gap",
+      "skill": "context",
+      "verbId": "buy",
+      "prompt": "They have ____ the tickets.",
+      "options": [],
+      "acceptedAnswers": ["bought"],
+      "explanation": "After have, use the past participle in the present perfect.",
+      "difficulty": "introductory",
+      "contentStatus": "needs_review"
+    },
+    {
+      "id": "q-write-audio-01",
+      "type": "audio_to_form",
+      "skill": "listening",
+      "verbId": "write",
+      "prompt": "Listen and choose the form you hear.",
+      "audioRef": "write.pastSimple.uk",
+      "options": ["write", "wrote", "written", "writing"],
+      "acceptedAnswers": ["wrote"],
+      "explanation": "Wrote is the past simple form of write.",
+      "difficulty": "intermediate",
+      "contentStatus": "needs_review"
+    }
+  ]
+}

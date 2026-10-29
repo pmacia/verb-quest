@@ -1,0 +1,12 @@
+{
+  "id": "plan-eso1-essentials",
+  "name": "Empiezo desde cero",
+  "description": "Plan ilustrativo; la selección y el curso recomendado deben ser configurables.",
+  "source": {"type": "course", "course": "eso1"},
+  "goals": ["learn", "review", "listening", "context"],
+  "schedule": {"minutesPerSession": 10, "newVerbsPerSession": 4, "daysPerWeek": ["mon", "tue", "wed", "thu", "fri"], "remindersEnabled": false},
+  "questionModes": ["flashcards", "matching", "audio_detective", "quiz", "sentence_gap"],
+  "isTemplate": true,
+  "createdAt": "2026-10-29T00:00:00Z",
+  "updatedAt": "2026-10-29T00:00:00Z"
+}

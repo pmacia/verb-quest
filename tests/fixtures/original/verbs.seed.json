@@ -1,0 +1,170 @@
+{
+  "datasetVersion": "0.1.0",
+  "notice": "Datos ilustrativos para desarrollar y probar la app. Los niveles, frecuencia, IPA y ejemplos deben validarse antes de producción.",
+  "verbs": [
+    {
+      "id": "be",
+      "lemma": "be",
+      "forms": {
+        "base": {"value": "be", "pronunciation": {"uk": {"ipa": "/biː/", "validated": false}, "us": {"ipa": "/biː/", "validated": false}}},
+        "pastSimple": {"variants": [{"value": "was", "dialect": "all", "usageNote": "I/he/she/it"}, {"value": "were", "dialect": "all", "usageNote": "you/we/they; also subjunctive uses"}]},
+        "pastParticiple": {"variants": [{"value": "been", "dialect": "all"}]},
+        "thirdPersonSingular": {"variants": [{"value": "is", "dialect": "all"}]},
+        "presentParticiple": {"variants": [{"value": "being", "dialect": "all"}]}
+      },
+      "meanings": ["ser", "estar"],
+      "meaningNotes": "Verbo fundamental; la forma del pasado depende del sujeto en uso normal.",
+      "classification": {"formRelation": "special", "frequencyBand": "essential", "patternGroups": ["suppletive", "auxiliary"], "spellingEndings": {"pastSimple": ["-as", "-ere"], "pastParticiple": ["-een"]}, "phoneticEndings": {}, "recommendedCourses": ["eso1", "eso2", "eso3", "eso4"], "topics": ["identity", "feelings", "places", "grammar"], "difficulty": "introductory"},
+      "examples": [
+        {"id": "be-ex-1", "sentence": "I am happy.", "translation": "Estoy contento/a.", "targetForm": "am", "grammarPoint": "present simple", "dialect": "neutral", "reviewStatus": "needs_review"},
+        {"id": "be-ex-2", "sentence": "They were at home yesterday.", "translation": "Ayer estaban en casa.", "targetForm": "were", "grammarPoint": "past simple", "dialect": "neutral", "reviewStatus": "needs_review"},
+        {"id": "be-ex-3", "sentence": "I have been here before.", "translation": "Ya he estado aquí antes.", "targetForm": "been", "grammarPoint": "present perfect", "dialect": "neutral", "reviewStatus": "needs_review"}
+      ],
+      "mnemonics": [],
+      "notes": ["No tratar was y were como variantes intercambiables en todos los contextos."],
+      "sources": [],
+      "contentStatus": "needs_review",
+      "createdAt": "2026-10-29T00:00:00Z",
+      "updatedAt": "2026-10-29T00:00:00Z"
+    },
+    {
+      "id": "go",
+      "lemma": "go",
+      "forms": {
+        "base": {"value": "go", "pronunciation": {"uk": {"ipa": "/ɡəʊ/", "validated": false}, "us": {"ipa": "/ɡoʊ/", "validated": false}}},
+        "pastSimple": {"variants": [{"value": "went", "dialect": "all"}]},
+        "pastParticiple": {"variants": [{"value": "gone", "dialect": "all"}]},
+        "thirdPersonSingular": {"variants": [{"value": "goes", "dialect": "all"}]},
+        "presentParticiple": {"variants": [{"value": "going", "dialect": "all"}]}
+      },
+      "meanings": ["ir", "marchar", "dirigirse"],
+      "meaningNotes": "Verbo muy frecuente con usos y expresiones compuestas.",
+      "classification": {"formRelation": "all_different", "frequencyBand": "essential", "patternGroups": ["suppletive"], "spellingEndings": {"pastSimple": ["-ent"], "pastParticiple": ["-one"]}, "phoneticEndings": {}, "recommendedCourses": ["eso1", "eso2", "eso3", "eso4"], "topics": ["movement", "travel", "daily_routines"], "difficulty": "introductory"},
+      "examples": [
+        {"id": "go-ex-1", "sentence": "I go to school every day.", "translation": "Voy al colegio todos los días.", "targetForm": "go", "grammarPoint": "present simple", "dialect": "neutral", "reviewStatus": "needs_review"},
+        {"id": "go-ex-2", "sentence": "We went to the beach yesterday.", "translation": "Ayer fuimos a la playa.", "targetForm": "went", "grammarPoint": "past simple", "dialect": "neutral", "reviewStatus": "needs_review"},
+        {"id": "go-ex-3", "sentence": "She has gone home.", "translation": "Se ha ido a casa.", "targetForm": "gone", "grammarPoint": "present perfect", "dialect": "neutral", "reviewStatus": "needs_review"}
+      ],
+      "mnemonics": ["Comparar con verbos de cambio completo, sin presentar el patrón como regla general."],
+      "notes": [],
+      "sources": [],
+      "contentStatus": "needs_review",
+      "createdAt": "2026-10-29T00:00:00Z",
+      "updatedAt": "2026-10-29T00:00:00Z"
+    },
+    {
+      "id": "take",
+      "lemma": "take",
+      "forms": {
+        "base": {"value": "take", "pronunciation": {"uk": {"ipa": "/teɪk/", "validated": false}, "us": {"ipa": "/teɪk/", "validated": false}}},
+        "pastSimple": {"variants": [{"value": "took", "dialect": "all"}]},
+        "pastParticiple": {"variants": [{"value": "taken", "dialect": "all"}]},
+        "thirdPersonSingular": {"variants": [{"value": "takes", "dialect": "all"}]},
+        "presentParticiple": {"variants": [{"value": "taking", "dialect": "all"}]}
+      },
+      "meanings": ["tomar", "llevar", "coger"],
+      "classification": {"formRelation": "all_different", "frequencyBand": "essential", "patternGroups": ["take-took-taken"], "spellingEndings": {"pastSimple": ["-ook"], "pastParticiple": ["-aken"]}, "phoneticEndings": {}, "recommendedCourses": ["eso1", "eso2", "eso3"], "topics": ["daily_routines", "movement"], "difficulty": "introductory"},
+      "examples": [
+        {"id": "take-ex-1", "sentence": "Take your book, please.", "translation": "Coge tu libro, por favor.", "targetForm": "take", "grammarPoint": "imperative", "dialect": "neutral", "reviewStatus": "needs_review"},
+        {"id": "take-ex-2", "sentence": "I took the bus yesterday.", "translation": "Ayer cogí el autobús.", "targetForm": "took", "grammarPoint": "past simple", "dialect": "neutral", "reviewStatus": "needs_review"},
+        {"id": "take-ex-3", "sentence": "She has taken my pen.", "translation": "Ha cogido mi bolígrafo.", "targetForm": "taken", "grammarPoint": "present perfect", "dialect": "neutral", "reviewStatus": "needs_review"}
+      ],
+      "mnemonics": [], "notes": [], "sources": [], "contentStatus": "needs_review", "createdAt": "2026-10-29T00:00:00Z", "updatedAt": "2026-10-29T00:00:00Z"
+    },
+    {
+      "id": "write",
+      "lemma": "write",
+      "forms": {
+        "base": {"value": "write", "pronunciation": {"uk": {"ipa": "/raɪt/", "validated": false}, "us": {"ipa": "/raɪt/", "validated": false}}},
+        "pastSimple": {"variants": [{"value": "wrote", "dialect": "all"}]},
+        "pastParticiple": {"variants": [{"value": "written", "dialect": "all"}]},
+        "thirdPersonSingular": {"variants": [{"value": "writes", "dialect": "all"}]},
+        "presentParticiple": {"variants": [{"value": "writing", "dialect": "all"}]}
+      },
+      "meanings": ["escribir"],
+      "classification": {"formRelation": "all_different", "frequencyBand": "common", "patternGroups": ["write-wrote-written", "silent-final-e"], "spellingEndings": {"pastSimple": ["-ote"], "pastParticiple": ["-itten"]}, "phoneticEndings": {}, "recommendedCourses": ["eso1", "eso2", "eso3", "eso4"], "topics": ["communication", "school"], "difficulty": "intermediate"},
+      "examples": [
+        {"id": "write-ex-1", "sentence": "I write in my notebook.", "translation": "Escribo en mi cuaderno.", "targetForm": "write", "grammarPoint": "present simple", "dialect": "neutral", "reviewStatus": "needs_review"},
+        {"id": "write-ex-2", "sentence": "She wrote a letter.", "translation": "Ella escribió una carta.", "targetForm": "wrote", "grammarPoint": "past simple", "dialect": "neutral", "reviewStatus": "needs_review"},
+        {"id": "write-ex-3", "sentence": "I have written the answer.", "translation": "He escrito la respuesta.", "targetForm": "written", "grammarPoint": "present perfect", "dialect": "neutral", "reviewStatus": "needs_review"}
+      ],
+      "mnemonics": [], "notes": [], "sources": [], "contentStatus": "needs_review", "createdAt": "2026-10-29T00:00:00Z", "updatedAt": "2026-10-29T00:00:00Z"
+    },
+    {
+      "id": "buy",
+      "lemma": "buy",
+      "forms": {
+        "base": {"value": "buy", "pronunciation": {"uk": {"ipa": "/baɪ/", "validated": false}, "us": {"ipa": "/baɪ/", "validated": false}}},
+        "pastSimple": {"variants": [{"value": "bought", "dialect": "all"}]},
+        "pastParticiple": {"variants": [{"value": "bought", "dialect": "all"}]},
+        "thirdPersonSingular": {"variants": [{"value": "buys", "dialect": "all"}]},
+        "presentParticiple": {"variants": [{"value": "buying", "dialect": "all"}]}
+      },
+      "meanings": ["comprar"],
+      "classification": {"formRelation": "past_participle_same", "frequencyBand": "essential", "patternGroups": ["buy-bought"], "spellingEndings": {"pastSimple": ["-ought"], "pastParticiple": ["-ought"]}, "phoneticEndings": {}, "recommendedCourses": ["eso1", "eso2", "eso3"], "topics": ["shopping", "daily_life"], "difficulty": "introductory"},
+      "examples": [
+        {"id": "buy-ex-1", "sentence": "I buy fruit on Saturdays.", "translation": "Compro fruta los sábados.", "targetForm": "buy", "grammarPoint": "present simple", "dialect": "neutral", "reviewStatus": "needs_review"},
+        {"id": "buy-ex-2", "sentence": "He bought a new bike.", "translation": "Compró una bicicleta nueva.", "targetForm": "bought", "grammarPoint": "past simple", "dialect": "neutral", "reviewStatus": "needs_review"},
+        {"id": "buy-ex-3", "sentence": "They have bought the tickets.", "translation": "Han comprado las entradas.", "targetForm": "bought", "grammarPoint": "present perfect", "dialect": "neutral", "reviewStatus": "needs_review"}
+      ],
+      "mnemonics": [], "notes": [], "sources": [], "contentStatus": "needs_review", "createdAt": "2026-10-29T00:00:00Z", "updatedAt": "2026-10-29T00:00:00Z"
+    },
+    {
+      "id": "see",
+      "lemma": "see",
+      "forms": {
+        "base": {"value": "see", "pronunciation": {"uk": {"ipa": "/siː/", "validated": false}, "us": {"ipa": "/siː/", "validated": false}}},
+        "pastSimple": {"variants": [{"value": "saw", "dialect": "all"}]},
+        "pastParticiple": {"variants": [{"value": "seen", "dialect": "all"}]},
+        "thirdPersonSingular": {"variants": [{"value": "sees", "dialect": "all"}]},
+        "presentParticiple": {"variants": [{"value": "seeing", "dialect": "all"}]}
+      },
+      "meanings": ["ver", "ver a alguien", "comprender"],
+      "classification": {"formRelation": "all_different", "frequencyBand": "essential", "patternGroups": ["see-saw-seen", "suppletive-vowel-change"], "spellingEndings": {"pastSimple": ["-aw"], "pastParticiple": ["-een"]}, "phoneticEndings": {}, "recommendedCourses": ["eso1", "eso2", "eso3", "eso4"], "topics": ["senses", "communication"], "difficulty": "introductory"},
+      "examples": [
+        {"id": "see-ex-1", "sentence": "I see my friends after school.", "translation": "Veo a mis amigos después del colegio.", "targetForm": "see", "grammarPoint": "present simple", "dialect": "neutral", "reviewStatus": "needs_review"},
+        {"id": "see-ex-2", "sentence": "We saw a film last night.", "translation": "Vimos una película anoche.", "targetForm": "saw", "grammarPoint": "past simple", "dialect": "neutral", "reviewStatus": "needs_review"},
+        {"id": "see-ex-3", "sentence": "Have you ever seen snow?", "translation": "¿Has visto nieve alguna vez?", "targetForm": "seen", "grammarPoint": "present perfect", "dialect": "neutral", "reviewStatus": "needs_review"}
+      ],
+      "mnemonics": [], "notes": [], "sources": [], "contentStatus": "needs_review", "createdAt": "2026-10-29T00:00:00Z", "updatedAt": "2026-10-29T00:00:00Z"
+    },
+    {
+      "id": "make",
+      "lemma": "make",
+      "forms": {
+        "base": {"value": "make", "pronunciation": {"uk": {"ipa": "/meɪk/", "validated": false}, "us": {"ipa": "/meɪk/", "validated": false}}},
+        "pastSimple": {"variants": [{"value": "made", "dialect": "all"}]},
+        "pastParticiple": {"variants": [{"value": "made", "dialect": "all"}]},
+        "thirdPersonSingular": {"variants": [{"value": "makes", "dialect": "all"}]},
+        "presentParticiple": {"variants": [{"value": "making", "dialect": "all"}]}
+      },
+      "meanings": ["hacer", "fabricar", "preparar"],
+      "classification": {"formRelation": "past_participle_same", "frequencyBand": "essential", "patternGroups": ["make-made"], "spellingEndings": {"pastSimple": ["-ade"], "pastParticiple": ["-ade"]}, "phoneticEndings": {}, "recommendedCourses": ["eso1", "eso2", "eso3", "eso4"], "topics": ["creation", "daily_life"], "difficulty": "introductory"},
+      "examples": [
+        {"id": "make-ex-1", "sentence": "I make breakfast with my dad.", "translation": "Preparo el desayuno con mi padre.", "targetForm": "make", "grammarPoint": "present simple", "dialect": "neutral", "reviewStatus": "needs_review"},
+        {"id": "make-ex-2", "sentence": "She made a cake yesterday.", "translation": "Ayer hizo un pastel.", "targetForm": "made", "grammarPoint": "past simple", "dialect": "neutral", "reviewStatus": "needs_review"},
+        {"id": "make-ex-3", "sentence": "We have made a mistake.", "translation": "Hemos cometido un error.", "targetForm": "made", "grammarPoint": "present perfect", "dialect": "neutral", "reviewStatus": "needs_review"}
+      ],
+      "mnemonics": [], "notes": [], "sources": [], "contentStatus": "needs_review", "createdAt": "2026-10-29T00:00:00Z", "updatedAt": "2026-10-29T00:00:00Z"
+    },
+    {
+      "id": "eat",
+      "lemma": "eat",
+      "forms": {
+        "base": {"value": "eat", "pronunciation": {"uk": {"ipa": "/iːt/", "validated": false}, "us": {"ipa": "/iːt/", "validated": false}}},
+        "pastSimple": {"variants": [{"value": "ate", "dialect": "all"}]},
+        "pastParticiple": {"variants": [{"value": "eaten", "dialect": "all"}]},
+        "thirdPersonSingular": {"variants": [{"value": "eats", "dialect": "all"}]},
+        "presentParticiple": {"variants": [{"value": "eating", "dialect": "all"}]}
+      },
+      "meanings": ["comer"],
+      "classification": {"formRelation": "all_different", "frequencyBand": "essential", "patternGroups": ["eat-ate-eaten"], "spellingEndings": {"pastSimple": ["-ate"], "pastParticiple": ["-aten"]}, "phoneticEndings": {}, "recommendedCourses": ["eso1", "eso2", "eso3"], "topics": ["food", "daily_routines"], "difficulty": "introductory"},
+      "examples": [
+        {"id": "eat-ex-1", "sentence": "We eat lunch at school.", "translation": "Comemos en el colegio.", "targetForm": "eat", "grammarPoint": "present simple", "dialect": "neutral", "reviewStatus": "needs_review"},
+        {"id": "eat-ex-2", "sentence": "I ate an apple.", "translation": "Me comí una manzana.", "targetForm": "ate", "grammarPoint": "past simple", "dialect": "neutral", "reviewStatus": "needs_review"},
+        {"id": "eat-ex-3", "sentence": "Have you eaten yet?", "translation": "¿Has comido ya?", "targetForm": "eaten", "grammarPoint": "present perfect", "dialect": "neutral", "reviewStatus": "needs_review"}
+      ],
+      "mnemonics": [], "notes": [], "sources": [], "contentStatus": "needs_review", "createdAt": "2026-10-29T00:00:00Z", "updatedAt": "2026-10-29T00:00:00Z"
+    }
+  ]
+}

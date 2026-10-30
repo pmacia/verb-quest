@@ -132,9 +132,11 @@ Ambas acciones requieren dos pasos de confirmación y permiten descargar una cop
 
 ## Editar, importar y exportar verbos
 
-En **Verbos**, utiliza **Editar catálogo** para crear una ficha y **Editar ficha** dentro de un verbo para modificarla. El editor avanzado JSON permite trabajar con variantes, fuentes, ejemplos y otros campos. El modo de edición local no es un sistema de permisos de profesor/alumno.
+En **Verbos**, activa el interruptor **Editar catálogo** para mostrar el lápiz y la papelera de cada fila. El lápiz abre la ficha para editarla; el botón **+**, junto al interruptor, crea un verbo nuevo. Al desactivar el modo de edición se ocultan estas acciones, conservando la búsqueda y los filtros. También puedes utilizar **Editar ficha** dentro de un verbo. El editor avanzado JSON permite trabajar con variantes, fuentes, ejemplos y otros campos. El modo de edición local no es un sistema de permisos de profesor/alumno.
 
-Archivar un verbo muestra su impacto y conserva referencias e historial. Para recuperarlo, activa **Ver archivados** en la biblioteca y abre su ficha.
+El altavoz de cada fila reproduce en orden la base, el pasado y el participio con tus ajustes de voz, dialecto, velocidad y volumen. Pulsarlo de nuevo detiene el audio; cambiar de verbo cancela la secuencia anterior. Para **read** se usan ejemplos revisados en contexto para distinguir sus pronunciaciones. Se utiliza voz sintética del navegador; escuchar no añade XP ni acredita dominio.
+
+Archivar un verbo muestra su impacto y conserva referencias e historial. Para recuperarlo, activa **Ver archivados** y el modo de edición en la biblioteca y pulsa el icono de restaurar, o abre su ficha.
 
 En **Importar / exportar** puedes previsualizar archivos, mapear columnas CSV y decidir si un duplicado se omite, actualiza o crea con otro identificador. La previsualización no aplica los cambios: debes confirmarlos.
 
@@ -231,7 +233,7 @@ npm test -- src/shared/identity/create-id.test.ts
 
 Los fallos E2E generan evidencias en `test-results/`, incluidas trazas cuando corresponda. El benchmark es orientativo y depende del equipo; no es una garantía de rendimiento de todos los dispositivos.
 
-Última verificación registrada, **30/10/2026**: 96 pruebas unitarias/integración y 75 E2E correctas. Incluye reproducción del acceso HTTP sin `crypto.randomUUID`. Véanse [aceptación inicial](docs/acceptance-report.md), [enriquecimiento del catálogo](docs/content/catalog-enrichment-review.md) y [corrección del acceso de red](docs/http-network-compatibility.md) para el alcance y los límites de cada comprobación.
+Última verificación registrada, **31/10/2026**: 103 pruebas unitarias/integración y 84 E2E correctas. Incluye reproducción del acceso HTTP sin `crypto.randomUUID`. Véanse [aceptación inicial](docs/acceptance-report.md), [enriquecimiento del catálogo](docs/content/catalog-enrichment-review.md) y [corrección del acceso de red](docs/http-network-compatibility.md) para el alcance y los límites de cada comprobación.
 
 ## Organización del proyecto
 

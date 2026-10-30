@@ -1,5 +1,5 @@
 import { toLocalDate } from '../../shared/time/calendar';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useApp } from '../../app/AppProviders';
 import { queryCatalog, formValues } from './query';
@@ -7,7 +7,10 @@ import { patternLabel, topicLabel } from './classification-labels';
 import { saveList } from './list-service';
 import { Icon } from '../../shared/ui/Icon';
 import { Dialog } from '../../shared/ui/Dialog';
-import type { CatalogQuery } from '../../shared/domain/types';
+import { useCatalogAudio } from './use-catalog-audio';
+import { CatalogArchiveDialog } from './CatalogArchiveDialog';
+import { restoreVerb } from './editor-service';
+import type { Verb, CatalogQuery } from '../../shared/domain/types';
 const frequency: Record<string, string> = {
   essential: 'Esencial',
   common: 'Frecuente',
@@ -22,6 +25,18 @@ export function CatalogPage() {
     sort: 'alphabetical',
     direction: 'asc',
   });
+  const [editing, setEditing] = useState(false);
+  const editToggle = useRef<HTMLButtonElement>(null);
+  const focusAfterArchive = useRef(false);
+  const [archiving, setArchiving] = useState<Verb | null>(null);
+  useEffect(() => {
+    if (!archiving && focusAfterArchive.current) {
+      focusAfterArchive.current = false;
+      editToggle.current?.focus();
+    }
+  }, [archiving]);
+  const [restoring, setRestoring] = useState<string | null>(null);
+  const [actionError, setActionError] = useState('');
   const [showArchived, setShowArchived] = useState(false);
   const [filters, setFilters] = useState(false);
   const [selected, setSelected] = useState<string[]>([]);
@@ -39,6 +54,7 @@ export function CatalogPage() {
       today: toLocalDate(new Date().toISOString(), settings.timeZone),
     },
   );
+  const audio = useCatalogAudio(result.items.map((v) => v.id));
   function filter(key: string, value: string) {
     setQ({ ...q, filter: { ...q.filter, [key]: value ? [value] : [] } });
   }
@@ -53,11 +69,47 @@ export function CatalogPage() {
           </h1>
           <p>Todo empieza con una palabra. Encuentra tu próximo descubrimiento.</p>
         </div>
-        <Link className="button secondary" to="/editor/verbs/new">
-          <Icon name="plus" />
-          Editar catálogo
-        </Link>
+        <div className="catalog-edit-actions">
+          <button
+            ref={editToggle}
+            className="secondary catalog-edit-toggle"
+            role="switch"
+            aria-label="Modo de edición del catálogo"
+            aria-checked={editing}
+            onClick={() => setEditing(!editing)}
+          >
+            <span className="switch-track" aria-hidden="true">
+              <span />
+            </span>
+            Editar catálogo
+          </button>
+          {editing && (
+            <Link
+              className="button secondary"
+              to="/editor/verbs/new"
+              aria-label="Crear verbo"
+              title="Crear nueva tarjeta"
+            >
+              <Icon name="plus" />
+            </Link>
+          )}
+        </div>
       </div>
+      <p className="catalog-audio-status" role="status">
+        {audio.message}
+      </p>
+      {actionError && <p role="alert">{actionError}</p>}
+      {archiving && (
+        <CatalogArchiveDialog
+          verb={archiving}
+          onClose={() => setArchiving(null)}
+          onArchived={() => {
+            setSelected(selected.filter((id) => id !== archiving.id));
+            focusAfterArchive.current = true;
+            setArchiving(null);
+          }}
+        />
+      )}
       <div className="catalog-layout">
         <section>
           <div className="panel catalog-toolbar">
@@ -360,13 +412,73 @@ export function CatalogPage() {
                   {formValues(v, 'pastParticiple').join(' / ')}
                 </span>
                 <span className="meaning">{v.meanings.slice(0, 2).join(' / ')}</span>
-                <Link
-                  to={`/verbs/${v.id}`}
-                  className="icon-link"
-                  aria-label={`Ver ficha de ${v.lemma}`}
-                >
-                  <Icon name="arrow" size={18} />
-                </Link>
+                <div className="verb-row-actions">
+                  <button
+                    className="icon-button"
+                    aria-pressed={audio.playingId === v.id}
+                    aria-label={
+                      audio.playingId === v.id
+                        ? `Detener audio de ${v.lemma}`
+                        : `Escuchar las tres formas de ${v.lemma}`
+                    }
+                    title="Escuchar las tres formas"
+                    onClick={() => void audio.play(v)}
+                  >
+                    <Icon name="sound" size={20} />
+                  </button>
+                  {editing && (
+                    <>
+                      <Link
+                        to={`/editor/verbs/${v.id}`}
+                        className="icon-link"
+                        aria-label={`Editar ${v.lemma}`}
+                        title="Editar verbo"
+                      >
+                        <Icon name="edit" size={20} />
+                      </Link>
+                      {showArchived ? (
+                        <button
+                          className="icon-button"
+                          aria-label={`Restaurar ${v.lemma}`}
+                          title="Restaurar verbo"
+                          disabled={restoring === v.id}
+                          onClick={async () => {
+                            setRestoring(v.id);
+                            setActionError('');
+                            try {
+                              await restoreVerb(repos, v.id);
+                              await refresh();
+                              editToggle.current?.focus();
+                            } catch {
+                              setActionError('No se pudo restaurar el verbo. Inténtalo de nuevo.');
+                            } finally {
+                              setRestoring(null);
+                            }
+                          }}
+                        >
+                          <Icon name="restore" size={20} />
+                        </button>
+                      ) : (
+                        <button
+                          className="icon-button"
+                          aria-label={`Quitar ${v.lemma} del catálogo`}
+                          title="Archivar verbo"
+                          onClick={() => setArchiving(v)}
+                        >
+                          <Icon name="trash" size={20} />
+                        </button>
+                      )}
+                    </>
+                  )}
+                  <Link
+                    to={`/verbs/${v.id}`}
+                    className="icon-link"
+                    aria-label={`Ver ficha de ${v.lemma}`}
+                    title="Ver ficha"
+                  >
+                    <Icon name="arrow" size={18} />
+                  </Link>
+                </div>
               </div>
             ))}
             {!result.total && (

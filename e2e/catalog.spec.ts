@@ -1,2 +1,12 @@
-import {test,expect} from '@playwright/test';
-test('catalog finds variants, filters and survives narrow navigation',async({page})=>{await page.setViewportSize({width:360,height:780});await page.goto('/verbs');await page.getByRole('textbox',{name:'Buscar verbos'}).fill('went');await expect(page.getByRole('link',{name:/^go/})).toBeVisible();await page.getByRole('link',{name:'Ver ficha de go'}).click();await expect(page.getByRole('heading',{name:'go.',exact:true})).toBeVisible();await page.reload();await expect(page.getByRole('heading',{name:'go.',exact:true})).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);});
+import { test, expect } from '@playwright/test';
+test('catalog finds variants, filters and survives narrow navigation', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 780 });
+  await page.goto('/verbs');
+  await page.getByRole('textbox', { name: 'Buscar verbos' }).fill('went');
+  await expect(page.getByRole('link', { name: /^go/ })).toBeVisible();
+  await page.getByRole('link', { name: 'Ver ficha de go' }).click();
+  await expect(page.getByRole('heading', { name: 'go.', exact: true })).toBeVisible();
+  await page.reload();
+  await expect(page.getByRole('heading', { name: 'go.', exact: true })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});

@@ -1,2 +1,17 @@
 import { defineConfig } from 'vitest/config';
-export default defineConfig({test:{environment:'jsdom',setupFiles:['./tests/setup.ts'],include:['src/**/*.test.{ts,tsx}'],restoreMocks:true}});
+import { fileURLToPath } from 'node:url';
+export default defineConfig({
+  resolve: {
+    alias: {
+      'virtual:pwa-register': fileURLToPath(
+        new URL('./tests/fixtures/pwa-register.ts', import.meta.url),
+      ),
+    },
+  },
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./tests/setup.ts'],
+    include: ['src/**/*.test.{ts,tsx}'],
+    restoreMocks: true,
+  },
+});

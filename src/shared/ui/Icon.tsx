@@ -1,1 +1,37 @@
-export function Icon({name,size=22}:{name:string;size?:number}){const paths:Record<string,string>={home:'M3 10 12 3l9 7v11h-6v-7H9v7H3Z',book:'M3 4h6a4 4 0 0 1 3 2 4 4 0 0 1 3-2h6v16h-6a4 4 0 0 0-3 1 4 4 0 0 0-3-1H3Zm9 2v15',study:'m12 3 10 5-10 5L2 8Zm-6 8v6q6 5 12 0v-6M22 8v8',game:'M7 8h10q4 0 5 10 0 4-4 2l-3-3H9l-3 3q-4 2-4-2Q3 8 7 8ZM7 10v5m-2-2h4m7-1h.01m3 2h.01',chart:'M4 20V10m8 10V4m8 16v-7',settings:'M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM9 3l-1 3-3 1v3l-2 2 2 2v3l3 1 1 3h6l1-3 3-1v-3l2-2-2-2V7l-3-1-1-3Z',arrow:'M4 12h16m-6-6 6 6-6 6',search:'M10 3a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm5 12 6 6',sound:'m3 9 5 0 5-5v16l-5-5H3Zm14-2q6 5 0 10m0-7q2 2 0 4',star:'m12 3 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1Z',check:'m5 12 4 4L20 5',plus:'M12 4v16M4 12h16',filter:'M3 5h18M6 12h12M9 19h6',clock:'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4v6l4 2',bolt:'m13 2-9 12h7l-1 8 10-13h-7Z',close:'m6 6 12 12M6 18 18 6',upload:'M12 16V3m-5 5 5-5 5 5M3 15v6h18v-6'};return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={paths[name]??paths.star}/></svg>;}
+export function Icon({ name, size = 22 }: { name: string; size?: number }) {
+  const paths: Record<string, string> = {
+    home: 'M3 10 12 3l9 7v11h-6v-7H9v7H3Z',
+    book: 'M3 4h6a4 4 0 0 1 3 2 4 4 0 0 1 3-2h6v16h-6a4 4 0 0 0-3 1 4 4 0 0 0-3-1H3Zm9 2v15',
+    study: 'm12 3 10 5-10 5L2 8Zm-6 8v6q6 5 12 0v-6M22 8v8',
+    game: 'M7 8h10q4 0 5 10 0 4-4 2l-3-3H9l-3 3q-4 2-4-2Q3 8 7 8ZM7 10v5m-2-2h4m7-1h.01m3 2h.01',
+    chart: 'M4 20V10m8 10V4m8 16v-7',
+    settings:
+      'M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM9 3l-1 3-3 1v3l-2 2 2 2v3l3 1 1 3h6l1-3 3-1v-3l2-2-2-2V7l-3-1-1-3Z',
+    arrow: 'M4 12h16m-6-6 6 6-6 6',
+    search: 'M10 3a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm5 12 6 6',
+    sound: 'm3 9 5 0 5-5v16l-5-5H3Zm14-2q6 5 0 10m0-7q2 2 0 4',
+    star: 'm12 3 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1Z',
+    check: 'm5 12 4 4L20 5',
+    plus: 'M12 4v16M4 12h16',
+    filter: 'M3 5h18M6 12h12M9 19h6',
+    clock: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4v6l4 2',
+    bolt: 'm13 2-9 12h7l-1 8 10-13h-7Z',
+    close: 'm6 6 12 12M6 18 18 6',
+    upload: 'M12 16V3m-5 5 5-5 5 5M3 15v6h18v-6',
+  };
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d={paths[name] ?? paths.star} />
+    </svg>
+  );
+}

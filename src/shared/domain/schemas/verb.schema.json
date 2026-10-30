@@ -6,55 +6,66 @@
   "type": "object",
   "required": ["id", "lemma", "forms", "meanings", "classification", "contentStatus"],
   "properties": {
-    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
-    "lemma": {"type": "string", "minLength": 1},
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "lemma": { "type": "string", "minLength": 1 },
     "forms": {
       "type": "object",
       "required": ["base", "pastSimple", "pastParticiple"],
       "properties": {
-        "base": {"$ref": "#/$defs/form"},
-        "pastSimple": {"$ref": "#/$defs/formGroup"},
-        "pastParticiple": {"$ref": "#/$defs/formGroup"},
-        "thirdPersonSingular": {"$ref": "#/$defs/formGroup"},
-        "presentParticiple": {"$ref": "#/$defs/formGroup"},
-        "otherForms": {"type": "array", "items": {"$ref": "#/$defs/labelledFormGroup"}}
+        "base": { "$ref": "#/$defs/form" },
+        "pastSimple": { "$ref": "#/$defs/formGroup" },
+        "pastParticiple": { "$ref": "#/$defs/formGroup" },
+        "thirdPersonSingular": { "$ref": "#/$defs/formGroup" },
+        "presentParticiple": { "$ref": "#/$defs/formGroup" },
+        "otherForms": { "type": "array", "items": { "$ref": "#/$defs/labelledFormGroup" } }
       },
       "additionalProperties": false
     },
-    "meanings": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
-    "meaningNotes": {"type": "string"},
+    "meanings": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+    "meaningNotes": { "type": "string" },
     "classification": {
       "type": "object",
       "required": ["formRelation", "frequencyBand", "patternGroups", "recommendedCourses"],
       "properties": {
-        "formRelation": {"enum": ["all_same", "past_participle_same", "all_different", "special"]},
-        "frequencyBand": {"enum": ["essential", "common", "less_common", "advanced"]},
-        "patternGroups": {"type": "array", "items": {"type": "string"}},
-        "spellingEndings": {"type": "object", "additionalProperties": {"type": "array", "items": {"type": "string"}}},
-        "phoneticEndings": {"type": "object", "additionalProperties": {"type": "array", "items": {"type": "string"}}},
-        "recommendedCourses": {"type": "array", "items": {"enum": ["eso1", "eso2", "eso3", "eso4"]}},
-        "topics": {"type": "array", "items": {"type": "string"}},
-        "difficulty": {"enum": ["introductory", "intermediate", "advanced"]}
+        "formRelation": {
+          "enum": ["all_same", "past_participle_same", "all_different", "special"]
+        },
+        "frequencyBand": { "enum": ["essential", "common", "less_common", "advanced"] },
+        "patternGroups": { "type": "array", "items": { "type": "string" } },
+        "spellingEndings": {
+          "type": "object",
+          "additionalProperties": { "type": "array", "items": { "type": "string" } }
+        },
+        "phoneticEndings": {
+          "type": "object",
+          "additionalProperties": { "type": "array", "items": { "type": "string" } }
+        },
+        "recommendedCourses": {
+          "type": "array",
+          "items": { "enum": ["eso1", "eso2", "eso3", "eso4"] }
+        },
+        "topics": { "type": "array", "items": { "type": "string" } },
+        "difficulty": { "enum": ["introductory", "intermediate", "advanced"] }
       },
       "additionalProperties": false
     },
-    "examples": {"type": "array", "items": {"$ref": "#/$defs/example"}},
-    "mnemonics": {"type": "array", "items": {"type": "string"}},
-    "notes": {"type": "array", "items": {"type": "string"}},
-    "sources": {"type": "array", "items": {"$ref": "#/$defs/source"}},
-    "contentStatus": {"enum": ["draft", "needs_review", "validated", "archived"]},
-    "createdAt": {"type": "string", "format": "date-time"},
-    "updatedAt": {"type": "string", "format": "date-time"}
+    "examples": { "type": "array", "items": { "$ref": "#/$defs/example" } },
+    "mnemonics": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "array", "items": { "type": "string" } },
+    "sources": { "type": "array", "items": { "$ref": "#/$defs/source" } },
+    "contentStatus": { "enum": ["draft", "needs_review", "validated", "archived"] },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "updatedAt": { "type": "string", "format": "date-time" }
   },
   "$defs": {
     "pronunciation": {
       "type": "object",
       "properties": {
-        "ipa": {"type": "string"},
-        "audioUrl": {"type": ["string", "null"], "format": "uri"},
-        "audioSource": {"type": "string"},
-        "audioLicense": {"type": "string"},
-        "validated": {"type": "boolean", "default": false}
+        "ipa": { "type": "string" },
+        "audioUrl": { "type": ["string", "null"], "format": "uri" },
+        "audioSource": { "type": "string" },
+        "audioLicense": { "type": "string" },
+        "validated": { "type": "boolean", "default": false }
       },
       "additionalProperties": false
     },
@@ -62,13 +73,13 @@
       "type": "object",
       "required": ["value"],
       "properties": {
-        "value": {"type": "string", "minLength": 1},
+        "value": { "type": "string", "minLength": 1 },
         "pronunciation": {
           "type": "object",
           "properties": {
-            "uk": {"$ref": "#/$defs/pronunciation"},
-            "us": {"$ref": "#/$defs/pronunciation"},
-            "other": {"type": "array", "items": {"$ref": "#/$defs/pronunciation"}}
+            "uk": { "$ref": "#/$defs/pronunciation" },
+            "us": { "$ref": "#/$defs/pronunciation" },
+            "other": { "type": "array", "items": { "$ref": "#/$defs/pronunciation" } }
           },
           "additionalProperties": false
         }
@@ -79,8 +90,8 @@
       "type": "object",
       "required": ["variants"],
       "properties": {
-        "variants": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/variant"}},
-        "usageNotes": {"type": "array", "items": {"type": "string"}}
+        "variants": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/variant" } },
+        "usageNotes": { "type": "array", "items": { "type": "string" } }
       },
       "additionalProperties": false
     },
@@ -88,14 +99,14 @@
       "type": "object",
       "required": ["value"],
       "properties": {
-        "value": {"type": "string", "minLength": 1},
-        "dialect": {"enum": ["all", "uk", "us", "other"]},
-        "usageNote": {"type": "string"},
+        "value": { "type": "string", "minLength": 1 },
+        "dialect": { "enum": ["all", "uk", "us", "other"] },
+        "usageNote": { "type": "string" },
         "pronunciation": {
           "type": "object",
           "properties": {
-            "uk": {"$ref": "#/$defs/pronunciation"},
-            "us": {"$ref": "#/$defs/pronunciation"}
+            "uk": { "$ref": "#/$defs/pronunciation" },
+            "us": { "$ref": "#/$defs/pronunciation" }
           },
           "additionalProperties": false
         }
@@ -106,8 +117,8 @@
       "type": "object",
       "required": ["label", "group"],
       "properties": {
-        "label": {"type": "string"},
-        "group": {"$ref": "#/$defs/formGroup"}
+        "label": { "type": "string" },
+        "group": { "$ref": "#/$defs/formGroup" }
       },
       "additionalProperties": false
     },
@@ -115,25 +126,25 @@
       "type": "object",
       "required": ["id", "sentence", "translation", "targetForm", "grammarPoint", "reviewStatus"],
       "properties": {
-        "id": {"type": "string"},
-        "sentence": {"type": "string"},
-        "translation": {"type": "string"},
-        "targetForm": {"type": "string"},
-        "grammarPoint": {"type": "string"},
-        "dialect": {"enum": ["uk", "us", "neutral"]},
-        "audioUrl": {"type": ["string", "null"], "format": "uri"},
-        "reviewStatus": {"enum": ["draft", "needs_review", "validated"]},
-        "source": {"type": "string"}
+        "id": { "type": "string" },
+        "sentence": { "type": "string" },
+        "translation": { "type": "string" },
+        "targetForm": { "type": "string" },
+        "grammarPoint": { "type": "string" },
+        "dialect": { "enum": ["uk", "us", "neutral"] },
+        "audioUrl": { "type": ["string", "null"], "format": "uri" },
+        "reviewStatus": { "enum": ["draft", "needs_review", "validated"] },
+        "source": { "type": "string" }
       },
       "additionalProperties": false
     },
     "source": {
       "type": "object",
       "properties": {
-        "label": {"type": "string"},
-        "url": {"type": "string", "format": "uri"},
-        "license": {"type": "string"},
-        "checkedAt": {"type": "string", "format": "date"}
+        "label": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "license": { "type": "string" },
+        "checkedAt": { "type": "string", "format": "date" }
       },
       "additionalProperties": false
     }

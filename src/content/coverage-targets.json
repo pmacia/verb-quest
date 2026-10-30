@@ -1,0 +1,5054 @@
+{
+  "be": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "be",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple:was",
+        "form": "pastSimple",
+        "variantValue": "was",
+        "contextKey": "singular"
+      },
+      {
+        "id": "pastSimple:were",
+        "form": "pastSimple",
+        "variantValue": "were",
+        "contextKey": "plural"
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "been",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "be",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple:was",
+        "form": "pastSimple",
+        "variantValue": "was",
+        "contextKey": "singular"
+      },
+      {
+        "id": "pastSimple:were",
+        "form": "pastSimple",
+        "variantValue": "were",
+        "contextKey": "plural"
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "been",
+        "contextKey": null
+      }
+    ]
+  },
+  "go": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "go",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "went",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "gone",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "go",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "went",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "gone",
+        "contextKey": null
+      }
+    ]
+  },
+  "have": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "have",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "had",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "had",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "have",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "had",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "had",
+        "contextKey": null
+      }
+    ]
+  },
+  "do": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "do",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "did",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "done",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "do",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "did",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "done",
+        "contextKey": null
+      }
+    ]
+  },
+  "get": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "get",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "got",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "got",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "get",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "got",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "gotten",
+        "contextKey": null
+      }
+    ]
+  },
+  "make": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "make",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "made",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "made",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "make",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "made",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "made",
+        "contextKey": null
+      }
+    ]
+  },
+  "take": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "take",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "took",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "taken",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "take",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "took",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "taken",
+        "contextKey": null
+      }
+    ]
+  },
+  "come": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "come",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "came",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "come",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "come",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "came",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "come",
+        "contextKey": null
+      }
+    ]
+  },
+  "see": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "see",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "saw",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "seen",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "see",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "saw",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "seen",
+        "contextKey": null
+      }
+    ]
+  },
+  "know": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "know",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "knew",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "known",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "know",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "knew",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "known",
+        "contextKey": null
+      }
+    ]
+  },
+  "think": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "think",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "thought",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "thought",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "think",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "thought",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "thought",
+        "contextKey": null
+      }
+    ]
+  },
+  "say": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "say",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "said",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "said",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "say",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "said",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "said",
+        "contextKey": null
+      }
+    ]
+  },
+  "tell": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "tell",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "told",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "told",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "tell",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "told",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "told",
+        "contextKey": null
+      }
+    ]
+  },
+  "give": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "give",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "gave",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "given",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "give",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "gave",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "given",
+        "contextKey": null
+      }
+    ]
+  },
+  "find": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "find",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "found",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "found",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "find",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "found",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "found",
+        "contextKey": null
+      }
+    ]
+  },
+  "feel": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "feel",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "felt",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "felt",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "feel",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "felt",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "felt",
+        "contextKey": null
+      }
+    ]
+  },
+  "leave": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "leave",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "left",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "left",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "leave",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "left",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "left",
+        "contextKey": null
+      }
+    ]
+  },
+  "put": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "put",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "put",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "put",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "put",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "put",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "put",
+        "contextKey": null
+      }
+    ]
+  },
+  "bring": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "bring",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "brought",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "brought",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "bring",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "brought",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "brought",
+        "contextKey": null
+      }
+    ]
+  },
+  "buy": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "buy",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "bought",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "bought",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "buy",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "bought",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "bought",
+        "contextKey": null
+      }
+    ]
+  },
+  "eat": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "eat",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "ate",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "eaten",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "eat",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "ate",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "eaten",
+        "contextKey": null
+      }
+    ]
+  },
+  "drink": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "drink",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "drank",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "drunk",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "drink",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "drank",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "drunk",
+        "contextKey": null
+      }
+    ]
+  },
+  "sleep": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "sleep",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "slept",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "slept",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "sleep",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "slept",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "slept",
+        "contextKey": null
+      }
+    ]
+  },
+  "read": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "read",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "read",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "read",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "read",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "read",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "read",
+        "contextKey": null
+      }
+    ]
+  },
+  "write": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "write",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "wrote",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "written",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "write",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "wrote",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "written",
+        "contextKey": null
+      }
+    ]
+  },
+  "speak": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "speak",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "spoke",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "spoken",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "speak",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "spoke",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "spoken",
+        "contextKey": null
+      }
+    ]
+  },
+  "hear": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "hear",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "heard",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "heard",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "hear",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "heard",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "heard",
+        "contextKey": null
+      }
+    ]
+  },
+  "meet": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "meet",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "met",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "met",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "meet",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "met",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "met",
+        "contextKey": null
+      }
+    ]
+  },
+  "run": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "run",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "ran",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "run",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "run",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "ran",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "run",
+        "contextKey": null
+      }
+    ]
+  },
+  "sit": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "sit",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "sat",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "sat",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "sit",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "sat",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "sat",
+        "contextKey": null
+      }
+    ]
+  },
+  "stand": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "stand",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "stood",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "stood",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "stand",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "stood",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "stood",
+        "contextKey": null
+      }
+    ]
+  },
+  "understand": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "understand",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "understood",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "understood",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "understand",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "understood",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "understood",
+        "contextKey": null
+      }
+    ]
+  },
+  "teach": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "teach",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "taught",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "taught",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "teach",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "taught",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "taught",
+        "contextKey": null
+      }
+    ]
+  },
+  "learn": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "learn",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "learnt",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "learnt",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "learn",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "learnt",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "learnt",
+        "contextKey": null
+      }
+    ]
+  },
+  "wear": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "wear",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "wore",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "worn",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "wear",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "wore",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "worn",
+        "contextKey": null
+      }
+    ]
+  },
+  "lose": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "lose",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "lost",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "lost",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "lose",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "lost",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "lost",
+        "contextKey": null
+      }
+    ]
+  },
+  "pay": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "pay",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "paid",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "paid",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "pay",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "paid",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "paid",
+        "contextKey": null
+      }
+    ]
+  },
+  "send": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "send",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "sent",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "sent",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "send",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "sent",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "sent",
+        "contextKey": null
+      }
+    ]
+  },
+  "build": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "build",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "built",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "built",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "build",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "built",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "built",
+        "contextKey": null
+      }
+    ]
+  },
+  "keep": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "keep",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "kept",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "kept",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "keep",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "kept",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "kept",
+        "contextKey": null
+      }
+    ]
+  },
+  "begin": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "begin",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "began",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "begun",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "begin",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "began",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "begun",
+        "contextKey": null
+      }
+    ]
+  },
+  "break": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "break",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "broke",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "broken",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "break",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "broke",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "broken",
+        "contextKey": null
+      }
+    ]
+  },
+  "choose": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "choose",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "chose",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "chosen",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "choose",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "chose",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "chosen",
+        "contextKey": null
+      }
+    ]
+  },
+  "drive": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "drive",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "drove",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "driven",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "drive",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "drove",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "driven",
+        "contextKey": null
+      }
+    ]
+  },
+  "fly": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "fly",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "flew",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "flown",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "fly",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "flew",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "flown",
+        "contextKey": null
+      }
+    ]
+  },
+  "forget": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "forget",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "forgot",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "forgotten",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "forget",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "forgot",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "forgotten",
+        "contextKey": null
+      }
+    ]
+  },
+  "grow": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "grow",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "grew",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "grown",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "grow",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "grew",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "grown",
+        "contextKey": null
+      }
+    ]
+  },
+  "hold": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "hold",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "held",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "held",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "hold",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "held",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "held",
+        "contextKey": null
+      }
+    ]
+  },
+  "catch": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "catch",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "caught",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "caught",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "catch",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "caught",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "caught",
+        "contextKey": null
+      }
+    ]
+  },
+  "cut": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "cut",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "cut",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "cut",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "cut",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "cut",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "cut",
+        "contextKey": null
+      }
+    ]
+  },
+  "draw": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "draw",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "drew",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "drawn",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "draw",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "drew",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "drawn",
+        "contextKey": null
+      }
+    ]
+  },
+  "fall": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "fall",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "fell",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "fallen",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "fall",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "fell",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "fallen",
+        "contextKey": null
+      }
+    ]
+  },
+  "win": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "win",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "won",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "won",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "win",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "won",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "won",
+        "contextKey": null
+      }
+    ]
+  },
+  "sell": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "sell",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "sold",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "sold",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "sell",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "sold",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "sold",
+        "contextKey": null
+      }
+    ]
+  },
+  "spend": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "spend",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "spent",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "spent",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "spend",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "spent",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "spent",
+        "contextKey": null
+      }
+    ]
+  },
+  "swim": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "swim",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "swam",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "swum",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "swim",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "swam",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "swum",
+        "contextKey": null
+      }
+    ]
+  },
+  "ride": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "ride",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "rode",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "ridden",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "ride",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "rode",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "ridden",
+        "contextKey": null
+      }
+    ]
+  },
+  "sing": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "sing",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "sang",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "sung",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "sing",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "sang",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "sung",
+        "contextKey": null
+      }
+    ]
+  },
+  "ring": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "ring",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "rang",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "rung",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "ring",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "rang",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "rung",
+        "contextKey": null
+      }
+    ]
+  },
+  "wake": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "wake",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "woke",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "woken",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "wake",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "woke",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "woken",
+        "contextKey": null
+      }
+    ]
+  },
+  "feed": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "feed",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "fed",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "fed",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "feed",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "fed",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "fed",
+        "contextKey": null
+      }
+    ]
+  },
+  "fight": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "fight",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "fought",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "fought",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "fight",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "fought",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "fought",
+        "contextKey": null
+      }
+    ]
+  },
+  "lend": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "lend",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "lent",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "lent",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "lend",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "lent",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "lent",
+        "contextKey": null
+      }
+    ]
+  },
+  "show": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "show",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "showed",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "shown",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "show",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "showed",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "shown",
+        "contextKey": null
+      }
+    ]
+  },
+  "shut": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "shut",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "shut",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "shut",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "shut",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "shut",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "shut",
+        "contextKey": null
+      }
+    ]
+  },
+  "hurt": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "hurt",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "hurt",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "hurt",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "hurt",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "hurt",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "hurt",
+        "contextKey": null
+      }
+    ]
+  },
+  "hit": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "hit",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "hit",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "hit",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "hit",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "hit",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "hit",
+        "contextKey": null
+      }
+    ]
+  },
+  "let": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "let",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "let",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "let",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "let",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "let",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "let",
+        "contextKey": null
+      }
+    ]
+  },
+  "mean": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "mean",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "meant",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "meant",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "mean",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "meant",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "meant",
+        "contextKey": null
+      }
+    ]
+  },
+  "cost": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "cost",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "cost",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "cost",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "cost",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "cost",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "cost",
+        "contextKey": null
+      }
+    ]
+  },
+  "become": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "become",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "became",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "become",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "become",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "became",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "become",
+        "contextKey": null
+      }
+    ]
+  },
+  "bend": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "bend",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "bent",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "bent",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "bend",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "bent",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "bent",
+        "contextKey": null
+      }
+    ]
+  },
+  "bite": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "bite",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "bit",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "bitten",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "bite",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "bit",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "bitten",
+        "contextKey": null
+      }
+    ]
+  },
+  "blow": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "blow",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "blew",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "blown",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "blow",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "blew",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "blown",
+        "contextKey": null
+      }
+    ]
+  },
+  "burn": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "burn",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "burnt",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "burnt",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "burn",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "burnt",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "burnt",
+        "contextKey": null
+      }
+    ]
+  },
+  "deal": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "deal",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "dealt",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "dealt",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "deal",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "dealt",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "dealt",
+        "contextKey": null
+      }
+    ]
+  },
+  "dig": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "dig",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "dug",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "dug",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "dig",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "dug",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "dug",
+        "contextKey": null
+      }
+    ]
+  },
+  "dream": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "dream",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "dreamt",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "dreamt",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "dream",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "dreamt",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "dreamt",
+        "contextKey": null
+      }
+    ]
+  },
+  "forgive": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "forgive",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "forgave",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "forgiven",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "forgive",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "forgave",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "forgiven",
+        "contextKey": null
+      }
+    ]
+  },
+  "freeze": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "freeze",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "froze",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "frozen",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "freeze",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "froze",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "frozen",
+        "contextKey": null
+      }
+    ]
+  },
+  "hide": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "hide",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "hid",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "hidden",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "hide",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "hid",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "hidden",
+        "contextKey": null
+      }
+    ]
+  },
+  "lay": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "lay",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "laid",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "laid",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "lay",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "laid",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "laid",
+        "contextKey": null
+      }
+    ]
+  },
+  "lead": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "lead",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "led",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "led",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "lead",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "led",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "led",
+        "contextKey": null
+      }
+    ]
+  },
+  "lie": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "lie",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "lay",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "lain",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "lie",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "lay",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "lain",
+        "contextKey": null
+      }
+    ]
+  },
+  "light": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "light",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "lit",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "lit",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "light",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "lit",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "lit",
+        "contextKey": null
+      }
+    ]
+  },
+  "rise": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "rise",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "rose",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "risen",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "rise",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "rose",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "risen",
+        "contextKey": null
+      }
+    ]
+  },
+  "shake": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "shake",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "shook",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "shaken",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "shake",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "shook",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "shaken",
+        "contextKey": null
+      }
+    ]
+  },
+  "shine": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "shine",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "shone",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "shone",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "shine",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "shone",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "shone",
+        "contextKey": null
+      }
+    ]
+  },
+  "shoot": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "shoot",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "shot",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "shot",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "shoot",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "shot",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "shot",
+        "contextKey": null
+      }
+    ]
+  },
+  "sink": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "sink",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "sank",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "sunk",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "sink",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "sank",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "sunk",
+        "contextKey": null
+      }
+    ]
+  },
+  "smell": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "smell",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "smelt",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "smelt",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "smell",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "smelt",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "smelt",
+        "contextKey": null
+      }
+    ]
+  },
+  "spell": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "spell",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "spelt",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "spelt",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "spell",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "spelt",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "spelt",
+        "contextKey": null
+      }
+    ]
+  },
+  "spill": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "spill",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "spilt",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "spilt",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "spill",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "spilt",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "spilt",
+        "contextKey": null
+      }
+    ]
+  },
+  "stick": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "stick",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "stuck",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "stuck",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "stick",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "stuck",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "stuck",
+        "contextKey": null
+      }
+    ]
+  },
+  "steal": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "steal",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "stole",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "stolen",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "steal",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "stole",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "stolen",
+        "contextKey": null
+      }
+    ]
+  },
+  "sweep": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "sweep",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "swept",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "swept",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "sweep",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "swept",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "swept",
+        "contextKey": null
+      }
+    ]
+  },
+  "tear": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "tear",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "tore",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "torn",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "tear",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "tore",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "torn",
+        "contextKey": null
+      }
+    ]
+  },
+  "throw": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "throw",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "threw",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "thrown",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "throw",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "threw",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "thrown",
+        "contextKey": null
+      }
+    ]
+  },
+  "beat": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "beat",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "beat",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "beaten",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "beat",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "beat",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "beaten",
+        "contextKey": null
+      }
+    ]
+  },
+  "hang": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "hang",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "hung",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "hung",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "hang",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "hung",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "hung",
+        "contextKey": null
+      }
+    ]
+  },
+  "arise": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "arise",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "arose",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "arisen",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "arise",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "arose",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "arisen",
+        "contextKey": null
+      }
+    ]
+  },
+  "awake": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "awake",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "awoke",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "awoken",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "awake",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "awoke",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "awoken",
+        "contextKey": null
+      }
+    ]
+  },
+  "bear": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "bear",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "bore",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "borne",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "bear",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "bore",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "borne",
+        "contextKey": null
+      }
+    ]
+  },
+  "bind": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "bind",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "bound",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "bound",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "bind",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "bound",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "bound",
+        "contextKey": null
+      }
+    ]
+  },
+  "bleed": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "bleed",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "bled",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "bled",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "bleed",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "bled",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "bled",
+        "contextKey": null
+      }
+    ]
+  },
+  "breed": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "breed",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "bred",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "bred",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "breed",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "bred",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "bred",
+        "contextKey": null
+      }
+    ]
+  },
+  "burst": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "burst",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "burst",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "burst",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "burst",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "burst",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "burst",
+        "contextKey": null
+      }
+    ]
+  },
+  "creep": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "creep",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "crept",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "crept",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "creep",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "crept",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "crept",
+        "contextKey": null
+      }
+    ]
+  },
+  "forbid": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "forbid",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "forbade",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "forbidden",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "forbid",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "forbade",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "forbidden",
+        "contextKey": null
+      }
+    ]
+  },
+  "kneel": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "kneel",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "knelt",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "knelt",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "kneel",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "knelt",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "knelt",
+        "contextKey": null
+      }
+    ]
+  },
+  "lean": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "lean",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "leant",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "leant",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "lean",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "leant",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "leant",
+        "contextKey": null
+      }
+    ]
+  },
+  "seek": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "seek",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "sought",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "sought",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "seek",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "sought",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "sought",
+        "contextKey": null
+      }
+    ]
+  },
+  "set": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "set",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "set",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "set",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "set",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "set",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "set",
+        "contextKey": null
+      }
+    ]
+  },
+  "shrink": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "shrink",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "shrank",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "shrunk",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "shrink",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "shrank",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "shrunk",
+        "contextKey": null
+      }
+    ]
+  },
+  "slide": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "slide",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "slid",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "slid",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "slide",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "slid",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "slid",
+        "contextKey": null
+      }
+    ]
+  },
+  "split": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "split",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "split",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "split",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "split",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "split",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "split",
+        "contextKey": null
+      }
+    ]
+  },
+  "spread": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "spread",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "spread",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "spread",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "spread",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "spread",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "spread",
+        "contextKey": null
+      }
+    ]
+  },
+  "spring": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "spring",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "sprang",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "sprung",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "spring",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "sprang",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "sprung",
+        "contextKey": null
+      }
+    ]
+  },
+  "swear": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "swear",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "swore",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "sworn",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "swear",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "swore",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "sworn",
+        "contextKey": null
+      }
+    ]
+  },
+  "swing": {
+    "uk": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "swing",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "swung",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "swung",
+        "contextKey": null
+      }
+    ],
+    "us": [
+      {
+        "id": "base",
+        "form": "base",
+        "variantValue": "swing",
+        "contextKey": null
+      },
+      {
+        "id": "pastSimple",
+        "form": "pastSimple",
+        "variantValue": "swung",
+        "contextKey": null
+      },
+      {
+        "id": "pastParticiple",
+        "form": "pastParticiple",
+        "variantValue": "swung",
+        "contextKey": null
+      }
+    ]
+  }
+}

@@ -1,3 +1,4 @@
+import { createId } from '../../shared/identity/create-id';
 import type { Verb, Clock } from '../../shared/domain/types';
 import type { AppRepositories } from '../persistence/repositories';
 import { validate } from '../../shared/domain/validation';
@@ -26,7 +27,7 @@ export async function saveVerb(
       return { status: 'duplicate' as const, current: duplicate.verb };
     const verb = {
       ...valid.value,
-      contentVersion: crypto.randomUUID(),
+      contentVersion: createId(),
       updatedAt: new Date().toISOString(),
     };
     if (existing) {

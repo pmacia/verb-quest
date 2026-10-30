@@ -1,3 +1,4 @@
+import { createId } from '../../shared/identity/create-id';
 import { computeXp, finishSessionXp } from '../gamification/xp';
 import { computeAwards } from '../gamification/awards';
 import type { AppRepositories } from '../persistence/repositories';
@@ -216,7 +217,7 @@ export async function submitAnswer(repos: AppRepositories, input: AnswerInput, c
     s.status = 'active';
     const root = q.retryOf ?? q.id;
     if (!superseded && a.correct === false && !s.retriedQuestionIds.includes(root)) {
-      s.queue.push({ ...q, id: crypto.randomUUID(), retryOf: root });
+      s.queue.push({ ...q, id: createId(), retryOf: root });
       s.retriedQuestionIds.push(root);
     }
     await repos.sessions.put(s);

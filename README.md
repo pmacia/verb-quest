@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-Abrir la URL que muestre Vite (por defecto http://127.0.0.1:3000). Los cambios de desarrollo conservan los datos de ese origen del navegador.
+Abrir la URL que muestre Vite (por defecto http://127.0.0.1:3000). Los cambios de desarrollo conservan los datos de ese origen del navegador. El servidor también acepta conexiones desde otros dispositivos de la misma red mediante la IP del equipo y el puerto 3000 que muestra Vite. La aplicación funciona por HTTP de red; la instalación PWA y el service worker requieren HTTPS o localhost. Cada dirección/origen conserva sus propios datos.
 
 ## Verificar y compilar
 
@@ -54,7 +54,7 @@ La voz proviene del navegador/sistema. Puede no estar disponible sin conexión o
 - [Plan](docs/superpowers/plans/2026-10-29-verbquest.md)
 - [Reglas de aprendizaje](docs/learning-rules.md)
 - [Formatos y copias](docs/data-formats.md)
-- [Almacenamiento/offline](docs/offline-and-storage.md)
+- [Almacenamiento/offline](docs/offline-and-storage.md) y [compatibilidad HTTP de red](docs/http-network-compatibility.md)
 - [Revisión del catálogo enriquecido](docs/content/catalog-enrichment-review.md)
 - [Selección de contenido](docs/content/selection-policy.md) y [revisión](docs/content/review-log.md)
 - [Informe de aceptación](docs/acceptance-report.md)

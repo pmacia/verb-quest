@@ -1,3 +1,4 @@
+import { createId } from '../../shared/identity/create-id';
 import type { AppRepositories } from '../persistence/repositories';
 import type { VerbList } from '../../shared/domain/types';
 export async function saveList(
@@ -8,7 +9,7 @@ export async function saveList(
   if (!input.name.trim()) throw Error('Escribe un nombre para la lista.');
   const list = {
     ...input,
-    id: input.id ?? crypto.randomUUID(),
+    id: input.id ?? createId(),
     profileId,
     name: input.name.trim(),
     verbIds: [...new Set(input.verbIds)],

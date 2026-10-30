@@ -1,3 +1,4 @@
+import { createId } from '../../../shared/identity/create-id';
 import type { AppRepositories } from '../../persistence/repositories';
 import type { ImportPreview } from './parse';
 import { validate } from '../../../shared/domain/validation';
@@ -40,7 +41,7 @@ export async function applyImport(
         (!decision.newId || decision.newId === conflict.existingId)
       )
         throw Error('Crear requiere un identificador nuevo.');
-      const v = validate<Verb>('verb', { ...r.verb, id, contentVersion: crypto.randomUUID() });
+      const v = validate<Verb>('verb', { ...r.verb, id, contentVersion: createId() });
       if (!v.ok) throw Error('Datos no válidos al confirmar.');
       await repos.catalog.put({
         verb: v.value,

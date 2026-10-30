@@ -1,3 +1,4 @@
+import { createId } from '../../shared/identity/create-id';
 import type { AppSettings, Clock, Dataset, Profile } from '../../shared/domain/types';
 import type { AppRepositories } from './repositories';
 import { reconcileSeed } from './seed-sync';
@@ -33,7 +34,7 @@ export async function bootstrap(
     let profile = await repos.profiles.toCollection().first();
     if (!profile) {
       profile = {
-        id: crypto.randomUUID(),
+        id: createId(),
         name: 'Mi aventura',
         timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone || 'Europe/Madrid',
         createdAt: clock.now(),

@@ -1,3 +1,4 @@
+import { createId } from '../../shared/identity/create-id';
 import { shuffle } from '../question-engine/generate';
 import type {
   StudyPlan,
@@ -94,7 +95,7 @@ export function buildSession(
     );
   const limit = input.plan.schedule.minutesPerSession * 2;
   return {
-    id: crypto.randomUUID(),
+    id: createId(),
     profileId: input.profileId,
     planId: input.plan.isTemplate ? null : input.plan.id,
     selection: allowed,

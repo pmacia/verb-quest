@@ -1,3 +1,4 @@
+import { createId } from '../../shared/identity/create-id';
 import type {
   Verb,
   EvaluatedSkill,
@@ -90,7 +91,7 @@ export function generateQuestions(
           });
           if (matchingPairs.length)
             result.questions.push({
-              id: crypto.randomUUID(),
+              id: createId(),
               version: '1',
               verbId: v.id,
               contentVersion: v.contentVersion,
@@ -187,7 +188,7 @@ export function generateQuestions(
             options = shuffle([accepted[0], ...shuffle(distractors, rng).slice(0, 3)], rng);
           }
           result.questions.push({
-            id: `${v.id}:${skill}:${mode}:${t.id}:${crypto.randomUUID()}`,
+            id: `${v.id}:${skill}:${mode}:${t.id}:${createId()}`,
             version: '1',
             verbId: v.id,
             contentVersion: v.contentVersion,

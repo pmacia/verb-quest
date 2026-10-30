@@ -1,3 +1,4 @@
+import { createId } from '../../shared/identity/create-id';
 import { useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useApp } from '../../app/AppProviders';
@@ -18,7 +19,7 @@ export function PlanEditorPage() {
   const original = plans.find((p) => p.id === id) || templates.find((p) => p.id === id);
   const [plan, setPlan] = useState<StudyPlan>(() => ({
     ...structuredClone(original ?? templates[0]),
-    id: original && !original.isTemplate ? original.id : crypto.randomUUID(),
+    id: original && !original.isTemplate ? original.id : createId(),
     profileId: profile.id,
     isTemplate: false,
     createdAt: new Date().toISOString(),

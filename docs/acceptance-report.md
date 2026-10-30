@@ -1,5 +1,7 @@
 # Informe de aceptación · 30/10/2026
 
+**Actualización posterior de catálogo:** el enriquecimiento selectivo está documentado en [su revisión](content/catalog-enrichment-review.md), con 93 pruebas unitarias/integración y 72 E2E correctas. Las cifras siguientes conservan la evidencia del cierre inicial del MVP.
+
 VerbQuest 0.1.0 queda operativo como aplicación local para navegador, en la rama `feat/verbquest`. No se ha publicado ni enviado a un repositorio remoto. El catálogo de producción sustituye a los ejemplos del paquete; estos se conservan como fixtures de pruebas.
 
 ## Evidencia final

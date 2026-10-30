@@ -65,3 +65,37 @@ it('unsupported future migration does not reset database', async () => {
   expect(await saved.table('kept').get('keep')).toEqual({ id: 'keep' });
   saved.close();
 });
+import { dataset as production } from '../../content/dataset';
+import original from '../../content/verbs.curated.json';
+import type { Verb } from '../../shared/domain/types';
+import { emptyProgress } from '../learning-engine/progress';
+it('metadata upgrade preserves local edits, lists and learning evidence', async () => {
+  const r = await openAppDatabase(crypto.randomUUID());
+  const profile = await bootstrap(
+    r,
+    { version: 'curated-1.0', kind: 'curated', verbs: original as Verb[] },
+    clock,
+  );
+  const go = (await r.catalog.get('go'))!;
+  go.locallyModified = true;
+  go.verb.meanings = ['mi traducción'];
+  await r.catalog.put(go);
+  const progress = {
+    ...emptyProgress(profile.id, 'go', 'recognition'),
+    stage: 1 as const,
+    state: 'learning' as const,
+    started: true,
+  };
+  await r.progress.put(progress);
+  await r.lists.put({ id: 'exam', profileId: profile.id, name: 'Examen', verbIds: ['go', 'buy'] });
+  await bootstrap(r, production, clock);
+  expect((await r.catalog.get('go'))?.verb.meanings).toEqual(['mi traducción']);
+  expect((await r.catalog.get('go'))?.pendingBase?.forms.base.pronunciation?.us?.validated).toBe(
+    true,
+  );
+  expect((await r.catalog.get('buy'))?.verb.forms.base.pronunciation?.us?.validated).toBe(true);
+  expect(await r.progress.get([profile.id, 'go', 'recognition'])).toEqual(progress);
+  expect((await r.lists.get('exam'))?.verbIds).toEqual(['go', 'buy']);
+  expect((await r.meta.get('datasetVersion'))?.value).toBe('curated-1.1');
+  r.close();
+});

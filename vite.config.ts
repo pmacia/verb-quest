@@ -23,6 +23,7 @@ export default defineConfig({
       output: {
         codeSplitting: {
           groups: [
+            { name: 'content', test: /src\/content\/.*\.json$/ },
             { name: 'react', test: /node_modules\/(react|react-dom|react-router)/ },
             { name: 'validation', test: /node_modules\/ajv/ },
             { name: 'storage', test: /node_modules\/dexie/ },

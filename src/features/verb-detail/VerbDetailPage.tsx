@@ -1,3 +1,5 @@
+import ipaReview from '../../content/enrichment-review.json';
+import { patternLabel, topicLabel } from '../catalog/classification-labels';
 import { useEffect } from 'react';
 import { recordActivity } from '../gamification/awards';
 import { skillLabels, stateLabels } from '../progress/selectors';
@@ -26,6 +28,9 @@ export function VerbDetailPage() {
       }).catch((e) => setError(String(e)));
   }, [id]);
   if (!v) return <StatusPanel title="No encontramos este verbo" />;
+  const ipaSources = [
+    ...new Set(ipaReview.reviewed.filter((r) => r.verbId === v.id).map((r) => r.source)),
+  ];
   return (
     <>
       <Link to="/verbs" className="back-link">
@@ -54,27 +59,48 @@ export function VerbDetailPage() {
               {['FORMA BASE', 'PASADO SIMPLE', 'PARTICIPIO PASADO'][i]}
             </span>
             <h2>{formValues(v, f).join(' / ')}</h2>
-            <p>
-              {(f === 'base' ? [v.forms.base] : v.forms[f].variants)
-                .map((form) => {
-                  const preferred = form.pronunciation?.[settings.dialect];
-                  const selected = preferred?.validated
-                    ? preferred
-                    : form.pronunciation?.uk?.validated
-                      ? form.pronunciation.uk
-                      : null;
-                  return selected
-                    ? `IPA (${preferred?.validated ? settings.dialect : 'uk'}): ${selected.ipa}`
-                    : '';
-                })
-                .filter(Boolean)
-                .join(' · ') || 'IPA no disponible con revisión'}
-              {f !== 'base' &&
-                v.forms[f].variants
-                  .map((a) => a.usageNote)
-                  .filter(Boolean)
-                  .join(' · ')}
-            </p>
+            <div className="pronunciation-list">
+              {(f === 'base' ? [v.forms.base] : v.forms[f].variants).map((form) => {
+                const entries = (
+                  [settings.dialect, settings.dialect === 'uk' ? 'us' : 'uk'] as const
+                ).flatMap((dialect) => {
+                  const p = form.pronunciation?.[dialect];
+                  return p?.ipa ? [{ dialect, p }] : [];
+                });
+                return (
+                  <div key={form.value}>
+                    {entries.length ? (
+                      entries.map(({ dialect, p }) => (
+                        <div key={dialect}>
+                          {p.validated ? (
+                            <p>
+                              {form.value} · IPA {dialect.toUpperCase()}: {p.ipa}
+                            </p>
+                          ) : (
+                            <div className="small muted">
+                              <span className="tag">IPA propuesta · pendiente de revisión</span>
+                              <p>
+                                {form.value} · {dialect.toUpperCase()}: {p.ipa}
+                              </p>
+                            </div>
+                          )}
+                        </div>
+                      ))
+                    ) : (
+                      <p className="small muted">{form.value}: IPA no disponible con revisión</p>
+                    )}
+                  </div>
+                );
+              })}
+              {f !== 'base' && (
+                <p className="small muted">
+                  {v.forms[f].variants
+                    .map((a) => a.usageNote)
+                    .filter(Boolean)
+                    .join(' · ')}
+                </p>
+              )}
+            </div>
             {v.lemma === 'read' ? (
               <p className="small muted">
                 Audio aislado desactivado: esta palabra necesita contexto para su pronunciación.
@@ -144,10 +170,13 @@ export function VerbDetailPage() {
             <div className="chips">
               {v.classification.patternGroups.map((g) => (
                 <span className="tag" key={g}>
-                  {g}
+                  {patternLabel(g)}
                 </span>
               ))}
             </div>
+            <p className="small muted">
+              Temas: {(v.classification.topics ?? []).map(topicLabel).join(' · ')}
+            </p>
             {v.notes?.map((n) => (
               <p key={n}>{n}</p>
             ))}
@@ -158,6 +187,17 @@ export function VerbDetailPage() {
           </section>
           <section className="panel">
             <h2>Fuentes y revisión</h2>
+            {ipaSources.map((url) => (
+              <p key={url}>
+                <a href={url} target="_blank" rel="noreferrer">
+                  IPA · {url.split('/').at(-1)} (Cambridge)
+                </a>
+              </p>
+            ))}
+            <p className="small muted">
+              La IPA propuesta procede del archivo aportado y está pendiente de contraste. Solo la
+              marcada como validada interviene en los filtros fonéticos.
+            </p>
             <p className="small">
               {v.contentVersion === 'curated-1.0'
                 ? 'Contenido con revisión asistida. Los cursos son orientativos.'

@@ -2,7 +2,7 @@
 
 - Perfil local único y sin sincronización. El progreso de un origen/puerto del navegador no se comparte con otro. Se recomienda guardar copias fuera del navegador.
 - Catálogo con comprobación lexicográfica y revisión asistida, sin revisión docente humana independiente. Las selecciones de 40/70/100/120 son recomendaciones acumulativas, no listas oficiales ni frecuencias estadísticas.
-- IPA parcial, solo en campos contrastados. TTS no es una grabación humana validada y puede necesitar red. Read aislado no se evalúa mediante TTS. Pronunciación permanece sin evaluar y no cuenta en las cinco habilidades evaluables.
+- IPA parcialmente contrastada: las propuestas del catálogo aportado se identifican como pendientes y no intervienen en filtros fonéticos. TTS no es una grabación humana validada y puede necesitar red. Read aislado no se evalúa mediante TTS. Pronunciación permanece sin evaluar y no cuenta en las cinco habilidades evaluables.
 - Un modo de edición local organiza la experiencia; no proporciona autorización real frente a alguien con acceso al navegador.
 - No se han incluido cuentas, aulas, notificaciones programadas, mundos, rachas, rankings ni reconocimiento de voz. La opción de sonidos no habilita efectos intrusivos: no se añaden recompensas sonoras obligatorias.
 - El CSV pierde metadatos que conserva JSON. Para trasladar progreso y personalizaciones se necesita una copia completa, no solo exportar verbos.
@@ -11,3 +11,5 @@
 
 - En una prueba previa hubo una demora de apertura en Firefox que no se reprodujo en repeticiones aisladas ni en las últimas baterías completas. Se desconoce la causa; se conservan marcas de arranque para diagnóstico.
 - La auditoría completa de npm señala cuatro avisos bajos en la cadena de herramientas PWA/Workbox, ninguno en dependencias de ejecución. La corrección automática sugerida implica una degradación incompatible; decisión y alcance en el informe de aceptación.
+
+- El catálogo aportado de 167 entradas se integra selectivamente sobre 120 verbos; los 47 adicionales y la IPA sin procedencia contrastada necesitan revisión. Véase la revisión de enriquecimiento del catálogo.

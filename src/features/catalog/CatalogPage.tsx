@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useApp } from '../../app/AppProviders';
 import { queryCatalog, formValues } from './query';
+import { patternLabel, topicLabel } from './classification-labels';
 import { saveList } from './list-service';
 import { Icon } from '../../shared/ui/Icon';
 import { Dialog } from '../../shared/ui/Dialog';
@@ -180,7 +181,9 @@ export function CatalogPage() {
                     {[...new Set(verbs.flatMap((v) => v.classification.patternGroups))]
                       .sort()
                       .map((v) => (
-                        <option key={v}>{v}</option>
+                        <option key={v} value={v}>
+                          {patternLabel(v)}
+                        </option>
                       ))}
                   </select>
                 </label>
@@ -194,7 +197,9 @@ export function CatalogPage() {
                     {[...new Set(verbs.flatMap((v) => v.classification.topics ?? []))]
                       .sort()
                       .map((v) => (
-                        <option key={v}>{v}</option>
+                        <option key={v} value={v}>
+                          {topicLabel(v)}
+                        </option>
                       ))}
                   </select>
                 </label>
@@ -217,18 +222,71 @@ export function CatalogPage() {
                   />
                 </label>
                 <label>
-                  Sonido final (IPA británica validada)
+                  Forma del filtro fonético
+                  <select
+                    value={q.filter.phonetic?.[0]?.form ?? 'base'}
+                    onChange={(e) =>
+                      setQ({
+                        ...q,
+                        filter: {
+                          ...q.filter,
+                          phonetic: [
+                            {
+                              form: e.target.value as 'base' | 'pastSimple' | 'pastParticiple',
+                              dialect: q.filter.phonetic?.[0]?.dialect ?? 'uk',
+                              ending: q.filter.phonetic?.[0]?.ending ?? '',
+                            },
+                          ],
+                        },
+                      })
+                    }
+                  >
+                    <option value="base">Forma base</option>
+                    <option value="pastSimple">Pasado simple</option>
+                    <option value="pastParticiple">Participio pasado</option>
+                  </select>
+                </label>
+                <label>
+                  Dialecto del filtro fonético
+                  <select
+                    value={q.filter.phonetic?.[0]?.dialect ?? 'uk'}
+                    onChange={(e) =>
+                      setQ({
+                        ...q,
+                        filter: {
+                          ...q.filter,
+                          phonetic: [
+                            {
+                              form: q.filter.phonetic?.[0]?.form ?? 'base',
+                              dialect: e.target.value as 'uk' | 'us',
+                              ending: q.filter.phonetic?.[0]?.ending ?? '',
+                            },
+                          ],
+                        },
+                      })
+                    }
+                  >
+                    <option value="uk">Británico (UK)</option>
+                    <option value="us">Estadounidense (US)</option>
+                  </select>
+                </label>
+                <label>
+                  Sonido final (IPA validada)
                   <input
-                    placeholder="Ej.: t/"
+                    placeholder="Ej.: t o /t/"
                     value={q.filter.phonetic?.[0]?.ending ?? ''}
                     onChange={(e) =>
                       setQ({
                         ...q,
                         filter: {
                           ...q.filter,
-                          phonetic: e.target.value
-                            ? [{ form: 'base', dialect: 'uk', ending: e.target.value }]
-                            : [],
+                          phonetic: [
+                            {
+                              form: q.filter.phonetic?.[0]?.form ?? 'base',
+                              dialect: q.filter.phonetic?.[0]?.dialect ?? 'uk',
+                              ending: e.target.value,
+                            },
+                          ],
                         },
                       })
                     }

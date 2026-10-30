@@ -1,0 +1,7016 @@
+{
+  "sourceFile": "verbquest-catalog-updated.json",
+  "sha256": "067b1b285a487702d1dc7afaf9bcff826212ef32d4c165e4bfeccee8ff61a73b",
+  "sourceCount": 167,
+  "excludedIds": [
+    "bet",
+    "broadcast",
+    "cast",
+    "cling",
+    "dwell",
+    "flee",
+    "fling",
+    "forecast",
+    "grind",
+    "leap",
+    "misunderstand",
+    "mow",
+    "overcome",
+    "prove",
+    "saw",
+    "sew",
+    "shave",
+    "shear",
+    "shed",
+    "slay",
+    "sling",
+    "slink",
+    "slit",
+    "sow",
+    "speed",
+    "spin",
+    "spit",
+    "spoil",
+    "sting",
+    "stink",
+    "stride",
+    "strike",
+    "string",
+    "strive",
+    "sweat",
+    "swell",
+    "thrive",
+    "thrust",
+    "tread",
+    "undergo",
+    "undertake",
+    "upset",
+    "weave",
+    "weep",
+    "wind",
+    "withdraw",
+    "wring"
+  ],
+  "entries": [
+    {
+      "id": "arise",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC_i_o_i"
+      ],
+      "topics": [
+        "daily_life",
+        "state_process"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "arise",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/əˈraɪz/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/əˈraɪz/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "arose",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/əˈrəʊz/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/əˈroʊz/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "arisen",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/əˈrɪz.n/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/əˈrɪz.ən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "awake",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC_a_o_o"
+      ],
+      "topics": [
+        "daily_life",
+        "body_perception"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "awake",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/əˈweɪk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/əˈweɪk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "awoke",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/əˈwəʊk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/əˈwoʊk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "awoken",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/əˈwəʊ.kən/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/əˈwoʊ.kən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "be",
+      "patternGroups": [
+        "pasado-y-participio",
+        "Especial"
+      ],
+      "topics": [
+        "daily_life",
+        "state_process"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "be",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/biː/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/biː/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "was/were",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/wɒz/ /wɜː(r)/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/wʌz/ /wɜːr/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "been",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/biːn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɪn/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "bear",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_ea_o_o"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "bear",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/beə(r)/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ber/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "bore",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bɔː(r)/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɔːr/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "borne",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bɔːn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɔːrn/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "beat",
+      "patternGroups": [
+        "pasado-y-participio",
+        "AAB"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "beat",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/biːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/biːt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "beat",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/biːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/biːt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "beaten",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˈbiːt.n/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˈbiːt̬.ən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "become",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABA"
+      ],
+      "topics": [
+        "daily_life",
+        "state_process"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "become",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bɪˈkʌm/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɪˈkʌm/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "became",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bɪˈkeɪm/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɪˈkeɪm/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "become",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bɪˈkʌm/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɪˈkʌm/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "begin",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC_i_a_u"
+      ],
+      "topics": [
+        "daily_life",
+        "state_process"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "begin",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bɪˈɡɪn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɪˈɡɪn/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "began",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bɪˈɡæn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɪˈɡæn/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "begun",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bɪˈɡʌn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɪˈɡʌn/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "bend",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_d_to_t"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "bend",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bend/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bend/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "bent",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bent/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bent/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "bent",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bent/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bent/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "bind",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_i_ou_ou"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "bind",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/baɪnd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/baɪnd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "bound",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/baʊnd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/baʊnd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "bound",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/baʊnd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/baʊnd/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "bite",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "body_perception"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "bite",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/baɪt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/baɪt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "bit",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bɪt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɪt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "bitten",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˈbɪt.n/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˈbɪt̬.ən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "bleed",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_shortening"
+      ],
+      "topics": [
+        "daily_life",
+        "body_perception"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "bleed",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bliːd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bliːd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "bled",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bled/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bled/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "bled",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bled/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bled/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "blow",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC_ow_ew_own"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "blow",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bləʊ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bloʊ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "blew",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bluː/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bluː/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "blown",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bləʊn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bloʊn/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "break",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "break",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/breɪk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/breɪk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "broke",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/brəʊk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/broʊk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "broken",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˈbrəʊ.kən/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˈbroʊ.kən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "breed",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_shortening"
+      ],
+      "topics": [
+        "daily_life",
+        "nature"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "breed",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/briːd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/briːd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "bred",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bred/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bred/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "bred",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bled/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bred/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "bring",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_ought"
+      ],
+      "topics": [
+        "daily_life",
+        "movement"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "bring",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/brɪŋ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/brɪŋ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "brought",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/brɔːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/brɑːt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "brought",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/brɔːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/brɑːt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "build",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_d_to_t"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "build",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bɪld/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɪld/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "built",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bɪlts/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɪlt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "built",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bɪlt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɪlt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "burn",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_/_Regular"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "burn",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bɜːn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɜːrn/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "burnt/burned",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bɜːnt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɜːrnt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "burnt/burned",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bɜːnt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɜːrnt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "burst",
+      "patternGroups": [
+        "pasado-y-participio",
+        "AAA_invariable"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "burst",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bɜːst/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɜːrst/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "burst",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bɜːst/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɜːrst/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "burst",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bɜːst/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɜːrst/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "buy",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_ought"
+      ],
+      "topics": [
+        "daily_life",
+        "finance_money"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "buy",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/baɪ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/baɪ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "bought",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bɔːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɑːt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "bought",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/bɔːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/bɑːt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "catch",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_aught"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "catch",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/kætʃ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/kætʃ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "caught",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/kɔːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/kɑːt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "caught",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/kɔːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/kɑːt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "choose",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "cognition_mind"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "choose",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/tʃuːz/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/tʃuːz/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "chose",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/tʃəʊz/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/tʃoʊz/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "chosen",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˈtʃəʊ.zən/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˈtʃoʊ.zən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "come",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABA"
+      ],
+      "topics": [
+        "daily_life",
+        "movement"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "come",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/kʌm/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/kʌm/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "came",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/keɪm/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/keɪm/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "come",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/kʌm/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/kʌm/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "cost",
+      "patternGroups": [
+        "pasado-y-participio",
+        "AAA_invariable"
+      ],
+      "topics": [
+        "daily_life",
+        "finance_money"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "cost",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/kɒst/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/kɑːst/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "cost",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/kɒst/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/kɑːst/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "cost",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/kɒst/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/kɑːst/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "creep",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_ept"
+      ],
+      "topics": [
+        "daily_life",
+        "movement"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "creep",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/kriːp/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/kriːp/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "crept",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/krept/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/krept/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "crept",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/krept/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/krept/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "cut",
+      "patternGroups": [
+        "pasado-y-participio",
+        "AAA_invariable"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "cut",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/kʌt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/kʌt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "cut",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/kʌt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/kʌt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "cut",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/kʌt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/kʌt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "deal",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_shortening"
+      ],
+      "topics": [
+        "daily_life",
+        "communication"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "deal",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/diːl/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/diːl/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "dealt",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/delt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/delt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "dealt",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/delt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/delt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dig",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_i_u_u"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "dig",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/dɪɡ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/dɪɡ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "dug",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/dʌɡ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/dʌɡ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "dug",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/dʌɡ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/dʌɡ/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "do",
+      "patternGroups": [
+        "pasado-y-participio",
+        "Especial"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "do",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/duː/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/duː/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "did",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/dɪd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/dɪd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "done",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/dʌn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/dʌn/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "draw",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC_aw_ew_awn"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "draw",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/drɔː/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/drɑː/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "drew",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/druː/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/druː/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "drawn",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/drɔːn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/drɑːn/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dream",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_/_Regular"
+      ],
+      "topics": [
+        "daily_life",
+        "cognition_mind"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "dream",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/driːm/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/driːm/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "dreamt/dreamed",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/dremt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/dremt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "dreamt/dreamed",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/dremt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/dremt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "drink",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC_i_a_u"
+      ],
+      "topics": [
+        "daily_life",
+        "body_perception"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "drink",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/drɪŋk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/drɪŋk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "drank",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/dræŋk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/dræŋk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "drunk",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/drʌŋk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/drʌŋk/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "drive",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC_i_o_i"
+      ],
+      "topics": [
+        "daily_life",
+        "movement"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "drive",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/draɪv/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/draɪv/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "drove",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/drəʊv/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/droʊv/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "driven",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˈdrɪv.n/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˈdrɪv.ən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "eat",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "body_perception"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "eat",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/iːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/iːt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "ate",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/eɪt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/eɪt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "eaten",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˈiːt.n/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˈiːt̬.ən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "fall",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "movement"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "fall",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/fɔːl/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/fɑːl/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "fell",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/fel/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/fel/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "fallen",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˈfɔː.lən/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˈfɑː.lən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "feed",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_shortening"
+      ],
+      "topics": [
+        "daily_life",
+        "body_perception"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "feed",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/fiːd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/fiːd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "fed",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/fed/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/fed/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "fed",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/fed/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/fed/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "feel",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_elt"
+      ],
+      "topics": [
+        "daily_life",
+        "cognition_mind"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "feel",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/fiːl/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/fiːl/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "felt",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/felt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/felt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "felt",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/felt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/felt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "fight",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_ought"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "fight",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/faɪt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/faɪt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "fought",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/fɔːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/fɑːt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "fought",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/fɔːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/fɑːt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "find",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_i_ou_ou"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "find",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/faɪnd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/faɪnd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "found",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/faʊnd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/faʊnd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "found",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/faʊnd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/faʊnd/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "fly",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "movement"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "fly",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/flaɪ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/flaɪ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "flew",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/fluː/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/fluː/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "flown",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/fləʊn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/floʊn/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "forbid",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "communication"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "forbid",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/fəˈbɪd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/fərˈbɪd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "forbade",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/fəˈbæd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/fərˈbæd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "forbidden",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/fəˈbɪd.n/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/fərˈbɪd.ən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "forget",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "cognition_mind"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "forget",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/fəˈɡet/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/fərˈget/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "forgot",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/fəˈɡɒt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/fərˈɡɑːt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "forgotten",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/fəˈɡɒt.n/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/fərˈɡɑːt̬.ən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "forgive",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "cognition_mind"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "forgive",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/fəˈɡɪv/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/fərˈɡɪv/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "forgave",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/fəˈɡeɪv/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/fərˈɡeɪv/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "forgiven",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/fəˈɡɪv.n/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/fərˈɡɪv.ən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "freeze",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "freeze",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/friːz/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/friːz/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "froze",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/frəʊz/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/froʊz/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "frozen",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˈfrəʊ.zən/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˈfroʊ.zən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "get",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABB_UK_/_ABC_US"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "get",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ɡet/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ɡet/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "got",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ɡɒt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ɡɑːt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "got / gotten",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ɡɒt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˈɡɑːt̬.ən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "give",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "give",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ɡɪv/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ɡɪv/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "gave",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ɡeɪv/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ɡeɪv/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "given",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˈɡɪv.n/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˈɡɪv.ən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "go",
+      "patternGroups": [
+        "pasado-y-participio",
+        "Especial_Supletivo"
+      ],
+      "topics": [
+        "daily_life",
+        "movement"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "go",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ɡəʊ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ɡoʊ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "went",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/went/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/went/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "gone",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ɡɒn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ɡɑːn/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "grow",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC_ow_ew_own"
+      ],
+      "topics": [
+        "daily_life",
+        "state_process"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "grow",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ɡrəʊ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ɡroʊ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "grew",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ɡruː/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/druː/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "grown",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ɡrəʊn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/groʊn/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "hang",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "hang",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/hæŋ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/hæŋ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "hung",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/hʌŋ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/hʌŋ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "hung",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/hʌŋ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/hʌŋ/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "have",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB"
+      ],
+      "topics": [
+        "daily_life",
+        "state_process"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "have",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/hæv/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/hæv/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "had",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/hæd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/hæd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "had",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/hæd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/hæd/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "hear",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB__d"
+      ],
+      "topics": [
+        "daily_life",
+        "body_perception"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "hear",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/hɪə(r)/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/hɪr/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "heard",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/hɜːd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/hɜːrd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "heard",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/hɜːd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/hɜːrd/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "hide",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "hide",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/haɪd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/haɪd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "hid",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/hɪd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/hɪd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "hidden",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˈhɪd.n/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˈhɪd.ən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "hit",
+      "patternGroups": [
+        "pasado-y-participio",
+        "AAA_invariable"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "hit",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/hɪt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/hɪt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "hit",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/hɪt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/hɪt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "hit",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/hɪt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/hɪt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "hold",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "hold",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/həʊld/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/hoʊld/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "held",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/held/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/held/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "held",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/held/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/held/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "hurt",
+      "patternGroups": [
+        "pasado-y-participio",
+        "AAA_invariable"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "hurt",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/hɜːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/hɜːrt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "hurt",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/hɜːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/hɜːrt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "hurt",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/hɜːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/hɜːrt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "keep",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_ept"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "keep",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/kiːp/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/kiːp/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "kept",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/kept/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/kept/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "kept",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/kept/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/kept/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "kneel",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_elt"
+      ],
+      "topics": [
+        "daily_life",
+        "body_perception"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "kneel",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/niːl/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/niːl/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "knelt",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/nelt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/nelt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "knelt",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/nelt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/nelt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "know",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC_ow_ew_own"
+      ],
+      "topics": [
+        "daily_life",
+        "cognition_mind"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "know",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/nəʊ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/noʊ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "knew",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/njuː/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/nuː/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "known",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/nəʊn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/noʊn/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "lay",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB__aid"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "lay",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/leɪ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/leɪ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "laid",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/leɪd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/leɪd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "laid",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/leɪd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/leɪd/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "lead",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_shortening"
+      ],
+      "topics": [
+        "daily_life",
+        "movement"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "lead",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/liːd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/liːd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "led",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/led/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/led/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "led",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/led/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/led/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "lean",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_/_Regular"
+      ],
+      "topics": [
+        "daily_life",
+        "body_perception"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "lean",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/liːn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/liːn/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "leant/leaned",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/lent/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/liːnd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "leant/leaned",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/lent/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/liːnd/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "learn",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_/_Regular"
+      ],
+      "topics": [
+        "daily_life",
+        "cognition_mind"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "learn",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/lɜːn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/lɜːrn/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "learnt/learned",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/lɜːnt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/lɜːrnd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "learnt/learned",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/lɜːnt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/lɜːrnd/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "leave",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB"
+      ],
+      "topics": [
+        "daily_life",
+        "movement"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "leave",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/liːv/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/liːv/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "left",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/left/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/left/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "left",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/left/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/left/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "lend",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_d_to_t"
+      ],
+      "topics": [
+        "daily_life",
+        "finance_money"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "lend",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/lend/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/lend/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "lent",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/lent/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/lent/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "lent",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/lent/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/lent/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "let",
+      "patternGroups": [
+        "pasado-y-participio",
+        "AAA_invariable"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "let",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/let/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/let/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "let",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/let/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/let/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "let",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/let/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/let/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "lie",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "body_perception"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "lie",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/laɪ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/laɪ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "lay",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/leɪ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/leɪ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "lain",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/leɪn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/leɪn/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "light",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_/_Regular"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "light",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/laɪt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/laɪt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "lit/lighted",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/lɪt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/lɪt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "lit/lighted",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/lɪt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/lɪt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "lose",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB"
+      ],
+      "topics": [
+        "daily_life",
+        "state_process"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "lose",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/luːz/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/luːz/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "lost",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/lɒst/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/lɑːst/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "lost",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/lɒst/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/lɑːst/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "make",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "make",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/meɪk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/meɪk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "made",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/meɪd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/meɪd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "made",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/meɪd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/meɪd/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "mean",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_shortening"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "mean",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/miːn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/miːn/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "meant",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ment/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ment/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "meant",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ment/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ment/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "meet",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_shortening"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "meet",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/miːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/miːt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "met",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/met/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/met/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "met",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/met/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/met/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "pay",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB__aid"
+      ],
+      "topics": [
+        "daily_life",
+        "finance_money"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "pay",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/peɪ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/peɪ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "paid",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/peɪd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/peɪd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "paid",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/peɪd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/peɪd/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "put",
+      "patternGroups": [
+        "pasado-y-participio",
+        "AAA_invariable"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "put",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/pʊt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/pʊt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "put",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/pʊt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/pʊt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "put",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/pʊt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/pʊt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "read",
+      "patternGroups": [
+        "pasado-y-participio",
+        "AAA_Vocal_cambia"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "read",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/riːd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/riːd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "read",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/red/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/red/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "read",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/red/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/red/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "ride",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC_i_o_i"
+      ],
+      "topics": [
+        "daily_life",
+        "movement"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "ride",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/raɪd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/raɪd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "rode",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/rəʊd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/roʊd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "ridden",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˈrɪd.n/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˈrɪd.ən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "ring",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC_i_a_u"
+      ],
+      "topics": [
+        "daily_life",
+        "communication"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "ring",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/rɪŋ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/rɪŋ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "rang",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ræŋ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ræŋ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "rung",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/rʌŋ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/rʌŋ/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "rise",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC_i_o_i"
+      ],
+      "topics": [
+        "daily_life",
+        "movement"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "rise",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/raɪz/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/raɪz/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "rose",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/rəʊz/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/roʊz/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "risen",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˈrɪz.n/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˈrɪz.ən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "run",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABA"
+      ],
+      "topics": [
+        "daily_life",
+        "movement"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "run",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/rʌn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/rʌn/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "ran",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ræn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ræn/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "run",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/rʌn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/rʌn/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "say",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_Vocal_cambia"
+      ],
+      "topics": [
+        "daily_life",
+        "communication"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "say",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/seɪ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/seɪ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "said",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sed/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sed/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "said",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sed/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sed/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "see",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "body_perception"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "see",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/siː/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/siː/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "saw",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sɔː/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sɑː/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "seen",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/siːn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/siːn/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "seek",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_ought"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "seek",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/siːk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/siːk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "sought",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sɔːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sɑːt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "sought",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sɔːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sɑːt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "sell",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_old"
+      ],
+      "topics": [
+        "daily_life",
+        "finance_money"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "sell",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sel/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sel/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "sold",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/səʊld/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/soʊld/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "sold",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/səʊld/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/soʊld/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "send",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_d_to_t"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "send",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/send/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/send/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "sent",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sent/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sent/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "sent",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sent/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sent/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "set",
+      "patternGroups": [
+        "pasado-y-participio",
+        "AAA_invariable"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "set",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/set/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/set/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "set",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/set/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/set/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "set",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/set/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/set/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "shake",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "shake",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ʃeɪk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ʃeɪk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "shook",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ʃʊk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ʃʊk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "shaken",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˈʃeɪ.kən/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˈʃeɪ.kən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "shine",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB"
+      ],
+      "topics": [
+        "daily_life",
+        "nature"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "shine",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ʃaɪn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ʃaɪn/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "shone",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ʃɒn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ʃoʊn/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "shone",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ʃɒn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ʃoʊn/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "shoot",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_shortening"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "shoot",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ʃuːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ʃuːt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "shot",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ʃɒt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ʃɑːt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "shot",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ʃɒt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ʃɑːt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "show",
+      "patternGroups": [
+        "formas-diferentes",
+        "mixed_regular_ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "show",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ʃəʊ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/soʊ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "showed",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ʃəʊd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/soʊd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "shown",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ʃəʊn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ʃoʊn/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "shrink",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC_i_a_u"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "shrink",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ʃrɪŋk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ʃrɪŋk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "shrank",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ʃræŋk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ʃræŋk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "shrunk",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ʃrʌŋk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ʃrʌŋk/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "shut",
+      "patternGroups": [
+        "pasado-y-participio",
+        "AAA_invariable"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "shut",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ʃʌt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ʃʌt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "shut",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ʃʌt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ʃʌt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "shut",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ʃʌt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ʃʌt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "sing",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC_i_a_u"
+      ],
+      "topics": [
+        "daily_life",
+        "communication"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "sing",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sɪŋ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sɪŋ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "sang",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sæŋ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sæŋ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "sung",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sʌŋ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sʌŋ/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "sink",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC_i_a_u"
+      ],
+      "topics": [
+        "daily_life",
+        "movement"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "sink",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sɪŋk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sɪŋk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "sank",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sæŋk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sæŋk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "sunk",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sʌŋk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sʌŋk/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "sit",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB"
+      ],
+      "topics": [
+        "daily_life",
+        "body_perception"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "sit",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sɪt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sɪt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "sat",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sæt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sæt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "sat",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sæt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sæt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "sleep",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_ept"
+      ],
+      "topics": [
+        "daily_life",
+        "body_perception"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "sleep",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sliːp/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sliːp/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "slept",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/slept/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/slept/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "slept",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/slept/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/slept/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "slide",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB"
+      ],
+      "topics": [
+        "daily_life",
+        "movement"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "slide",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/slaɪd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/slaɪd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "slid",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/slɪd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/slɪd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "slid",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/slɪd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/slɪd/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "smell",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_/_Regular"
+      ],
+      "topics": [
+        "daily_life",
+        "body_perception"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "smell",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/smel/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/smel/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "smelt/smelled",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/smelt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/smeld/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "smelt/smelled",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/smelt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/smeld/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "speak",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "communication"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "speak",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/spiːk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/spiːk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "spoke",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/spəʊk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/spoʊk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "spoken",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˈspəʊ.kən/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˈspoʊ.kən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "spell",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_/_Regular"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "spell",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/spel/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/spel/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "spelt/spelled",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/spelt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/speld/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "spelt/spelled",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/smelt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/speld/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "spend",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_d_to_t"
+      ],
+      "topics": [
+        "daily_life",
+        "finance_money"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "spend",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/spend/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/spend/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "spent",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sent/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/spent/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "spent",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sent/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/spent/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "spill",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_/_Regular"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "spill",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/spɪl/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/spɪl/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "spilt/spilled",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/spɪlts/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/spɪld/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "spilt/spilled",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/spɪlts/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/spɪld/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "split",
+      "patternGroups": [
+        "pasado-y-participio",
+        "AAA_invariable"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "split",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/splɪt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/splɪt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "split",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/splɪt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/splɪt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "split",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/splɪt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/splɪt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "spread",
+      "patternGroups": [
+        "pasado-y-participio",
+        "AAA_invariable"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "spread",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/spred/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/spred/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "spread",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/spred/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/spred/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "spread",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/spred/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/spred/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "spring",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC_i_a_u"
+      ],
+      "topics": [
+        "daily_life",
+        "movement"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "spring",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sprɪŋ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sprɪŋ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "sprang",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/spræŋ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/spræŋ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "sprung",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sprʌŋ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sprʌŋ/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "stand",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB"
+      ],
+      "topics": [
+        "daily_life",
+        "body_perception"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "stand",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/stænd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/stænd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "stood",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/stʊd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/stʊd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "stood",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/stʊd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/stʊd/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "steal",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "steal",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/stiːl/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/stiːl/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "stole",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/stəʊl/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/soʊld/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "stolen",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˈstəʊ.lən/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˈstoʊ.lən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "stick",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "stick",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/stɪk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/stɪk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "stuck",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/stʌk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/stʌk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "stuck",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/stʌk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/stʌk/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "swear",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "communication"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "swear",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/sweə(r)/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/swer/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "swore",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/swɔː(r)/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/swɔːr/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "sworn",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/swɔːn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/swɔːrn/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "sweep",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_ept"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "sweep",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/swiːp/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/swiːp/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "swept",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/swept/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/swept/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "swept",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/swept/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/swept/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "swim",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC_i_a_u"
+      ],
+      "topics": [
+        "daily_life",
+        "movement"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "swim",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/swɪm/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/swɪm/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "swam",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/swæm/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/swæm/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "swum",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/swʌm/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/swʌm/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "swing",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_i_u_u"
+      ],
+      "topics": [
+        "daily_life",
+        "movement"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "swing",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/swɪŋ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/swɪŋ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "swung",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/swʌŋ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/swʌŋ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "swung",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/swʌŋ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/swʌŋ/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "take",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "take",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/teɪk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/teɪk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "took",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/tʊk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/tʊk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "taken",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˈteɪ.kən/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˈteɪ.kən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "teach",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_aught"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "teach",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/tiːtʃ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/tiːtʃ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "taught",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/tɔːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/tɑːt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "taught",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/tɔːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/tɑːt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "tear",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "tear",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/teə(r)/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ter/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "tore",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/tɔː(r)/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/tɔːr/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "torn",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/tɔːn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/tɔːrn/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "tell",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_old"
+      ],
+      "topics": [
+        "daily_life",
+        "communication"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "tell",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/tel/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/sel/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "told",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/təʊld/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/toʊld/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "told",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/təʊld/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/toʊld/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "think",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB_ought"
+      ],
+      "topics": [
+        "daily_life",
+        "cognition_mind"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "think",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/θɪŋk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/θɪŋk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "thought",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/θɔːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/θɑːt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "thought",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/θɔːt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/θɑːt/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "throw",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC_ow_ew_own"
+      ],
+      "topics": [
+        "daily_life",
+        "physical_action"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "throw",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/θrəʊ/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/θroʊ/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "threw",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/θruː/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/θruː/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "thrown",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/θrəʊn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/θroʊn/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "understand",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB"
+      ],
+      "topics": [
+        "daily_life",
+        "cognition_mind"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "understand",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˌʌn.dəˈstænd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˌʌn.dɚˈstænd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "understood",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˌʌn.dəˈstʊd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˌʌn.dɚˈstʊd/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "understood",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˌʌn.dəˈstʊd/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˌʌn.dɚˈstʊd/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "wake",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "body_perception"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "wake",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/weɪk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/weɪk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "woke",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/wəʊk/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/woʊk/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "woken",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˈwəʊ.kən/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˈwoʊ.kən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "wear",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "wear",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/weə(r)/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/wer/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "wore",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/wɔː(r)/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/wɔːr/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "worn",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/wɔːn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/wɔːrn/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "win",
+      "patternGroups": [
+        "pasado-y-participio",
+        "ABB"
+      ],
+      "topics": [
+        "daily_life",
+        "daily_life"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "win",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/wɪn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/wɪn/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "won",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/wʌn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/wʌn/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "won",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/wʌn/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/wʌn/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "write",
+      "patternGroups": [
+        "formas-diferentes",
+        "ABC_i_o_i"
+      ],
+      "topics": [
+        "daily_life",
+        "communication"
+      ],
+      "forms": {
+        "base": [
+          {
+            "value": "write",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/raɪt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/raɪt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastSimple": [
+          {
+            "value": "wrote",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/rəʊt/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/roʊt/",
+                "validated": false
+              }
+            }
+          }
+        ],
+        "pastParticiple": [
+          {
+            "value": "written",
+            "pronunciation": {
+              "uk": {
+                "ipa": "/ˈrɪt.n/",
+                "validated": false
+              },
+              "us": {
+                "ipa": "/ˈrɪt̬.ən/",
+                "validated": false
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -42,7 +42,7 @@ Los avances objetivos se confirman atómicamente con la respuesta. Repetir en el
 
 Los datos viven en IndexedDB en **ese navegador y origen**. Exporta una copia JSON completa desde Configuración antes de borrar datos del navegador o cambiar de dispositivo. Restaurar reemplaza la instalación local tras dos confirmaciones; no hay mezcla automática de perfiles. El navegador puede retirar almacenamiento; la PWA no sustituye a una copia externa.
 
-La voz proviene del navegador/sistema. Puede no estar disponible sin conexión o usar un servicio remoto. Existe alternativa visual sin acreditar escucha. No se redistribuyen audios de terceros ni se usa micrófono. `read` aislado se excluye de síntesis evaluable por ambigüedad de pronunciación. IPA solo se muestra en campos contrastados; no se ha inventado para completar fichas.
+La voz proviene del navegador/sistema. Puede no estar disponible sin conexión o usar un servicio remoto. Existe alternativa visual sin acreditar escucha. No se redistribuyen audios de terceros ni se usa micrófono. `read` aislado se excluye de síntesis evaluable por ambigüedad de pronunciación. La IPA contrastada se distingue de las propuestas pendientes del archivo aportado; solo la validada interviene en filtros fonéticos. No se inventan transcripciones para completar variantes.
 
 ## Estructura
 
@@ -55,6 +55,7 @@ La voz proviene del navegador/sistema. Puede no estar disponible sin conexión o
 - [Reglas de aprendizaje](docs/learning-rules.md)
 - [Formatos y copias](docs/data-formats.md)
 - [Almacenamiento/offline](docs/offline-and-storage.md)
+- [Revisión del catálogo enriquecido](docs/content/catalog-enrichment-review.md)
 - [Selección de contenido](docs/content/selection-policy.md) y [revisión](docs/content/review-log.md)
 - [Informe de aceptación](docs/acceptance-report.md)
 - [Limitaciones](docs/known-limitations.md), [accesibilidad](docs/accessibility-checklist.md) y [capturas](docs/screenshots)

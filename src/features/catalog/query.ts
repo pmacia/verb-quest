@@ -68,10 +68,14 @@ export function queryCatalog(
           )) &&
         (!f.phonetic?.length ||
           f.phonetic.some((x) => {
+            if (!x.ending.trim().replace(/^\/|\/$/g, '')) return true;
             const values = x.form === 'base' ? [v.forms.base] : v.forms[x.form].variants;
             return values.some((a) => {
               const p = a.pronunciation?.[x.dialect];
-              return p?.validated && p.ipa?.endsWith(x.ending);
+              return (
+                p?.validated &&
+                p.ipa?.replace(/^\/|\/$/g, '').endsWith(x.ending.trim().replace(/^\/|\/$/g, ''))
+              );
             });
           }))
       );

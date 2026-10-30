@@ -1,0 +1,212 @@
+{
+  "method": "manual comparison with primary dictionary entries, assisted; remaining IPA unverified",
+  "reviewed": [
+    {
+      "verbId": "arise",
+      "form": "base",
+      "value": "arise",
+      "dialect": "uk",
+      "ipa": "/əˈraɪz/",
+      "source": "https://dictionary.cambridge.org/pronunciation/english/arise",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "arise",
+      "form": "base",
+      "value": "arise",
+      "dialect": "us",
+      "ipa": "/əˈraɪz/",
+      "source": "https://dictionary.cambridge.org/pronunciation/english/arise",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "arise",
+      "form": "pastSimple",
+      "value": "arose",
+      "dialect": "uk",
+      "ipa": "/əˈrəʊz/",
+      "source": "https://dictionary.cambridge.org/pronunciation/english/arose",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "arise",
+      "form": "pastSimple",
+      "value": "arose",
+      "dialect": "us",
+      "ipa": "/əˈroʊz/",
+      "source": "https://dictionary.cambridge.org/pronunciation/english/arose",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "arise",
+      "form": "pastParticiple",
+      "value": "arisen",
+      "dialect": "us",
+      "ipa": "/əˈrɪz.ən/",
+      "source": "https://dictionary.cambridge.org/pronunciation/english/arisen",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "buy",
+      "form": "base",
+      "value": "buy",
+      "dialect": "uk",
+      "ipa": "/baɪ/",
+      "source": "https://dictionary.cambridge.org/pronunciation/english/buy",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "buy",
+      "form": "base",
+      "value": "buy",
+      "dialect": "us",
+      "ipa": "/baɪ/",
+      "source": "https://dictionary.cambridge.org/pronunciation/english/buy",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "buy",
+      "form": "pastSimple",
+      "value": "bought",
+      "dialect": "uk",
+      "ipa": "/bɔːt/",
+      "source": "https://dictionary.cambridge.org/pronunciation/english/bought",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "buy",
+      "form": "pastSimple",
+      "value": "bought",
+      "dialect": "us",
+      "ipa": "/bɑːt/",
+      "source": "https://dictionary.cambridge.org/pronunciation/english/bought",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "buy",
+      "form": "pastParticiple",
+      "value": "bought",
+      "dialect": "uk",
+      "ipa": "/bɔːt/",
+      "source": "https://dictionary.cambridge.org/pronunciation/english/bought",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "buy",
+      "form": "pastParticiple",
+      "value": "bought",
+      "dialect": "us",
+      "ipa": "/bɑːt/",
+      "source": "https://dictionary.cambridge.org/pronunciation/english/bought",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "go",
+      "form": "base",
+      "value": "go",
+      "dialect": "uk",
+      "ipa": "/ɡəʊ/",
+      "source": "https://dictionary.cambridge.org/pronunciation/english/go",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "go",
+      "form": "base",
+      "value": "go",
+      "dialect": "us",
+      "ipa": "/ɡoʊ/",
+      "source": "https://dictionary.cambridge.org/pronunciation/english/go",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "go",
+      "form": "pastSimple",
+      "value": "went",
+      "dialect": "uk",
+      "ipa": "/went/",
+      "source": "https://dictionary.cambridge.org/pronunciation/english/went",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "go",
+      "form": "pastSimple",
+      "value": "went",
+      "dialect": "us",
+      "ipa": "/went/",
+      "source": "https://dictionary.cambridge.org/pronunciation/english/went",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "go",
+      "form": "pastParticiple",
+      "value": "gone",
+      "dialect": "uk",
+      "ipa": "/ɡɒn/",
+      "source": "https://dictionary.cambridge.org/pronunciation/english/gone",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "go",
+      "form": "pastParticiple",
+      "value": "gone",
+      "dialect": "us",
+      "ipa": "/ɡɑːn/",
+      "source": "https://dictionary.cambridge.org/pronunciation/english/gone",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "read",
+      "form": "base",
+      "value": "read",
+      "dialect": "uk",
+      "ipa": "/riːd/",
+      "source": "https://dictionary.cambridge.org/dictionary/english/read",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "read",
+      "form": "base",
+      "value": "read",
+      "dialect": "us",
+      "ipa": "/riːd/",
+      "source": "https://dictionary.cambridge.org/dictionary/english/read",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "read",
+      "form": "pastSimple",
+      "value": "read",
+      "dialect": "uk",
+      "ipa": "/red/",
+      "source": "https://dictionary.cambridge.org/dictionary/english/read",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "read",
+      "form": "pastSimple",
+      "value": "read",
+      "dialect": "us",
+      "ipa": "/red/",
+      "source": "https://dictionary.cambridge.org/dictionary/english/read",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "read",
+      "form": "pastParticiple",
+      "value": "read",
+      "dialect": "uk",
+      "ipa": "/red/",
+      "source": "https://dictionary.cambridge.org/dictionary/english/read",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "verbId": "read",
+      "form": "pastParticiple",
+      "value": "read",
+      "dialect": "us",
+      "ipa": "/red/",
+      "source": "https://dictionary.cambridge.org/dictionary/english/read",
+      "checkedAt": "2026-10-30"
+    }
+  ]
+}

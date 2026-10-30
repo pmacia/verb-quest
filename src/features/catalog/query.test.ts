@@ -51,3 +51,24 @@ it('saved list retains order and removes duplicate IDs', async () => {
   expect((await r.lists.get(l.id))?.name).toBe('Examen');
   r.close();
 });
+it('matches phonetic endings with or without IPA slashes and excludes unreviewed IPA', () => {
+  const make = (id: string, validated: boolean) => ({
+    ...verbs[1],
+    id,
+    forms: {
+      ...verbs[1].forms,
+      pastSimple: {
+        variants: [{ value: 'went', pronunciation: { us: { ipa: '/went/', validated } } }],
+      },
+    },
+  });
+  const candidates = [make('checked', true), make('proposed', false)];
+  for (const ending of ['t', '/t/', 't/'])
+    expect(
+      queryCatalog(
+        candidates,
+        { ...q, filter: { phonetic: [{ form: 'pastSimple', dialect: 'us', ending }] } },
+        ctx,
+      ).items.map((v) => v.id),
+    ).toEqual(['checked']);
+});

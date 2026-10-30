@@ -297,4 +297,11 @@ Dependencias: 1→2→3→4→5; 6 usa 1–2; 7 usa 1/6; 8 usa 3/6/7; 9 usa 2/4/
 
 Autorrevisión realizada contra diseño: todos los P0 tienen tarea; las cinco condiciones de Review Focus tienen pruebas; firmas y nombres compartidos se fijan arriba. Contratos de tipos son decisiones del plan, no código de producto generado.
 
-Método propuesto: **nativo**, implementando tareas aquí y revisión independiente final; comparte muchos contratos y evita contextos nuevos por cada tarea. Alternativa: **subagentes**, con implementador/revisor por tarea, más comprobaciones independientes y mayor coste de coordinación. El usuario todavía no ha elegido método ni revisado este plan detallado. Esperar esa revisión antes de implementar; la aprobación del diseño ya está registrada y no hay que volver a pedirla.
+Método propuesto: **nativo**, implementando tareas aquí y revisión independiente final; comparte muchos contratos y evita contextos nuevos por cada tarea. Alternativa: **subagentes**, con implementador/revisor por tarea, más comprobaciones independientes y mayor coste de coordinación. El usuario aprobó continuar con el plan y su ejecución en esta conversación. Se utilizó el método nativo y una revisión independiente final.
+
+
+## Cierre de ejecución · 30/10/2026
+
+Tareas 1–15 implementadas y verificadas. La evidencia final, las seis correcciones de revisión, las decisiones de ejecución y las limitaciones están en [el informe de aceptación](../../acceptance-report.md). Los checklists originales anteriores se conservan como especificación histórica; este cierre registra el resultado efectivo.
+
+Resultado: 86 pruebas unitarias/integración y 66 E2E pasan, catálogo de 120 verbos/362 ejemplos, compilación y comprobación editorial correctas. Las verificaciones humanas pendientes son revisión docente independiente, lector de pantalla/teclado virtual físico y validación auditiva con una voz real disponible. No se afirma certificación docente/AA ni despliegue. Los avisos bajos de herramientas y la demora no reproducida de Firefox se documentan sin atribuir una corrección no demostrada.

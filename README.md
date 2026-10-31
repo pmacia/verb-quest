@@ -167,7 +167,7 @@ La reproducción utiliza síntesis de voz del navegador/sistema. No se usa micr�
 - La interfaz identifica la voz/dialecto utilizados y avisa de alternativas. No garantiza que todos los dispositivos dispongan de voces UK y US.
 - Si falta audio, Audio Detective permite continuar con una alternativa de escritura. Esa respuesta **no cuenta como escucha**.
 - La IPA aparece por forma, variante y dialecto. Las propuestas sin contraste se marcan como **pendientes de revisión**; solo la IPA validada interviene en filtros fonéticos.
-- El filtro de sonido final admite, por ejemplo, `t`, `t/` o `/t/`, con elección de forma verbal y dialecto.
+- Los campos **Terminación escrita (pasado)** y **Sonido final (IPA validada)** ofrecen sugerencias desplegables y permiten escribir libremente. Ejemplos escritos: `ought`, `ew`, `ent`; ejemplos fonéticos: `/t/`, `/d/`, `/n/`. El sonido final admite también `t` o `t/`; sus resultados dependen de la forma elegida, el dialecto y la IPA validada disponible.
 - `read` aislado se excluye de síntesis evaluable: su escritura no basta para distinguir la pronunciación de la base y el pasado.
 
 La transcripción IPA, la voz sintética y la evaluación del alumno son recursos distintos; disponer de uno no valida los otros.

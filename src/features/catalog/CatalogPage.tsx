@@ -239,6 +239,9 @@ export function CatalogPage() {
                   Terminación escrita (pasado)
                   <input
                     placeholder="Ej.: ought"
+                    list="spelling-ending-examples"
+                    aria-label="Terminación escrita (pasado)"
+                    aria-describedby="spelling-ending-help"
                     value={q.filter.spelling?.[0]?.ending ?? ''}
                     onChange={(e) =>
                       setQ({
@@ -252,6 +255,14 @@ export function CatalogPage() {
                       })
                     }
                   />
+                  <datalist id="spelling-ending-examples">
+                    <option value="ought">bought · thought · brought</option>
+                    <option value="ew">grew · knew · threw</option>
+                    <option value="ent">went · sent · spent</option>
+                  </datalist>
+                  <small id="spelling-ending-help" className="muted">
+                    Elige un ejemplo o escribe otra terminación.
+                  </small>
                 </label>
                 <label>
                   Forma del filtro fonético
@@ -306,6 +317,9 @@ export function CatalogPage() {
                   Sonido final (IPA validada)
                   <input
                     placeholder="Ej.: t o /t/"
+                    list="phonetic-ending-examples"
+                    aria-label="Sonido final (IPA validada)"
+                    aria-describedby="phonetic-ending-help"
                     value={q.filter.phonetic?.[0]?.ending ?? ''}
                     onChange={(e) =>
                       setQ({
@@ -323,6 +337,15 @@ export function CatalogPage() {
                       })
                     }
                   />
+                  <datalist id="phonetic-ending-examples">
+                    <option value="/t/">bought</option>
+                    <option value="/d/">read</option>
+                    <option value="/n/">gone</option>
+                  </datalist>
+                  <small id="phonetic-ending-help" className="muted">
+                    Elige un ejemplo o escribe otro sonido. Los resultados dependen de la forma, el
+                    dialecto y la IPA validada.
+                  </small>
                 </label>
               </div>
             )}

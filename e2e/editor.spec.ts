@@ -33,7 +33,7 @@ test('archived verbs can be found and restored from the library', async ({ page 
 test('advanced JSON cannot replace the form with malformed data', async ({ page }) => {
   await page.goto('/editor/verbs/go');
   await page
-    .getByText('Todos los campos: ejemplos, IPA, audio, fuentes y etiquetas', { exact: true })
+    .getByText('Todos los campos: ejemplos, audio, fuentes y etiquetas', { exact: true })
     .click();
   await page.getByLabel('Datos completos de la ficha').fill('{"id":"go"}');
   await page.getByRole('button', { name: 'Aplicar JSON al formulario' }).click();

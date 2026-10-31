@@ -93,3 +93,19 @@ it('matching snapshots and semantic coverage survive a full backup round trip', 
   destination.close();
   r.close();
 });
+
+it('accepts legacy backups without IPA mode and preserves the explicit strict setting', async () => {
+  const r = await openAppDatabase(crypto.randomUUID());
+  const p = await bootstrap(r, dataset, { now: () => '2026-10-31T00:00:00Z' });
+  const settings = (await r.settings.get(p.id))!;
+  await r.settings.put({ ...settings, strictIpa: true });
+  const backup = await exportBackup(r, p.id, { now: () => '2026-10-31T00:00:00Z' });
+  expect(previewRestore(backup).ok).toBe(true);
+  const other = await openAppDatabase(crypto.randomUUID());
+  await restoreBackup(other, backup, 'replace_local_profile');
+  expect((await other.settings.get(p.id))?.strictIpa).toBe(true);
+  delete backup.settings.strictIpa;
+  expect(previewRestore(backup).ok).toBe(true);
+  r.close();
+  other.close();
+});

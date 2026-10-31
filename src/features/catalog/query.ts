@@ -8,6 +8,7 @@ export const normalize = (s: string) =>
 export const formValues = (v: Verb, form: 'base' | 'pastSimple' | 'pastParticiple') =>
   form === 'base' ? [v.forms.base.value] : v.forms[form].variants.map((x) => x.value);
 export interface CatalogContext {
+  strictIpa?: boolean;
   lists: Pick<VerbList, 'id' | 'verbIds'>[];
   progress: Partial<SkillProgress>[];
   today: string;
@@ -73,8 +74,8 @@ export function queryCatalog(
             return values.some((a) => {
               const p = a.pronunciation?.[x.dialect];
               return (
-                p?.validated &&
-                p.ipa?.replace(/^\/|\/$/g, '').endsWith(x.ending.trim().replace(/^\/|\/$/g, ''))
+                (!context.strictIpa || p?.validated) &&
+                p?.ipa?.replace(/^\/|\/$/g, '').endsWith(x.ending.trim().replace(/^\/|\/$/g, ''))
               );
             });
           }))

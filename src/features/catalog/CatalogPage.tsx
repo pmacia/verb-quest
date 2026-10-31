@@ -53,6 +53,7 @@ export function CatalogPage() {
   const result = queryCatalog(filterFamilyCandidates(familyCatalog, relation, familySelection), q, {
     lists,
     progress,
+    strictIpa: settings.strictIpa === true,
     today: toLocalDate(new Date().toISOString(), settings.timeZone),
   });
   const audio = useCatalogAudio(result.items.map((v) => v.id));
@@ -267,7 +268,7 @@ export function CatalogPage() {
                 <label>
                   Forma del filtro fonético
                   <select
-                    value={q.filter.phonetic?.[0]?.form ?? 'base'}
+                    value={q.filter.phonetic?.[0]?.form ?? 'pastParticiple'}
                     onChange={(e) =>
                       setQ({
                         ...q,
@@ -300,7 +301,7 @@ export function CatalogPage() {
                           ...q.filter,
                           phonetic: [
                             {
-                              form: q.filter.phonetic?.[0]?.form ?? 'base',
+                              form: q.filter.phonetic?.[0]?.form ?? 'pastParticiple',
                               dialect: e.target.value as 'uk' | 'us',
                               ending: q.filter.phonetic?.[0]?.ending ?? '',
                             },
@@ -314,11 +315,11 @@ export function CatalogPage() {
                   </select>
                 </label>
                 <label>
-                  Sonido final (IPA validada)
+                  {settings.strictIpa ? 'Sonido final (IPA validada)' : 'Sonido final'}
                   <input
                     placeholder="Ej.: t o /t/"
                     list="phonetic-ending-examples"
-                    aria-label="Sonido final (IPA validada)"
+                    aria-label={settings.strictIpa ? 'Sonido final (IPA validada)' : 'Sonido final'}
                     aria-describedby="phonetic-ending-help"
                     value={q.filter.phonetic?.[0]?.ending ?? ''}
                     onChange={(e) =>
@@ -328,7 +329,7 @@ export function CatalogPage() {
                           ...q.filter,
                           phonetic: [
                             {
-                              form: q.filter.phonetic?.[0]?.form ?? 'base',
+                              form: q.filter.phonetic?.[0]?.form ?? 'pastParticiple',
                               dialect: q.filter.phonetic?.[0]?.dialect ?? 'uk',
                               ending: e.target.value,
                             },
@@ -343,8 +344,9 @@ export function CatalogPage() {
                     <option value="/n/">gone</option>
                   </datalist>
                   <small id="phonetic-ending-help" className="muted">
-                    Elige un ejemplo o escribe otro sonido. Los resultados dependen de la forma, el
-                    dialecto y la IPA validada.
+                    {settings.strictIpa
+                      ? 'Solo IPA validada para la forma y el dialecto elegidos.'
+                      : 'Elige un ejemplo o escribe otro sonido. Las agrupaciones son orientativas y dependen de la forma y el dialecto.'}
                   </small>
                 </label>
               </div>

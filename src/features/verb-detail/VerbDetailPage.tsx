@@ -60,38 +60,39 @@ export function VerbDetailPage() {
             </span>
             <h2>{formValues(v, f).join(' / ')}</h2>
             <div className="pronunciation-list">
-              {(f === 'base' ? [v.forms.base] : v.forms[f].variants).map((form) => {
-                const entries = (
-                  [settings.dialect, settings.dialect === 'uk' ? 'us' : 'uk'] as const
-                ).flatMap((dialect) => {
-                  const p = form.pronunciation?.[dialect];
-                  return p?.ipa ? [{ dialect, p }] : [];
-                });
-                return (
-                  <div key={form.value}>
-                    {entries.length ? (
-                      entries.map(({ dialect, p }) => (
-                        <div key={dialect}>
-                          {p.validated ? (
-                            <p>
-                              {form.value} · IPA {dialect.toUpperCase()}: {p.ipa}
-                            </p>
-                          ) : (
-                            <div className="small muted">
-                              <span className="tag">IPA propuesta · pendiente de revisión</span>
+              {settings.strictIpa &&
+                (f === 'base' ? [v.forms.base] : v.forms[f].variants).map((form) => {
+                  const entries = (
+                    [settings.dialect, settings.dialect === 'uk' ? 'us' : 'uk'] as const
+                  ).flatMap((dialect) => {
+                    const p = form.pronunciation?.[dialect];
+                    return p?.ipa ? [{ dialect, p }] : [];
+                  });
+                  return (
+                    <div key={form.value}>
+                      {entries.length ? (
+                        entries.map(({ dialect, p }) => (
+                          <div key={dialect}>
+                            {p.validated ? (
                               <p>
-                                {form.value} · {dialect.toUpperCase()}: {p.ipa}
+                                {form.value} · IPA {dialect.toUpperCase()}: {p.ipa}
                               </p>
-                            </div>
-                          )}
-                        </div>
-                      ))
-                    ) : (
-                      <p className="small muted">{form.value}: IPA no disponible con revisión</p>
-                    )}
-                  </div>
-                );
-              })}
+                            ) : (
+                              <div className="small muted">
+                                <span className="tag">IPA propuesta · pendiente de revisión</span>
+                                <p>
+                                  {form.value} · {dialect.toUpperCase()}: {p.ipa}
+                                </p>
+                              </div>
+                            )}
+                          </div>
+                        ))
+                      ) : (
+                        <p className="small muted">{form.value}: IPA no disponible con revisión</p>
+                      )}
+                    </div>
+                  );
+                })}
               {f !== 'base' && (
                 <p className="small muted">
                   {v.forms[f].variants
@@ -187,17 +188,20 @@ export function VerbDetailPage() {
           </section>
           <section className="panel">
             <h2>Fuentes y revisión</h2>
-            {ipaSources.map((url) => (
-              <p key={url}>
-                <a href={url} target="_blank" rel="noreferrer">
-                  IPA · {url.split('/').at(-1)} (Cambridge)
-                </a>
+            {settings.strictIpa &&
+              ipaSources.map((url) => (
+                <p key={url}>
+                  <a href={url} target="_blank" rel="noreferrer">
+                    IPA · {url.split('/').at(-1)} (Cambridge)
+                  </a>
+                </p>
+              ))}
+            {settings.strictIpa && (
+              <p className="small muted">
+                La IPA propuesta procede del archivo aportado y está pendiente de contraste. Solo la
+                marcada como validada interviene en los filtros fonéticos en este modo.
               </p>
-            ))}
-            <p className="small muted">
-              La IPA propuesta procede del archivo aportado y está pendiente de contraste. Solo la
-              marcada como validada interviene en los filtros fonéticos.
-            </p>
+            )}
             <p className="small">
               {v.contentVersion === 'curated-1.0'
                 ? 'Contenido con revisión asistida. Los cursos son orientativos.'

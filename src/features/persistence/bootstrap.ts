@@ -12,6 +12,7 @@ export const defaultLearning = {
 export function defaultSettings(p: Profile): AppSettings {
   return {
     profileId: p.id,
+    strictIpa: false,
     volume: 0.8,
     rate: 0.9,
     dialect: 'uk',

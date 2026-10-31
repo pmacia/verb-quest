@@ -104,6 +104,21 @@ export function SettingsPage() {
         </section>
         <section className="panel settings-section">
           <h2>Escuchar a tu ritmo</h2>
+          <label>
+            <input
+              type="checkbox"
+              role="switch"
+              aria-label="Modo IPA estricto"
+              checked={s.strictIpa === true}
+              onChange={(event) => change({ strictIpa: event.target.checked })}
+            />
+            Modo IPA estricto
+          </label>
+          <p className="small muted">
+            Desactivado: filtro de sonidos orientativo, sin transcripciones ni avisos IPA en las
+            fichas. Activado: solo transcripciones validadas en el filtro y detalles de IPA y
+            revisión en las fichas. Guarda las preferencias para aplicar el cambio.
+          </p>
           <div className="form-grid">
             <label>
               Dialecto preferido

@@ -81,7 +81,13 @@ export async function startSession(
       };
     }
     const today = toLocalDate(clock.now(), settings.timeZone);
-    const selection = resolvePlanSelection(plan, { verbs, lists, progress, today });
+    const selection = resolvePlanSelection(plan, {
+      verbs,
+      lists,
+      progress,
+      today,
+      strictIpa: settings.strictIpa === true,
+    });
     if (!selection.verbIds.length)
       throw Error('La selección no tiene verbos disponibles. Añade verbos o cambia los filtros.');
     const generated = generateQuestions(

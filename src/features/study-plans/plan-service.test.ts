@@ -103,3 +103,27 @@ it('a mixed short session gives each chosen verb and skill a place', () => {
   expect(new Set(s.queue.map((q) => q.verbId)).size).toBe(4);
   expect(new Set(s.queue.map((q) => q.skill)).size).toBe(5);
 });
+
+it('uses the same normal/strict pronunciation policy for filtered plans', () => {
+  const verb = {
+    ...dataset.verbs[1],
+    forms: {
+      ...dataset.verbs[1].forms,
+      pastParticiple: {
+        variants: [{ value: 'gone', pronunciation: { uk: { ipa: '/ɡɒn/', validated: false } } }],
+      },
+    },
+  };
+  const filtered = {
+    ...plan,
+    source: {
+      type: 'filter',
+      filter: { phonetic: [{ form: 'pastParticiple', dialect: 'uk', ending: 'n' }] },
+    },
+  };
+  const context = { verbs: [verb], lists: [], progress: [] };
+  expect(resolvePlanSelection(filtered, { ...context, strictIpa: false }).verbIds).toEqual([
+    verb.id,
+  ]);
+  expect(resolvePlanSelection(filtered, { ...context, strictIpa: true }).verbIds).toEqual([]);
+});

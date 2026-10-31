@@ -10,7 +10,7 @@ const verbs = seed.verbs.map((x) => {
   return r.value;
 });
 const q = { text: '', filter: {}, sort: 'alphabetical', direction: 'asc' } as const;
-const ctx = { lists: [], progress: [], today: '2026-10-29' };
+const ctx = { lists: [], progress: [], today: '2026-10-29', strictIpa: true };
 it('finds go by went and ignores case', () =>
   expect(queryCatalog(verbs, { ...q, text: 'WeNt' }, ctx).items.map((x) => x.id)).toEqual(['go']));
 it('normalizes accents in Spanish meanings', () =>
@@ -71,4 +71,24 @@ it('matches phonetic endings with or without IPA slashes and excludes unreviewed
         ctx,
       ).items.map((v) => v.id),
     ).toEqual(['checked']);
+});
+
+it('uses available IPA in normal mode and only validated IPA in strict mode', () => {
+  const proposed = {
+    ...verbs[1],
+    forms: {
+      ...verbs[1].forms,
+      pastParticiple: {
+        variants: [{ value: 'gone', pronunciation: { uk: { ipa: '/ɡɒn/', validated: false } } }],
+      },
+    },
+  };
+  const query = {
+    ...q,
+    filter: {
+      phonetic: [{ form: 'pastParticiple' as const, dialect: 'uk' as const, ending: 'n' }],
+    },
+  };
+  expect(queryCatalog([proposed], query, { ...ctx, strictIpa: false }).total).toBe(1);
+  expect(queryCatalog([proposed], query, { ...ctx, strictIpa: true }).total).toBe(0);
 });

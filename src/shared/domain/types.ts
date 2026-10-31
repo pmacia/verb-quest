@@ -245,6 +245,7 @@ export interface StudySession {
   completedAt: ISOInstant | null;
 }
 export interface AppSettings {
+  strictIpa?: boolean;
   profileId: string;
   volume: number;
   rate: number;

@@ -3,7 +3,7 @@ test('ending fields offer examples and still accept custom endings', async ({ pa
   await page.goto('/verbs');
   await page.getByRole('button', { name: 'Filtros', exact: true }).click();
   const spelling = page.getByLabel('Terminación escrita (pasado)', { exact: true });
-  const sound = page.getByLabel('Sonido final (IPA validada)', { exact: true });
+  const sound = page.getByLabel('Sonido final', { exact: true });
   await expect(spelling).toHaveAttribute('list', 'spelling-ending-examples');
   await expect(sound).toHaveAttribute('list', 'phonetic-ending-examples');
   expect(

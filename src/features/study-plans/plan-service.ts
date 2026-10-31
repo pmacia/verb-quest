@@ -73,7 +73,13 @@ export const templates: StudyPlan[] = [
 }));
 export function resolvePlanSelection(
   plan: StudyPlan,
-  context: { verbs: Verb[]; lists: VerbList[]; progress: SkillProgress[]; today?: string },
+  context: {
+    verbs: Verb[];
+    lists: VerbList[];
+    progress: SkillProgress[];
+    today?: string;
+    strictIpa?: boolean;
+  },
 ): ResolvedSelection {
   const s = plan.source;
   let candidates: string[];
@@ -86,6 +92,7 @@ export function resolvePlanSelection(
       context.verbs,
       { text: '', filter, sort: 'alphabetical', direction: 'asc' },
       {
+        strictIpa: context.strictIpa,
         lists: context.lists,
         progress: context.progress,
         today: context.today ?? new Date().toISOString().slice(0, 10),

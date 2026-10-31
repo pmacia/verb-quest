@@ -265,7 +265,7 @@ export function VerbEditorPage() {
             </label>
           </div>
           <details>
-            <summary>Todos los campos: ejemplos, IPA, audio, fuentes y etiquetas</summary>
+            <summary>Todos los campos: ejemplos, audio, fuentes y etiquetas</summary>
             <p className="small">
               Editor avanzado JSON. Al aplicar se conservan todos los campos; el guardado validará
               su estructura. No se ejecuta su contenido.

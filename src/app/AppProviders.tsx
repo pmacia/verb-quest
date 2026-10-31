@@ -73,7 +73,7 @@ export function AppProviders({ children }: { children: ReactNode }) {
               plans,
               sessions,
               progress,
-              settings,
+              settings: { ...settings, strictIpa: settings.strictIpa === true },
               awards,
               xp,
               refresh,

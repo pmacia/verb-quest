@@ -23,9 +23,9 @@ test('enriched patterns and topics filter the existing library with Spanish labe
   await page
     .getByRole('combobox', { name: 'Dialecto del filtro fonético', exact: true })
     .selectOption('us');
-  await page.getByLabel('Sonido final (IPA validada)', { exact: true }).fill('t');
+  await page.getByLabel('Sonido final', { exact: true }).fill('t');
   await expect(page.getByRole('link', { name: /^go\s/ })).toBeVisible();
-  await page.getByLabel('Sonido final (IPA validada)', { exact: true }).fill('');
+  await page.getByLabel('Sonido final', { exact: true }).fill('');
   await expect(
     page.getByRole('combobox', { name: 'Forma del filtro fonético', exact: true }),
   ).toHaveValue('pastSimple');
@@ -36,6 +36,10 @@ test('enriched patterns and topics filter the existing library with Spanish labe
 test('pronunciation distinguishes reviewed UK/US forms from pending proposals', async ({
   page,
 }) => {
+  await page.goto('/settings');
+  await page.getByRole('switch', { name: 'Modo IPA estricto' }).check();
+  await page.getByRole('button', { name: 'Guardar preferencias', exact: true }).click();
+  await expect(page.getByText('Preferencias guardadas.', { exact: true })).toBeVisible();
   await page.goto('/verbs/go');
   await expect(page.getByText('go · IPA UK: /ɡəʊ/', { exact: true })).toBeVisible();
   await expect(page.getByText('gone · IPA US: /ɡɑːn/', { exact: true })).toBeVisible();

@@ -9,6 +9,7 @@ export async function updateSettings(
   if (!current) throw Error('Preferencias no encontradas');
   const s = { ...current, ...patch, profileId };
   if (
+    (s.strictIpa !== undefined && typeof s.strictIpa !== 'boolean') ||
     !Number.isFinite(s.volume) ||
     s.volume < 0 ||
     s.volume > 1 ||

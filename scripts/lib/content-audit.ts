@@ -49,7 +49,7 @@ export function checkContent(dataset: Dataset, manifest: any): ContentReport {
   }
   const warnings = [
     'Revisión asistida; no hay certificación docente independiente.',
-    'Solo la IPA contrastada está validada; las propuestas pendientes no se usan en filtros fonéticos. Las voces del navegador no garantizan pronunciación por contexto.',
+    'Solo la IPA contrastada está validada. El modo IPA estricto excluye propuestas pendientes; el modo normal puede usarlas para agrupaciones orientativas. Las voces del navegador no garantizan pronunciación por contexto.',
   ];
   return {
     publishable: errors.length === 0,

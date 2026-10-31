@@ -30,3 +30,20 @@ it('reset deletes sessions and evidence but retains catalog lists and preference
   expect(await r.settings.get(p.id)).toBeDefined();
   r.close();
 });
+
+it('IPA mode defaults off, upgrades legacy preferences and persists an explicit choice', async () => {
+  const r = await openAppDatabase(crypto.randomUUID());
+  const p = await bootstrap(r, dataset, { now: () => '2026-10-31T00:00:00Z' });
+  const settings = (await r.settings.get(p.id))!;
+  expect(settings.strictIpa).toBe(false);
+  delete settings.strictIpa;
+  await r.settings.put(settings);
+  await updateSettings(r, p.id, { strictIpa: true });
+  expect((await r.settings.get(p.id))?.strictIpa).toBe(true);
+  await updateSettings(r, p.id, { strictIpa: false });
+  expect((await r.settings.get(p.id))?.strictIpa).toBe(false);
+  await expect(
+    updateSettings(r, p.id, { strictIpa: 'yes' as unknown as boolean }),
+  ).rejects.toThrow();
+  r.close();
+});

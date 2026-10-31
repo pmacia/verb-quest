@@ -3,12 +3,14 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useApp } from '../../app/AppProviders';
 import { queryCatalog, formValues } from './query';
-import { patternLabel, topicLabel } from './classification-labels';
+import { topicLabel } from './classification-labels';
 import { saveList } from './list-service';
 import { Icon } from '../../shared/ui/Icon';
 import { Dialog } from '../../shared/ui/Dialog';
 import { useCatalogAudio } from './use-catalog-audio';
 import { CatalogArchiveDialog } from './CatalogArchiveDialog';
+import { FamilyFilter } from './FamilyFilter';
+import { filterFamilyCandidates, type RelationScope } from './family-filter';
 import { restoreVerb } from './editor-service';
 import type { Verb, CatalogQuery } from '../../shared/domain/types';
 const frequency: Record<string, string> = {
@@ -38,27 +40,31 @@ export function CatalogPage() {
   const [restoring, setRestoring] = useState<string | null>(null);
   const [actionError, setActionError] = useState('');
   const [showArchived, setShowArchived] = useState(false);
+  const [familySelection, setFamilySelection] = useState<string[] | null>(null);
   const [filters, setFilters] = useState(false);
   const [selected, setSelected] = useState<string[]>([]);
   const [newList, setNewList] = useState(false);
   const [name, setName] = useState('');
   const [error, setError] = useState('');
-  const result = queryCatalog(
-    showArchived
-      ? verbs.filter((v) => v.archivedAt).map((v) => ({ ...v, archivedAt: null }))
-      : verbs,
-    q,
-    {
-      lists,
-      progress,
-      today: toLocalDate(new Date().toISOString(), settings.timeZone),
-    },
-  );
+  const familyCatalog = showArchived
+    ? verbs.filter((v) => v.archivedAt).map((v) => ({ ...v, archivedAt: null }))
+    : verbs.filter((v) => !v.archivedAt);
+  const relation = (q.filter.relations?.[0] ?? '') as RelationScope;
+  const result = queryCatalog(filterFamilyCandidates(familyCatalog, relation, familySelection), q, {
+    lists,
+    progress,
+    today: toLocalDate(new Date().toISOString(), settings.timeZone),
+  });
   const audio = useCatalogAudio(result.items.map((v) => v.id));
   function filter(key: string, value: string) {
     setQ({ ...q, filter: { ...q.filter, [key]: value ? [value] : [] } });
   }
   const active = Object.entries(q.filter).filter(([, v]) => Array.isArray(v) && v.length);
+  function clearFilters() {
+    setQ({ ...q, filter: {} });
+    setFamilySelection(null);
+  }
+  const filterCount = active.length + (familySelection !== null ? 1 : 0);
   return (
     <>
       <div className="page-heading">
@@ -128,7 +134,7 @@ export function CatalogPage() {
                 onClick={() => setFilters(!filters)}
               >
                 <Icon name="filter" />
-                Filtros {active.length > 0 && `(${active.length})`}
+                Filtros {filterCount > 0 && `(${filterCount})`}
               </button>
               <label className="sort-control">
                 <span className="sr-only">Ordenar verbos</span>
@@ -169,26 +175,16 @@ export function CatalogPage() {
                     ))}
                   </select>
                 </label>
-                <label>
-                  Relación de formas
-                  <select
-                    aria-label="Relación de formas"
-                    onChange={(e) => filter('relations', e.target.value)}
-                    value={q.filter.relations?.[0] ?? ''}
-                  >
-                    <option value="">Todas</option>
-                    {[
-                      ['all_same', 'Tres iguales'],
-                      ['past_participle_same', 'Pasado y participio iguales'],
-                      ['all_different', 'Tres diferentes'],
-                      ['special', 'Especiales'],
-                    ].map(([v, l]) => (
-                      <option key={v} value={v}>
-                        {l}
-                      </option>
-                    ))}
-                  </select>
-                </label>
+                <FamilyFilter
+                  verbs={familyCatalog}
+                  relation={relation}
+                  selected={familySelection}
+                  onRelation={(value) => {
+                    filter('relations', value);
+                    setFamilySelection(null);
+                  }}
+                  onSelection={setFamilySelection}
+                />
                 <label>
                   Frecuencia
                   <select
@@ -221,22 +217,6 @@ export function CatalogPage() {
                         {l}
                       </option>
                     ))}
-                  </select>
-                </label>
-                <label>
-                  Familia
-                  <select
-                    onChange={(e) => filter('families', e.target.value)}
-                    value={q.filter.families?.[0] ?? ''}
-                  >
-                    <option value="">Todas</option>
-                    {[...new Set(verbs.flatMap((v) => v.classification.patternGroups))]
-                      .sort()
-                      .map((v) => (
-                        <option key={v} value={v}>
-                          {patternLabel(v)}
-                        </option>
-                      ))}
                   </select>
                 </label>
                 <label>
@@ -346,13 +326,28 @@ export function CatalogPage() {
                 </label>
               </div>
             )}
-            {active.length > 0 && (
+            {filterCount > 0 && (
               <div className="chips">
+                {familySelection !== null && (
+                  <button
+                    className="chip"
+                    aria-label="Quitar filtro de familias"
+                    onClick={() => setFamilySelection(null)}
+                  >
+                    Familias: selección personalizada ×
+                  </button>
+                )}
+                <button className="chip" onClick={clearFilters}>
+                  Limpiar filtros
+                </button>
                 {active.map(([k, v]) => (
                   <button
                     key={k}
                     className="chip"
-                    onClick={() => setQ({ ...q, filter: { ...q.filter, [k]: [] } })}
+                    onClick={() => {
+                      setQ({ ...q, filter: { ...q.filter, [k]: [] } });
+                      if (k === 'relations') setFamilySelection(null);
+                    }}
                   >
                     Quitar {k}: {JSON.stringify(v).replace(/[\[\]"{}]/g, '')} ×
                   </button>
@@ -485,7 +480,12 @@ export function CatalogPage() {
               <div className="empty">
                 <h2>No hay coincidencias</h2>
                 <p>Prueba otra búsqueda o elimina algún filtro.</p>
-                <button onClick={() => setQ({ ...q, text: '', filter: {} })}>
+                <button
+                  onClick={() => {
+                    clearFilters();
+                    setQ({ ...q, text: '', filter: {} });
+                  }}
+                >
                   Limpiar búsqueda
                 </button>
               </div>

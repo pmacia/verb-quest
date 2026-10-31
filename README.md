@@ -69,7 +69,7 @@ Sin `--strictPort`, Vite puede escoger otro puerto si el configurado está ocupa
 ## Primeros pasos y juegos
 
 1. Abre **Verbos** y busca una forma o un significado: buscar `went` encuentra `go`.
-2. Consulta la ficha, sus variantes, ejemplos y transcripciones disponibles. Combina filtros por curso, relación de formas, familia, tema o aprendizaje.
+2. Consulta la ficha, sus variantes, ejemplos y transcripciones disponibles. Combina filtros por curso, relación de formas y familias, tema o aprendizaje.
 3. Marca varios verbos y pulsa **Guardar selección** para crear una lista.
 4. En **Estudiar**, utiliza una de las nueve plantillas o configura un plan. Desde **Juegos**, elige biblioteca, lista, plan guardado o selección manual.
 5. Revisa las habilidades y próximas fechas en **Progreso**. Puedes pausar una sesión y continuarla después.
@@ -133,6 +133,8 @@ Ambas acciones requieren dos pasos de confirmación y permiten descargar una cop
 ## Editar, importar y exportar verbos
 
 En **Verbos**, activa el interruptor **Editar catálogo** para mostrar el lápiz y la papelera de cada fila. El lápiz abre la ficha para editarla; el botón **+**, junto al interruptor, crea un verbo nuevo. Al desactivar el modo de edición se ocultan estas acciones, conservando la búsqueda y los filtros. También puedes utilizar **Editar ficha** dentro de un verbo. El editor avanzado JSON permite trabajar con variantes, fuentes, ejemplos y otros campos. El modo de edición local no es un sistema de permisos de profesor/alumno.
+
+En **Filtros → Relación de formas y familias**, elegir una relación selecciona todas sus familias. Puedes desmarcar familias para afinar la búsqueda o marcar varias. La casilla **Todas las familias** indica la selección parcial y permite volver a seleccionarlas todas; si no queda ninguna marcada, no habrá resultados. **Quitar filtro de familias** restaura todas las familias de la relación sin borrar la búsqueda ni los otros filtros. **Limpiar filtros** reinicia los filtros y conserva el texto de búsqueda. Las familias se agrupan según la clasificación de cada verbo: algunas pertenecen a más de una relación. Las etiquetas generales antiguas se conservan en los datos, pero este control muestra la familia detallada cuando está disponible.
 
 El altavoz de cada fila reproduce en orden la base, el pasado y el participio con tus ajustes de voz, dialecto, velocidad y volumen. Pulsarlo de nuevo detiene el audio; cambiar de verbo cancela la secuencia anterior. Para **read** se usan ejemplos revisados en contexto para distinguir sus pronunciaciones. Se utiliza voz sintética del navegador; escuchar no añade XP ni acredita dominio.
 
@@ -233,7 +235,7 @@ npm test -- src/shared/identity/create-id.test.ts
 
 Los fallos E2E generan evidencias en `test-results/`, incluidas trazas cuando corresponda. El benchmark es orientativo y depende del equipo; no es una garantía de rendimiento de todos los dispositivos.
 
-Última verificación registrada, **31/10/2026**: 103 pruebas unitarias/integración y 84 E2E correctas. Incluye reproducción del acceso HTTP sin `crypto.randomUUID`. Véanse [aceptación inicial](docs/acceptance-report.md), [enriquecimiento del catálogo](docs/content/catalog-enrichment-review.md) y [corrección del acceso de red](docs/http-network-compatibility.md) para el alcance y los límites de cada comprobación.
+Última verificación registrada, **31/10/2026**: 107 pruebas unitarias/integración y 87 E2E correctas. Incluye reproducción del acceso HTTP sin `crypto.randomUUID`. Véanse [aceptación inicial](docs/acceptance-report.md), [enriquecimiento del catálogo](docs/content/catalog-enrichment-review.md) y [corrección del acceso de red](docs/http-network-compatibility.md) para el alcance y los límites de cada comprobación.
 
 ## Organización del proyecto
 

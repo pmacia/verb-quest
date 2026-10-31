@@ -4,7 +4,10 @@ test('enriched patterns and topics filter the existing library with Spanish labe
 }) => {
   await page.goto('/verbs');
   await page.getByRole('button', { name: 'Filtros', exact: true }).click();
-  await page.getByRole('combobox', { name: 'Familia', exact: true }).selectOption('ABC_i_a_u');
+  await page.getByRole('checkbox', { name: 'Todas las familias', exact: true }).uncheck();
+  await page
+    .getByRole('checkbox', { name: 'ABC · Alternancia escrita i–a–u', exact: true })
+    .check();
   await expect(page.getByRole('link', { name: /^sing\s/ })).toBeVisible();
   await expect(page.getByRole('link', { name: /^buy\s/ })).toHaveCount(0);
   await page.getByRole('combobox', { name: 'Tema', exact: true }).selectOption('communication');
@@ -12,7 +15,7 @@ test('enriched patterns and topics filter the existing library with Spanish labe
   await expect(
     page.getByRole('combobox', { name: 'Tema', exact: true }).locator('option:checked'),
   ).toHaveText('Comunicación');
-  await page.getByRole('combobox', { name: 'Familia', exact: true }).selectOption('');
+  await page.getByRole('button', { name: 'Quitar filtro de familias', exact: true }).click();
   await page.getByRole('combobox', { name: 'Tema', exact: true }).selectOption('');
   await page
     .getByRole('combobox', { name: 'Forma del filtro fonético', exact: true })

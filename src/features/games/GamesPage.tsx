@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useApp } from '../../app/AppProviders';
+import { useApp } from '../../app/app-context';
 import { startSession } from '../learning-engine/session-service';
 import { systemClock } from '../../shared/time/clock';
 import { Icon } from '../../shared/ui/Icon';

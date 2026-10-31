@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useApp } from '../../app/AppProviders';
+import { useApp } from '../../app/app-context';
 import { templates } from './plan-service';
 import { Icon } from '../../shared/ui/Icon';
 export function PlansPage() {

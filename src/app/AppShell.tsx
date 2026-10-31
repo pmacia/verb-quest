@@ -1,6 +1,6 @@
 import { UpdateNotice } from './UpdateNotice';
 import { NavLink, Link, Outlet, useLocation } from 'react-router-dom';
-import { useApp } from './AppProviders';
+import { useApp } from './app-context';
 import { Icon } from '../shared/ui/Icon';
 import { useEffect, useRef } from 'react';
 import { dataset } from '../content/dataset';

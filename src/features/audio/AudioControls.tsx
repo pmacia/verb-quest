@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useApp } from '../../app/AppProviders';
+import { useApp } from '../../app/app-context';
 import { getSpeechService } from './speech-service';
 import { Icon } from '../../shared/ui/Icon';
 export function AudioControls({

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { useApp } from '../../app/AppProviders';
+import { useApp } from '../../app/app-context';
 import { startSession, resumeSession, completeSession } from '../learning-engine/session-service';
 import { systemClock } from '../../shared/time/clock';
 import { templates } from '../study-plans/plan-service';

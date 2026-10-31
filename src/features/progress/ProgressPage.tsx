@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useApp } from '../../app/AppProviders';
+import { useApp } from '../../app/app-context';
 import { toLocalDate } from '../../shared/time/calendar';
 import { deriveVisibleState } from '../learning-engine/progress';
 import { skillLabels, stateLabels, summarizeVerb } from './selectors';

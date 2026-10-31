@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useApp } from './AppProviders';
+import { useApp } from './app-context';
 import { registerAppUpdates, activateUpdate } from './pwa';
 export function UpdateNotice() {
   const { repos } = useApp();

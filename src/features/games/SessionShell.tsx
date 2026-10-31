@@ -2,7 +2,7 @@ import { AudioDetectiveGame } from './AudioDetectiveGame';
 import { SentenceGapGame } from './SentenceGapGame';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useApp } from '../../app/AppProviders';
+import { useApp } from '../../app/app-context';
 import {
   submitAnswer,
   pauseSession,

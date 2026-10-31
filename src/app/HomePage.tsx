@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useApp } from './AppProviders';
+import { useApp } from './app-context';
 import { Icon } from '../shared/ui/Icon';
 import { toLocalDate } from '../shared/time/calendar';
 import { deriveVisibleState } from '../features/learning-engine/progress';

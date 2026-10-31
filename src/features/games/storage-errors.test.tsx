@@ -9,7 +9,7 @@ import { startSession } from '../learning-engine/session-service';
 import { SessionShell } from './SessionShell';
 import { StudyPage } from './StudyPage';
 const state = vi.hoisted(() => ({ data: null as any }));
-vi.mock('../../app/AppProviders', () => ({ useApp: () => state.data }));
+vi.mock('../../app/app-context', () => ({ useApp: () => state.data }));
 afterEach(cleanup);
 const clock = { now: () => '2026-10-29T12:00:00Z' };
 async function prepare() {

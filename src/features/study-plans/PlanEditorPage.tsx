@@ -1,7 +1,7 @@
 import { createId } from '../../shared/identity/create-id';
 import { useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { useApp } from '../../app/AppProviders';
+import { useApp } from '../../app/app-context';
 import { templates, savePlan } from './plan-service';
 import type { StudyPlan, PlanGoal, QuestionMode, PlanSource } from '../../shared/domain/types';
 import { StatusPanel } from '../../shared/ui/StatusPanel';

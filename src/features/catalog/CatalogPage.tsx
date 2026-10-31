@@ -1,7 +1,7 @@
 import { toLocalDate } from '../../shared/time/calendar';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useApp } from '../../app/AppProviders';
+import { useApp } from '../../app/app-context';
 import { queryCatalog, formValues } from './query';
 import { topicLabel } from './classification-labels';
 import { saveList } from './list-service';

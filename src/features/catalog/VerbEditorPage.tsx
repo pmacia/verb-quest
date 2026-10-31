@@ -2,7 +2,7 @@ import { validate } from '../../shared/domain/validation';
 import { StatusPanel } from '../../shared/ui/StatusPanel';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, useBlocker, Link } from 'react-router-dom';
-import { useApp } from '../../app/AppProviders';
+import { useApp } from '../../app/app-context';
 import {
   saveVerb,
   archiveVerb,

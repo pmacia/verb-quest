@@ -7,7 +7,7 @@ import { deriveVisibleState } from '../learning-engine/progress';
 import { toLocalDate } from '../../shared/time/calendar';
 import { AudioControls } from '../audio/AudioControls';
 import { useParams, Link } from 'react-router-dom';
-import { useApp } from '../../app/AppProviders';
+import { useApp } from '../../app/app-context';
 import { formValues } from '../catalog/query';
 import { toggleListVerb } from '../catalog/list-service';
 import { StatusPanel } from '../../shared/ui/StatusPanel';

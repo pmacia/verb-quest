@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useApp } from '../../app/AppProviders';
+import { useApp } from '../../app/app-context';
 import { getSpeechService, type VoiceInfo } from '../audio/speech-service';
 import { updateSettings, resetProgress, deleteAllLocalData } from './settings-service';
 import { exportBackup } from '../persistence/backup';

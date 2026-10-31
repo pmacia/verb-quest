@@ -1,41 +1,10 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { openAppDatabase, type AppRepositories } from '../features/persistence/repositories';
 import { bootstrap } from '../features/persistence/bootstrap';
 import { systemClock } from '../shared/time/clock';
 import { dataset } from '../content/dataset';
-import type {
-  Profile,
-  Verb,
-  VerbList,
-  StudyPlan,
-  StudySession,
-  SkillProgress,
-  AppSettings,
-  UserAchievement,
-  XpEntry,
-  CatalogEntry,
-} from '../shared/domain/types';
-export interface AppData {
-  repos: AppRepositories;
-  profile: Profile;
-  verbs: Verb[];
-  entries: CatalogEntry[];
-  lists: VerbList[];
-  plans: StudyPlan[];
-  sessions: StudySession[];
-  progress: SkillProgress[];
-  settings: AppSettings;
-  awards: UserAchievement[];
-  xp: XpEntry[];
-  refresh: () => Promise<void>;
-}
-const Context = createContext<AppData | null>(null);
+import { AppContext, type AppData } from './app-context';
 let connection: Promise<AppRepositories> | undefined;
-export function useApp() {
-  const value = useContext(Context);
-  if (!value) throw Error('Aplicación no preparada');
-  return value;
-}
 export function AppProviders({ children }: { children: ReactNode }) {
   const [data, setData] = useState<AppData | null>(null);
   const [error, setError] = useState('');
@@ -128,5 +97,5 @@ export function AppProviders({ children }: { children: ReactNode }) {
         <p>Abriendo tu biblioteca local.</p>
       </main>
     );
-  return <Context.Provider value={data}>{children}</Context.Provider>;
+  return <AppContext.Provider value={data}>{children}</AppContext.Provider>;
 }

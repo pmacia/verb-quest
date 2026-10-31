@@ -204,6 +204,7 @@ Ejecuta los comandos desde la raíz del repositorio.
 | `npm run build`             | Comprueba tipos y genera `dist`, manifest y service worker |
 | `npm run preview`           | Sirve `dist` localmente para revisión                      |
 | `npm run test:e2e`          | Construye y prueba la aplicación con Playwright            |
+| `npm run test:dev-hmr`      | Comprueba la recarga en caliente con Vite y Chromium        |
 | `npm run benchmark:catalog` | Mide consultas sobre 10.000 entradas sintéticas de prueba  |
 
 ### Preparar los navegadores de pruebas
@@ -354,3 +355,9 @@ No se ha elegido un proveedor ni publicado la aplicación. Para usar un subdirec
 Esta versión no incluye cuentas, aulas, sincronización, notificaciones programadas ni reconocimiento de voz. Las comprobaciones automáticas de accesibilidad no equivalen a certificación WCAG ni a pruebas extensas con lectores de pantalla. Sigue pendiente la revisión docente independiente del contenido.
 
 Los textos y audios de diccionarios de referencia pertenecen a sus titulares; se enlazan como fuentes, no se redistribuyen sus grabaciones ni ejemplos. Los recursos de marca parten del material aportado al proyecto. El inventario de dependencias no concede una licencia general sobre la aplicación ni acredita la disponibilidad comercial de la marca VerbQuest.
+
+### Recarga durante el desarrollo
+
+Si una pestaña abierta durante una actualización del código muestra **«Aplicación no preparada»**, recarga la página (`⌘R` en macOS). No borres IndexedDB ni el almacenamiento del sitio: esa pantalla no significa que hayas perdido tus datos.
+
+El contexto compartido vive en `src/app/app-context.ts`, separado del componente proveedor, y conserva su identidad durante la recarga en caliente de Vite. Tras cambios en el arranque o en este contexto, ejecuta `npm run test:dev-hmr`: abre una copia temporal de la aplicación con Vite real, sustituye ambos módulos y comprueba que el contexto, la pantalla y las preferencias guardadas siguen funcionando. No modifica el código del checkout, el servidor de desarrollo abierto ni los datos del navegador habitual.

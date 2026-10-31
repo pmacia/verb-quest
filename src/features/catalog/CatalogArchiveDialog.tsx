@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useApp } from '../../app/AppProviders';
+import { useApp } from '../../app/app-context';
 import type { Verb } from '../../shared/domain/types';
 import { systemClock } from '../../shared/time/clock';
 import { Dialog } from '../../shared/ui/Dialog';

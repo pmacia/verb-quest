@@ -38,7 +38,9 @@ export function AudioControls({
           setPlaying(false);
           if (r.status === 'played') {
             setMessage(
-              `Voz sintética: ${r.voice?.name} · ${r.voice?.lang}${r.fallback ? ' · dialecto alternativo disponible' : ''}${r.voice?.localService ? ' · local' : ' · puede necesitar conexión'}`,
+              settings.showTechnicalDetails
+                ? `Voz sintética: ${r.voice?.name} · ${r.voice?.lang}${r.fallback ? ' · dialecto alternativo disponible' : ''}${r.voice?.localService ? ' · local' : ' · puede necesitar conexión'}`
+                : `Audio reproducido.${r.fallback ? ' Se ha usado una voz de otro dialecto.' : ''}`,
             );
             onPlayed?.();
           } else if (r.status !== 'cancelled')

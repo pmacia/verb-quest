@@ -58,6 +58,8 @@ export const entitySchemas = {
   settings: object(
     {
       strictIpa: boolean,
+      showSources: boolean,
+      showTechnicalDetails: boolean,
       profileId: string,
       volume: { type: 'number', minimum: 0, maximum: 1 },
       rate: { type: 'number', minimum: 0.5, maximum: 2 },
@@ -82,7 +84,7 @@ export const entitySchemas = {
         maxRetryPerQuestion: { const: 1 },
       }),
     },
-    ['strictIpa'],
+    ['strictIpa', 'showSources', 'showTechnicalDetails'],
   ),
   list: object({
     id: string,

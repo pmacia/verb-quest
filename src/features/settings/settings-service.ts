@@ -10,6 +10,8 @@ export async function updateSettings(
   const s = { ...current, ...patch, profileId };
   if (
     (s.strictIpa !== undefined && typeof s.strictIpa !== 'boolean') ||
+    (s.showSources !== undefined && typeof s.showSources !== 'boolean') ||
+    (s.showTechnicalDetails !== undefined && typeof s.showTechnicalDetails !== 'boolean') ||
     !Number.isFinite(s.volume) ||
     s.volume < 0 ||
     s.volume > 1 ||

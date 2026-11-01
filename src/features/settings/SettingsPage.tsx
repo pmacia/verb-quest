@@ -103,7 +103,11 @@ export function SettingsPage() {
           </div>
         </section>
         <section className="panel settings-section">
-          <h2>Escuchar a tu ritmo</h2>
+          <h2>Información avanzada</h2>
+          <p>
+            Opciones para docentes y para quienes quieran consultar más detalles. Desactivadas por
+            defecto; puedes elegir cada una por separado.
+          </p>
           <label>
             <input
               type="checkbox"
@@ -119,6 +123,35 @@ export function SettingsPage() {
             fichas. Activado: solo transcripciones validadas en el filtro y detalles de IPA y
             revisión en las fichas. Guarda las preferencias para aplicar el cambio.
           </p>
+          <label>
+            <input
+              type="checkbox"
+              role="switch"
+              checked={s.showSources === true}
+              onChange={(e) => change({ showSources: e.target.checked })}
+            />
+            Mostrar fuentes y revisión
+          </label>
+          <p className="small muted">
+            Muestra la procedencia de los ejemplos, las referencias y la información de revisión de
+            las fichas.
+          </p>
+          <label>
+            <input
+              type="checkbox"
+              role="switch"
+              checked={s.showTechnicalDetails === true}
+              onChange={(e) => change({ showTechnicalDetails: e.target.checked })}
+            />
+            Mostrar detalles técnicos del audio
+          </label>
+          <p className="small muted">
+            Muestra el nombre de la voz, su idioma y si puede necesitar conexión. Guarda las
+            preferencias para aplicar los cambios.
+          </p>
+        </section>
+        <section className="panel settings-section">
+          <h2>Escuchar a tu ritmo</h2>
           <div className="form-grid">
             <label>
               Dialecto preferido

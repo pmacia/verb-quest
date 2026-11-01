@@ -98,12 +98,21 @@ it('accepts legacy backups without IPA mode and preserves the explicit strict se
   const r = await openAppDatabase(crypto.randomUUID());
   const p = await bootstrap(r, dataset, { now: () => '2026-10-31T00:00:00Z' });
   const settings = (await r.settings.get(p.id))!;
-  await r.settings.put({ ...settings, strictIpa: true });
+  await r.settings.put({
+    ...settings,
+    strictIpa: true,
+    showSources: true,
+    showTechnicalDetails: true,
+  });
   const backup = await exportBackup(r, p.id, { now: () => '2026-10-31T00:00:00Z' });
   expect(previewRestore(backup).ok).toBe(true);
   const other = await openAppDatabase(crypto.randomUUID());
   await restoreBackup(other, backup, 'replace_local_profile');
   expect((await other.settings.get(p.id))?.strictIpa).toBe(true);
+  expect((await other.settings.get(p.id))?.showSources).toBe(true);
+  expect((await other.settings.get(p.id))?.showTechnicalDetails).toBe(true);
+  delete backup.settings.showSources;
+  delete backup.settings.showTechnicalDetails;
   delete backup.settings.strictIpa;
   expect(previewRestore(backup).ok).toBe(true);
   r.close();

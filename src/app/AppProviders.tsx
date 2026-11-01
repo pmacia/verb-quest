@@ -42,7 +42,12 @@ export function AppProviders({ children }: { children: ReactNode }) {
               plans,
               sessions,
               progress,
-              settings: { ...settings, strictIpa: settings.strictIpa === true },
+              settings: {
+                ...settings,
+                strictIpa: settings.strictIpa === true,
+                showSources: settings.showSources === true,
+                showTechnicalDetails: settings.showTechnicalDetails === true,
+              },
               awards,
               xp,
               refresh,

@@ -43,7 +43,7 @@ export function useCatalogAudio(visibleIds: string[]) {
       setPlayingId(null);
       setMessage(
         result.status === 'played'
-          ? `Tres formas de ${verb.lemma} reproducidas. Voz sintética: ${result.voice?.name} · ${result.voice?.lang}${result.fallback ? ' · dialecto alternativo disponible' : ''}.`
+          ? `Tres formas de ${verb.lemma} reproducidas.${settings.showTechnicalDetails ? ` Voz sintética: ${result.voice?.name} · ${result.voice?.lang}${result.fallback ? ' · dialecto alternativo disponible' : ''}.` : result.fallback ? ' Se ha usado una voz de otro dialecto.' : ''}`
           : 'Audio no disponible. Puedes volver a intentarlo o consultar las formas escritas.',
       );
     } catch (error) {

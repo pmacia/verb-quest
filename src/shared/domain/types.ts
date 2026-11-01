@@ -246,6 +246,8 @@ export interface StudySession {
 }
 export interface AppSettings {
   strictIpa?: boolean;
+  showSources?: boolean;
+  showTechnicalDetails?: boolean;
   profileId: string;
   volume: number;
   rate: number;

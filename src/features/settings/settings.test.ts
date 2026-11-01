@@ -47,3 +47,26 @@ it('IPA mode defaults off, upgrades legacy preferences and persists an explicit 
   ).rejects.toThrow();
   r.close();
 });
+it('advanced display options default off and persist independently of IPA', async () => {
+  const r = await openAppDatabase(crypto.randomUUID());
+  const p = await bootstrap(r, dataset, { now: () => '2026-11-01T00:00:00Z' });
+  const s = (await r.settings.get(p.id))!;
+  expect(s.showSources).toBe(false);
+  expect(s.showTechnicalDetails).toBe(false);
+  delete s.showSources;
+  delete s.showTechnicalDetails;
+  await r.settings.put(s);
+  await updateSettings(r, p.id, { showSources: true, showTechnicalDetails: true });
+  expect(await r.settings.get(p.id)).toMatchObject({
+    strictIpa: false,
+    showSources: true,
+    showTechnicalDetails: true,
+  });
+  await expect(
+    updateSettings(r, p.id, { showSources: 'yes' as unknown as boolean }),
+  ).rejects.toThrow();
+  await expect(
+    updateSettings(r, p.id, { showTechnicalDetails: 1 as unknown as boolean }),
+  ).rejects.toThrow();
+  r.close();
+});

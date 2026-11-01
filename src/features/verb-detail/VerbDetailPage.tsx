@@ -149,10 +149,10 @@ export function VerbDetailPage() {
               <span className="tag">{ex.grammarPoint}</span>
               <h3 lang="en">{ex.sentence}</h3>
               <p>{ex.translation}</p>
-              {ex.reviewStatus === 'validated' && (
+              {settings.showSources && ex.reviewStatus === 'validated' && (
                 <small className="muted">{ex.source ?? 'Revisado por el editor local'}</small>
               )}
-              {ex.reviewStatus !== 'validated' && (
+              {settings.showSources && ex.reviewStatus !== 'validated' && (
                 <small className="muted">Ejemplo de prueba · pendiente de revisión</small>
               )}
             </article>
@@ -202,46 +202,52 @@ export function VerbDetailPage() {
               {v.classification.recommendedCourses.map((c) => c.replace('eso', '')).join(', ')} ESO.
             </p>
           </section>
-          <section className="panel">
-            <h2>Fuentes y revisión</h2>
-            {settings.strictIpa &&
-              ipaSources.map((url) => (
-                <p key={url}>
-                  <a href={url} target="_blank" rel="noreferrer">
-                    IPA ·{' '}
-                    {new URL(url).hostname.includes('oxford')
-                      ? 'Oxford'
-                      : new URL(url).hostname.includes('britishcouncil')
-                        ? 'British Council'
-                        : 'Cambridge'}{' '}
-                    · {new URL(url).pathname.split('/').at(-1)?.replace(/_\d+$/, '')}
-                  </a>
+          {(settings.showSources || settings.strictIpa) && (
+            <section className="panel">
+              <h2>{settings.showSources ? 'Fuentes y revisión' : 'Revisión IPA'}</h2>
+              {settings.showSources &&
+                settings.strictIpa &&
+                ipaSources.map((url) => (
+                  <p key={url}>
+                    <a href={url} target="_blank" rel="noreferrer">
+                      IPA ·{' '}
+                      {new URL(url).hostname.includes('oxford')
+                        ? 'Oxford'
+                        : new URL(url).hostname.includes('britishcouncil')
+                          ? 'British Council'
+                          : 'Cambridge'}{' '}
+                      · {new URL(url).pathname.split('/').at(-1)?.replace(/_\d+$/, '')}
+                    </a>
+                  </p>
+                ))}
+              {settings.strictIpa && (
+                <p className="small muted">
+                  {pendingIpa
+                    ? 'Hay transcripciones locales pendientes de contraste. Solo la IPA validada interviene en el filtro estricto.'
+                    : 'Transcripciones contrastadas.'}
                 </p>
-              ))}
-            {settings.strictIpa && (
-              <p className="small muted">
-                {pendingIpa
-                  ? 'Hay transcripciones locales pendientes de contraste. Solo la IPA validada interviene en el filtro estricto.'
-                  : 'Transcripciones contrastadas. Las fuentes anteriores corresponden a las formas y transcripciones mostradas.'}
-              </p>
-            )}
-            <p className="small">
-              {v.contentVersion === 'curated-1.0'
-                ? 'Contenido con revisión asistida. Los cursos son orientativos.'
-                : 'Contenido del editor local.'}
-            </p>
-            {v.sources.map((source, i) => (
-              <p className="small" key={i}>
-                {source.url ? (
-                  <a href={source.url} target="_blank" rel="noreferrer">
-                    {source.label ?? source.url}
-                  </a>
-                ) : (
-                  source.label
-                )}
-              </p>
-            ))}
-          </section>
+              )}
+              {settings.showSources && (
+                <p className="small">
+                  {v.contentVersion === 'curated-1.0'
+                    ? 'Contenido con revisión asistida. Los cursos son orientativos.'
+                    : 'Contenido del editor local.'}
+                </p>
+              )}
+              {settings.showSources &&
+                v.sources.map((source, i) => (
+                  <p className="small" key={i}>
+                    {source.url ? (
+                      <a href={source.url} target="_blank" rel="noreferrer">
+                        {source.label ?? source.url}
+                      </a>
+                    ) : (
+                      source.label
+                    )}
+                  </p>
+                ))}
+            </section>
+          )}
           <section className="panel">
             <h2>Tu progreso por habilidad</h2>
             {Object.entries(skillLabels).map(([skill, label]) => {

@@ -28,6 +28,7 @@ test('IPA guide explains symbols, works by keyboard and keeps normal mode unobtr
   await page.goto('/verbs/write');
   await expect(page.locator('main')).not.toContainText('IPA');
   await page.goto('/settings');
+  await page.getByRole('switch', { name: 'Mostrar fuentes y revisión', exact: true }).check();
   await page.getByRole('switch', { name: 'Modo IPA estricto' }).check();
   await page.getByRole('button', { name: 'Guardar preferencias', exact: true }).click();
   await expect(page.getByText('Preferencias guardadas.', { exact: true })).toBeVisible();

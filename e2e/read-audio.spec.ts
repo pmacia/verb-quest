@@ -53,7 +53,7 @@ test('read stays written read and speaks isolated sounds in detail and library',
         ),
       )
       .toEqual(sounds.slice(0, i + 1));
-    await expect(card.getByRole('status')).toContainText('Voz sintética');
+    await expect(card.getByRole('status')).toContainText('Audio reproducido.');
   }
   await expect(page.getByText('Audio aislado desactivado', { exact: false })).toHaveCount(0);
   await expect(page.locator('main')).not.toContainText('IPA');

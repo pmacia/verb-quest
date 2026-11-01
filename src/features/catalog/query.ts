@@ -7,6 +7,15 @@ export const normalize = (s: string) =>
     .trim();
 export const formValues = (v: Verb, form: 'base' | 'pastSimple' | 'pastParticiple') =>
   form === 'base' ? [v.forms.base.value] : v.forms[form].variants.map((x) => x.value);
+// Oxford's final (r) denotes linking r in UK, not literal parentheses in a sound.
+function matchesIpaEnding(ipa: string | undefined, ending: string): boolean {
+  if (!ipa) return false;
+  const value = ipa.replace(/^\/|\/$/g, '');
+  const requested = ending.trim().replace(/^\/|\/$/g, '');
+  return [value, value.replace(/\(r\)$/, ''), value.replace(/\(r\)$/, 'r')].some((candidate) =>
+    candidate.endsWith(requested),
+  );
+}
 export interface CatalogContext {
   strictIpa?: boolean;
   lists: Pick<VerbList, 'id' | 'verbIds'>[];
@@ -73,10 +82,7 @@ export function queryCatalog(
             const values = x.form === 'base' ? [v.forms.base] : v.forms[x.form].variants;
             return values.some((a) => {
               const p = a.pronunciation?.[x.dialect];
-              return (
-                (!context.strictIpa || p?.validated) &&
-                p?.ipa?.replace(/^\/|\/$/g, '').endsWith(x.ending.trim().replace(/^\/|\/$/g, ''))
-              );
+              return (!context.strictIpa || p?.validated) && matchesIpaEnding(p?.ipa, x.ending);
             });
           }))
       );

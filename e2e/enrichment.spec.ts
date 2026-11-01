@@ -33,19 +33,17 @@ test('enriched patterns and topics filter the existing library with Spanish labe
     page.getByRole('combobox', { name: 'Dialecto del filtro fonético', exact: true }),
   ).toHaveValue('us');
 });
-test('pronunciation distinguishes reviewed UK/US forms from pending proposals', async ({
-  page,
-}) => {
+test('pronunciation shows verified UK/US forms with matching sources', async ({ page }) => {
   await page.goto('/settings');
   await page.getByRole('switch', { name: 'Modo IPA estricto' }).check();
   await page.getByRole('button', { name: 'Guardar preferencias', exact: true }).click();
   await expect(page.getByText('Preferencias guardadas.', { exact: true })).toBeVisible();
   await page.goto('/verbs/go');
   await expect(page.getByText('go · IPA UK: /ɡəʊ/', { exact: true })).toBeVisible();
-  await expect(page.getByText('gone · IPA US: /ɡɑːn/', { exact: true })).toBeVisible();
+  await expect(page.getByText('gone · IPA US: /ɡɔːn/', { exact: true })).toBeVisible();
   await page.goto('/verbs/write');
   await expect(
-    page.getByText('IPA propuesta · pendiente de revisión', { exact: true }).first(),
-  ).toBeVisible();
-  await expect(page.getByText('write · IPA UK: /raɪt/', { exact: true })).toHaveCount(0);
+    page.getByText('IPA propuesta · pendiente de revisión', { exact: true }),
+  ).toHaveCount(0);
+  await expect(page.getByText('write · IPA UK: /raɪt/', { exact: true })).toBeVisible();
 });

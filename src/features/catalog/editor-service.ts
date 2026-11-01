@@ -1,3 +1,4 @@
+import { applyPronunciationReview, pronunciationReview } from '../../content/pronunciation-review';
 import { createId } from '../../shared/identity/create-id';
 import type { Verb, Clock } from '../../shared/domain/types';
 import type { AppRepositories } from '../persistence/repositories';
@@ -88,16 +89,42 @@ export async function restoreVerb(repos: AppRepositories, verbId: string) {
 export async function resolveSeedConflict(
   repos: AppRepositories,
   verbId: string,
-  choice: 'keep_local' | 'accept_base',
+  choice: 'keep_local' | 'accept_base' | 'ipa_only',
 ) {
-  const e = await repos.catalog.get(verbId);
-  if (!e?.pendingBase) return;
-  const version = (await repos.meta.get('datasetVersion'))?.value ?? null;
-  if (choice === 'accept_base') {
-    e.verb = e.pendingBase;
-    e.locallyModified = false;
-  }
-  e.pendingBase = null;
-  e.baseVersion = version;
-  await repos.catalog.put(e);
+  return repos.runAtomic(async () => {
+    const e = await repos.catalog.get(verbId);
+    if (!e?.pendingBase) return;
+    const version = (await repos.meta.get('datasetVersion'))?.value ?? null;
+    if (choice === 'accept_base') {
+      e.verb = e.pendingBase;
+      e.locallyModified = false;
+    } else if (choice === 'ipa_only') {
+      const pending = e.pendingBase;
+      const verified = pronunciationReview.filter((r) => {
+        if (r.verbId !== verbId) return false;
+        const targets = r.form === 'base' ? [pending.forms.base] : pending.forms[r.form].variants;
+        return targets.some(
+          (target) =>
+            target.value === r.value &&
+            target.pronunciation?.[r.dialect]?.validated &&
+            target.pronunciation[r.dialect]?.ipa === r.ipa,
+        );
+      });
+      const localTargets = (r: (typeof verified)[number]) =>
+        r.form === 'base' ? [e.verb.forms.base] : e.verb.forms[r.form].variants;
+      if (!verified.some((r) => localTargets(r).some((target) => target.value === r.value)))
+        throw Error('La actualización no contiene transcripciones contrastadas compatibles.');
+      const updated = applyPronunciationReview([e.verb], verified)[0];
+      if (JSON.stringify(updated) !== JSON.stringify(e.verb)) {
+        updated.contentVersion = createId();
+        updated.updatedAt = new Date().toISOString();
+      }
+      e.verb = updated;
+      e.locallyModified = true;
+    }
+    e.pendingBase = null;
+    e.baseVersion = version;
+    await repos.catalog.put(e);
+    return e.verb;
+  });
 }

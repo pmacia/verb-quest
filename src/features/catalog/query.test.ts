@@ -92,3 +92,21 @@ it('uses available IPA in normal mode and only validated IPA in strict mode', ()
   expect(queryCatalog([proposed], query, { ...ctx, strictIpa: false }).total).toBe(1);
   expect(queryCatalog([proposed], query, { ...ctx, strictIpa: true }).total).toBe(0);
 });
+
+it('interprets Oxford optional final r as both documented UK realizations', () => {
+  const v = {
+    ...verbs[1],
+    forms: {
+      ...verbs[1].forms,
+      base: { value: 'bear', pronunciation: { uk: { ipa: '/beə(r)/', validated: true } } },
+    },
+  };
+  for (const ending of ['r', 'ə', '(r)'])
+    expect(
+      queryCatalog(
+        [v],
+        { ...q, filter: { phonetic: [{ form: 'base', dialect: 'uk', ending }] } },
+        ctx,
+      ).total,
+    ).toBe(1);
+});

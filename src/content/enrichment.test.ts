@@ -91,7 +91,7 @@ it('preserves previously reviewed pronunciation and ignores unknown verb identit
 import { dataset } from './dataset';
 import { learningRevision } from '../features/question-engine/revision';
 it('enriches the production dataset without changing any assessed linguistic content', () => {
-  expect(dataset.version).toBe('curated-1.1');
+  expect(dataset.version).toBe('curated-1.2');
   expect(dataset.verbs).toHaveLength(base.length);
   for (const original of base as Verb[]) {
     const updated = dataset.verbs.find((v) => v.id === original.id)!;

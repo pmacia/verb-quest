@@ -37,7 +37,7 @@ export function compatiblePattern(verb: Verb, pattern: string): boolean {
 export function enrichVerbs(
   verbs: Verb[],
   entries: VerbEnrichment[],
-  reviewed: ReviewedPronunciation[],
+  reviewed: readonly ReviewedPronunciation[],
 ): Verb[] {
   const byId = new Map(entries.map((e) => [e.id, e]));
   return structuredClone(verbs).map((v) => {

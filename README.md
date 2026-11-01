@@ -167,8 +167,12 @@ La reproducción utiliza síntesis de voz del navegador/sistema. No se usa micr�
 - La interfaz identifica la voz/dialecto utilizados y avisa de alternativas. No garantiza que todos los dispositivos dispongan de voces UK y US.
 - Si falta audio, Audio Detective permite continuar con una alternativa de escritura. Esa respuesta **no cuenta como escucha**.
 - **Modo IPA estricto** (en Configuración, desactivado por defecto): al activarlo y guardar las preferencias, las fichas muestran IPA por forma, variante y dialecto, sus fuentes y los avisos de revisión; el filtro solo admite transcripciones validadas. Desactivado, las fichas ocultan esa información y sus avisos; el filtro usa las transcripciones disponibles como agrupación orientativa, sin convertirlas en validadas. Es compatible con preferencias guardadas antes de existir este ajuste.
-- Los campos **Terminación escrita (pasado)** y **Sonido final** ofrecen sugerencias desplegables y permiten escribir libremente. Ejemplos escritos: `ought`, `ew`, `ent`; ejemplos fonéticos: `/t/`, `/d/`, `/n/`. El sonido final admite también `t` o `t/`. Comienza en **participio pasado**, donde estas tres terminaciones agrupan 98 de los 120 verbos del catálogo actual en UK sin modo estricto. Puedes cambiar forma y dialecto; los resultados dependen de los datos disponibles y del modo elegido. No se inventan sonidos para verbos sin transcripción.
+- Los campos **Terminación escrita (pasado)** y **Sonido final** ofrecen sugerencias desplegables y permiten escribir libremente. Ejemplos escritos: `ought`, `ew`, `ent`; ejemplos fonéticos: `/t/`, `/d/`, `/n/`. El sonido final admite también `t` o `t/`. Comienza en **participio pasado**, donde estas tres terminaciones agrupan 107 de los 120 verbos del catálogo actual en UK, también en modo estricto. Puedes cambiar forma y dialecto; los resultados dependen de los datos disponibles y del modo elegido. No se inventan sonidos para verbos sin transcripción.
 - `read` aislado se excluye de síntesis evaluable: su escritura no basta para distinguir la pronunciación de la base y el pasado.
+
+El catálogo incluido tiene **756 transcripciones contrastadas: 378 UK y 378 US**, sin pendientes. El botón **Cómo leer los sonidos**, disponible en el filtro y en las fichas con modo IPA activo, explica los símbolos y ofrece ejemplos. Cada ficha muestra sus fuentes en modo IPA.
+
+Si has personalizado una ficha y aparece una actualización pendiente, activa el modo IPA y abre su editor: **Actualizar solo IPA y conservar mi ficha** incorpora las transcripciones que coinciden con tus formas sin sustituir tus traducciones. Las formas personales nuevas requieren revisión propia.
 
 La transcripción IPA, la voz sintética y la evaluación del alumno son recursos distintos; disponer de uno no valida los otros.
 
@@ -200,6 +204,7 @@ Ejecuta los comandos desde la raíz del repositorio.
 | `npm run typecheck`         | Comprueba los tipos sin emitir archivos                    |
 | `npm test`                  | Ejecuta las pruebas unitarias y de integración con Vitest  |
 | `npm run test:watch`        | Ejecuta Vitest en modo de observación                      |
+| `npm run content:ipa`       | Comprueba cobertura y trazabilidad de las 756 IPA           |
 | `npm run content:check`     | Audita el catálogo activo y su revisión editorial          |
 | `npm run build`             | Comprueba tipos y genera `dist`, manifest y service worker |
 | `npm run preview`           | Sirve `dist` localmente para revisión                      |
@@ -236,7 +241,7 @@ npm test -- src/shared/identity/create-id.test.ts
 
 Los fallos E2E generan evidencias en `test-results/`, incluidas trazas cuando corresponda. El benchmark es orientativo y depende del equipo; no es una garantía de rendimiento de todos los dispositivos.
 
-Última verificación registrada, **31/10/2026**: 111 pruebas unitarias/integración y 93 E2E correctas. Incluye reproducción del acceso HTTP sin `crypto.randomUUID`. Véanse [aceptación inicial](docs/acceptance-report.md), [enriquecimiento del catálogo](docs/content/catalog-enrichment-review.md) y [corrección del acceso de red](docs/http-network-compatibility.md) para el alcance y los límites de cada comprobación.
+Última verificación registrada, **01/11/2026**: 120 pruebas unitarias/integración y 99 E2E correctas. Incluye reproducción del acceso HTTP sin `crypto.randomUUID`. Véanse [aceptación inicial](docs/acceptance-report.md), [enriquecimiento del catálogo](docs/content/catalog-enrichment-review.md) y [corrección del acceso de red](docs/http-network-compatibility.md) para el alcance y los límites de cada comprobación.
 
 ## Organización del proyecto
 
@@ -281,9 +286,10 @@ La composición del catálogo separa:
 
 - `verbs.curated.json`: contenido base revisado.
 - `catalog-enrichment.json`: candidatos de IPA, patrones y temas extraídos del archivo aportado.
-- `enrichment-review.json`: IPA contrastada y sus fuentes.
+- `enrichment-review.json`: 756 transcripciones con fuentes, fecha y evidencia por forma y dialecto.
+- `pronunciation-review.ts`: aplica las correcciones contrastadas y audita su correspondencia exacta.
 - `enrichment.ts`: política aditiva que conserva las formas, variantes, ejemplos y evidencia originales.
-- `dataset.ts`: catálogo activo `curated-1.1`, compartido por la aplicación y la auditoría de contenido.
+- `dataset.ts`: catálogo activo `curated-1.2`, compartido por la aplicación y la auditoría de contenido.
 
 El archivo aportado de 167 entradas se integró selectivamente: los 47 verbos adicionales necesitan fuentes y revisión antes de incorporarse al catálogo evaluable. Una bandera `validated: true` en un archivo recibido no equivale a una comprobación editorial independiente.
 
@@ -346,6 +352,7 @@ No se ha elegido un proveedor ni publicado la aplicación. Para usar un subdirec
 | [Compatibilidad HTTP de red](docs/http-network-compatibility.md)                                                                          | Causa, corrección y pruebas del problema de UUID  |
 | [Selección de contenido](docs/content/selection-policy.md) y [revisión inicial](docs/content/review-log.md)                               | Criterios y procedencia editorial                 |
 | [Revisión del catálogo enriquecido](docs/content/catalog-enrichment-review.md)                                                            | Incorporaciones aceptadas y propuestas pendientes |
+| [Validación completa IPA](docs/content/ipa-validation-2026-11-01.md) | Cobertura, fuentes, discrepancias y ayuda de símbolos |
 | [Informe de aceptación](docs/acceptance-report.md)                                                                                        | Evidencias y alcance del cierre inicial           |
 | [Accesibilidad](docs/accessibility-checklist.md)                                                                                          | Comprobaciones y validaciones humanas pendientes  |
 | [Limitaciones conocidas](docs/known-limitations.md)                                                                                       | Capacidades excluidas e incidencias documentadas  |

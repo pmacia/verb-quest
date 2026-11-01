@@ -28,12 +28,12 @@ test('normal mode offers broad final-sound groups; strict mode persists and cont
   await expect(toggle).toBeChecked();
   await page.goto('/verbs/write');
   await expect(
-    page.getByText('IPA propuesta · pendiente de revisión', { exact: true }).first(),
-  ).toBeVisible();
+    page.getByText('IPA propuesta · pendiente de revisión', { exact: true }),
+  ).toHaveCount(0);
   await page.goto('/verbs');
   await page.getByRole('button', { name: 'Filtros', exact: true }).click();
   await page.getByLabel('Sonido final (IPA validada)', { exact: true }).fill('n');
-  await expect(page.locator('.verb-row')).toHaveCount(1);
+  await expect.poll(() => page.locator('.verb-row').count()).toBeGreaterThan(35);
   await page.goto('/settings');
   await toggle.click();
   await page.getByRole('button', { name: 'Guardar preferencias', exact: true }).click();

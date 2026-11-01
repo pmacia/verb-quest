@@ -15,6 +15,7 @@
     "test:dev-hmr": "tsx scripts/test-dev-hmr.ts",
     "build": "npm run typecheck && vite build",
     "preview": "vite preview --host 127.0.0.1",
+    "content:ipa": "tsx scripts/check-ipa.ts",
     "content:check": "tsx scripts/check-content.ts",
     "benchmark:catalog": "tsx scripts/benchmark-catalog.ts"
   },

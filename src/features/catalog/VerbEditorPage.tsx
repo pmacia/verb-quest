@@ -38,11 +38,13 @@ const emptyVerb = (): Verb => ({
 });
 export function VerbEditorPage() {
   const { id } = useParams();
-  const { entries, repos, refresh } = useApp();
+  const { entries, repos, refresh, settings } = useApp();
   const current = entries.find((e) => e.verb.id === id);
   const [verb, setVerb] = useState<Verb>(() => structuredClone(current?.verb ?? emptyVerb()));
   const [dirty, setDirty] = useState(false);
   const [error, setError] = useState('');
+  const [ipaUpdating, setIpaUpdating] = useState(false);
+  const [ipaUpdated, setIpaUpdated] = useState(false);
   const [saved, setSaved] = useState(false);
   const [archive, setArchive] = useState<{ lists: number; plans: number; sessions: number } | null>(
     null,
@@ -87,7 +89,7 @@ export function VerbEditorPage() {
             e.preventDefault();
             setError('');
             try {
-              const r = await saveVerb(repos, verb, current?.verb.contentVersion ?? null);
+              const r = await saveVerb(repos, verb, id ? verb.contentVersion : null);
               if (r.status === 'saved') {
                 await refresh();
                 setDirty(false);
@@ -347,6 +349,28 @@ export function VerbEditorPage() {
         <section className="panel">
           <h2>Hay una actualización del contenido base</h2>
           <p>Tu edición local se ha conservado. Elige qué versión usar.</p>
+          {settings.strictIpa && (
+            <button
+              className="secondary"
+              disabled={dirty || ipaUpdating}
+              onClick={async () => {
+                setIpaUpdating(true);
+                setError('');
+                try {
+                  const updated = await resolveSeedConflict(repos, verb.id, 'ipa_only');
+                  if (updated) setVerb(updated);
+                  await refresh();
+                  setIpaUpdated(true);
+                } catch (error) {
+                  setError(String(error));
+                } finally {
+                  setIpaUpdating(false);
+                }
+              }}
+            >
+              Actualizar solo IPA y conservar mi ficha
+            </button>
+          )}
           {(['keep_local', 'accept_base'] as const).map((c) => (
             <button
               key={c}
@@ -361,6 +385,11 @@ export function VerbEditorPage() {
             </button>
           ))}
         </section>
+      )}
+      {ipaUpdated && (
+        <p role="status">
+          Se han actualizado las transcripciones coincidentes. Tus otros cambios se conservan.
+        </p>
       )}
       {archive && (
         <Dialog title="Archivar este verbo" onClose={() => setArchive(null)}>

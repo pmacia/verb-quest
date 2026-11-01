@@ -1,4 +1,5 @@
-import ipaReview from '../../content/enrichment-review.json';
+import { pronunciationReview, reviewedSources } from '../../content/pronunciation-review';
+import { IpaHelpButton } from '../phonetics/IpaHelpButton';
 import { patternLabel, topicLabel } from '../catalog/classification-labels';
 import { useEffect } from 'react';
 import { recordActivity } from '../gamification/awards';
@@ -28,9 +29,12 @@ export function VerbDetailPage() {
       }).catch((e) => setError(String(e)));
   }, [id]);
   if (!v) return <StatusPanel title="No encontramos este verbo" />;
-  const ipaSources = [
-    ...new Set(ipaReview.reviewed.filter((r) => r.verbId === v.id).map((r) => r.source)),
-  ];
+  const ipaSources = reviewedSources(v, pronunciationReview);
+  const pendingIpa = (['base', 'pastSimple', 'pastParticiple'] as const).some((form) =>
+    (form === 'base' ? [v.forms.base] : v.forms[form].variants).some((value) =>
+      (['uk', 'us'] as const).some((dialect) => !value.pronunciation?.[dialect]?.validated),
+    ),
+  );
   return (
     <>
       <Link to="/verbs" className="back-link">
@@ -52,6 +56,7 @@ export function VerbDetailPage() {
       {v.archivedAt && (
         <div className="notice">Este verbo está archivado. Su historial se conserva.</div>
       )}
+      {settings.strictIpa && <IpaHelpButton />}
       <div className="forms-grid">
         {(['base', 'pastSimple', 'pastParticiple'] as const).map((f, i) => (
           <section className="panel form-card" key={f}>
@@ -192,14 +197,21 @@ export function VerbDetailPage() {
               ipaSources.map((url) => (
                 <p key={url}>
                   <a href={url} target="_blank" rel="noreferrer">
-                    IPA · {url.split('/').at(-1)} (Cambridge)
+                    IPA ·{' '}
+                    {new URL(url).hostname.includes('oxford')
+                      ? 'Oxford'
+                      : new URL(url).hostname.includes('britishcouncil')
+                        ? 'British Council'
+                        : 'Cambridge'}{' '}
+                    · {new URL(url).pathname.split('/').at(-1)?.replace(/_\d+$/, '')}
                   </a>
                 </p>
               ))}
             {settings.strictIpa && (
               <p className="small muted">
-                La IPA propuesta procede del archivo aportado y está pendiente de contraste. Solo la
-                marcada como validada interviene en los filtros fonéticos en este modo.
+                {pendingIpa
+                  ? 'Hay transcripciones locales pendientes de contraste. Solo la IPA validada interviene en el filtro estricto.'
+                  : 'Transcripciones contrastadas. Las fuentes anteriores corresponden a las formas y transcripciones mostradas.'}
               </p>
             )}
             <p className="small">

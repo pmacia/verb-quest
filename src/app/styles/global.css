@@ -1662,3 +1662,54 @@ main:focus-visible {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+.ipa-help-trigger {
+  align-self: start;
+  justify-self: start;
+  margin-bottom: 12px;
+}
+.ipa-help-content {
+  max-height: 65vh;
+  overflow-y: auto;
+  padding: 3px;
+}
+.ipa-reading-key {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 10px;
+  font-size: 13px;
+}
+.ipa-reading-key dt {
+  font-weight: 700;
+}
+.ipa-reading-key dd {
+  margin: 0;
+}
+.ipa-symbol-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.ipa-symbol {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 9px;
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.ipa-symbol strong {
+  font-size: 20px;
+}
+.ipa-symbol span {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 520px) {
+  .ipa-symbol-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ipa-reading-key {
+    grid-template-columns: 68px minmax(0, 1fr);
+  }
+}

@@ -11,6 +11,7 @@ import { useCatalogAudio } from './use-catalog-audio';
 import { CatalogArchiveDialog } from './CatalogArchiveDialog';
 import { FamilyFilter } from './FamilyFilter';
 import { filterFamilyCandidates, type RelationScope } from './family-filter';
+import { IpaHelpButton } from '../phonetics/IpaHelpButton';
 import { restoreVerb } from './editor-service';
 import type { Verb, CatalogQuery } from '../../shared/domain/types';
 const frequency: Record<string, string> = {
@@ -349,6 +350,7 @@ export function CatalogPage() {
                       : 'Elige un ejemplo o escribe otro sonido. Las agrupaciones son orientativas y dependen de la forma y el dialecto.'}
                   </small>
                 </label>
+                <IpaHelpButton />
               </div>
             )}
             {filterCount > 0 && (

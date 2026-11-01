@@ -30,7 +30,7 @@ test('ending fields offer examples and still accept custom endings', async ({ pa
     .selectOption('us');
   await sound.fill('/n/');
   await expect(page.getByRole('link', { name: 'Ver ficha de arise', exact: true })).toBeVisible();
-  await sound.fill('ən');
+  await sound.fill('ɪzn');
   await expect(page.getByRole('link', { name: 'Ver ficha de arise', exact: true })).toBeVisible();
   await sound.fill('');
   await expect(page.getByRole('link', { name: 'Ver ficha de buy', exact: true })).toBeVisible();

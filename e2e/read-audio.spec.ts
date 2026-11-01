@@ -56,7 +56,8 @@ test('read stays written read and speaks isolated sounds in detail and library',
     await expect(card.getByRole('status')).toContainText('Audio reproducido.');
   }
   await expect(page.getByText('Audio aislado desactivado', { exact: false })).toHaveCount(0);
-  await expect(page.locator('main')).not.toContainText('IPA');
+  await expect(page.locator('main')).not.toContainText('IPA propuesta · pendiente de revisión');
+  await expect(page.locator('.pronunciation-list').first()).not.toBeEmpty();
   await page.goto('/verbs');
   await page.getByRole('button', { name: 'Escuchar las tres formas de read', exact: true }).click();
   await expect

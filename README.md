@@ -164,11 +164,11 @@ El catálogo importado admite hasta **5 MiB**, **10.000 filas** y **20.000 carac
 
 En **Configuración → Información avanzada** se agrupan las opciones pensadas para consultar información profesional. Se guardan por separado y empiezan desactivadas:
 
-- **Modo IPA estricto:** muestra las transcripciones y sus avisos y limita el filtro a IPA validada.
-- **Mostrar fuentes y revisión:** muestra la procedencia bajo los ejemplos y el bloque de referencias y revisión. Las referencias IPA aparecen cuando también se activa IPA.
+- **Modo IPA estricto:** limita el filtro de sonidos a IPA validada; no controla la visibilidad de la fonética.
+- **Mostrar fuentes y revisión:** muestra la procedencia bajo los ejemplos y el bloque de referencias y revisión. Incluye también las referencias IPA.
 - **Mostrar detalles técnicos del audio:** muestra el nombre de la voz, idioma y datos de conexión tras escuchar. Desactivado, solo se confirma la reproducción.
 
-Pulsa **Guardar preferencias** para aplicar los cambios. Sin estas opciones, se mantienen las frases, traducciones, explicaciones gramaticales y controles para estudiar. Los errores, alternativas de audio y confirmaciones de borrado siguen visibles. Las preferencias de IPA ya guardadas se conservan; los ajustes nuevos de fuentes y detalles técnicos quedan apagados también para perfiles antiguos. Las copias completas conservan estas opciones y siguen admitiendo copias anteriores sin ellas.
+Pulsa **Guardar preferencias** para aplicar los cambios. Sin estas opciones, se mantienen las frases, traducciones, explicaciones gramaticales, transcripciones fonéticas y controles para estudiar. Los errores, alternativas de audio y confirmaciones de borrado siguen visibles. Las preferencias de IPA ya guardadas se conservan; los ajustes nuevos de fuentes y detalles técnicos quedan apagados también para perfiles antiguos. Las copias completas conservan estas opciones y siguen admitiendo copias anteriores sin ellas.
 
 ## Audio y pronunciación
 
@@ -177,11 +177,11 @@ La reproducción utiliza síntesis de voz del navegador/sistema. No se usa micr�
 - Puedes configurar dialecto, voz, volumen y velocidad. La voz disponible depende del dispositivo y puede necesitar Internet.
 - La interfaz identifica la voz/dialecto utilizados y avisa de alternativas. No garantiza que todos los dispositivos dispongan de voces UK y US.
 - Si falta audio, Audio Detective permite continuar con una alternativa de escritura. Esa respuesta **no cuenta como escucha**.
-- **Modo IPA estricto** (en Configuración, desactivado por defecto): al activarlo y guardar las preferencias, las fichas muestran IPA por forma, variante y dialecto y sus avisos de revisión (las fuentes tienen su propio ajuste); el filtro solo admite transcripciones validadas. Desactivado, las fichas ocultan esa información y sus avisos; el filtro usa las transcripciones disponibles como agrupación orientativa, sin convertirlas en validadas. Es compatible con preferencias guardadas antes de existir este ajuste.
+- **La transcripción fonética se muestra siempre** debajo de cada forma verbal, identificada por UK/US. **Modo IPA estricto** (Configuración, desactivado por defecto) solo limita el filtro de sonidos a transcripciones validadas. Los mensajes de calidad, revisión y procedencia permanecen ocultos salvo que actives **Mostrar fuentes y revisión**.
 - Los campos **Terminación escrita (pasado)** y **Sonido final** ofrecen sugerencias desplegables y permiten escribir libremente. Ejemplos escritos: `ought`, `ew`, `ent`; ejemplos fonéticos: `/t/`, `/d/`, `/n/`. El sonido final admite también `t` o `t/`. Comienza en **participio pasado**, donde estas tres terminaciones agrupan 107 de los 120 verbos del catálogo actual en UK, también en modo estricto. Puedes cambiar forma y dialecto; los resultados dependen de los datos disponibles y del modo elegido. No se inventan sonidos para verbos sin transcripción.
 - **read** mantiene la escritura `read / read / read` y la relación AAA. Cada tarjeta reproduce una palabra aislada: /riːd/ en base y /red/ en pasado y participio. La biblioteca y Audio Detective utilizan la misma distinción; las respuestas escritas siguen siendo `read`. Internamente se emplean los homófonos `reed` y `red` para evitar la ambigüedad del motor de voz, sin alterar el catálogo ni mostrar esas palabras como formas del verbo. La calidad de la síntesis depende de la voz del dispositivo.
 
-El catálogo incluido tiene **756 transcripciones contrastadas: 378 UK y 378 US**, sin pendientes. El botón **Cómo leer los sonidos**, disponible en el filtro y en las fichas con modo IPA activo, explica los símbolos y ofrece ejemplos. Las fuentes IPA de cada ficha se muestran cuando están activados IPA y «Mostrar fuentes y revisión».
+El catálogo incluido tiene **756 transcripciones contrastadas: 378 UK y 378 US**, sin pendientes. El botón **Cómo leer los sonidos**, disponible en el filtro y en todas las fichas, explica los símbolos y ofrece ejemplos. Las fuentes IPA de cada ficha se muestran al activar «Mostrar fuentes y revisión».
 
 Si has personalizado una ficha y aparece una actualización pendiente, activa el modo IPA y abre su editor: **Actualizar solo IPA y conservar mi ficha** incorpora las transcripciones que coinciden con tus formas sin sustituir tus traducciones. Las formas personales nuevas requieren revisión propia.
 
@@ -252,7 +252,7 @@ npm test -- src/shared/identity/create-id.test.ts
 
 Los fallos E2E generan evidencias en `test-results/`, incluidas trazas cuando corresponda. El benchmark es orientativo y depende del equipo; no es una garantía de rendimiento de todos los dispositivos.
 
-Verificación completa de IPA, **01/11/2026**: 120 pruebas unitarias/integración y 99 E2E correctas. Tras incorporar Información avanzada: 122 pruebas unitarias/integración y 42 E2E pertinentes correctas en los tres motores, además de la regresión de recarga en caliente. Incluye reproducción del acceso HTTP sin `crypto.randomUUID`. Véanse [aceptación inicial](docs/acceptance-report.md), [enriquecimiento del catálogo](docs/content/catalog-enrichment-review.md) y [corrección del acceso de red](docs/http-network-compatibility.md) para el alcance y los límites de cada comprobación.
+Verificación completa de IPA, **01/11/2026**: 120 pruebas unitarias/integración y 99 E2E correctas. Tras incorporar Información avanzada: 122 pruebas unitarias/integración y, tras separar la fonética visible de sus mensajes de revisión, 45 E2E pertinentes correctas en los tres motores, además de la regresión de recarga en caliente. Incluye reproducción del acceso HTTP sin `crypto.randomUUID`. Véanse [aceptación inicial](docs/acceptance-report.md), [enriquecimiento del catálogo](docs/content/catalog-enrichment-review.md) y [corrección del acceso de red](docs/http-network-compatibility.md) para el alcance y los límites de cada comprobación.
 
 ## Organización del proyecto
 

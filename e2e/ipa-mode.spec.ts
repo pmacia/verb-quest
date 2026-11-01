@@ -17,7 +17,8 @@ test('normal mode offers broad final-sound groups; strict mode persists and cont
     await expect.poll(() => page.locator('.verb-row').count()).toBeGreaterThan(min);
   }
   await page.goto('/verbs/write');
-  await expect(page.locator('main')).not.toContainText('IPA');
+  await expect(page.locator('main')).not.toContainText('IPA propuesta · pendiente de revisión');
+  await expect(page.locator('.pronunciation-list').first()).not.toBeEmpty();
   await page.goto('/settings');
   const toggle = page.getByRole('switch', { name: 'Modo IPA estricto', exact: true });
   await expect(toggle).not.toBeChecked();
@@ -39,5 +40,6 @@ test('normal mode offers broad final-sound groups; strict mode persists and cont
   await page.getByRole('button', { name: 'Guardar preferencias', exact: true }).click();
   await expect(page.getByText('Preferencias guardadas.', { exact: true })).toBeVisible();
   await page.goto('/verbs/write');
-  await expect(page.locator('main')).not.toContainText('IPA');
+  await expect(page.locator('main')).not.toContainText('IPA propuesta · pendiente de revisión');
+  await expect(page.locator('.pronunciation-list').first()).not.toBeEmpty();
 });

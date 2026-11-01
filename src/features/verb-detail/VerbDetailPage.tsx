@@ -57,7 +57,7 @@ export function VerbDetailPage() {
       {v.archivedAt && (
         <div className="notice">Este verbo está archivado. Su historial se conserva.</div>
       )}
-      {settings.strictIpa && <IpaHelpButton />}
+      <IpaHelpButton />
       <div className="forms-grid">
         {(['base', 'pastSimple', 'pastParticiple'] as const).map((f, i) => {
           let audioText: string | null = null;
@@ -75,41 +75,38 @@ export function VerbDetailPage() {
               </span>
               <h2>{formValues(v, f).join(' / ')}</h2>
               <div className="pronunciation-list">
-                {settings.strictIpa &&
-                  (f === 'base' ? [v.forms.base] : v.forms[f].variants).map((form) => {
-                    const entries = (
-                      [settings.dialect, settings.dialect === 'uk' ? 'us' : 'uk'] as const
-                    ).flatMap((dialect) => {
-                      const p = form.pronunciation?.[dialect];
-                      return p?.ipa ? [{ dialect, p }] : [];
-                    });
-                    return (
-                      <div key={form.value}>
-                        {entries.length ? (
-                          entries.map(({ dialect, p }) => (
-                            <div key={dialect}>
-                              {p.validated ? (
+                {(f === 'base' ? [v.forms.base] : v.forms[f].variants).map((form) => {
+                  const entries = (
+                    [settings.dialect, settings.dialect === 'uk' ? 'us' : 'uk'] as const
+                  ).flatMap((dialect) => {
+                    const p = form.pronunciation?.[dialect];
+                    return p?.ipa ? [{ dialect, p }] : [];
+                  });
+                  return (
+                    <div key={form.value}>
+                      {entries.length ? (
+                        entries.map(({ dialect, p }) => (
+                          <div key={dialect}>
+                            {p.validated || !settings.showSources ? (
+                              <p>
+                                {form.value} · IPA {dialect.toUpperCase()}: {p.ipa}
+                              </p>
+                            ) : (
+                              <div className="small muted">
+                                <span className="tag">IPA propuesta · pendiente de revisión</span>
                                 <p>
-                                  {form.value} · IPA {dialect.toUpperCase()}: {p.ipa}
+                                  {form.value} · {dialect.toUpperCase()}: {p.ipa}
                                 </p>
-                              ) : (
-                                <div className="small muted">
-                                  <span className="tag">IPA propuesta · pendiente de revisión</span>
-                                  <p>
-                                    {form.value} · {dialect.toUpperCase()}: {p.ipa}
-                                  </p>
-                                </div>
-                              )}
-                            </div>
-                          ))
-                        ) : (
-                          <p className="small muted">
-                            {form.value}: IPA no disponible con revisión
-                          </p>
-                        )}
-                      </div>
-                    );
-                  })}
+                              </div>
+                            )}
+                          </div>
+                        ))
+                      ) : settings.showSources ? (
+                        <p className="small muted">{form.value}: IPA no disponible con revisión</p>
+                      ) : null}
+                    </div>
+                  );
+                })}
                 {f !== 'base' && (
                   <p className="small muted">
                     {v.forms[f].variants
@@ -202,25 +199,23 @@ export function VerbDetailPage() {
               {v.classification.recommendedCourses.map((c) => c.replace('eso', '')).join(', ')} ESO.
             </p>
           </section>
-          {(settings.showSources || settings.strictIpa) && (
+          {settings.showSources && (
             <section className="panel">
-              <h2>{settings.showSources ? 'Fuentes y revisión' : 'Revisión IPA'}</h2>
-              {settings.showSources &&
-                settings.strictIpa &&
-                ipaSources.map((url) => (
-                  <p key={url}>
-                    <a href={url} target="_blank" rel="noreferrer">
-                      IPA ·{' '}
-                      {new URL(url).hostname.includes('oxford')
-                        ? 'Oxford'
-                        : new URL(url).hostname.includes('britishcouncil')
-                          ? 'British Council'
-                          : 'Cambridge'}{' '}
-                      · {new URL(url).pathname.split('/').at(-1)?.replace(/_\d+$/, '')}
-                    </a>
-                  </p>
-                ))}
-              {settings.strictIpa && (
+              <h2>Fuentes y revisión</h2>
+              {ipaSources.map((url) => (
+                <p key={url}>
+                  <a href={url} target="_blank" rel="noreferrer">
+                    IPA ·{' '}
+                    {new URL(url).hostname.includes('oxford')
+                      ? 'Oxford'
+                      : new URL(url).hostname.includes('britishcouncil')
+                        ? 'British Council'
+                        : 'Cambridge'}{' '}
+                    · {new URL(url).pathname.split('/').at(-1)?.replace(/_\d+$/, '')}
+                  </a>
+                </p>
+              ))}
+              {settings.showSources && (
                 <p className="small muted">
                   {pendingIpa
                     ? 'Hay transcripciones locales pendientes de contraste. Solo la IPA validada interviene en el filtro estricto.'

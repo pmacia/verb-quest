@@ -119,9 +119,8 @@ export function SettingsPage() {
             Modo IPA estricto
           </label>
           <p className="small muted">
-            Desactivado: filtro de sonidos orientativo, sin transcripciones ni avisos IPA en las
-            fichas. Activado: solo transcripciones validadas en el filtro y detalles de IPA y
-            revisión en las fichas. Guarda las preferencias para aplicar el cambio.
+            Limita el filtro de sonidos a transcripciones validadas. La fonética de cada forma
+            siempre se muestra en las fichas, con independencia de este ajuste.
           </p>
           <label>
             <input

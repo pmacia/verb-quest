@@ -29,7 +29,7 @@ test('advanced information defaults hidden and sources can be enabled without IP
     page.getByRole('heading', { name: 'Fuentes y revisión', exact: true }),
   ).toBeVisible();
   await expect(page.locator('.example').first()).toContainText('revisión asistida');
-  await expect(page.locator('.form-card').first()).not.toContainText('IPA');
+  await expect(page.locator('.form-card').first()).toContainText('/ɡəʊ/');
   await page.reload();
   await expect(
     page.getByRole('heading', { name: 'Fuentes y revisión', exact: true }),

@@ -26,7 +26,8 @@ test('IPA guide explains symbols, works by keyboard and keeps normal mode unobtr
   await expect(dialog).toHaveCount(0);
   await expect(trigger).toBeFocused();
   await page.goto('/verbs/write');
-  await expect(page.locator('main')).not.toContainText('IPA');
+  await expect(page.locator('main')).not.toContainText('IPA propuesta · pendiente de revisión');
+  await expect(page.locator('.pronunciation-list').first()).not.toBeEmpty();
   await page.goto('/settings');
   await page.getByRole('switch', { name: 'Mostrar fuentes y revisión', exact: true }).check();
   await page.getByRole('switch', { name: 'Modo IPA estricto' }).check();

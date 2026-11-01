@@ -168,7 +168,7 @@ La reproducción utiliza síntesis de voz del navegador/sistema. No se usa micr�
 - Si falta audio, Audio Detective permite continuar con una alternativa de escritura. Esa respuesta **no cuenta como escucha**.
 - **Modo IPA estricto** (en Configuración, desactivado por defecto): al activarlo y guardar las preferencias, las fichas muestran IPA por forma, variante y dialecto, sus fuentes y los avisos de revisión; el filtro solo admite transcripciones validadas. Desactivado, las fichas ocultan esa información y sus avisos; el filtro usa las transcripciones disponibles como agrupación orientativa, sin convertirlas en validadas. Es compatible con preferencias guardadas antes de existir este ajuste.
 - Los campos **Terminación escrita (pasado)** y **Sonido final** ofrecen sugerencias desplegables y permiten escribir libremente. Ejemplos escritos: `ought`, `ew`, `ent`; ejemplos fonéticos: `/t/`, `/d/`, `/n/`. El sonido final admite también `t` o `t/`. Comienza en **participio pasado**, donde estas tres terminaciones agrupan 107 de los 120 verbos del catálogo actual en UK, también en modo estricto. Puedes cambiar forma y dialecto; los resultados dependen de los datos disponibles y del modo elegido. No se inventan sonidos para verbos sin transcripción.
-- `read` aislado se excluye de síntesis evaluable: su escritura no basta para distinguir la pronunciación de la base y el pasado.
+- **read** es el único de los 120 verbos con tratamiento contextual especial. En su ficha, cada forma ofrece **Escuchar** y muestra la frase que va a reproducirse: «We can read…», «We read… yesterday» y «We have read…». El altavoz de la biblioteca utiliza los mismos ejemplos. No falta IPA: el contexto ayuda a la voz sintética a distinguir /riːd/ de /red/. La síntesis depende del dispositivo; esto no convierte el audio en una grabación validada. `read` sigue excluido de las preguntas evaluables de Audio Detective con palabra aislada.
 
 El catálogo incluido tiene **756 transcripciones contrastadas: 378 UK y 378 US**, sin pendientes. El botón **Cómo leer los sonidos**, disponible en el filtro y en las fichas con modo IPA activo, explica los símbolos y ofrece ejemplos. Cada ficha muestra sus fuentes en modo IPA.
 
@@ -241,7 +241,7 @@ npm test -- src/shared/identity/create-id.test.ts
 
 Los fallos E2E generan evidencias en `test-results/`, incluidas trazas cuando corresponda. El benchmark es orientativo y depende del equipo; no es una garantía de rendimiento de todos los dispositivos.
 
-Última verificación registrada, **01/11/2026**: 120 pruebas unitarias/integración y 99 E2E correctas. Incluye reproducción del acceso HTTP sin `crypto.randomUUID`. Véanse [aceptación inicial](docs/acceptance-report.md), [enriquecimiento del catálogo](docs/content/catalog-enrichment-review.md) y [corrección del acceso de red](docs/http-network-compatibility.md) para el alcance y los límites de cada comprobación.
+Verificación completa de IPA, **01/11/2026**: 120 pruebas unitarias/integración y 99 E2E correctas. Tras corregir el audio contextual de las fichas de `read`: 121 pruebas unitarias/integración y 21 E2E de audio, biblioteca y ayuda correctas en los tres motores. Incluye reproducción del acceso HTTP sin `crypto.randomUUID`. Véanse [aceptación inicial](docs/acceptance-report.md), [enriquecimiento del catálogo](docs/content/catalog-enrichment-review.md) y [corrección del acceso de red](docs/http-network-compatibility.md) para el alcance y los límites de cada comprobación.
 
 ## Organización del proyecto
 

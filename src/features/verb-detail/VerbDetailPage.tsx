@@ -6,6 +6,7 @@ import { recordActivity } from '../gamification/awards';
 import { skillLabels, stateLabels } from '../progress/selectors';
 import { deriveVisibleState } from '../learning-engine/progress';
 import { toLocalDate } from '../../shared/time/calendar';
+import { getVerbAudioSegment, needsAudioContext } from '../audio/verb-audio';
 import { AudioControls } from '../audio/AudioControls';
 import { useParams, Link } from 'react-router-dom';
 import { useApp } from '../../app/app-context';
@@ -58,76 +59,93 @@ export function VerbDetailPage() {
       )}
       {settings.strictIpa && <IpaHelpButton />}
       <div className="forms-grid">
-        {(['base', 'pastSimple', 'pastParticiple'] as const).map((f, i) => (
-          <section className="panel form-card" key={f}>
-            <span className="eyebrow">
-              {['FORMA BASE', 'PASADO SIMPLE', 'PARTICIPIO PASADO'][i]}
-            </span>
-            <h2>{formValues(v, f).join(' / ')}</h2>
-            <div className="pronunciation-list">
-              {settings.strictIpa &&
-                (f === 'base' ? [v.forms.base] : v.forms[f].variants).map((form) => {
-                  const entries = (
-                    [settings.dialect, settings.dialect === 'uk' ? 'us' : 'uk'] as const
-                  ).flatMap((dialect) => {
-                    const p = form.pronunciation?.[dialect];
-                    return p?.ipa ? [{ dialect, p }] : [];
-                  });
-                  return (
-                    <div key={form.value}>
-                      {entries.length ? (
-                        entries.map(({ dialect, p }) => (
-                          <div key={dialect}>
-                            {p.validated ? (
-                              <p>
-                                {form.value} · IPA {dialect.toUpperCase()}: {p.ipa}
-                              </p>
-                            ) : (
-                              <div className="small muted">
-                                <span className="tag">IPA propuesta · pendiente de revisión</span>
+        {(['base', 'pastSimple', 'pastParticiple'] as const).map((f, i) => {
+          let audioText: string | null = null;
+          let audioError = '';
+          try {
+            audioText = getVerbAudioSegment(v, settings.dialect, f).text;
+          } catch (error) {
+            audioError =
+              error instanceof Error ? error.message : 'Audio no disponible para esta forma.';
+          }
+          const contextual = needsAudioContext(v);
+          return (
+            <section className="panel form-card" key={f}>
+              <span className="eyebrow">
+                {['FORMA BASE', 'PASADO SIMPLE', 'PARTICIPIO PASADO'][i]}
+              </span>
+              <h2>{formValues(v, f).join(' / ')}</h2>
+              <div className="pronunciation-list">
+                {settings.strictIpa &&
+                  (f === 'base' ? [v.forms.base] : v.forms[f].variants).map((form) => {
+                    const entries = (
+                      [settings.dialect, settings.dialect === 'uk' ? 'us' : 'uk'] as const
+                    ).flatMap((dialect) => {
+                      const p = form.pronunciation?.[dialect];
+                      return p?.ipa ? [{ dialect, p }] : [];
+                    });
+                    return (
+                      <div key={form.value}>
+                        {entries.length ? (
+                          entries.map(({ dialect, p }) => (
+                            <div key={dialect}>
+                              {p.validated ? (
                                 <p>
-                                  {form.value} · {dialect.toUpperCase()}: {p.ipa}
+                                  {form.value} · IPA {dialect.toUpperCase()}: {p.ipa}
                                 </p>
-                              </div>
-                            )}
-                          </div>
-                        ))
-                      ) : (
-                        <p className="small muted">{form.value}: IPA no disponible con revisión</p>
-                      )}
-                    </div>
-                  );
-                })}
-              {f !== 'base' && (
-                <p className="small muted">
-                  {v.forms[f].variants
-                    .map((a) => a.usageNote)
-                    .filter(Boolean)
-                    .join(' · ')}
-                </p>
+                              ) : (
+                                <div className="small muted">
+                                  <span className="tag">IPA propuesta · pendiente de revisión</span>
+                                  <p>
+                                    {form.value} · {dialect.toUpperCase()}: {p.ipa}
+                                  </p>
+                                </div>
+                              )}
+                            </div>
+                          ))
+                        ) : (
+                          <p className="small muted">
+                            {form.value}: IPA no disponible con revisión
+                          </p>
+                        )}
+                      </div>
+                    );
+                  })}
+                {f !== 'base' && (
+                  <p className="small muted">
+                    {v.forms[f].variants
+                      .map((a) => a.usageNote)
+                      .filter(Boolean)
+                      .join(' · ')}
+                  </p>
+                )}
+              </div>
+              {contextual && audioText && (
+                <div className="small">
+                  <p>Escucha en contexto para distinguir esta forma:</p>
+                  <p lang="en">{audioText}</p>
+                </div>
               )}
-            </div>
-            {v.lemma === 'read' ? (
-              <p className="small muted">
-                Audio aislado desactivado: esta palabra necesita contexto para su pronunciación.
-              </p>
-            ) : (
-              <AudioControls
-                text={formValues(v, f).join(', ')}
-                label={`Escuchar ${f} de ${v.lemma}`}
-                onPlayed={() =>
-                  void recordActivity(repos, {
-                    kind: 'audio_completed',
-                    profileId: profile.id,
-                    verbId: v.id,
-                    form: f,
-                    at: new Date().toISOString(),
-                  }).catch((e) => setError(String(e)))
-                }
-              />
-            )}
-          </section>
-        ))}
+              {audioText ? (
+                <AudioControls
+                  text={audioText}
+                  label={`Escuchar ${f} de ${v.lemma}${contextual ? ' en contexto' : ''}`}
+                  onPlayed={() =>
+                    void recordActivity(repos, {
+                      kind: 'audio_completed',
+                      profileId: profile.id,
+                      verbId: v.id,
+                      form: f,
+                      at: new Date().toISOString(),
+                    }).catch((e) => setError(String(e)))
+                  }
+                />
+              ) : (
+                <p className="small muted">{audioError}</p>
+              )}
+            </section>
+          );
+        })}
       </div>
       <div className="detail-columns">
         <section className="panel">

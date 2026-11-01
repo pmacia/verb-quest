@@ -1,7 +1,7 @@
 import { it, expect, vi } from 'vitest';
 import { dataset } from '../../content/dataset';
 import { createSpeechService, type SpeechPort } from './speech-service';
-import { createVerbAudioPlayer, getVerbAudioSegments } from './verb-audio';
+import { createVerbAudioPlayer, getVerbAudioSegment, getVerbAudioSegments } from './verb-audio';
 const settings = { dialect: 'uk' as const, voiceURI: null, volume: 0.7, rate: 0.8 };
 const segments = [
   { form: 'base' as const, text: 'go' },
@@ -98,4 +98,19 @@ it('speech failure stops the sequence and never awards unfinished forms', async 
   expect((await pending).status).toBe('failed');
   expect(c.requests).toHaveLength(1);
   expect(completed).not.toHaveBeenCalled();
+});
+
+it('resolves each contextual form independently and covers every bundled verb in both dialects', () => {
+  const read = structuredClone(dataset.verbs.find((v) => v.id === 'read')!);
+  read.examples = read.examples.filter((e) => e.form !== 'pastSimple');
+  expect(() => getVerbAudioSegment(read, 'uk', 'pastSimple')).toThrow(/read/);
+  expect(getVerbAudioSegment(read, 'uk', 'base').text).toBe('We can read a book about space.');
+  expect(getVerbAudioSegment(read, 'us', 'pastParticiple').text).toBe(
+    'We have read a book about space.',
+  );
+  for (const verb of dataset.verbs)
+    for (const dialect of ['uk', 'us'] as const) {
+      expect(getVerbAudioSegments(verb, dialect)).toHaveLength(3);
+      expect(getVerbAudioSegments(verb, dialect).every((s) => s.text.trim().length > 0)).toBe(true);
+    }
 });

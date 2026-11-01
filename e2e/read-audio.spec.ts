@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-test('read detail offers contextual audio for all three forms while ordinary verbs remain isolated', async ({
+test('read stays written read and speaks isolated sounds in detail and library', async ({
   page,
 }) => {
   await page.addInitScript(() => {
@@ -34,20 +34,17 @@ test('read detail offers contextual audio for all three forms while ordinary ver
     });
   });
   await page.goto('/verbs/read');
-  const sentences = [
-    'We can read a book about space.',
-    'We read a book about space yesterday.',
-    'We have read a book about space.',
-  ];
+  const sounds = ['reed', 'red', 'red'];
   const forms = ['base', 'pastSimple', 'pastParticiple'];
   for (let i = 0; i < forms.length; i++) {
     const button = page.getByRole('button', {
-      name: `Escuchar ${forms[i]} de read en contexto`,
+      name: `Escuchar ${forms[i]} de read`,
       exact: true,
     });
     await expect(button).toBeEnabled();
     const card = page.locator('.form-card').nth(i);
-    await expect(card).toContainText(sentences[i]);
+    await expect(card.getByRole('heading', { name: 'read', exact: true })).toBeVisible();
+    await expect(card).not.toContainText('We ');
     await button.click();
     await expect
       .poll(() =>
@@ -55,11 +52,18 @@ test('read detail offers contextual audio for all three forms while ordinary ver
           () => (window as unknown as { __verbquestSpoken: string[] }).__verbquestSpoken,
         ),
       )
-      .toEqual(sentences.slice(0, i + 1));
+      .toEqual(sounds.slice(0, i + 1));
     await expect(card.getByRole('status')).toContainText('Voz sintética');
   }
   await expect(page.getByText('Audio aislado desactivado', { exact: false })).toHaveCount(0);
   await expect(page.locator('main')).not.toContainText('IPA');
+  await page.goto('/verbs');
+  await page.getByRole('button', { name: 'Escuchar las tres formas de read', exact: true }).click();
+  await expect
+    .poll(() =>
+      page.evaluate(() => (window as unknown as { __verbquestSpoken: string[] }).__verbquestSpoken),
+    )
+    .toEqual(sounds);
   await page.goto('/verbs/go');
   await page.getByRole('button', { name: 'Escuchar base de go', exact: true }).click();
   await expect

@@ -1,3 +1,4 @@
+import { spokenForm } from '../audio/verb-audio';
 import { createId } from '../../shared/identity/create-id';
 import type {
   Verb,
@@ -46,13 +47,6 @@ export function generateQuestions(
       continue;
     }
     for (const mode of input.modes) {
-      if (mode === 'audio_detective' && v.lemma === 'read') {
-        result.unavailable.push({
-          verbId: v.id,
-          reason: 'La voz aislada no garantiza la distinción de pronunciación de read.',
-        });
-        continue;
-      }
       const skills: EvaluatedSkill[] =
         mode === 'flashcards'
           ? ['recall']
@@ -171,7 +165,7 @@ export function generateQuestions(
           }
           const visualPrompt = prompt;
           if (mode === 'audio_detective') {
-            audioText = t.variantValue;
+            audioText = spokenForm(v, t.form, t.variantValue);
             prompt = 'Escucha y escribe la forma que oyes.';
           }
           if (mode === 'quiz') {

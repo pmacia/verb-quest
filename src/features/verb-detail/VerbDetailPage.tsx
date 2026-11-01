@@ -6,7 +6,7 @@ import { recordActivity } from '../gamification/awards';
 import { skillLabels, stateLabels } from '../progress/selectors';
 import { deriveVisibleState } from '../learning-engine/progress';
 import { toLocalDate } from '../../shared/time/calendar';
-import { getVerbAudioSegment, needsAudioContext } from '../audio/verb-audio';
+import { getVerbAudioSegment } from '../audio/verb-audio';
 import { AudioControls } from '../audio/AudioControls';
 import { useParams, Link } from 'react-router-dom';
 import { useApp } from '../../app/app-context';
@@ -68,7 +68,6 @@ export function VerbDetailPage() {
             audioError =
               error instanceof Error ? error.message : 'Audio no disponible para esta forma.';
           }
-          const contextual = needsAudioContext(v);
           return (
             <section className="panel form-card" key={f}>
               <span className="eyebrow">
@@ -120,16 +119,10 @@ export function VerbDetailPage() {
                   </p>
                 )}
               </div>
-              {contextual && audioText && (
-                <div className="small">
-                  <p>Escucha en contexto para distinguir esta forma:</p>
-                  <p lang="en">{audioText}</p>
-                </div>
-              )}
               {audioText ? (
                 <AudioControls
                   text={audioText}
-                  label={`Escuchar ${f} de ${v.lemma}${contextual ? ' en contexto' : ''}`}
+                  label={`Escuchar ${f} de ${v.lemma}`}
                   onPlayed={() =>
                     void recordActivity(repos, {
                       kind: 'audio_completed',

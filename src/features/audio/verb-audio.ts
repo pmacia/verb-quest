@@ -5,30 +5,28 @@ export interface VerbAudioSegment {
   text: string;
 }
 export type VerbAudioSettings = Pick<AppSettings, 'voiceURI' | 'dialect' | 'volume' | 'rate'>;
-export function needsAudioContext(verb: Verb): boolean {
-  return verb.forms.base.value.trim().toLowerCase() === 'read';
+/** Homophones disambiguate the speech engine without changing the displayed/accepted spelling.
+ * Oxford: read_1 /riːd/, /red/; reed /riːd/; red_1 /red/.
+ * https://www.oxfordlearnersdictionaries.com/definition/english/read_1
+ */
+export function spokenForm(verb: Verb, form: FormKey, value: string): string {
+  if (
+    verb.forms.base.value.trim().toLowerCase() === 'read' &&
+    value.trim().toLowerCase() === 'read'
+  )
+    return form === 'base' ? 'reed' : 'red';
+  return value;
 }
-export function getVerbAudioSegment(verb: Verb, dialect: Dialect, form: FormKey): VerbAudioSegment {
-  if (needsAudioContext(verb)) {
-    const example = verb.examples.find(
-      (e) =>
-        e.form === form &&
-        e.reviewStatus === 'validated' &&
-        e.sentence.trim() &&
-        (!e.dialect || e.dialect === 'neutral' || e.dialect === dialect),
-    );
-    if (!example)
-      throw Error(
-        'Para escuchar esta forma de read hace falta un ejemplo revisado. Puedes completarlo en su ficha.',
-      );
-    return { form, text: example.sentence };
-  }
+export function getVerbAudioSegment(
+  verb: Verb,
+  _dialect: Dialect,
+  form: FormKey,
+): VerbAudioSegment {
+  const values =
+    form === 'base' ? [verb.forms.base.value] : verb.forms[form].variants.map((v) => v.value);
   return {
     form,
-    text:
-      form === 'base'
-        ? verb.forms.base.value
-        : [...new Set(verb.forms[form].variants.map((v) => v.value))].join(', '),
+    text: [...new Set(values.map((value) => spokenForm(verb, form, value)))].join(', '),
   };
 }
 export function getVerbAudioSegments(verb: Verb, dialect: Dialect): VerbAudioSegment[] {

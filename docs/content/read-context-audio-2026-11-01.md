@@ -1,4 +1,6 @@
-# Audio contextual de read — 01/11/2026
+# Audio de read — 01/11/2026
+
+**Estado vigente:** la solución contextual descrita abajo fue sustituida a petición del usuario por reproducción aislada, manteniendo `read / read / read`. Véase [audio aislado por forma](read-isolated-audio-2026-11-01.md). El resto de este documento conserva el diagnóstico y la solución anteriores como historial.
 
 La revisión del código y del catálogo de 120 verbos detectó un único bloqueo explícito por ambigüedad: **read**. Su IPA sí está completa: base /riːd/; pasado y participio /red/. La escritura aislada no permite elegir el sonido por forma gramatical en el motor de voz del navegador.
 

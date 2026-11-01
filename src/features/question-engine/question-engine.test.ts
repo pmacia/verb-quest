@@ -79,7 +79,7 @@ it('coverage includes both noninterchangeable be past forms', () =>
   ]));
 import curated from '../../content/verbs.curated.json';
 import type { Verb } from '../../shared/domain/types';
-it('uses the correct dialect-specific sentence and excludes ambiguous synthetic read', () => {
+it('uses dialect-specific sentences and isolated form-specific read audio', () => {
   const get = (curated as Verb[]).find((v) => v.id === 'get')!;
   const read = (curated as Verb[]).find((v) => v.id === 'read')!;
   const questions = generateQuestions(
@@ -93,18 +93,18 @@ it('uses the correct dialect-specific sentence and excludes ambiguous synthetic 
     () => 0.5,
   ).questions;
   expect(questions.find((q) => q.target === 'pastParticiple')?.acceptedAnswers).toEqual(['gotten']);
-  expect(
-    generateQuestions(
-      {
-        verbs: [read],
-        skills: ['listening'],
-        modes: ['audio_detective'],
-        dialect: 'uk',
-        allowFixtures: false,
-      },
-      () => 0.5,
-    ).questions,
-  ).toHaveLength(0);
+  const readQuestions = generateQuestions(
+    {
+      verbs: [read],
+      skills: ['listening'],
+      modes: ['audio_detective'],
+      dialect: 'uk',
+      allowFixtures: false,
+    },
+    () => 0.5,
+  ).questions;
+  expect(readQuestions.map((q) => q.audioText)).toEqual(['reed', 'red', 'red']);
+  expect(readQuestions.every((q) => q.acceptedAnswers.includes('read'))).toBe(true);
 });
 it('preserves subject-dependent be variants when an imported verb has a new identity', () => {
   const copied: Verb = { ...dataset.verbs[0], id: 'be-imported', editorialStatus: 'validated' };

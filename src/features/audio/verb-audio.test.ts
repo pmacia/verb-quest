@@ -1,7 +1,7 @@
 import { it, expect, vi } from 'vitest';
 import { dataset } from '../../content/dataset';
 import { createSpeechService, type SpeechPort } from './speech-service';
-import { createVerbAudioPlayer, getVerbAudioSegment, getVerbAudioSegments } from './verb-audio';
+import { createVerbAudioPlayer, getVerbAudioSegments } from './verb-audio';
 const settings = { dialect: 'uk' as const, voiceURI: null, volume: 0.7, rate: 0.8 };
 const segments = [
   { form: 'base' as const, text: 'go' },
@@ -37,15 +37,19 @@ it('builds the three forms in order without dropping be variants', () => {
     { form: 'pastParticiple', text: 'been' },
   ]);
 });
-it('uses reviewed contextual sentences for read and rejects missing reviewed context', () => {
-  const read = dataset.verbs.find((v) => v.id === 'read')!;
-  expect(getVerbAudioSegments(read, 'uk')).toEqual(
-    ['base', 'pastSimple', 'pastParticiple'].map((form) => ({
-      form,
-      text: read.examples.find((e) => e.form === form)!.sentence,
-    })),
-  );
-  expect(() => getVerbAudioSegments({ ...read, examples: [] }, 'uk')).toThrow(/read/);
+it('speaks read in isolation with an unambiguous homophone for each form in UK and US', () => {
+  const read = structuredClone(dataset.verbs.find((v) => v.id === 'read')!);
+  read.examples = [];
+  for (const dialect of ['uk', 'us'] as const) {
+    expect(getVerbAudioSegments(read, dialect)).toEqual([
+      { form: 'base', text: 'reed' },
+      { form: 'pastSimple', text: 'red' },
+      { form: 'pastParticiple', text: 'red' },
+    ]);
+  }
+  expect(read.forms.base.value).toBe('read');
+  expect(read.forms.pastSimple.variants[0].value).toBe('read');
+  expect(read.forms.pastParticiple.variants[0].value).toBe('read');
 });
 it('waits for each end event, forwards preferences and records only completed forms', async () => {
   const c = controlled(),
@@ -100,14 +104,7 @@ it('speech failure stops the sequence and never awards unfinished forms', async 
   expect(completed).not.toHaveBeenCalled();
 });
 
-it('resolves each contextual form independently and covers every bundled verb in both dialects', () => {
-  const read = structuredClone(dataset.verbs.find((v) => v.id === 'read')!);
-  read.examples = read.examples.filter((e) => e.form !== 'pastSimple');
-  expect(() => getVerbAudioSegment(read, 'uk', 'pastSimple')).toThrow(/read/);
-  expect(getVerbAudioSegment(read, 'uk', 'base').text).toBe('We can read a book about space.');
-  expect(getVerbAudioSegment(read, 'us', 'pastParticiple').text).toBe(
-    'We have read a book about space.',
-  );
+it('covers every bundled verb in both dialects without requiring examples', () => {
   for (const verb of dataset.verbs)
     for (const dialect of ['uk', 'us'] as const) {
       expect(getVerbAudioSegments(verb, dialect)).toHaveLength(3);

@@ -6,10 +6,12 @@ export function AudioControls({
   text,
   label,
   onPlayed,
+  iconOnly = false,
 }: {
   text: string;
   label: string;
   onPlayed?: () => void;
+  iconOnly?: boolean;
 }) {
   const { settings } = useApp();
   const service = getSpeechService();
@@ -18,10 +20,12 @@ export function AudioControls({
   const [message, setMessage] = useState('');
   useEffect(() => () => service.cancel(), [text]);
   return (
-    <div className="audio-controls">
+    <div className={`audio-controls${iconOnly ? ' audio-controls-compact' : ''}`}>
       <button
         type="button"
-        className="secondary"
+        className={iconOnly ? 'secondary icon-button' : 'secondary'}
+        title={label}
+        aria-busy={playing}
         disabled={playing}
         aria-label={label}
         onClick={async () => {
@@ -48,7 +52,7 @@ export function AudioControls({
         }}
       >
         <Icon name="sound" size={18} />
-        {playing ? 'Reproduciendo…' : 'Escuchar'}
+        {!iconOnly && (playing ? 'Reproduciendo…' : 'Escuchar')}
       </button>
       {playing && (
         <>

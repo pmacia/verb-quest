@@ -144,7 +144,14 @@ export function VerbDetailPage() {
           {v.examples.map((ex) => (
             <article className="example" key={ex.id}>
               <span className="tag">{ex.grammarPoint}</span>
-              <h3 lang="en">{ex.sentence}</h3>
+              <div className="example-sentence">
+                <h3 lang="en">{ex.sentence}</h3>
+                <AudioControls
+                  text={ex.sentence}
+                  label={`Escuchar ejemplo: ${ex.sentence}`}
+                  iconOnly
+                />
+              </div>
               <p>{ex.translation}</p>
               {settings.showSources && ex.reviewStatus === 'validated' && (
                 <small className="muted">{ex.source ?? 'Revisado por el editor local'}</small>

@@ -175,6 +175,7 @@ Pulsa **Guardar preferencias** para aplicar los cambios. Sin estas opciones, se 
 La reproducción utiliza síntesis de voz del navegador/sistema. No se usa micrófono ni se redistribuyen grabaciones de terceros.
 
 - Puedes configurar dialecto, voz, volumen y velocidad. La voz disponible depende del dispositivo y puede necesitar Internet.
+- Cada frase de ejemplo tiene un **icono de altavoz** a su derecha para escucharla completa. Permite pausar, continuar y detener; usa los mismos ajustes y la misma opción de detalles técnicos que los demás controles. Escuchar ejemplos no añade XP ni acredita dominio.
 - La interfaz identifica la voz/dialecto utilizados y avisa de alternativas. No garantiza que todos los dispositivos dispongan de voces UK y US.
 - Si falta audio, Audio Detective permite continuar con una alternativa de escritura. Esa respuesta **no cuenta como escucha**.
 - **La transcripción fonética se muestra siempre** debajo de cada forma verbal, identificada por UK/US. **Modo IPA estricto** (Configuración, desactivado por defecto) solo limita el filtro de sonidos a transcripciones validadas. Los mensajes de calidad, revisión y procedencia permanecen ocultos salvo que actives **Mostrar fuentes y revisión**.
@@ -252,7 +253,7 @@ npm test -- src/shared/identity/create-id.test.ts
 
 Los fallos E2E generan evidencias en `test-results/`, incluidas trazas cuando corresponda. El benchmark es orientativo y depende del equipo; no es una garantía de rendimiento de todos los dispositivos.
 
-Verificación completa de IPA, **01/11/2026**: 120 pruebas unitarias/integración y 99 E2E correctas. Tras incorporar Información avanzada: 122 pruebas unitarias/integración y, tras separar la fonética visible de sus mensajes de revisión, 45 E2E pertinentes correctas en los tres motores, además de la regresión de recarga en caliente. Incluye reproducción del acceso HTTP sin `crypto.randomUUID`. Véanse [aceptación inicial](docs/acceptance-report.md), [enriquecimiento del catálogo](docs/content/catalog-enrichment-review.md) y [corrección del acceso de red](docs/http-network-compatibility.md) para el alcance y los límites de cada comprobación.
+Verificación completa de IPA, **01/11/2026**: 120 pruebas unitarias/integración y 99 E2E correctas. Tras incorporar Información avanzada: 122 pruebas unitarias/integración y, tras añadir el audio de ejemplos, 33 E2E pertinentes correctas en los tres motores, además de la regresión de recarga en caliente. Incluye reproducción del acceso HTTP sin `crypto.randomUUID`. Véanse [aceptación inicial](docs/acceptance-report.md), [enriquecimiento del catálogo](docs/content/catalog-enrichment-review.md) y [corrección del acceso de red](docs/http-network-compatibility.md) para el alcance y los límites de cada comprobación.
 
 ## Organización del proyecto
 

@@ -1713,3 +1713,26 @@ main:focus-visible {
     grid-template-columns: 68px minmax(0, 1fr);
   }
 }
+
+.example-sentence {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 5px;
+}
+.example-sentence h3 {
+  flex: 1 1 180px;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.example-sentence .audio-controls-compact {
+  flex: 0 1 auto;
+  max-width: 100%;
+}
+.audio-controls-compact .icon-button {
+  min-height: 44px;
+}
+.audio-controls-compact small:empty {
+  display: none;
+}

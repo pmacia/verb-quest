@@ -146,9 +146,11 @@ export function VerbEditorPage() {
                         [f]: {
                           ...verb.forms[f],
                           variants: e.target.value.split('/').map((x, i) => ({
-                            ...verb.forms[f].variants[i],
+                            ...verb.forms[f].variants.find((variant) => variant.value === x.trim()),
                             value: x.trim(),
-                            dialect: verb.forms[f].variants[i]?.dialect ?? 'all',
+                            dialect:
+                              verb.forms[f].variants.find((variant) => variant.value === x.trim())
+                                ?.dialect ?? 'all',
                           })),
                         },
                       },
@@ -157,6 +159,34 @@ export function VerbEditorPage() {
                 />
               </label>
             ))}
+            {(['base', 'pastSimple', 'pastParticiple'] as const).map((form) =>
+              (form === 'base' ? [verb.forms.base] : verb.forms[form].variants).map(
+                (variant, index) => (
+                  <label key={`${form}-${index}`}>
+                    Traducción de {variant.value || form} (
+                    {form === 'base'
+                      ? 'infinitivo'
+                      : form === 'pastSimple'
+                        ? 'pasado'
+                        : 'participio'}
+                    )
+                    <input
+                      value={variant.translation ?? ''}
+                      onChange={(e) => {
+                        const updated = structuredClone(verb);
+                        const target =
+                          form === 'base'
+                            ? updated.forms.base
+                            : updated.forms[form].variants[index];
+                        if (e.target.value.trim()) target.translation = e.target.value;
+                        else delete target.translation;
+                        change(updated);
+                      }}
+                    />
+                  </label>
+                ),
+              ),
+            )}
             <label className="full">
               Significados (separados por ;)
               <input

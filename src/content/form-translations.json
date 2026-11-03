@@ -1,0 +1,1340 @@
+{
+  "be": {
+    "base": {
+      "be": "ser / estar"
+    },
+    "pastSimple": {
+      "was": "fui / fue; estuve / estuvo",
+      "were": "fuiste / fuimos / fueron; estuviste / estuvimos / estuvieron"
+    },
+    "pastParticiple": {
+      "been": "sido / estado"
+    }
+  },
+  "go": {
+    "base": {
+      "go": "ir"
+    },
+    "pastSimple": {
+      "went": "fui / fue"
+    },
+    "pastParticiple": {
+      "gone": "ido"
+    }
+  },
+  "have": {
+    "base": {
+      "have": "tener"
+    },
+    "pastSimple": {
+      "had": "tuve / tuvo"
+    },
+    "pastParticiple": {
+      "had": "tenido"
+    }
+  },
+  "do": {
+    "base": {
+      "do": "hacer"
+    },
+    "pastSimple": {
+      "did": "hice / hizo"
+    },
+    "pastParticiple": {
+      "done": "hecho"
+    }
+  },
+  "get": {
+    "base": {
+      "get": "conseguir / obtener"
+    },
+    "pastSimple": {
+      "got": "conseguí / consiguió; obtuve / obtuvo"
+    },
+    "pastParticiple": {
+      "got": "conseguido / obtenido",
+      "gotten": "conseguido / obtenido"
+    }
+  },
+  "make": {
+    "base": {
+      "make": "hacer / preparar"
+    },
+    "pastSimple": {
+      "made": "hice / hizo; preparé / preparó"
+    },
+    "pastParticiple": {
+      "made": "hecho / preparado"
+    }
+  },
+  "take": {
+    "base": {
+      "take": "tomar / llevar"
+    },
+    "pastSimple": {
+      "took": "tomé / tomó; llevé / llevó"
+    },
+    "pastParticiple": {
+      "taken": "tomado / llevado"
+    }
+  },
+  "come": {
+    "base": {
+      "come": "venir"
+    },
+    "pastSimple": {
+      "came": "vine / vino"
+    },
+    "pastParticiple": {
+      "come": "venido"
+    }
+  },
+  "see": {
+    "base": {
+      "see": "ver"
+    },
+    "pastSimple": {
+      "saw": "vi / vio"
+    },
+    "pastParticiple": {
+      "seen": "visto"
+    }
+  },
+  "know": {
+    "base": {
+      "know": "saber / conocer"
+    },
+    "pastSimple": {
+      "knew": "supe / supo; conocí / conoció"
+    },
+    "pastParticiple": {
+      "known": "sabido / conocido"
+    }
+  },
+  "think": {
+    "base": {
+      "think": "pensar"
+    },
+    "pastSimple": {
+      "thought": "pensé / pensó"
+    },
+    "pastParticiple": {
+      "thought": "pensado"
+    }
+  },
+  "say": {
+    "base": {
+      "say": "decir"
+    },
+    "pastSimple": {
+      "said": "dije / dijo"
+    },
+    "pastParticiple": {
+      "said": "dicho"
+    }
+  },
+  "tell": {
+    "base": {
+      "tell": "contar / decir"
+    },
+    "pastSimple": {
+      "told": "conté / contó; dije / dijo"
+    },
+    "pastParticiple": {
+      "told": "contado / dicho"
+    }
+  },
+  "give": {
+    "base": {
+      "give": "dar"
+    },
+    "pastSimple": {
+      "gave": "di / dio"
+    },
+    "pastParticiple": {
+      "given": "dado"
+    }
+  },
+  "find": {
+    "base": {
+      "find": "encontrar"
+    },
+    "pastSimple": {
+      "found": "encontré / encontró"
+    },
+    "pastParticiple": {
+      "found": "encontrado"
+    }
+  },
+  "feel": {
+    "base": {
+      "feel": "sentir / sentirse"
+    },
+    "pastSimple": {
+      "felt": "sentí / sintió; me sentí / se sintió"
+    },
+    "pastParticiple": {
+      "felt": "sentido"
+    }
+  },
+  "leave": {
+    "base": {
+      "leave": "dejar / salir"
+    },
+    "pastSimple": {
+      "left": "dejé / dejó; salí / salió"
+    },
+    "pastParticiple": {
+      "left": "dejado / salido"
+    }
+  },
+  "put": {
+    "base": {
+      "put": "poner"
+    },
+    "pastSimple": {
+      "put": "puse / puso"
+    },
+    "pastParticiple": {
+      "put": "puesto"
+    }
+  },
+  "bring": {
+    "base": {
+      "bring": "traer"
+    },
+    "pastSimple": {
+      "brought": "traje / trajo"
+    },
+    "pastParticiple": {
+      "brought": "traído"
+    }
+  },
+  "buy": {
+    "base": {
+      "buy": "comprar"
+    },
+    "pastSimple": {
+      "bought": "compré / compró"
+    },
+    "pastParticiple": {
+      "bought": "comprado"
+    }
+  },
+  "eat": {
+    "base": {
+      "eat": "comer"
+    },
+    "pastSimple": {
+      "ate": "comí / comió"
+    },
+    "pastParticiple": {
+      "eaten": "comido"
+    }
+  },
+  "drink": {
+    "base": {
+      "drink": "beber"
+    },
+    "pastSimple": {
+      "drank": "bebí / bebió"
+    },
+    "pastParticiple": {
+      "drunk": "bebido"
+    }
+  },
+  "sleep": {
+    "base": {
+      "sleep": "dormir"
+    },
+    "pastSimple": {
+      "slept": "dormí / durmió"
+    },
+    "pastParticiple": {
+      "slept": "dormido"
+    }
+  },
+  "read": {
+    "base": {
+      "read": "leer"
+    },
+    "pastSimple": {
+      "read": "leí / leyó"
+    },
+    "pastParticiple": {
+      "read": "leído"
+    }
+  },
+  "write": {
+    "base": {
+      "write": "escribir"
+    },
+    "pastSimple": {
+      "wrote": "escribí / escribió"
+    },
+    "pastParticiple": {
+      "written": "escrito"
+    }
+  },
+  "speak": {
+    "base": {
+      "speak": "hablar"
+    },
+    "pastSimple": {
+      "spoke": "hablé / habló"
+    },
+    "pastParticiple": {
+      "spoken": "hablado"
+    }
+  },
+  "hear": {
+    "base": {
+      "hear": "oír"
+    },
+    "pastSimple": {
+      "heard": "oí / oyó"
+    },
+    "pastParticiple": {
+      "heard": "oído"
+    }
+  },
+  "meet": {
+    "base": {
+      "meet": "conocer / reunirse"
+    },
+    "pastSimple": {
+      "met": "conocí / conoció; me reuní / se reunió"
+    },
+    "pastParticiple": {
+      "met": "conocido / reunido"
+    }
+  },
+  "run": {
+    "base": {
+      "run": "correr"
+    },
+    "pastSimple": {
+      "ran": "corrí / corrió"
+    },
+    "pastParticiple": {
+      "run": "corrido"
+    }
+  },
+  "sit": {
+    "base": {
+      "sit": "sentarse"
+    },
+    "pastSimple": {
+      "sat": "me senté / se sentó"
+    },
+    "pastParticiple": {
+      "sat": "sentado"
+    }
+  },
+  "stand": {
+    "base": {
+      "stand": "estar de pie"
+    },
+    "pastSimple": {
+      "stood": "estuve / estuvo de pie"
+    },
+    "pastParticiple": {
+      "stood": "estado de pie"
+    }
+  },
+  "understand": {
+    "base": {
+      "understand": "entender"
+    },
+    "pastSimple": {
+      "understood": "entendí / entendió"
+    },
+    "pastParticiple": {
+      "understood": "entendido"
+    }
+  },
+  "teach": {
+    "base": {
+      "teach": "enseñar"
+    },
+    "pastSimple": {
+      "taught": "enseñé / enseñó"
+    },
+    "pastParticiple": {
+      "taught": "enseñado"
+    }
+  },
+  "learn": {
+    "base": {
+      "learn": "aprender"
+    },
+    "pastSimple": {
+      "learnt": "aprendí / aprendió",
+      "learned": "aprendí / aprendió"
+    },
+    "pastParticiple": {
+      "learnt": "aprendido",
+      "learned": "aprendido"
+    }
+  },
+  "wear": {
+    "base": {
+      "wear": "llevar puesto"
+    },
+    "pastSimple": {
+      "wore": "llevé / llevó puesto"
+    },
+    "pastParticiple": {
+      "worn": "llevado puesto"
+    }
+  },
+  "lose": {
+    "base": {
+      "lose": "perder"
+    },
+    "pastSimple": {
+      "lost": "perdí / perdió"
+    },
+    "pastParticiple": {
+      "lost": "perdido"
+    }
+  },
+  "pay": {
+    "base": {
+      "pay": "pagar"
+    },
+    "pastSimple": {
+      "paid": "pagué / pagó"
+    },
+    "pastParticiple": {
+      "paid": "pagado"
+    }
+  },
+  "send": {
+    "base": {
+      "send": "enviar"
+    },
+    "pastSimple": {
+      "sent": "envié / envió"
+    },
+    "pastParticiple": {
+      "sent": "enviado"
+    }
+  },
+  "build": {
+    "base": {
+      "build": "construir"
+    },
+    "pastSimple": {
+      "built": "construí / construyó"
+    },
+    "pastParticiple": {
+      "built": "construido"
+    }
+  },
+  "keep": {
+    "base": {
+      "keep": "guardar / mantener"
+    },
+    "pastSimple": {
+      "kept": "guardé / guardó; mantuve / mantuvo"
+    },
+    "pastParticiple": {
+      "kept": "guardado / mantenido"
+    }
+  },
+  "begin": {
+    "base": {
+      "begin": "empezar"
+    },
+    "pastSimple": {
+      "began": "empecé / empezó"
+    },
+    "pastParticiple": {
+      "begun": "empezado"
+    }
+  },
+  "break": {
+    "base": {
+      "break": "romper"
+    },
+    "pastSimple": {
+      "broke": "rompí / rompió"
+    },
+    "pastParticiple": {
+      "broken": "roto"
+    }
+  },
+  "choose": {
+    "base": {
+      "choose": "elegir"
+    },
+    "pastSimple": {
+      "chose": "elegí / eligió"
+    },
+    "pastParticiple": {
+      "chosen": "elegido"
+    }
+  },
+  "drive": {
+    "base": {
+      "drive": "conducir"
+    },
+    "pastSimple": {
+      "drove": "conduje / condujo"
+    },
+    "pastParticiple": {
+      "driven": "conducido"
+    }
+  },
+  "fly": {
+    "base": {
+      "fly": "volar"
+    },
+    "pastSimple": {
+      "flew": "volé / voló"
+    },
+    "pastParticiple": {
+      "flown": "volado"
+    }
+  },
+  "forget": {
+    "base": {
+      "forget": "olvidar"
+    },
+    "pastSimple": {
+      "forgot": "olvidé / olvidó"
+    },
+    "pastParticiple": {
+      "forgotten": "olvidado"
+    }
+  },
+  "grow": {
+    "base": {
+      "grow": "crecer / cultivar"
+    },
+    "pastSimple": {
+      "grew": "crecí / creció; cultivé / cultivó"
+    },
+    "pastParticiple": {
+      "grown": "crecido / cultivado"
+    }
+  },
+  "hold": {
+    "base": {
+      "hold": "sujetar / celebrar"
+    },
+    "pastSimple": {
+      "held": "sujeté / sujetó; celebré / celebró"
+    },
+    "pastParticiple": {
+      "held": "sujetado / celebrado"
+    }
+  },
+  "catch": {
+    "base": {
+      "catch": "atrapar / coger"
+    },
+    "pastSimple": {
+      "caught": "atrapé / atrapó; cogí / cogió"
+    },
+    "pastParticiple": {
+      "caught": "atrapado / cogido"
+    }
+  },
+  "cut": {
+    "base": {
+      "cut": "cortar"
+    },
+    "pastSimple": {
+      "cut": "corté / cortó"
+    },
+    "pastParticiple": {
+      "cut": "cortado"
+    }
+  },
+  "draw": {
+    "base": {
+      "draw": "dibujar"
+    },
+    "pastSimple": {
+      "drew": "dibujé / dibujó"
+    },
+    "pastParticiple": {
+      "drawn": "dibujado"
+    }
+  },
+  "fall": {
+    "base": {
+      "fall": "caer"
+    },
+    "pastSimple": {
+      "fell": "caí / cayó"
+    },
+    "pastParticiple": {
+      "fallen": "caído"
+    }
+  },
+  "win": {
+    "base": {
+      "win": "ganar"
+    },
+    "pastSimple": {
+      "won": "gané / ganó"
+    },
+    "pastParticiple": {
+      "won": "ganado"
+    }
+  },
+  "sell": {
+    "base": {
+      "sell": "vender"
+    },
+    "pastSimple": {
+      "sold": "vendí / vendió"
+    },
+    "pastParticiple": {
+      "sold": "vendido"
+    }
+  },
+  "spend": {
+    "base": {
+      "spend": "gastar / pasar tiempo"
+    },
+    "pastSimple": {
+      "spent": "gasté / gastó; pasé / pasó tiempo"
+    },
+    "pastParticiple": {
+      "spent": "gastado / pasado tiempo"
+    }
+  },
+  "swim": {
+    "base": {
+      "swim": "nadar"
+    },
+    "pastSimple": {
+      "swam": "nadé / nadó"
+    },
+    "pastParticiple": {
+      "swum": "nadado"
+    }
+  },
+  "ride": {
+    "base": {
+      "ride": "montar"
+    },
+    "pastSimple": {
+      "rode": "monté / montó"
+    },
+    "pastParticiple": {
+      "ridden": "montado"
+    }
+  },
+  "sing": {
+    "base": {
+      "sing": "cantar"
+    },
+    "pastSimple": {
+      "sang": "canté / cantó"
+    },
+    "pastParticiple": {
+      "sung": "cantado"
+    }
+  },
+  "ring": {
+    "base": {
+      "ring": "llamar / sonar"
+    },
+    "pastSimple": {
+      "rang": "llamé / llamó; sonó"
+    },
+    "pastParticiple": {
+      "rung": "llamado / sonado"
+    }
+  },
+  "wake": {
+    "base": {
+      "wake": "despertar"
+    },
+    "pastSimple": {
+      "woke": "desperté / despertó"
+    },
+    "pastParticiple": {
+      "woken": "despertado"
+    }
+  },
+  "feed": {
+    "base": {
+      "feed": "dar de comer"
+    },
+    "pastSimple": {
+      "fed": "di / dio de comer"
+    },
+    "pastParticiple": {
+      "fed": "dado de comer"
+    }
+  },
+  "fight": {
+    "base": {
+      "fight": "luchar"
+    },
+    "pastSimple": {
+      "fought": "luché / luchó"
+    },
+    "pastParticiple": {
+      "fought": "luchado"
+    }
+  },
+  "lend": {
+    "base": {
+      "lend": "prestar"
+    },
+    "pastSimple": {
+      "lent": "presté / prestó"
+    },
+    "pastParticiple": {
+      "lent": "prestado"
+    }
+  },
+  "show": {
+    "base": {
+      "show": "mostrar"
+    },
+    "pastSimple": {
+      "showed": "mostré / mostró"
+    },
+    "pastParticiple": {
+      "shown": "mostrado"
+    }
+  },
+  "shut": {
+    "base": {
+      "shut": "cerrar"
+    },
+    "pastSimple": {
+      "shut": "cerré / cerró"
+    },
+    "pastParticiple": {
+      "shut": "cerrado"
+    }
+  },
+  "hurt": {
+    "base": {
+      "hurt": "hacer daño / doler"
+    },
+    "pastSimple": {
+      "hurt": "hice / hizo daño; dolió"
+    },
+    "pastParticiple": {
+      "hurt": "hecho daño / dolido"
+    }
+  },
+  "hit": {
+    "base": {
+      "hit": "golpear"
+    },
+    "pastSimple": {
+      "hit": "golpeé / golpeó"
+    },
+    "pastParticiple": {
+      "hit": "golpeado"
+    }
+  },
+  "let": {
+    "base": {
+      "let": "dejar / permitir"
+    },
+    "pastSimple": {
+      "let": "dejé / dejó; permití / permitió"
+    },
+    "pastParticiple": {
+      "let": "dejado / permitido"
+    }
+  },
+  "mean": {
+    "base": {
+      "mean": "significar / querer decir"
+    },
+    "pastSimple": {
+      "meant": "significó; quise / quiso decir"
+    },
+    "pastParticiple": {
+      "meant": "significado / querido decir"
+    }
+  },
+  "cost": {
+    "base": {
+      "cost": "costar"
+    },
+    "pastSimple": {
+      "cost": "costó / costaron"
+    },
+    "pastParticiple": {
+      "cost": "costado"
+    }
+  },
+  "become": {
+    "base": {
+      "become": "convertirse en"
+    },
+    "pastSimple": {
+      "became": "me convertí / se convirtió en"
+    },
+    "pastParticiple": {
+      "become": "convertido en"
+    }
+  },
+  "bend": {
+    "base": {
+      "bend": "doblar"
+    },
+    "pastSimple": {
+      "bent": "doblé / dobló"
+    },
+    "pastParticiple": {
+      "bent": "doblado"
+    }
+  },
+  "bite": {
+    "base": {
+      "bite": "morder"
+    },
+    "pastSimple": {
+      "bit": "mordí / mordió"
+    },
+    "pastParticiple": {
+      "bitten": "mordido"
+    }
+  },
+  "blow": {
+    "base": {
+      "blow": "soplar"
+    },
+    "pastSimple": {
+      "blew": "soplé / sopló"
+    },
+    "pastParticiple": {
+      "blown": "soplado"
+    }
+  },
+  "burn": {
+    "base": {
+      "burn": "quemar"
+    },
+    "pastSimple": {
+      "burnt": "quemé / quemó",
+      "burned": "quemé / quemó"
+    },
+    "pastParticiple": {
+      "burnt": "quemado",
+      "burned": "quemado"
+    }
+  },
+  "deal": {
+    "base": {
+      "deal": "tratar / repartir"
+    },
+    "pastSimple": {
+      "dealt": "traté / trató; repartí / repartió"
+    },
+    "pastParticiple": {
+      "dealt": "tratado / repartido"
+    }
+  },
+  "dig": {
+    "base": {
+      "dig": "cavar"
+    },
+    "pastSimple": {
+      "dug": "cavé / cavó"
+    },
+    "pastParticiple": {
+      "dug": "cavado"
+    }
+  },
+  "dream": {
+    "base": {
+      "dream": "soñar"
+    },
+    "pastSimple": {
+      "dreamt": "soñé / soñó",
+      "dreamed": "soñé / soñó"
+    },
+    "pastParticiple": {
+      "dreamt": "soñado",
+      "dreamed": "soñado"
+    }
+  },
+  "forgive": {
+    "base": {
+      "forgive": "perdonar"
+    },
+    "pastSimple": {
+      "forgave": "perdoné / perdonó"
+    },
+    "pastParticiple": {
+      "forgiven": "perdonado"
+    }
+  },
+  "freeze": {
+    "base": {
+      "freeze": "congelar"
+    },
+    "pastSimple": {
+      "froze": "congelé / congeló"
+    },
+    "pastParticiple": {
+      "frozen": "congelado"
+    }
+  },
+  "hide": {
+    "base": {
+      "hide": "esconder"
+    },
+    "pastSimple": {
+      "hid": "escondí / escondió"
+    },
+    "pastParticiple": {
+      "hidden": "escondido"
+    }
+  },
+  "lay": {
+    "base": {
+      "lay": "poner / colocar"
+    },
+    "pastSimple": {
+      "laid": "puse / puso; coloqué / colocó"
+    },
+    "pastParticiple": {
+      "laid": "puesto / colocado"
+    }
+  },
+  "lead": {
+    "base": {
+      "lead": "guiar / liderar"
+    },
+    "pastSimple": {
+      "led": "guié / guio; lideré / lideró"
+    },
+    "pastParticiple": {
+      "led": "guiado / liderado"
+    }
+  },
+  "lie": {
+    "base": {
+      "lie": "tumbarse / estar tumbado"
+    },
+    "pastSimple": {
+      "lay": "me tumbé / se tumbó; estuve / estuvo tumbado"
+    },
+    "pastParticiple": {
+      "lain": "estado tumbado"
+    }
+  },
+  "light": {
+    "base": {
+      "light": "encender / iluminar"
+    },
+    "pastSimple": {
+      "lit": "encendí / encendió; iluminé / iluminó"
+    },
+    "pastParticiple": {
+      "lit": "encendido / iluminado"
+    }
+  },
+  "rise": {
+    "base": {
+      "rise": "subir / elevarse"
+    },
+    "pastSimple": {
+      "rose": "subí / subió; me elevé / se elevó"
+    },
+    "pastParticiple": {
+      "risen": "subido / elevado"
+    }
+  },
+  "shake": {
+    "base": {
+      "shake": "agitar / sacudir"
+    },
+    "pastSimple": {
+      "shook": "agité / agitó; sacudí / sacudió"
+    },
+    "pastParticiple": {
+      "shaken": "agitado / sacudido"
+    }
+  },
+  "shine": {
+    "base": {
+      "shine": "brillar / iluminar"
+    },
+    "pastSimple": {
+      "shone": "brillé / brilló; iluminé / iluminó"
+    },
+    "pastParticiple": {
+      "shone": "brillado / iluminado"
+    }
+  },
+  "shoot": {
+    "base": {
+      "shoot": "rodar / disparar"
+    },
+    "pastSimple": {
+      "shot": "rodé / rodó; disparé / disparó"
+    },
+    "pastParticiple": {
+      "shot": "rodado / disparado"
+    }
+  },
+  "sink": {
+    "base": {
+      "sink": "hundir / hundirse"
+    },
+    "pastSimple": {
+      "sank": "hundí / hundió; me hundí / se hundió"
+    },
+    "pastParticiple": {
+      "sunk": "hundido"
+    }
+  },
+  "smell": {
+    "base": {
+      "smell": "oler"
+    },
+    "pastSimple": {
+      "smelt": "olí / olió",
+      "smelled": "olí / olió"
+    },
+    "pastParticiple": {
+      "smelt": "olido",
+      "smelled": "olido"
+    }
+  },
+  "spell": {
+    "base": {
+      "spell": "deletrear"
+    },
+    "pastSimple": {
+      "spelt": "deletreé / deletreó",
+      "spelled": "deletreé / deletreó"
+    },
+    "pastParticiple": {
+      "spelt": "deletreado",
+      "spelled": "deletreado"
+    }
+  },
+  "spill": {
+    "base": {
+      "spill": "derramar"
+    },
+    "pastSimple": {
+      "spilt": "derramé / derramó",
+      "spilled": "derramé / derramó"
+    },
+    "pastParticiple": {
+      "spilt": "derramado",
+      "spilled": "derramado"
+    }
+  },
+  "stick": {
+    "base": {
+      "stick": "pegar"
+    },
+    "pastSimple": {
+      "stuck": "pegué / pegó"
+    },
+    "pastParticiple": {
+      "stuck": "pegado"
+    }
+  },
+  "steal": {
+    "base": {
+      "steal": "robar"
+    },
+    "pastSimple": {
+      "stole": "robé / robó"
+    },
+    "pastParticiple": {
+      "stolen": "robado"
+    }
+  },
+  "sweep": {
+    "base": {
+      "sweep": "barrer"
+    },
+    "pastSimple": {
+      "swept": "barrí / barrió"
+    },
+    "pastParticiple": {
+      "swept": "barrido"
+    }
+  },
+  "tear": {
+    "base": {
+      "tear": "rasgar / romper"
+    },
+    "pastSimple": {
+      "tore": "rasgué / rasgó; rompí / rompió"
+    },
+    "pastParticiple": {
+      "torn": "rasgado / roto"
+    }
+  },
+  "throw": {
+    "base": {
+      "throw": "lanzar"
+    },
+    "pastSimple": {
+      "threw": "lancé / lanzó"
+    },
+    "pastParticiple": {
+      "thrown": "lanzado"
+    }
+  },
+  "beat": {
+    "base": {
+      "beat": "vencer / batir"
+    },
+    "pastSimple": {
+      "beat": "vencí / venció; batí / batió"
+    },
+    "pastParticiple": {
+      "beaten": "vencido / batido"
+    }
+  },
+  "hang": {
+    "base": {
+      "hang": "colgar"
+    },
+    "pastSimple": {
+      "hung": "colgué / colgó"
+    },
+    "pastParticiple": {
+      "hung": "colgado"
+    }
+  },
+  "arise": {
+    "base": {
+      "arise": "surgir"
+    },
+    "pastSimple": {
+      "arose": "surgí / surgió"
+    },
+    "pastParticiple": {
+      "arisen": "surgido"
+    }
+  },
+  "awake": {
+    "base": {
+      "awake": "despertar"
+    },
+    "pastSimple": {
+      "awoke": "desperté / despertó"
+    },
+    "pastParticiple": {
+      "awoken": "despertado"
+    }
+  },
+  "bear": {
+    "base": {
+      "bear": "soportar"
+    },
+    "pastSimple": {
+      "bore": "soporté / soportó"
+    },
+    "pastParticiple": {
+      "borne": "soportado"
+    }
+  },
+  "bind": {
+    "base": {
+      "bind": "encuadernar / atar"
+    },
+    "pastSimple": {
+      "bound": "encuaderné / encuadernó; até / ató"
+    },
+    "pastParticiple": {
+      "bound": "encuadernado / atado"
+    }
+  },
+  "bleed": {
+    "base": {
+      "bleed": "sangrar"
+    },
+    "pastSimple": {
+      "bled": "sangré / sangró"
+    },
+    "pastParticiple": {
+      "bled": "sangrado"
+    }
+  },
+  "breed": {
+    "base": {
+      "breed": "criar"
+    },
+    "pastSimple": {
+      "bred": "crié / crio"
+    },
+    "pastParticiple": {
+      "bred": "criado"
+    }
+  },
+  "burst": {
+    "base": {
+      "burst": "reventar / estallar"
+    },
+    "pastSimple": {
+      "burst": "reventé / reventó; estallé / estalló"
+    },
+    "pastParticiple": {
+      "burst": "reventado / estallado"
+    }
+  },
+  "creep": {
+    "base": {
+      "creep": "avanzar sigilosamente"
+    },
+    "pastSimple": {
+      "crept": "avancé / avanzó sigilosamente"
+    },
+    "pastParticiple": {
+      "crept": "avanzado sigilosamente"
+    }
+  },
+  "forbid": {
+    "base": {
+      "forbid": "prohibir"
+    },
+    "pastSimple": {
+      "forbade": "prohibí / prohibió"
+    },
+    "pastParticiple": {
+      "forbidden": "prohibido"
+    }
+  },
+  "kneel": {
+    "base": {
+      "kneel": "arrodillarse"
+    },
+    "pastSimple": {
+      "knelt": "me arrodillé / se arrodilló",
+      "kneeled": "me arrodillé / se arrodilló"
+    },
+    "pastParticiple": {
+      "knelt": "arrodillado",
+      "kneeled": "arrodillado"
+    }
+  },
+  "lean": {
+    "base": {
+      "lean": "inclinarse / apoyar"
+    },
+    "pastSimple": {
+      "leant": "me incliné / se inclinó; apoyé / apoyó",
+      "leaned": "me incliné / se inclinó; apoyé / apoyó"
+    },
+    "pastParticiple": {
+      "leant": "inclinado / apoyado",
+      "leaned": "inclinado / apoyado"
+    }
+  },
+  "seek": {
+    "base": {
+      "seek": "buscar"
+    },
+    "pastSimple": {
+      "sought": "busqué / buscó"
+    },
+    "pastParticiple": {
+      "sought": "buscado"
+    }
+  },
+  "set": {
+    "base": {
+      "set": "poner / fijar"
+    },
+    "pastSimple": {
+      "set": "puse / puso; fijé / fijó"
+    },
+    "pastParticiple": {
+      "set": "puesto / fijado"
+    }
+  },
+  "shrink": {
+    "base": {
+      "shrink": "encoger"
+    },
+    "pastSimple": {
+      "shrank": "encogí / encogió"
+    },
+    "pastParticiple": {
+      "shrunk": "encogido"
+    }
+  },
+  "slide": {
+    "base": {
+      "slide": "deslizar / deslizarse"
+    },
+    "pastSimple": {
+      "slid": "deslicé / deslizó; me deslicé / se deslizó"
+    },
+    "pastParticiple": {
+      "slid": "deslizado"
+    }
+  },
+  "split": {
+    "base": {
+      "split": "dividir"
+    },
+    "pastSimple": {
+      "split": "dividí / dividió"
+    },
+    "pastParticiple": {
+      "split": "dividido"
+    }
+  },
+  "spread": {
+    "base": {
+      "spread": "extender / untar"
+    },
+    "pastSimple": {
+      "spread": "extendí / extendió; unté / untó"
+    },
+    "pastParticiple": {
+      "spread": "extendido / untado"
+    }
+  },
+  "spring": {
+    "base": {
+      "spring": "saltar / surgir"
+    },
+    "pastSimple": {
+      "sprang": "salté / saltó; surgí / surgió"
+    },
+    "pastParticiple": {
+      "sprung": "saltado / surgido"
+    }
+  },
+  "swear": {
+    "base": {
+      "swear": "jurar"
+    },
+    "pastSimple": {
+      "swore": "juré / juró"
+    },
+    "pastParticiple": {
+      "sworn": "jurado"
+    }
+  },
+  "swing": {
+    "base": {
+      "swing": "balancear / balancearse"
+    },
+    "pastSimple": {
+      "swung": "balanceé / balanceó; me balanceé / se balanceó"
+    },
+    "pastParticiple": {
+      "swung": "balanceado"
+    }
+  }
+}

@@ -26,6 +26,7 @@ export interface Pronunciation {
   validated?: boolean;
 }
 export interface Variant {
+  translation?: string;
   value: string;
   dialect?: 'all' | 'uk' | 'us' | 'other';
   usageNote?: string;
@@ -48,7 +49,11 @@ export interface Verb {
   id: VerbId;
   lemma: string;
   forms: {
-    base: { value: string; pronunciation?: Partial<Record<Dialect, Pronunciation>> };
+    base: {
+      value: string;
+      translation?: string;
+      pronunciation?: Partial<Record<Dialect, Pronunciation>>;
+    };
     pastSimple: { variants: Variant[]; usageNotes?: string[] };
     pastParticiple: { variants: Variant[]; usageNotes?: string[] };
     thirdPersonSingular?: { variants: Variant[] };

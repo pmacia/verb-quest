@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 test('ending fields offer examples and still accept custom endings', async ({ page }) => {
   await page.goto('/verbs');
   await page.getByRole('button', { name: 'Filtros', exact: true }).click();
+  await page.getByText('Escritura y sonido', { exact: true }).click();
   const spelling = page.getByLabel('Terminación escrita (pasado)', { exact: true });
   const sound = page.getByLabel('Sonido final', { exact: true });
   await expect(spelling).toHaveAttribute('list', 'spelling-ending-examples');

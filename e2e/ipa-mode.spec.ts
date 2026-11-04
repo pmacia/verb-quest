@@ -4,6 +4,7 @@ test('normal mode offers broad final-sound groups; strict mode persists and cont
 }) => {
   await page.goto('/verbs');
   await page.getByRole('button', { name: 'Filtros', exact: true }).click();
+  await page.getByText('Escritura y sonido', { exact: true }).click();
   await expect(
     page.getByRole('combobox', { name: 'Forma del filtro fonético', exact: true }),
   ).toHaveValue('pastParticiple');
@@ -33,6 +34,7 @@ test('normal mode offers broad final-sound groups; strict mode persists and cont
   ).toHaveCount(0);
   await page.goto('/verbs');
   await page.getByRole('button', { name: 'Filtros', exact: true }).click();
+  await page.getByText('Escritura y sonido', { exact: true }).click();
   await page.getByLabel('Sonido final (IPA validada)', { exact: true }).fill('n');
   await expect.poll(() => page.locator('.verb-row').count()).toBeGreaterThan(35);
   await page.goto('/settings');

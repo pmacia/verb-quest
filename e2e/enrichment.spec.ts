@@ -4,12 +4,14 @@ test('enriched patterns and topics filter the existing library with Spanish labe
 }) => {
   await page.goto('/verbs');
   await page.getByRole('button', { name: 'Filtros', exact: true }).click();
+  await page.getByText('Relación y familias', { exact: true }).click();
   await page.getByRole('checkbox', { name: 'Todas las familias', exact: true }).uncheck();
   await page
     .getByRole('checkbox', { name: 'ABC · Alternancia escrita i–a–u', exact: true })
     .check();
   await expect(page.getByRole('link', { name: /^sing\s/ })).toBeVisible();
   await expect(page.getByRole('link', { name: /^buy\s/ })).toHaveCount(0);
+  await page.getByText('Temas', { exact: true }).click();
   await page
     .getByRole('group', { name: 'Tema', exact: true })
     .getByRole('radio', { name: 'Comunicación', exact: true })
@@ -25,6 +27,7 @@ test('enriched patterns and topics filter the existing library with Spanish labe
     .getByRole('group', { name: 'Tema', exact: true })
     .getByRole('radio', { name: 'Todos los temas', exact: true })
     .check();
+  await page.getByText('Escritura y sonido', { exact: true }).click();
   await page
     .getByRole('combobox', { name: 'Forma del filtro fonético', exact: true })
     .selectOption('pastSimple');

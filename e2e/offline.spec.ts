@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test('first complete load makes direct verb route available offline', async ({ page, context }) => {
   await page.goto('/verbs');
-  await expect(page.getByRole('textbox', { name: 'Buscar verbos' })).toBeVisible();
+  await expect(page.getByRole('searchbox', { name: 'Buscar verbos' })).toBeVisible();
   await expect
     .poll(() => page.evaluate(() => !!navigator.serviceWorker?.controller), { timeout: 5000 })
     .toBe(true);

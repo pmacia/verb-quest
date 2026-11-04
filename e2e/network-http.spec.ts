@@ -22,7 +22,7 @@ test('HTTP network origin can create a profile, list, plan and recover a session
       entropy: typeof crypto.getRandomValues,
     })),
   ).toEqual({ secure: false, uuid: 'undefined', entropy: 'function' });
-  await expect(page.getByRole('textbox', { name: 'Buscar verbos' })).toBeVisible();
+  await expect(page.getByRole('searchbox', { name: 'Buscar verbos' })).toBeVisible();
   for (const id of ['be', 'go', 'take'])
     await page.getByRole('checkbox', { name: 'Seleccionar ' + id, exact: true }).check();
   await page.getByRole('button', { name: 'Guardar selección' }).click();

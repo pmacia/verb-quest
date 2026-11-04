@@ -12,12 +12,12 @@ test('editing is a switch with per-row actions and a separate new-verb button', 
   await expect(
     page.getByRole('button', { name: 'Quitar go del catálogo', exact: true }),
   ).toHaveCount(0);
-  await page.getByRole('textbox', { name: 'Buscar verbos' }).fill('went');
+  await page.getByRole('searchbox', { name: 'Buscar verbos' }).fill('went');
   await toggle.focus();
   await page.keyboard.press('Space');
   await expect(toggle).toBeChecked();
   await expect(page).toHaveURL(/\/verbs$/);
-  await expect(page.getByRole('textbox', { name: 'Buscar verbos' })).toHaveValue('went');
+  await expect(page.getByRole('searchbox', { name: 'Buscar verbos' })).toHaveValue('went');
   await expect(page.getByRole('link', { name: 'Editar go', exact: true })).toBeVisible();
   await expect(
     page.getByRole('button', { name: 'Quitar go del catálogo', exact: true }),
@@ -34,13 +34,8 @@ test('editing is a switch with per-row actions and a separate new-verb button', 
     ).violations,
   ).toEqual([]);
   await page.setViewportSize({ width: 600, height: 900 });
-  await expect(page.locator('.catalog-verb-item').first()).toBeVisible();
-  await expect(
-    page
-      .locator('.catalog-verb-item')
-      .first()
-      .getByRole('region', { name: 'Pasado simple', exact: true }),
-  ).toContainText('went');
+  await expect(page.locator('.cq-card').first()).toBeVisible();
+  await expect(page.locator('.cq-card').first().locator('.cq-forms-strip')).toContainText('went');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.getByRole('link', { name: 'Crear verbo', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Un nuevo descubrimiento' })).toBeVisible();

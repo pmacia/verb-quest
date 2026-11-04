@@ -3,6 +3,7 @@ test.use({ timezoneId: 'Europe/Madrid' });
 test('filters combine, lists feed games and archive preserves references', async ({ page }) => {
   await page.goto('/verbs');
   await page.getByRole('button', { name: 'Filtros', exact: true }).click();
+  await page.getByText('Relación y familias', { exact: true }).click();
   await page.getByRole('radio', { name: '2.º ESO', exact: true }).check();
   await page.getByRole('radio', { name: 'ABB · Pasado y participio iguales', exact: true }).check();
   await expect(page.getByRole('link', { name: /^buy/ })).toBeVisible();

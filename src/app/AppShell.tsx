@@ -1,3 +1,4 @@
+import { ThemeToggle } from '../features/settings/ThemeToggle';
 import { UpdateNotice } from './UpdateNotice';
 import { NavLink, Link, Outlet, useLocation } from 'react-router-dom';
 import { useApp } from './app-context';
@@ -81,6 +82,7 @@ export function AppShell() {
             <span className="local-status">
               <i /> En este navegador
             </span>
+            <ThemeToggle />
             <Link className="avatar" to="/settings" aria-label="Abrir configuración">
               TÚ
             </Link>

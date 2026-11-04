@@ -85,7 +85,21 @@ Sin `--strictPort`, Vite puede escoger otro puerto si el configurado está ocupa
 
 Las sesiones de estudio también incorporan ejercicios de respuesta escrita. Los temas claro/oscuro, movimiento reducido, voz y duración se ajustan desde **Configuración**.
 
-![Ficha de go con modo IPA estricto activado, formas y ejemplos](docs/screenshots/ipa-reviewed.png)
+![Catálogo renovado con tres formas, etiquetas y controles de audio](docs/screenshots/catalog-redesign-desktop.png)
+
+## Catálogo y fichas
+
+**Verbos** ofrece las vistas **Detallada** y **Compacta**. El navegador recuerda la última vista elegida; cambiarla conserva la búsqueda, los filtros y los verbos seleccionados. Las tarjetas muestran las tres formas, sus variantes, la fonética y las etiquetas de curso, patrón y frecuencia. Los cursos son orientativos; no se convierten automáticamente en niveles A1–B2.
+
+En **Filtros** puedes elegir curso, frecuencia, aprendizaje, tema, relación y familias mediante opciones visibles. Se conservan la terminación escrita y el sonido final con sus campos libres, sugerencias, forma verbal y dialecto. Las etiquetas activas permiten retirar cada criterio. La selección se puede guardar en una lista o vaciar desde su franja de acciones.
+
+En la **ficha**, el significado general aparece arriba y cada forma tiene su traducción específica: por ejemplo, **go → ir**, **went → fui / fue**, **gone → ido**. Son equivalentes orientativos, dependientes de la persona y el contexto. Se conservan todas las variantes (por ejemplo, **was/were** y **got/gotten**), sus notas de uso, los ejemplos escuchables, listas y progreso.
+
+El altavoz de la cabecera reproduce las tres formas seguidas. Los botones **UK/US** reproducen una variante con el dialecto solicitado; la ficha ofrece además un botón por forma con los ajustes habituales. Repetir la pulsación detiene el audio y empezar otra reproducción cancela la anterior. Si el dialecto solicitado no está disponible, se comunica la alternativa. Las grabaciones no se descargan de diccionarios: se sigue utilizando síntesis del dispositivo.
+
+El icono de **sol/luna** en la barra superior cambia rápidamente el tema y guarda la elección. Mientras Configuración tenga **Según el dispositivo**, muestra la acción correspondiente al tema efectivo del sistema. El selector de Configuración y el botón rápido permanecen sincronizados.
+
+La actualización conserva los cambios locales. Si una ficha personalizada tiene una versión base pendiente, revísala en el editor; no se sustituyen automáticamente sus datos. Las traducciones por forma se pueden editar individualmente. Las fichas antiguas sin estos campos siguen siendo válidas y muestran «Traducción por completar»; JSON y copias completas conservan las traducciones, mientras que el CSV básico no las incluye.
 
 ## Cómo se mide el aprendizaje
 
@@ -251,9 +265,11 @@ npm run test:e2e -- --project=chromium e2e/network-http.spec.ts
 npm test -- src/shared/identity/create-id.test.ts
 ```
 
+Para limitar el uso de recursos de las pruebas unitarias puedes ejecutar `npm test -- --maxWorkers=2`.
+
 Los fallos E2E generan evidencias en `test-results/`, incluidas trazas cuando corresponda. El benchmark es orientativo y depende del equipo; no es una garantía de rendimiento de todos los dispositivos.
 
-Verificación completa de IPA, **01/11/2026**: 120 pruebas unitarias/integración y 99 E2E correctas. Tras incorporar Información avanzada: 122 pruebas unitarias/integración y, tras añadir el audio de ejemplos, 33 E2E pertinentes correctas en los tres motores, además de la regresión de recarga en caliente. Incluye reproducción del acceso HTTP sin `crypto.randomUUID`. Véanse [aceptación inicial](docs/acceptance-report.md), [enriquecimiento del catálogo](docs/content/catalog-enrichment-review.md) y [corrección del acceso de red](docs/http-network-compatibility.md) para el alcance y los límites de cada comprobación.
+Última verificación del rediseño, **04/11/2026**: 127 pruebas unitarias/integración, 135 E2E en Chromium/Firefox/WebKit, auditoría de contenido e IPA y regresión de recarga en caliente. El catálogo mantiene 120 verbos, 362 ejemplos y 756 transcripciones contrastadas. Incluye HTTP sin `crypto.randomUUID`, accesibilidad automática, tema Sistema, variantes, lectura individual/secuencial y edición sin pérdida de metadatos. Véase el [informe del rediseño](docs/catalog-redesign-2026-11-04.md).
 
 ## Organización del proyecto
 
@@ -301,7 +317,8 @@ La composición del catálogo separa:
 - `enrichment-review.json`: 756 transcripciones con fuentes, fecha y evidencia por forma y dialecto.
 - `pronunciation-review.ts`: aplica las correcciones contrastadas y audita su correspondencia exacta.
 - `enrichment.ts`: política aditiva que conserva las formas, variantes, ejemplos y evidencia originales.
-- `dataset.ts`: catálogo activo `curated-1.2`, compartido por la aplicación y la auditoría de contenido.
+- `form-translations.json`: equivalentes españoles por forma y variante; opcionales para fichas antiguas y editables.
+- `dataset.ts`: catálogo activo `curated-1.3`, compartido por la aplicación y la auditoría de contenido.
 
 El archivo aportado de 167 entradas se integró selectivamente: los 47 verbos adicionales necesitan fuentes y revisión antes de incorporarse al catálogo evaluable. Una bandera `validated: true` en un archivo recibido no equivale a una comprobación editorial independiente.
 

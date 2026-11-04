@@ -1,3 +1,7 @@
+import '../catalog/catalog-design.css';
+import { VerbForms } from '../catalog/VerbForms';
+import { VerbBadges } from '../catalog/VerbBadges';
+import { useCatalogAudio } from '../catalog/use-catalog-audio';
 import { pronunciationReview, reviewedSources } from '../../content/pronunciation-review';
 import { IpaHelpButton } from '../phonetics/IpaHelpButton';
 import { patternLabel, topicLabel } from '../catalog/classification-labels';
@@ -6,20 +10,19 @@ import { recordActivity } from '../gamification/awards';
 import { skillLabels, stateLabels } from '../progress/selectors';
 import { deriveVisibleState } from '../learning-engine/progress';
 import { toLocalDate } from '../../shared/time/calendar';
-import { getVerbAudioSegment } from '../audio/verb-audio';
 import { AudioControls } from '../audio/AudioControls';
 import { useParams, Link } from 'react-router-dom';
 import { useApp } from '../../app/app-context';
-import { formValues } from '../catalog/query';
 import { toggleListVerb } from '../catalog/list-service';
 import { StatusPanel } from '../../shared/ui/StatusPanel';
 import { Icon } from '../../shared/ui/Icon';
 import { useState } from 'react';
 export function VerbDetailPage() {
   const { id } = useParams();
-  const { verbs, lists, repos, profile, refresh, progress, settings } = useApp();
+  const { verbs, entries, lists, repos, profile, refresh, progress, settings } = useApp();
   const [error, setError] = useState('');
   const v = verbs.find((v) => v.id === id);
+  const audio = useCatalogAudio(v ? [v.id] : []);
   useEffect(() => {
     if (v)
       void recordActivity(repos, {
@@ -49,6 +52,7 @@ export function VerbDetailPage() {
             <span className="dot">.</span>
           </h1>
           <p className="large">{v.meanings.join(' · ')}</p>
+          <VerbBadges verb={v} detailed />
         </div>
         <Link to={`/editor/verbs/${id}`} className="button secondary">
           Editar ficha
@@ -58,85 +62,29 @@ export function VerbDetailPage() {
         <div className="notice">Este verbo está archivado. Su historial se conserva.</div>
       )}
       <IpaHelpButton />
-      <div className="forms-grid">
-        {(['base', 'pastSimple', 'pastParticiple'] as const).map((f, i) => {
-          let audioText: string | null = null;
-          let audioError = '';
-          try {
-            audioText = getVerbAudioSegment(v, settings.dialect, f).text;
-          } catch (error) {
-            audioError =
-              error instanceof Error ? error.message : 'Audio no disponible para esta forma.';
-          }
-          return (
-            <section className="panel form-card" key={f}>
-              <span className="eyebrow">
-                {['FORMA BASE', 'PASADO SIMPLE', 'PARTICIPIO PASADO'][i]}
-              </span>
-              <h2>{formValues(v, f).join(' / ')}</h2>
-              <div className="pronunciation-list">
-                {(f === 'base' ? [v.forms.base] : v.forms[f].variants).map((form) => {
-                  const entries = (
-                    [settings.dialect, settings.dialect === 'uk' ? 'us' : 'uk'] as const
-                  ).flatMap((dialect) => {
-                    const p = form.pronunciation?.[dialect];
-                    return p?.ipa ? [{ dialect, p }] : [];
-                  });
-                  return (
-                    <div key={form.value}>
-                      {entries.length ? (
-                        entries.map(({ dialect, p }) => (
-                          <div key={dialect}>
-                            {p.validated || !settings.showSources ? (
-                              <p>
-                                {form.value} · IPA {dialect.toUpperCase()}: {p.ipa}
-                              </p>
-                            ) : (
-                              <div className="small muted">
-                                <span className="tag">IPA propuesta · pendiente de revisión</span>
-                                <p>
-                                  {form.value} · {dialect.toUpperCase()}: {p.ipa}
-                                </p>
-                              </div>
-                            )}
-                          </div>
-                        ))
-                      ) : settings.showSources ? (
-                        <p className="small muted">{form.value}: IPA no disponible con revisión</p>
-                      ) : null}
-                    </div>
-                  );
-                })}
-                {f !== 'base' && (
-                  <p className="small muted">
-                    {v.forms[f].variants
-                      .map((a) => a.usageNote)
-                      .filter(Boolean)
-                      .join(' · ')}
-                  </p>
-                )}
-              </div>
-              {audioText ? (
-                <AudioControls
-                  text={audioText}
-                  label={`Escuchar ${f} de ${v.lemma}`}
-                  onPlayed={() =>
-                    void recordActivity(repos, {
-                      kind: 'audio_completed',
-                      profileId: profile.id,
-                      verbId: v.id,
-                      form: f,
-                      at: new Date().toISOString(),
-                    }).catch((e) => setError(String(e)))
-                  }
-                />
-              ) : (
-                <p className="small muted">{audioError}</p>
-              )}
-            </section>
-          );
-        })}
-      </div>
+      <p className="catalog-audio-status" role="status">
+        {audio.message}
+      </p>
+      <button
+        type="button"
+        className="secondary"
+        aria-label={
+          audio.playingKey === v.id
+            ? `Detener audio de ${v.lemma}`
+            : `Escuchar las tres formas de ${v.lemma}`
+        }
+        onClick={() => void audio.play(v)}
+      >
+        <Icon name="sound" size={18} />
+        {audio.playingKey === v.id ? 'Detener audio' : 'Escuchar las tres formas'}
+      </button>
+      <VerbForms
+        verb={v}
+        translations
+        playingKey={audio.playingKey}
+        onPlay={(form, value, dialect) => void audio.play(v, form, value, dialect)}
+      />
+      <p className="small muted">Las traducciones pueden variar según la persona y el contexto.</p>
       <div className="detail-columns">
         <section className="panel">
           <h2>Del verbo a la frase</h2>
@@ -231,7 +179,7 @@ export function VerbDetailPage() {
               )}
               {settings.showSources && (
                 <p className="small">
-                  {v.contentVersion === 'curated-1.0'
+                  {!entries.find((entry) => entry.verb.id === v.id)?.locallyModified
                     ? 'Contenido con revisión asistida. Los cursos son orientativos.'
                     : 'Contenido del editor local.'}
                 </p>

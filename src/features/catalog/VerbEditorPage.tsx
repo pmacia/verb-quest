@@ -1,6 +1,6 @@
 import { validate } from '../../shared/domain/validation';
 import { StatusPanel } from '../../shared/ui/StatusPanel';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate, useBlocker, Link } from 'react-router-dom';
 import { useApp } from '../../app/app-context';
 import {
@@ -12,7 +12,7 @@ import {
 } from './editor-service';
 import { Dialog } from '../../shared/ui/Dialog';
 import { systemClock } from '../../shared/time/clock';
-import type { Verb } from '../../shared/domain/types';
+import type { Variant, Verb } from '../../shared/domain/types';
 const emptyVerb = (): Verb => ({
   id: '',
   lemma: '',
@@ -41,6 +41,16 @@ export function VerbEditorPage() {
   const { entries, repos, refresh, settings } = useApp();
   const current = entries.find((e) => e.verb.id === id);
   const [verb, setVerb] = useState<Verb>(() => structuredClone(current?.verb ?? emptyVerb()));
+  const variantMemory = useRef(new Map<string, Variant>());
+  function editedVariants(form: 'pastSimple' | 'pastParticiple', text: string) {
+    for (const variant of verb.forms[form].variants)
+      variantMemory.current.set(`${form}:${variant.value}`, structuredClone(variant));
+    return text.split('/').map((part) => {
+      const value = part.trim();
+      const stored = variantMemory.current.get(`${form}:${value}`);
+      return { ...stored, value, dialect: stored?.dialect ?? ('all' as const) };
+    });
+  }
   const [dirty, setDirty] = useState(false);
   const [error, setError] = useState('');
   const [ipaUpdating, setIpaUpdating] = useState(false);
@@ -145,13 +155,7 @@ export function VerbEditorPage() {
                         ...verb.forms,
                         [f]: {
                           ...verb.forms[f],
-                          variants: e.target.value.split('/').map((x, i) => ({
-                            ...verb.forms[f].variants.find((variant) => variant.value === x.trim()),
-                            value: x.trim(),
-                            dialect:
-                              verb.forms[f].variants.find((variant) => variant.value === x.trim())
-                                ?.dialect ?? 'all',
-                          })),
+                          variants: editedVariants(f, e.target.value),
                         },
                       },
                     })

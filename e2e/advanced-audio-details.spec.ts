@@ -35,9 +35,7 @@ test('voice details are optional in detail and library while success remains vis
   });
   await page.goto('/verbs/go');
   await page.getByRole('button', { name: 'Escuchar base de go', exact: true }).click();
-  await expect(page.locator('.form-card').first().getByRole('status')).toContainText(
-    'Audio reproducido.',
-  );
+  await expect(page.locator('.catalog-audio-status')).toContainText('Audio reproducido.');
   await expect(page.locator('main')).not.toContainText('Test UK');
   await page.goto('/verbs');
   await page.getByRole('button', { name: 'Escuchar las tres formas de go', exact: true }).click();
@@ -51,9 +49,7 @@ test('voice details are optional in detail and library while success remains vis
   await expect(page.getByText('Preferencias guardadas.', { exact: true })).toBeVisible();
   await page.goto('/verbs/go');
   await page.getByRole('button', { name: 'Escuchar base de go', exact: true }).click();
-  await expect(page.locator('.form-card').first().getByRole('status')).toContainText(
-    'Voz sintética: Test UK',
-  );
+  await expect(page.locator('.catalog-audio-status')).toContainText('Voz sintética: Test UK');
   await page.goto('/verbs');
   await page.getByRole('button', { name: 'Escuchar las tres formas de go', exact: true }).click();
   await expect(page.getByRole('status')).toContainText('Voz sintética: Test UK');

@@ -1,3 +1,8 @@
+import { relationLabels } from './VerbBadges';
+import { stateLabels } from '../progress/selectors';
+import { FilterChoices } from './FilterChoices';
+import './catalog-design.css';
+import { CatalogVerbItem } from './CatalogVerbItem';
 import { toLocalDate } from '../../shared/time/calendar';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -28,7 +33,24 @@ export function CatalogPage() {
     sort: 'alphabetical',
     direction: 'asc',
   });
+  const [viewMode, setViewMode] = useState<'expanded' | 'compact'>(() => {
+    try {
+      return localStorage.getItem('verbquest.catalog-density') === 'compact'
+        ? 'compact'
+        : 'expanded';
+    } catch {
+      return 'expanded';
+    }
+  });
+  useEffect(() => {
+    try {
+      localStorage.setItem('verbquest.catalog-density', viewMode);
+    } catch {
+      /* Optional presentation preference. */
+    }
+  }, [viewMode]);
   const [editing, setEditing] = useState(false);
+  const [editNoticeDismissed, setEditNoticeDismissed] = useState(false);
   const editToggle = useRef<HTMLButtonElement>(null);
   const focusAfterArchive = useRef(false);
   const [archiving, setArchiving] = useState<Verb | null>(null);
@@ -73,18 +95,44 @@ export function CatalogPage() {
         <div>
           <span className="eyebrow">EXPLORA · DESCUBRE · APRENDE</span>
           <h1>
-            Tu biblioteca de verbos<span className="dot">.</span>
+            Verbos irregulares<span className="dot">.</span>
+            <span className="catalog-total" aria-label={`${result.total} verbos`}>
+              {result.total}
+            </span>
           </h1>
-          <p>Todo empieza con una palabra. Encuentra tu próximo descubrimiento.</p>
+          <p>Compara sus formas, escucha y descubre cómo utilizarlos.</p>
         </div>
         <div className="catalog-edit-actions">
+          <div className="catalog-density" role="group" aria-label="Vista del catálogo">
+            <button
+              type="button"
+              className="secondary"
+              aria-label="Vista detallada"
+              aria-pressed={viewMode === 'expanded'}
+              onClick={() => setViewMode('expanded')}
+            >
+              Detallada
+            </button>
+            <button
+              type="button"
+              className="secondary"
+              aria-label="Vista compacta"
+              aria-pressed={viewMode === 'compact'}
+              onClick={() => setViewMode('compact')}
+            >
+              Compacta
+            </button>
+          </div>
           <button
             ref={editToggle}
             className="secondary catalog-edit-toggle"
             role="switch"
             aria-label="Modo de edición del catálogo"
             aria-checked={editing}
-            onClick={() => setEditing(!editing)}
+            onClick={() => {
+              setEditing(!editing);
+              setEditNoticeDismissed(false);
+            }}
           >
             <span className="switch-track" aria-hidden="true">
               <span />
@@ -103,6 +151,22 @@ export function CatalogPage() {
           )}
         </div>
       </div>
+      {editing && !editNoticeDismissed && (
+        <div className="notice catalog-edit-notice">
+          <p>
+            Modo de edición: utiliza el lápiz para editar o la papelera para archivar. El archivado
+            es reversible.
+          </p>
+          <button
+            type="button"
+            className="icon-button"
+            aria-label="Cerrar aviso de modo edición"
+            onClick={() => setEditNoticeDismissed(true)}
+          >
+            <Icon name="close" size={18} />
+          </button>
+        </div>
+      )}
       <p className="catalog-audio-status" role="status">
         {audio.message}
       </p>
@@ -130,9 +194,20 @@ export function CatalogPage() {
                 onChange={(e) => setQ({ ...q, text: e.target.value })}
               />
             </div>
+            {q.text && (
+              <button
+                type="button"
+                className="text-button"
+                onClick={() => setQ({ ...q, text: '' })}
+              >
+                Limpiar búsqueda
+              </button>
+            )}
             <div className="toolbar-actions">
               <button
                 className={filters ? 'secondary active' : 'secondary'}
+                aria-expanded={filters}
+                aria-controls="catalog-filters"
                 onClick={() => setFilters(!filters)}
               >
                 <Icon name="filter" />
@@ -160,23 +235,40 @@ export function CatalogPage() {
                 </select>
               </label>
             </div>
+            <div className="catalog-quick-filters" role="group" aria-label="Cursos rápidos">
+              <button
+                type="button"
+                className="chip"
+                aria-pressed={!filterCount}
+                onClick={clearFilters}
+              >
+                Todos
+              </button>
+              {[1, 2, 3, 4].map((n) => (
+                <button
+                  type="button"
+                  className="chip"
+                  key={n}
+                  aria-pressed={q.filter.courses?.[0] === `eso${n}`}
+                  onClick={() =>
+                    filter('courses', q.filter.courses?.[0] === `eso${n}` ? '' : `eso${n}`)
+                  }
+                >
+                  {n}.º ESO
+                </button>
+              ))}
+            </div>
             {filters && (
-              <div className="filters-grid">
-                <label>
-                  Curso
-                  <select
-                    aria-label="Curso"
-                    onChange={(e) => filter('courses', e.target.value)}
-                    value={q.filter.courses?.[0] ?? ''}
-                  >
-                    <option value="">Todos los cursos</option>
-                    {[1, 2, 3, 4].map((n) => (
-                      <option value={`eso${n}`} key={n}>
-                        {n}.º ESO
-                      </option>
-                    ))}
-                  </select>
-                </label>
+              <div className="filters-grid" id="catalog-filters">
+                <FilterChoices
+                  label="Curso"
+                  value={q.filter.courses?.[0] ?? ''}
+                  onChange={(value) => filter('courses', value)}
+                  options={[
+                    ['', 'Todos los cursos'],
+                    ...[1, 2, 3, 4].map((n) => [`eso${n}`, `${n}.º ESO`] as const),
+                  ]}
+                />
                 <FamilyFilter
                   verbs={familyCatalog}
                   relation={relation}
@@ -187,56 +279,36 @@ export function CatalogPage() {
                   }}
                   onSelection={setFamilySelection}
                 />
-                <label>
-                  Frecuencia
-                  <select
-                    value={q.filter.frequencies?.[0] ?? ''}
-                    onChange={(e) => filter('frequencies', e.target.value)}
-                  >
-                    <option value="">Todas</option>
-                    {Object.entries(frequency).map(([v, l]) => (
-                      <option value={v} key={v}>
-                        {l}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <label>
-                  Aprendizaje
-                  <select
-                    value={q.filter.states?.[0] ?? ''}
-                    onChange={(e) => filter('states', e.target.value)}
-                  >
-                    <option value="">Todos</option>
-                    {[
-                      ['new', 'Nuevo'],
-                      ['learning', 'En aprendizaje'],
-                      ['needs_review', 'Necesita refuerzo'],
-                      ['consolidating', 'Consolidando'],
-                      ['mastered', 'Dominado'],
-                    ].map(([v, l]) => (
-                      <option value={v} key={v}>
-                        {l}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <label>
-                  Tema
-                  <select
-                    onChange={(e) => filter('topics', e.target.value)}
-                    value={q.filter.topics?.[0] ?? ''}
-                  >
-                    <option value="">Todos</option>
-                    {[...new Set(verbs.flatMap((v) => v.classification.topics ?? []))]
+                <FilterChoices
+                  label="Frecuencia"
+                  value={q.filter.frequencies?.[0] ?? ''}
+                  onChange={(value) => filter('frequencies', value)}
+                  options={[['', 'Todas'], ...Object.entries(frequency)]}
+                />
+                <FilterChoices
+                  label="Aprendizaje"
+                  value={q.filter.states?.[0] ?? ''}
+                  onChange={(value) => filter('states', value)}
+                  options={[
+                    ['', 'Todos'],
+                    ['new', 'Nuevo'],
+                    ['learning', 'En aprendizaje'],
+                    ['needs_review', 'Necesita refuerzo'],
+                    ['consolidating', 'Consolidando'],
+                    ['mastered', 'Dominado'],
+                  ]}
+                />
+                <FilterChoices
+                  label="Tema"
+                  value={q.filter.topics?.[0] ?? ''}
+                  onChange={(value) => filter('topics', value)}
+                  options={[
+                    ['', 'Todos los temas'],
+                    ...[...new Set(verbs.flatMap((v) => v.classification.topics ?? []))]
                       .sort()
-                      .map((v) => (
-                        <option key={v} value={v}>
-                          {topicLabel(v)}
-                        </option>
-                      ))}
-                  </select>
-                </label>
+                      .map((topic) => [topic, topicLabel(topic)] as const),
+                  ]}
+                />
                 <label>
                   Terminación escrita (pasado)
                   <input
@@ -376,7 +448,35 @@ export function CatalogPage() {
                       if (k === 'relations') setFamilySelection(null);
                     }}
                   >
-                    Quitar {k}: {JSON.stringify(v).replace(/[\[\]"{}]/g, '')} ×
+                    Quitar{' '}
+                    {{
+                      courses: 'curso',
+                      frequencies: 'frecuencia',
+                      states: 'aprendizaje',
+                      topics: 'tema',
+                      spelling: 'terminación escrita',
+                      phonetic: 'sonido final',
+                      listIds: 'lista',
+                      relations: 'relación',
+                    }[k] ?? k}
+                    :{' '}
+                    {v
+                      .map((value: unknown) =>
+                        typeof value === 'string'
+                          ? k === 'topics'
+                            ? topicLabel(value)
+                            : k === 'listIds'
+                              ? (lists.find((l) => l.id === value)?.name ?? value)
+                              : k === 'courses'
+                                ? `${value.replace('eso', '')}.º ESO`
+                                : (frequency[value] ??
+                                  relationLabels[value] ??
+                                  stateLabels[value as keyof typeof stateLabels] ??
+                                  value)
+                          : (value as { ending?: string }).ending,
+                      )
+                      .join(', ')}{' '}
+                    ×
                   </button>
                 ))}
               </div>
@@ -400,108 +500,53 @@ export function CatalogPage() {
                 : 'Selecciona para crear una lista'}
             </span>
           </div>
-          <div className="panel verb-table">
-            <div className="verb-table-head">
-              <span />
-              <span>BASE</span>
-              <span>PASADO SIMPLE</span>
-              <span>PARTICIPIO</span>
-              <span>SIGNIFICADO</span>
-              <span />
+          {selected.length > 0 && (
+            <div
+              className="catalog-selection-banner"
+              role="region"
+              aria-label="Selección de verbos"
+            >
+              <strong>{selected.length} seleccionados</strong>
+              <button type="button" className="secondary" onClick={() => setNewList(true)}>
+                Guardar en lista
+              </button>
+              <button type="button" className="text-button" onClick={() => setSelected([])}>
+                Deseleccionar todos
+              </button>
             </div>
+          )}
+          <div className={`catalog-items catalog-view-${viewMode}`}>
             {result.items.map((v) => (
-              <div className="verb-row" key={v.id}>
-                <input
-                  type="checkbox"
-                  aria-label={`Seleccionar ${v.lemma}`}
-                  checked={selected.includes(v.id)}
-                  onChange={(e) =>
-                    setSelected(
-                      e.target.checked ? [...selected, v.id] : selected.filter((id) => id !== v.id),
-                    )
+              <CatalogVerbItem
+                key={v.id}
+                verb={v}
+                compact={viewMode === 'compact'}
+                selected={selected.includes(v.id)}
+                onSelect={(checked) =>
+                  setSelected(checked ? [...selected, v.id] : selected.filter((id) => id !== v.id))
+                }
+                editing={editing}
+                archived={showArchived}
+                restoring={restoring === v.id}
+                onArchive={() => setArchiving(v)}
+                onRestore={async () => {
+                  setRestoring(v.id);
+                  setActionError('');
+                  try {
+                    await restoreVerb(repos, v.id);
+                    await refresh();
+                    editToggle.current?.focus();
+                  } catch {
+                    setActionError('No se pudo restaurar el verbo. Inténtalo de nuevo.');
+                  } finally {
+                    setRestoring(null);
                   }
-                />
-                <Link to={`/verbs/${v.id}`} className="verb-base">
-                  {v.lemma}
-                  <small>{frequency[v.classification.frequencyBand]}</small>
-                </Link>
-                <span>
-                  <small className="mobile-label">Pasado</small>
-                  {formValues(v, 'pastSimple').join(' / ')}
-                </span>
-                <span>
-                  <small className="mobile-label">Participio</small>
-                  {formValues(v, 'pastParticiple').join(' / ')}
-                </span>
-                <span className="meaning">{v.meanings.slice(0, 2).join(' / ')}</span>
-                <div className="verb-row-actions">
-                  <button
-                    className="icon-button"
-                    aria-pressed={audio.playingId === v.id}
-                    aria-label={
-                      audio.playingId === v.id
-                        ? `Detener audio de ${v.lemma}`
-                        : `Escuchar las tres formas de ${v.lemma}`
-                    }
-                    title="Escuchar las tres formas"
-                    onClick={() => void audio.play(v)}
-                  >
-                    <Icon name="sound" size={20} />
-                  </button>
-                  {editing && (
-                    <>
-                      <Link
-                        to={`/editor/verbs/${v.id}`}
-                        className="icon-link"
-                        aria-label={`Editar ${v.lemma}`}
-                        title="Editar verbo"
-                      >
-                        <Icon name="edit" size={20} />
-                      </Link>
-                      {showArchived ? (
-                        <button
-                          className="icon-button"
-                          aria-label={`Restaurar ${v.lemma}`}
-                          title="Restaurar verbo"
-                          disabled={restoring === v.id}
-                          onClick={async () => {
-                            setRestoring(v.id);
-                            setActionError('');
-                            try {
-                              await restoreVerb(repos, v.id);
-                              await refresh();
-                              editToggle.current?.focus();
-                            } catch {
-                              setActionError('No se pudo restaurar el verbo. Inténtalo de nuevo.');
-                            } finally {
-                              setRestoring(null);
-                            }
-                          }}
-                        >
-                          <Icon name="restore" size={20} />
-                        </button>
-                      ) : (
-                        <button
-                          className="icon-button"
-                          aria-label={`Quitar ${v.lemma} del catálogo`}
-                          title="Archivar verbo"
-                          onClick={() => setArchiving(v)}
-                        >
-                          <Icon name="trash" size={20} />
-                        </button>
-                      )}
-                    </>
-                  )}
-                  <Link
-                    to={`/verbs/${v.id}`}
-                    className="icon-link"
-                    aria-label={`Ver ficha de ${v.lemma}`}
-                    title="Ver ficha"
-                  >
-                    <Icon name="arrow" size={18} />
-                  </Link>
-                </div>
-              </div>
+                }}
+                playingKey={audio.playingKey}
+                playing={audio.playingKey === v.id}
+                onPlayAll={() => void audio.play(v)}
+                onPlayForm={(form, value, dialect) => void audio.play(v, form, value, dialect)}
+              />
             ))}
             {!result.total && (
               <div className="empty">

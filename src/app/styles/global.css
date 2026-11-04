@@ -96,7 +96,7 @@ button:disabled {
   min-height: 44px;
   color: var(--muted);
 }
-input:not([type='checkbox']):not([type='range']),
+input:not([type='checkbox']):not([type='range']):not([type='radio']),
 select,
 textarea {
   width: 100%;
@@ -1735,4 +1735,33 @@ main:focus-visible {
 }
 .audio-controls-compact small:empty {
   display: none;
+}
+
+.quick-theme {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.quick-theme .icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 6px;
+}
+.quick-theme .icon-button:hover {
+  background: var(--sky);
+  color: var(--blue);
+}
+.quick-theme [role='alert'] {
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  right: 0;
+  width: 220px;
+  padding: 12px;
+  background: var(--surface);
+  color: var(--error);
+  border: 1px solid var(--line);
+  border-radius: 10px;
 }

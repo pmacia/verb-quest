@@ -22,7 +22,8 @@ it('covers all 120 verbs and variants without changing learning evidence or lega
       ...old.forms.pastParticiple.variants,
     ].forEach((f) => delete f.translation);
     expect(validate('verb', old).ok).toBe(true);
-    expect(learningRevision(old, 'spelling')).toBe(learningRevision(verb, 'spelling'));
+    for (const skill of ['recognition', 'recall', 'listening', 'spelling', 'context'] as const)
+      expect(learningRevision(old, skill)).toBe(learningRevision(verb, skill));
   }
 });
 it('distinguishes conjugated translations and preserves written read and be variants', () => {
@@ -34,4 +35,7 @@ it('distinguishes conjugated translations and preserves written read and be vari
     'fui / fue; estuve / estuvo',
     'fuiste / fuimos / fueron; estuviste / estuvimos / estuvieron',
   ]);
+});
+it('updates editorial version independently of learning revision', () => {
+  expect(dataset.verbs[0].contentVersion).toBe('curated-1.3');
 });

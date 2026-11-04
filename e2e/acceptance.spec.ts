@@ -3,12 +3,12 @@ test.use({ timezoneId: 'Europe/Madrid' });
 test('filters combine, lists feed games and archive preserves references', async ({ page }) => {
   await page.goto('/verbs');
   await page.getByRole('button', { name: 'Filtros', exact: true }).click();
-  await page.getByLabel('Curso', { exact: true }).selectOption('eso2');
-  await page.getByLabel('Relación de formas').selectOption('past_participle_same');
+  await page.getByRole('radio', { name: '2.º ESO', exact: true }).check();
+  await page.getByRole('radio', { name: 'ABB · Pasado y participio iguales', exact: true }).check();
   await expect(page.getByRole('link', { name: /^buy/ })).toBeVisible();
   await expect(page.getByRole('link', { name: /^go\s/ })).toHaveCount(0);
-  await page.getByRole('button', { name: /Quitar courses/ }).click();
-  await page.getByRole('button', { name: /Quitar relations/ }).click();
+  await page.getByRole('button', { name: /Quitar curso/ }).click();
+  await page.getByRole('button', { name: /Quitar relación/ }).click();
   for (const id of ['be', 'go', 'take', 'buy', 'write'])
     await page.getByRole('checkbox', { name: `Seleccionar ${id}`, exact: true }).check();
   await page.getByRole('button', { name: 'Guardar selección' }).click();

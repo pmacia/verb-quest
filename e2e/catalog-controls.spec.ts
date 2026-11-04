@@ -34,12 +34,13 @@ test('editing is a switch with per-row actions and a separate new-verb button', 
     ).violations,
   ).toEqual([]);
   await page.setViewportSize({ width: 600, height: 900 });
-  await expect(page.locator('.verb-table-head')).toBeVisible();
-  expect(
-    await page
-      .locator('.verb-row')
-      .evaluate((row) => getComputedStyle(row).gridTemplateColumns.split(' ').length),
-  ).toBe(6);
+  await expect(page.locator('.catalog-verb-item').first()).toBeVisible();
+  await expect(
+    page
+      .locator('.catalog-verb-item')
+      .first()
+      .getByRole('region', { name: 'Pasado simple', exact: true }),
+  ).toContainText('went');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.getByRole('link', { name: 'Crear verbo', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Un nuevo descubrimiento' })).toBeVisible();

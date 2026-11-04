@@ -1,3 +1,4 @@
+import { FilterChoices } from './FilterChoices';
 import { useEffect, useRef } from 'react';
 import type { Verb } from '../../shared/domain/types';
 import { familyLabel, getFamilyOptions, type RelationScope } from './family-filter';
@@ -27,20 +28,18 @@ export function FamilyFilter({
   return (
     <fieldset className="family-filter">
       <legend>Relación de formas y familias</legend>
-      <label>
-        Relación de formas
-        <select
-          aria-label="Relación de formas"
-          value={relation}
-          onChange={(event) => onRelation(event.target.value as RelationScope)}
-        >
-          <option value="">Todas las relaciones</option>
-          <option value="all_same">Tres iguales</option>
-          <option value="past_participle_same">Pasado y participio iguales</option>
-          <option value="all_different">Tres diferentes</option>
-          <option value="special">Especiales</option>
-        </select>
-      </label>
+      <FilterChoices
+        label="Relación de formas"
+        value={relation}
+        onChange={(value) => onRelation(value as RelationScope)}
+        options={[
+          ['', 'Todas las relaciones'],
+          ['all_same', 'AAA · Tres iguales'],
+          ['past_participle_same', 'ABB · Pasado y participio iguales'],
+          ['all_different', 'ABC · Tres diferentes'],
+          ['special', 'Formas especiales'],
+        ]}
+      />
       <p className="small muted">
         La relación selecciona sus familias. Desmarca las que quieras excluir. Un verbo puede
         pertenecer a varias familias.

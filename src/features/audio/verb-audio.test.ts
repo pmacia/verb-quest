@@ -111,3 +111,11 @@ it('covers every bundled verb in both dialects without requiring examples', () =
       expect(getVerbAudioSegments(verb, dialect).every((s) => s.text.trim().length > 0)).toBe(true);
     }
 });
+it('single variants preserve grammatical pronunciation and do not drop be variants', async () => {
+  const { getVariantAudioSegment } = await import('./verb-audio');
+  const read = dataset.verbs.find((v) => v.id === 'read')!;
+  expect(getVariantAudioSegment(read, 'pastSimple', 'read').text).toBe('red');
+  const be = dataset.verbs.find((v) => v.id === 'be')!;
+  expect(getVariantAudioSegment(be, 'pastSimple', 'were').text).toBe('were');
+  expect(() => getVariantAudioSegment(be, 'pastSimple', 'gone')).toThrow();
+});

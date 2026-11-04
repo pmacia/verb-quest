@@ -4,7 +4,9 @@ export interface VerbAudioSegment {
   form: FormKey;
   text: string;
 }
-export type VerbAudioSettings = Pick<AppSettings, 'voiceURI' | 'dialect' | 'volume' | 'rate'>;
+export type VerbAudioSettings = Pick<AppSettings, 'voiceURI' | 'dialect' | 'volume' | 'rate'> & {
+  forceDialect?: boolean;
+};
 /** Homophones disambiguate the speech engine without changing the displayed/accepted spelling.
  * Oxford: read_1 /riːd/, /red/; reed /riːd/; red_1 /red/.
  * https://www.oxfordlearnersdictionaries.com/definition/english/read_1
@@ -16,6 +18,11 @@ export function spokenForm(verb: Verb, form: FormKey, value: string): string {
   )
     return form === 'base' ? 'reed' : 'red';
   return value;
+}
+export function getVariantAudioSegment(verb: Verb, form: FormKey, value: string): VerbAudioSegment {
+  const targets = form === 'base' ? [verb.forms.base] : verb.forms[form].variants;
+  if (!targets.some((target) => target.value === value)) throw Error('Forma verbal no encontrada');
+  return { form, text: spokenForm(verb, form, value) };
 }
 export function getVerbAudioSegment(
   verb: Verb,
@@ -54,6 +61,7 @@ export function createVerbAudioPlayer(service: SpeechService) {
         if (token !== serial) return { status: 'cancelled' };
         result = await service.play({
           text: segment.text,
+          forceDialect: settings.forceDialect,
           voiceURI: settings.voiceURI,
           preferredDialect: settings.dialect,
           volume: settings.volume,

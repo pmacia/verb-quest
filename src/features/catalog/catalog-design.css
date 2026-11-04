@@ -1,0 +1,408 @@
+/* Catalogue and verb detail share one visual vocabulary, built on the app tokens. */
+.catalog-total {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-left: 12px;
+  padding: 4px 10px;
+  border-radius: 24px;
+  font-size: 14px;
+  letter-spacing: 0;
+  background: var(--sky);
+  color: var(--blue);
+}
+.catalog-density {
+  display: flex;
+  padding: 3px;
+  gap: 3px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  border-radius: 24px;
+}
+.catalog-density button {
+  padding: 7px 12px;
+  min-height: 40px;
+  font-size: 13px;
+  border-radius: 22px;
+}
+.catalog-density button[aria-pressed='true'] {
+  background: var(--sky);
+  color: var(--blue);
+  border-color: var(--blue);
+}
+.catalog-quick-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+.catalog-quick-filters .chip {
+  min-height: 40px;
+  border: 1px solid var(--line);
+}
+.catalog-quick-filters .chip[aria-pressed='true'] {
+  background: var(--sky);
+  color: var(--blue);
+  border-color: var(--blue);
+}
+.catalog-items {
+  display: grid;
+  gap: 18px;
+}
+.catalog-verb-item.verb-row {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 20px;
+  background: var(--surface);
+  min-width: 0;
+  overflow-wrap: anywhere;
+  box-shadow: 0 3px 12px color-mix(in srgb, var(--text) 4%, transparent);
+}
+.catalog-verb-item.verb-row:hover {
+  border-color: var(--blue);
+}
+.catalog-verb-item.is-selected {
+  border-color: var(--blue);
+  background: color-mix(in srgb, var(--sky) 45%, var(--surface));
+}
+.catalog-item-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.catalog-item-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1 1 230px;
+}
+.catalog-select {
+  display: flex;
+  min-width: 32px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.catalog-select input {
+  margin: 0;
+}
+.verb-emblem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  min-width: 42px;
+  height: 42px;
+  background: var(--sky);
+  border-radius: 13px;
+  color: var(--blue);
+  font-size: 23px;
+}
+.catalog-item-title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  align-items: baseline;
+}
+.catalog-item-title .verb-base {
+  font-size: 25px;
+  text-decoration: none;
+}
+.catalog-item-title > span {
+  color: var(--muted);
+  font-size: 15px;
+}
+.catalog-verb-item .verb-row-actions {
+  width: auto;
+  flex: 0 1 auto;
+  justify-content: flex-end;
+}
+.verb-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0;
+}
+.verb-badges .tag {
+  white-space: normal;
+  font-size: 11px;
+  border: 1px solid var(--line);
+  padding: 4px 8px;
+  line-height: 1.4;
+  background: var(--bg);
+  color: var(--text);
+}
+.verb-badges .badge-pattern {
+  background: var(--sky);
+  color: var(--blue);
+}
+.verb-badges .badge-course,
+.verb-badges .badge-topic {
+  color: var(--text);
+}
+.verb-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+.verb-form-grid .verb-form-column {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 14px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--blue);
+}
+.verb-form-grid .form-color-1 {
+  border-top-color: var(--text);
+}
+.verb-form-grid .form-color-2 {
+  border-top-color: var(--navy);
+}
+.verb-form-column .eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.07em;
+}
+.verb-form-column .verb-variant h2 {
+  margin: 10px 0 6px;
+  font-size: 23px;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+.verb-form-column .verb-variant + .verb-variant {
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+  margin-top: 12px;
+}
+.verb-form-column .form-translation {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0 0 10px;
+}
+.verb-pronunciation {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px;
+  margin: 5px 0;
+}
+.verb-pronunciation > span {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.ipa-text {
+  font-family: system-ui, sans-serif;
+}
+.verb-pronunciation .form-sound {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 4px 8px;
+  font-size: 11px;
+  border: 1px solid var(--line);
+  color: var(--blue);
+  background: var(--surface);
+}
+.form-card-actions {
+  margin-top: auto;
+  padding-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+.catalog-item-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.catalog-item-footer > span {
+  flex: 1 1 220px;
+}
+.catalog-item-footer a {
+  font-weight: 650;
+}
+.catalog-item-compact.verb-row {
+  padding: 12px 16px;
+}
+.catalog-item-compact .verb-emblem {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  font-size: 18px;
+}
+.catalog-item-compact .catalog-item-title .verb-base {
+  font-size: 20px;
+}
+.catalog-item-compact .verb-badges {
+  margin: 4px 0;
+}
+.compact-forms.verb-form-grid {
+  margin: 8px 0 0;
+  gap: 8px;
+}
+.compact-forms .verb-form-column {
+  padding: 8px 10px;
+  border-top-width: 1px;
+}
+.compact-forms .verb-variant h2 {
+  font-size: 17px;
+  margin: 6px 0 2px;
+}
+.compact-forms .verb-pronunciation {
+  margin: 0;
+}
+.catalog-selection-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  margin: 16px 0;
+  border-radius: 14px;
+  background: var(--sky);
+  color: var(--text);
+}
+.catalog-selection-banner strong {
+  margin-right: auto;
+}
+.catalog-selection-banner button {
+  font-size: 13px;
+}
+.page-heading .verb-badges {
+  max-width: 750px;
+}
+@media (max-width: 1100px) and (min-width: 761px) {
+  .catalog-verb-item .verb-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .catalog-verb-item.verb-row {
+    padding: 14px;
+  }
+  .verb-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .catalog-item-header {
+    gap: 4px;
+  }
+  .catalog-item-summary {
+    flex-basis: 100%;
+  }
+  .catalog-verb-item .verb-row-actions {
+    margin-left: auto;
+  }
+  .catalog-item-title .verb-base {
+    font-size: 23px;
+  }
+  .catalog-item-title > span {
+    font-size: 14px;
+  }
+  .compact-forms.verb-form-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px;
+  }
+  .compact-forms .verb-form-column {
+    padding: 7px;
+  }
+  .compact-forms .verb-form-column .eyebrow {
+    font-size: 9px;
+    letter-spacing: 0;
+  }
+  .compact-forms .verb-pronunciation > span {
+    font-size: 10px;
+  }
+  .compact-forms .verb-variant h2 {
+    font-size: 16px;
+  }
+}
+
+.filter-choices {
+  min-width: 0;
+  margin: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.filter-choices legend {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 0 5px;
+}
+.filter-choice-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.filter-choice-options .filter-choice {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  padding: 6px 9px;
+  background: var(--surface);
+  cursor: pointer;
+  min-height: 40px;
+}
+.filter-choice input {
+  flex: 0 0 14px;
+  min-width: 14px;
+  width: 14px;
+  height: 14px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+.filter-choice:has(input:checked) {
+  border-color: var(--blue);
+  background: var(--sky);
+  color: var(--blue);
+}
+.filter-choice:focus-within {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+.family-filter .filter-choices {
+  border: 0;
+  padding: 0;
+}
+.family-filter .filter-choices legend {
+  padding: 0;
+  margin-bottom: 8px;
+}
+
+.catalog-edit-notice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+}
+.catalog-edit-notice p {
+  color: var(--text);
+  margin: 0;
+  flex: 1;
+}
+
+.form-sound[aria-pressed='true'] {
+  background: var(--sky);
+  border-color: var(--blue);
+}

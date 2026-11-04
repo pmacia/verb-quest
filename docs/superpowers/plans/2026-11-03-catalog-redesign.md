@@ -1,6 +1,6 @@
 # Catálogo y ficha renovados — Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Integrar la GUI de la referencia sin regresiones, con traducciones por forma y acceso rápido al tema.
 
@@ -29,35 +29,43 @@
 
 **Files:** domain types/schema, content/form-translations.json y dataset, editor, pruebas.
 **Interface:** translation?: string en formas base/variantes; applyFormTranslations conserva los datos y solo enlaza por id/forma/valor exactos.
-- [ ] RED: traducciones de go/read/be/get, 120 verbos completos, validación, identidad de aprendizaje y compatibilidad de fichas antiguas.
-- [ ] GREEN: catálogo curated-1.3 y traducciones revisadas de las formas existentes, editor e importación JSON compatibles.
-- [ ] Verificar unidad/contenido y registrar resultado.
+- [x] RED: traducciones de go/read/be/get, 120 verbos completos, validación, identidad de aprendizaje y compatibilidad de fichas antiguas.
+- [x] GREEN: catálogo curated-1.3 y traducciones revisadas de las formas existentes, editor e importación JSON compatibles.
+- [x] Verificar unidad/contenido y registrar resultado.
 
 ## Task 2 — Audio y componentes compartidos
 
 **Files:** audio service/player, use-catalog-audio, VerbBadges, VerbForms, CSS de componente.
 **Interfaces:** reproducción de verbo o segmento con dialecto explícito, un único estado/cancelación; VerbForms recibe verbo, densidad y acción de reproducción.
-- [ ] RED: read aislado por forma, variantes completas, voz incompatible con dialecto explícito y cancelación secuencia→individual.
-- [ ] GREEN: compartir controlador, renderizado por variante, etiquetas españolas con datos reales.
-- [ ] Verificar contratos y registrar resultado.
+- [x] RED: read aislado por forma, variantes completas, voz incompatible con dialecto explícito y cancelación secuencia→individual.
+- [x] GREEN: compartir controlador, renderizado por variante, etiquetas españolas con datos reales.
+- [x] Verificar contratos y registrar resultado.
 
 ## Task 3 — GUI de catálogo y ficha
 
 **Files:** CatalogPage, FamilyFilter, VerbDetailPage y estilos de catálogo/ficha.
-- [ ] RED: vistas detallada/compacta, selección conservada, todas las formas/IPA/audio, traducciones y etiquetas en ficha.
-- [ ] GREEN: cabecera, buscador, chips de filtros, tarjetas/filas, selección y edición; mantener sonido final y todos los filtros actuales.
-- [ ] GREEN: ficha con significado general, etiquetas, traducciones específicas, IPA y UK/US; ejemplos y bloques existentes conservados.
-- [ ] Verificar E2E pertinente, móvil/teclado y registrar resultado.
+- [x] RED: vistas detallada/compacta, selección conservada, todas las formas/IPA/audio, traducciones y etiquetas en ficha.
+- [x] GREEN: cabecera, buscador, chips de filtros, tarjetas/filas, selección y edición; mantener sonido final y todos los filtros actuales.
+- [x] GREEN: ficha con significado general, etiquetas, traducciones específicas, IPA y UK/US; ejemplos y bloques existentes conservados.
+- [x] Verificar E2E pertinente, móvil/teclado y registrar resultado.
 
 ## Task 4 — Tema, revisión y cierre
 
 **Files:** AppShell, Icon, estilos, README, pruebas tema.
-- [ ] RED: botón rápido persiste tema y respeta tema efectivo Sistema.
-- [ ] GREEN: usar servicio de ajustes sin duplicar control del DOM; errores visibles.
-- [ ] Ejecutar tipos, unidad, contenido/IPA, E2E, HMR y revisión independiente final.
-- [ ] Corregir hallazgos importantes con regresiones, actualizar README y publicar los commits autorizados.
+- [x] RED: botón rápido persiste tema y respeta tema efectivo Sistema.
+- [x] GREEN: usar servicio de ajustes sin duplicar control del DOM; errores visibles.
+- [x] Ejecutar tipos, unidad, contenido/IPA, E2E, HMR y revisión independiente final.
+- [x] Corregir hallazgos importantes con regresiones, actualizar README y publicar los commits autorizados.
 
 ## Ledger
 
 Ruling: se reutiliza el checkout actual — el usuario revisa un servidor ya abierto y la instrucción del entorno prefiere conservar el checkout — coste: no hay aislamiento adicional de archivos.
 Ruling: ejecución inline autorizada por «vamos con la implementación» sobre la propuesta acordada; no se vuelve a pedir aprobación de la planificación operativa.
+
+## Cierre — 4 de noviembre de 2026
+
+127 pruebas unitarias correctas (`npm test -- --maxWorkers=2`), auditoría de contenido/IPA sin incidencias y 135 E2E correctas. HMR verificado. Revisión independiente de la implementación completada; sus hallazgos se corrigieron con regresiones RED→GREEN. Capturas y README actualizados.
+
+Ruling: los hallazgos de audio etiquetados como menores se incluyeron en la misma pasada por afectar a la información y acción accesible de los controles solicitados; coste: un pequeño estado adicional de reproducción. No quedan menores diferidos.
+
+Ruling: los aspectos visuales y la voz real que el revisor no juzgó se cubren con navegador, axe y capturas; la pronunciación acústica de cada voz sigue dependiendo del dispositivo.

@@ -11,6 +11,9 @@ import type { AppSettings } from '../../shared/domain/types';
 export function SettingsPage() {
   const { repos, profile, settings, refresh } = useApp();
   const [s, setS] = useState(settings);
+  useEffect(() => {
+    setS((draft) => ({ ...draft, theme: settings.theme }));
+  }, [settings.theme]);
   const [voices, setVoices] = useState<VoiceInfo[]>([]);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');

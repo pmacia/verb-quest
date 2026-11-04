@@ -1,6 +1,6 @@
 # Catálogo y ficha: análisis de la referencia del 3 de noviembre de 2026
 
-Estado: estudio y propuesta para acordar el diseño; no es un plan de implementación aprobado. No se ha modificado código de la aplicación.
+Estado: propuesta aprobada e implementada tras la confirmación del usuario. Resultado y verificación en [informe del rediseño](../catalog-redesign-2026-11-04.md). El texto siguiente conserva el análisis que guio la integración.
 
 ## Objetivo y alcance
 

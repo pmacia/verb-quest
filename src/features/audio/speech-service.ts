@@ -5,6 +5,7 @@ export interface VoiceInfo {
   localService: boolean;
 }
 export interface SpeechRequest {
+  forceDialect?: boolean;
   text: string;
   voiceURI: string | null;
   preferredDialect: 'uk' | 'us';
@@ -59,7 +60,11 @@ export function createSpeechService(port: SpeechPort) {
       const voices = listVoices();
       const preferred = request.preferredDialect === 'uk' ? 'en-GB' : 'en-US';
       const voice =
-        voices.find((v) => v.uri === request.voiceURI) ||
+        voices.find(
+          (v) =>
+            v.uri === request.voiceURI &&
+            (!request.forceDialect || v.lang.toLowerCase() === preferred.toLowerCase()),
+        ) ||
         voices.find((v) => v.lang.toLowerCase() === preferred.toLowerCase()) ||
         voices[0];
       if (!voice) return Promise.resolve({ status: 'unavailable' });
@@ -103,14 +108,12 @@ export function browserSpeechPort(): SpeechPort {
     typeof window !== 'undefined' && 'speechSynthesis' in window ? window.speechSynthesis : null;
   return {
     getVoices: () =>
-      synth
-        ?.getVoices()
-        .map((v) => ({
-          uri: v.voiceURI,
-          lang: v.lang,
-          name: v.name,
-          localService: v.localService,
-        })) ?? [],
+      synth?.getVoices().map((v) => ({
+        uri: v.voiceURI,
+        lang: v.lang,
+        name: v.name,
+        localService: v.localService,
+      })) ?? [],
     onVoices(fn) {
       synth?.addEventListener('voiceschanged', fn);
       return () => synth?.removeEventListener('voiceschanged', fn);

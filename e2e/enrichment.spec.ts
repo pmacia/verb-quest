@@ -10,13 +10,21 @@ test('enriched patterns and topics filter the existing library with Spanish labe
     .check();
   await expect(page.getByRole('link', { name: /^sing\s/ })).toBeVisible();
   await expect(page.getByRole('link', { name: /^buy\s/ })).toHaveCount(0);
-  await page.getByRole('combobox', { name: 'Tema', exact: true }).selectOption('communication');
+  await page
+    .getByRole('group', { name: 'Tema', exact: true })
+    .getByRole('radio', { name: 'Comunicación', exact: true })
+    .check();
   await expect(page.getByRole('link', { name: /^sing\s/ })).toBeVisible();
   await expect(
-    page.getByRole('combobox', { name: 'Tema', exact: true }).locator('option:checked'),
-  ).toHaveText('Comunicación');
+    page
+      .getByRole('group', { name: 'Tema', exact: true })
+      .getByRole('radio', { name: 'Comunicación', exact: true }),
+  ).toBeChecked();
   await page.getByRole('button', { name: 'Quitar filtro de familias', exact: true }).click();
-  await page.getByRole('combobox', { name: 'Tema', exact: true }).selectOption('');
+  await page
+    .getByRole('group', { name: 'Tema', exact: true })
+    .getByRole('radio', { name: 'Todos los temas', exact: true })
+    .check();
   await page
     .getByRole('combobox', { name: 'Forma del filtro fonético', exact: true })
     .selectOption('pastSimple');

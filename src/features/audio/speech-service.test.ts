@@ -77,3 +77,10 @@ it('late callbacks from a cancelled utterance cannot complete a newer one', asyn
   s.cancel();
   expect((await second).status).toBe('cancelled');
 });
+it('explicit UK/US actions override an incompatible pinned voice', async () => {
+  const us = { ...voice, uri: 'us', lang: 'en-US', name: 'US Voice' };
+  const s = createSpeechService(port([voice, us]));
+  expect(
+    await s.play({ ...req, voiceURI: 'uk', preferredDialect: 'us', forceDialect: true }),
+  ).toMatchObject({ voice: us, fallback: false });
+});

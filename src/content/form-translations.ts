@@ -5,6 +5,7 @@ const records = translations as Record<string, Record<FormKey, Record<string, st
 export function applyFormTranslations(verbs: Verb[]): Verb[] {
   return structuredClone(verbs).map((verb) => {
     const record = records[verb.id];
+    if (record) verb.contentVersion = 'curated-1.3';
     for (const form of ['base', 'pastSimple', 'pastParticiple'] as const) {
       const targets = form === 'base' ? [verb.forms.base] : verb.forms[form].variants;
       for (const target of targets) {

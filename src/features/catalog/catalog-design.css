@@ -1200,6 +1200,7 @@ html[data-theme='dark'] .catalog-page {
 }
 .catalog-page .catalog-item-compact .cq-forms-strip {
   grid-column: 1;
+  margin-left: 72px;
   margin-top: 0;
   align-self: start;
   margin-right: 0;
@@ -1239,7 +1240,6 @@ html[data-theme='dark'] .catalog-page {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: start;
     column-gap: 5px;
-    margin-left: 0;
   }
   .catalog-page .catalog-item-compact .cq-inline-form {
     display: flex;
@@ -1275,4 +1275,10 @@ html[data-theme='dark'] .catalog-page {
   font-size: 11px;
   line-height: 1.35;
   color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .catalog-page .catalog-item-compact .cq-forms-strip {
+    margin-left: 58px;
+  }
 }

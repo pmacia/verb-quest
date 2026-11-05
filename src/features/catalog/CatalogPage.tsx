@@ -317,41 +317,43 @@ function CatalogEntry({
               {verb.meanings.join(' / ')}
             </span>
           </div>
-          <div className="cq-badges" aria-label={`Características de ${verb.lemma}`}>
-            {course && (
+          {!compact && (
+            <div className="cq-badges" aria-label={`Características de ${verb.lemma}`}>
+              {course && (
+                <span
+                  className="cq-label-badge cq-course"
+                  title={`Desde ${course.replace('eso', '')}.º ESO`}
+                >
+                  <CatalogGlyph name="study" size={13} />
+                  <span>
+                    {course.replace('eso', '')}.º <span className="cq-mobile-optional">ESO</span>
+                  </span>
+                </span>
+              )}
               <span
-                className="cq-label-badge cq-course"
-                title={`Desde ${course.replace('eso', '')}.º ESO`}
+                className="cq-label-badge cq-pattern"
+                title={relationLabels[verb.classification.formRelation]}
               >
-                <CatalogGlyph name="study" size={13} />
-                <span>
-                  {course.replace('eso', '')}.º <span className="cq-mobile-optional">ESO</span>
+                <CatalogGlyph name="pattern" size={13} />
+                <span>{pattern}</span>
+              </span>
+              <span
+                className="cq-label-badge cq-frequency"
+                title={frequency[verb.classification.frequencyBand]}
+              >
+                <CatalogGlyph
+                  name={verb.classification.frequencyBand === 'essential' ? 'bolt' : 'star'}
+                  size={13}
+                />
+                <span className="cq-mobile-optional">
+                  {frequency[verb.classification.frequencyBand]}
+                </span>
+                <span className="cq-mobile-only sr-only">
+                  {frequency[verb.classification.frequencyBand]}
                 </span>
               </span>
-            )}
-            <span
-              className="cq-label-badge cq-pattern"
-              title={relationLabels[verb.classification.formRelation]}
-            >
-              <CatalogGlyph name="pattern" size={13} />
-              <span>{pattern}</span>
-            </span>
-            <span
-              className="cq-label-badge cq-frequency"
-              title={frequency[verb.classification.frequencyBand]}
-            >
-              <CatalogGlyph
-                name={verb.classification.frequencyBand === 'essential' ? 'bolt' : 'star'}
-                size={13}
-              />
-              <span className="cq-mobile-optional">
-                {frequency[verb.classification.frequencyBand]}
-              </span>
-              <span className="cq-mobile-only sr-only">
-                {frequency[verb.classification.frequencyBand]}
-              </span>
-            </span>
-          </div>
+            </div>
+          )}
         </div>
       </header>
       {compact ? (
@@ -377,7 +379,6 @@ function CatalogEntry({
                     {variant.pronunciation?.[dialect]?.ipa && (
                       <span className="cq-ipa">{variant.pronunciation[dialect]?.ipa}</span>
                     )}
-                    {renderSound(form, variant.value, dialect)}
                   </span>
                 ),
               )}
@@ -960,7 +961,7 @@ export function CatalogPage() {
                 {familySelection !== null && (
                   <button
                     type="button"
-                    className="chip"
+                    className="chip cq-pattern"
                     aria-label="Quitar filtro de familias"
                     onClick={() => setFamilySelection(null)}
                   >
@@ -1010,7 +1011,19 @@ export function CatalogPage() {
                     <button
                       type="button"
                       key={key}
-                      className="chip"
+                      className={`chip ${
+                        key === 'courses'
+                          ? 'cq-course'
+                          : key === 'frequencies'
+                            ? 'cq-frequency'
+                            : key === 'relations'
+                              ? 'cq-pattern'
+                              : key === 'topics' || key === 'listIds'
+                                ? 'cq-course'
+                                : key === 'states'
+                                  ? 'cq-frequency'
+                                  : 'cq-pattern'
+                      }`}
                       aria-label={`Quitar ${names[key] ?? key}: ${description}`}
                       title={`Quitar ${names[key] ?? key}: ${description}`}
                       onClick={() => {

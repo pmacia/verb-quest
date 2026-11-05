@@ -479,6 +479,44 @@ html[data-theme='dark'] .catalog-page {
   align-items: center;
   gap: 4px;
 }
+/* Keep filter categories aligned with the colours of their active chips. */
+.catalog-page .cq-filter-teal {
+  --cq-filter-color: var(--cq-teal);
+}
+.catalog-page .cq-filter-gold {
+  --cq-filter-color: var(--cq-gold);
+}
+.catalog-page .cq-filter-purple {
+  --cq-filter-color: var(--cq-purple);
+}
+.catalog-page .cq-filter-panel .filter-choices,
+.catalog-page .cq-filter-panel .cq-filter-group {
+  border-color: color-mix(in srgb, var(--cq-filter-color) 30%, var(--line));
+}
+.catalog-page .cq-filter-panel legend,
+.catalog-page .cq-filter-group > summary,
+.catalog-page .cq-filter-panel .filter-choice svg {
+  color: var(--cq-filter-color);
+}
+.catalog-page .cq-filter-group > summary {
+  background: color-mix(in srgb, var(--cq-filter-color) 5%, var(--surface));
+}
+.catalog-page .cq-filter-panel input[type='radio'],
+.catalog-page .cq-filter-panel input[type='checkbox'] {
+  accent-color: var(--cq-filter-color);
+}
+.catalog-page .cq-filter-panel .filter-choice:has(input:checked),
+.catalog-page .cq-filter-panel .family-choice:has(input:checked) {
+  background: color-mix(in srgb, var(--cq-filter-color) 10%, var(--surface));
+  border-color: var(--cq-filter-color);
+  color: var(--cq-filter-color);
+}
+.catalog-page .cq-filter-panel .family-choice:has(input:checked) small {
+  color: inherit;
+}
+.catalog-page .cq-filter-panel .filter-choice:focus-within {
+  outline-color: var(--cq-filter-color);
+}
 .catalog-page .filter-choice-options {
   display: flex;
   flex-wrap: wrap;
@@ -505,7 +543,7 @@ html[data-theme='dark'] .catalog-page {
   min-height: 12px;
   padding: 0;
   margin: 0;
-  accent-color: var(--blue);
+  accent-color: var(--cq-filter-color, var(--blue));
 }
 .catalog-page .filter-choice:has(input:checked) {
   background: var(--sky);
@@ -812,8 +850,8 @@ html[data-theme='dark'] .catalog-page {
 .catalog-page .catalog-item-compact .cq-card-footer {
   position: static;
   grid-column: 2;
-  grid-row: 2;
-  align-self: end;
+  grid-row: 1 / span 2;
+  align-self: center;
   margin: 0;
 }
 .catalog-page .cq-actions {
@@ -1158,7 +1196,7 @@ html[data-theme='dark'] .catalog-page {
   row-gap: 0;
 }
 .catalog-page .catalog-item-compact .cq-card-heading {
-  grid-column: 1 / -1;
+  grid-column: 1;
 }
 .catalog-page .catalog-item-compact .cq-forms-strip {
   grid-column: 1;

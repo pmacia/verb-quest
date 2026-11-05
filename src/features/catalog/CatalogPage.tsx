@@ -193,7 +193,9 @@ function CatalogChoices({
     Tema: 'tag',
   };
   return (
-    <fieldset className="filter-choices">
+    <fieldset
+      className={`filter-choices ${label === 'Curso' || label === 'Tema' ? 'cq-filter-teal' : 'cq-filter-gold'}`}
+    >
       <legend>
         <CatalogGlyph name={icons[label] ?? 'filter'} size={13} />
         {label}
@@ -762,7 +764,7 @@ export function CatalogPage() {
                       options={[['', 'Todas'], ...Object.entries(frequency)]}
                     />
                   </div>
-                  <details className="cq-filter-group">
+                  <details className="cq-filter-group cq-filter-purple">
                     <summary>
                       <CatalogGlyph name="pattern" />
                       <span>Relación y familias</span>
@@ -779,7 +781,7 @@ export function CatalogPage() {
                       onSelection={setFamilySelection}
                     />
                   </details>
-                  <details className="cq-filter-group">
+                  <details className="cq-filter-group cq-filter-gold">
                     <summary>
                       <CatalogGlyph name="chart" />
                       <span>Aprendizaje</span>
@@ -799,7 +801,7 @@ export function CatalogPage() {
                       ]}
                     />
                   </details>
-                  <details className="cq-filter-group">
+                  <details className="cq-filter-group cq-filter-teal">
                     <summary>
                       <CatalogGlyph name="tag" />
                       <span>Temas</span>
@@ -817,7 +819,7 @@ export function CatalogPage() {
                       ]}
                     />
                   </details>
-                  <details className="cq-filter-group">
+                  <details className="cq-filter-group cq-filter-purple">
                     <summary>
                       <CatalogGlyph name="sound" />
                       <span>Escritura y sonido</span>

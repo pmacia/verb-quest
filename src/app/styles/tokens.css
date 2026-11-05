@@ -2,6 +2,7 @@
   color-scheme: light;
   --navy: #102a56;
   --blue: #1b5fd0;
+  --button-text: #fff;
   --teal: #168573;
   --sky: #edf4ff;
   --surface: #fff;
@@ -15,6 +16,7 @@ html[data-theme='dark'] {
   color-scheme: dark;
   --navy: #dbe9ff;
   --blue: #8db9ff;
+  --button-text: #102a56;
   --teal: #6edaca;
   --sky: #203858;
   --surface: #152238;
@@ -24,9 +26,7 @@ html[data-theme='dark'] {
   --line: #2d3d55;
   --error: #ff99ae;
 }
-html[data-theme='dark'] button:not(.secondary):not(.icon-button):not(.text-button):not(.list-item) {
-  color: #102a56;
-}
+
 html[data-theme='dark'] .brand {
   color: var(--text);
 }
@@ -35,6 +35,7 @@ html[data-theme='dark'] .brand {
     color-scheme: dark;
     --navy: #dbe9ff;
     --blue: #8db9ff;
+    --button-text: #102a56;
     --teal: #6edaca;
     --sky: #203858;
     --surface: #152238;

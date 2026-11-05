@@ -1,0 +1,28 @@
+/* The shared dialog close control stays circular in both catalogue and detail. */
+dialog:has(> .ipa-help-content) > header > .icon-button {
+  flex: 0 0 32px;
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  min-height: 32px;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text);
+  font-size: 22px;
+  line-height: 1;
+  transition:
+    border-color 0.15s,
+    color 0.15s;
+}
+dialog:has(> .ipa-help-content) > header > .icon-button:hover {
+  background: transparent;
+  border-color: var(--blue);
+  color: var(--blue);
+}
+dialog:has(> .ipa-help-content) > header > .icon-button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}

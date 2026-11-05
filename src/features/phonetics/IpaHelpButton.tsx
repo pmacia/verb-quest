@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { Dialog } from '../../shared/ui/Dialog';
+import './ipa-help.css';
 const groups = [
   {
     title: 'Vocales',

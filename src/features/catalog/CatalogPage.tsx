@@ -947,7 +947,6 @@ export function CatalogPage() {
                   </details>
                 </div>
                 <footer className="cq-filter-footer">
-                  <IpaHelpButton />
                   <button type="button" className="cq-reset" onClick={clearFilters}>
                     <CatalogGlyph name="restore" />
                     <span>Restablecer</span>
@@ -1055,30 +1054,44 @@ export function CatalogPage() {
             )}
           </div>
           <div className="results-heading">
-            <strong>
-              {result.total} verbos <span>por descubrir</span>
-            </strong>
-            <span>
-              {selected.length > 0
-                ? `${selected.length} seleccionados`
-                : 'Selecciona para crear una lista'}
-            </span>
-          </div>
-          {selected.length > 0 && (
-            <div
-              className="catalog-selection-banner"
-              role="region"
-              aria-label="Selección de verbos"
-            >
-              <strong>{selected.length} seleccionados</strong>
-              <button type="button" className="secondary" onClick={() => setNewList(true)}>
-                Guardar en lista
-              </button>
-              <button type="button" className="text-button" onClick={() => setSelected([])}>
-                Deseleccionar todos
-              </button>
+            <div className="cq-result-counts">
+              <strong>
+                {result.total} verbos <span>por descubrir</span>
+              </strong>
+              {selected.length > 0 ? (
+                <span>{selected.length} seleccionados</span>
+              ) : (
+                <span className="cq-results-hint">Selecciona para crear una lista</span>
+              )}
             </div>
-          )}
+            <div className="cq-result-actions" role="group" aria-label="Acciones del catálogo">
+              {selected.length > 0 && (
+                <>
+                  <button
+                    type="button"
+                    className="secondary"
+                    aria-label="Guardar en lista"
+                    title="Guardar en lista"
+                    onClick={() => setNewList(true)}
+                  >
+                    <CatalogGlyph name="book" size={15} />
+                    <span className="cq-control-label">Guardar en lista</span>
+                  </button>
+                  <button
+                    type="button"
+                    className="secondary"
+                    aria-label="Deseleccionar todos"
+                    title="Deseleccionar todos"
+                    onClick={() => setSelected([])}
+                  >
+                    <CatalogGlyph name="close" size={15} />
+                    <span className="cq-control-label">Deseleccionar todos</span>
+                  </button>
+                </>
+              )}
+              <IpaHelpButton />
+            </div>
+          </div>
           <div className={`catalog-items catalog-view-${viewMode}`}>
             {result.items.map((v) => (
               <CatalogEntry

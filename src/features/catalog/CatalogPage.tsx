@@ -1055,11 +1055,22 @@ export function CatalogPage() {
           </div>
           <div className="results-heading">
             <div className="cq-result-counts">
-              <strong>
-                {result.total} verbos <span>por descubrir</span>
+              <strong className="cq-count-badge cq-result-total">
+                <CatalogGlyph name="book" size={13} />
+                <span className="cq-count-number">{result.total}</span>
+                <span>
+                  verbos <span className="cq-count-description">por descubrir</span>
+                </span>
               </strong>
               {selected.length > 0 ? (
-                <span>{selected.length} seleccionados</span>
+                <span
+                  className="cq-count-badge cq-result-selected"
+                  title={`${selected.length} seleccionados`}
+                >
+                  <CatalogGlyph name="check" size={13} />
+                  <span className="cq-count-number">{selected.length}</span>
+                  <span className="cq-count-label">seleccionados</span>
+                </span>
               ) : (
                 <span className="cq-results-hint">Selecciona para crear una lista</span>
               )}

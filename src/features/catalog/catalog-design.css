@@ -236,17 +236,20 @@ html[data-theme='dark'] .catalog-page {
   background: color-mix(in srgb, var(--cq-purple) 9%, var(--surface));
 }
 .catalog-page .switch-track {
+  position: relative;
+  padding: 0;
   width: 25px;
   height: 15px;
   min-width: 25px;
 }
 .catalog-page .switch-track > span {
+  position: absolute;
   width: 11px;
   height: 11px;
   top: 2px;
   left: 2px;
 }
-.catalog-page [aria-checked='true'] .switch-track > span {
+.catalog-page .catalog-edit-toggle[aria-checked='true'] .switch-track > span {
   transform: translateX(10px);
 }
 .catalog-page .catalog-edit-actions > .button {
@@ -1152,12 +1155,15 @@ html[data-theme='dark'] .catalog-page {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   column-gap: 6px;
+  row-gap: 0;
 }
 .catalog-page .catalog-item-compact .cq-card-heading {
   grid-column: 1 / -1;
 }
 .catalog-page .catalog-item-compact .cq-forms-strip {
   grid-column: 1;
+  margin-top: 0;
+  align-self: start;
   margin-right: 0;
 }
 .catalog-page .catalog-item-compact .cq-actions {
@@ -1175,6 +1181,7 @@ html[data-theme='dark'] .catalog-page {
   .catalog-page .catalog-item-compact .cq-forms-strip {
     grid-column: 2;
     grid-row: 1;
+    align-self: center;
     margin: 0;
     gap: 2px 9px;
   }

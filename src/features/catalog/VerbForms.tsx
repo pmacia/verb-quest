@@ -12,12 +12,14 @@ export function VerbForms({
   verb,
   compact = false,
   translations = false,
+  concisePronunciation = false,
   onPlay,
   playingKey = null,
 }: {
   verb: Verb;
   compact?: boolean;
   translations?: boolean;
+  concisePronunciation?: boolean;
   onPlay: PlayVerbForm;
   playingKey?: string | null;
 }) {
@@ -54,7 +56,9 @@ export function VerbForms({
                         <span>
                           {p?.ipa ? (
                             <>
-                              {variant.value} · IPA {dialect.toUpperCase()}:{' '}
+                              <span className={concisePronunciation ? 'sr-only' : undefined}>
+                                {variant.value} · IPA {dialect.toUpperCase()}:{' '}
+                              </span>
                               <span className="ipa-text">{p.ipa}</span>
                             </>
                           ) : (

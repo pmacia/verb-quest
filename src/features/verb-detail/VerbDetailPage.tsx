@@ -1,4 +1,6 @@
+import { getVerbIcon } from '../catalog/verb-icons';
 import '../catalog/catalog-design.css';
+import './verb-detail.css';
 import { VerbForms } from '../catalog/VerbForms';
 import { VerbBadges } from '../catalog/VerbBadges';
 import { useCatalogAudio } from '../catalog/use-catalog-audio';
@@ -40,58 +42,96 @@ export function VerbDetailPage() {
     ),
   );
   return (
-    <>
-      <Link to="/verbs" className="back-link">
-        ← Volver a la biblioteca
-      </Link>
+    <div className="verb-detail-page">
+      <nav className="vd-navigation" aria-label="Navegación de la ficha">
+        <Link to="/verbs" className="back-link">
+          <span className="vd-back-icon">
+            <Icon name="arrow" size={16} />
+          </span>
+          Volver a la biblioteca
+        </Link>
+        <Link
+          to={`/editor/verbs/${id}`}
+          className="button secondary vd-edit"
+          aria-label="Editar ficha"
+          title="Editar ficha"
+        >
+          <Icon name="edit" size={16} />
+          <span className="vd-action-label">Editar ficha</span>
+        </Link>
+      </nav>
       <div className="page-heading">
         <div>
           <span className="eyebrow">UN VERBO, MUCHAS POSIBILIDADES</span>
-          <h1 className="verb-title">
-            {v.lemma}
-            <span className="dot">.</span>
-          </h1>
+          <div className="vd-identity">
+            <span className="vd-verb-icon" aria-hidden="true">
+              {getVerbIcon(v)}
+            </span>
+            <h1 className="verb-title">
+              {v.lemma}
+              <span className="dot">.</span>
+            </h1>
+          </div>
           <p className="large">{v.meanings.join(' · ')}</p>
-          <VerbBadges verb={v} detailed />
+          <VerbBadges verb={v} detailed icons />
         </div>
-        <Link to={`/editor/verbs/${id}`} className="button secondary">
-          Editar ficha
-        </Link>
       </div>
       {v.archivedAt && (
         <div className="notice">Este verbo está archivado. Su historial se conserva.</div>
       )}
-      <IpaHelpButton />
+      <div className="vd-form-toolbar">
+        <h2>
+          <Icon name="book" size={15} />
+          Las tres formas
+        </h2>
+        <button
+          type="button"
+          className="secondary vd-play-all"
+          aria-pressed={audio.playingKey === v.id}
+          title={audio.playingKey === v.id ? 'Detener audio' : 'Escuchar las tres formas'}
+          aria-label={
+            audio.playingKey === v.id
+              ? `Detener audio de ${v.lemma}`
+              : `Escuchar las tres formas de ${v.lemma}`
+          }
+          onClick={() => void audio.play(v)}
+        >
+          <Icon name="sound" size={18} />
+          <span className="vd-action-label">
+            {audio.playingKey === v.id ? 'Detener audio' : 'Escuchar las tres formas'}
+          </span>
+          <span className="vd-mobile-only" aria-hidden="true">
+            ×3
+          </span>
+        </button>
+        <IpaHelpButton />
+      </div>
       <p className="catalog-audio-status" role="status">
         {audio.message}
       </p>
-      <button
-        type="button"
-        className="secondary"
-        aria-label={
-          audio.playingKey === v.id
-            ? `Detener audio de ${v.lemma}`
-            : `Escuchar las tres formas de ${v.lemma}`
-        }
-        onClick={() => void audio.play(v)}
-      >
-        <Icon name="sound" size={18} />
-        {audio.playingKey === v.id ? 'Detener audio' : 'Escuchar las tres formas'}
-      </button>
       <VerbForms
         verb={v}
         translations
+        concisePronunciation
         playingKey={audio.playingKey}
         onPlay={(form, value, dialect) => void audio.play(v, form, value, dialect)}
       />
       <p className="small muted">Las traducciones pueden variar según la persona y el contexto.</p>
       <div className="detail-columns">
         <section className="panel">
-          <h2>Del verbo a la frase</h2>
+          <h2 className="vd-section-title">
+            <Icon name="book" size={18} />
+            Del verbo a la frase
+          </h2>
           <p className="muted">Descubre cómo cambia en cada contexto.</p>
           {v.examples.map((ex) => (
             <article className="example" key={ex.id}>
-              <span className="tag">{ex.grammarPoint}</span>
+              <span
+                className={`tag vd-example-tag ${ex.grammarPoint.toLowerCase().includes('particip') ? 'vd-example-participle' : ex.grammarPoint.toLowerCase().includes('past') ? 'vd-example-past' : ''}`}
+              >
+                <Icon name="study" size={12} />
+                {ex.grammarPoint}
+              </span>
               <div className="example-sentence">
                 <h3 lang="en">{ex.sentence}</h3>
                 <AudioControls
@@ -112,7 +152,10 @@ export function VerbDetailPage() {
         </section>
         <aside>
           <section className="panel">
-            <h2>Hazlo parte de tu plan</h2>
+            <h2 className="vd-section-title">
+              <Icon name="book" size={18} />
+              Hazlo parte de tu plan
+            </h2>
             <p>Guárdalo en una lista para practicarlo después.</p>
             {lists.map((l) => (
               <label className="check-row" key={l.id}>
@@ -135,10 +178,14 @@ export function VerbDetailPage() {
             {error && <p role="alert">{error}</p>}
           </section>
           <section className="panel">
-            <h2>Una pista para aprender</h2>
+            <h2 className="vd-section-title">
+              <Icon name="star" size={18} />
+              Una pista para aprender
+            </h2>
             <div className="chips">
               {v.classification.patternGroups.map((g) => (
-                <span className="tag" key={g}>
+                <span className="tag vd-family-tag" key={g}>
+                  <Icon name="filter" size={12} />
                   {patternLabel(g)}
                 </span>
               ))}
@@ -156,7 +203,10 @@ export function VerbDetailPage() {
           </section>
           {settings.showSources && (
             <section className="panel">
-              <h2>Fuentes y revisión</h2>
+              <h2 className="vd-section-title">
+                <Icon name="book" size={18} />
+                Fuentes y revisión
+              </h2>
               {ipaSources.map((url) => (
                 <p key={url}>
                   <a href={url} target="_blank" rel="noreferrer">
@@ -199,7 +249,10 @@ export function VerbDetailPage() {
             </section>
           )}
           <section className="panel">
-            <h2>Tu progreso por habilidad</h2>
+            <h2 className="vd-section-title">
+              <Icon name="chart" size={18} />
+              Tu progreso por habilidad
+            </h2>
             {Object.entries(skillLabels).map(([skill, label]) => {
               const p = progress.find((p) => p.verbId === id && p.skill === skill);
               return (
@@ -223,6 +276,6 @@ export function VerbDetailPage() {
           </section>
         </aside>
       </div>
-    </>
+    </div>
   );
 }

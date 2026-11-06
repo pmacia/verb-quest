@@ -13,7 +13,8 @@ test('catalogue defaults to genuinely compact rows with icons and a bounded coll
   await expect(rows).toHaveCount(120);
   expect(await rows.first().evaluate((el) => el.getBoundingClientRect().height)).toBeLessThan(150);
   await expect(page.locator('.catalog-page .cq-verb-icon').first()).not.toHaveText('✦');
-  await expect(page.locator('.cq-label-badge svg').first()).toBeVisible();
+  await expect(rows.locator('.cq-label-badge')).toHaveCount(0);
+  await expect(rows.locator('.cq-sound')).toHaveCount(0);
   const filters = page.getByRole('button', { name: 'Filtros', exact: true });
   await filters.click();
   await expect(filters).toHaveAttribute('aria-expanded', 'true');

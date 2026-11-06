@@ -76,6 +76,7 @@ test('individual audio announces its word, exposes stop state and respects an ex
   await expect(page.locator('.catalog-audio-status')).toContainText('local');
   await page.goto('/verbs');
   await page.getByLabel('Buscar verbos').fill('read');
+  await page.getByRole('button', { name: 'Vista detallada', exact: true }).click();
   await page.getByRole('button', { name: 'Escuchar las tres formas de read', exact: true }).click();
   await page
     .getByRole('button', { name: 'Escuchar pastSimple de read: read en UK', exact: true })

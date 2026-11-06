@@ -1,5 +1,8 @@
 export function Icon({ name, size = 22 }: { name: string; size?: number }) {
   const paths: Record<string, string> = {
+    pause: 'M8 5v14M16 5v14',
+    play: 'm7 4 14 8-14 8Z',
+    stop: 'M5 5h14v14H5Z',
     moon: 'M20 15A9 9 0 0 1 9 4a9 9 0 1 0 11 11Z',
     sun: 'M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM12 2v2m0 16v2M2 12h2m16 0h2M5 5l2 2m10 10 2 2M5 19l2-2M17 7l2-2',
     edit: 'm16 3 5 5-12 12-6 1 1-6ZM14 5l5 5',

@@ -58,23 +58,33 @@ export function AudioControls({
         <>
           <button
             type="button"
-            className="secondary"
+            className={iconOnly ? 'secondary icon-button' : 'secondary'}
+            aria-label={paused ? 'Continuar audio' : 'Pausar audio'}
+            title={paused ? 'Continuar audio' : 'Pausar audio'}
             onClick={() => {
               paused ? service.resume() : service.pause();
               setPaused(!paused);
             }}
           >
-            {paused ? 'Continuar audio' : 'Pausar audio'}
+            {iconOnly ? (
+              <Icon name={paused ? 'play' : 'pause'} size={18} />
+            ) : paused ? (
+              'Continuar audio'
+            ) : (
+              'Pausar audio'
+            )}
           </button>
           <button
             type="button"
-            className="secondary"
+            className={iconOnly ? 'secondary icon-button' : 'secondary'}
+            aria-label="Detener audio"
+            title="Detener audio"
             onClick={() => {
               service.cancel();
               setPlaying(false);
             }}
           >
-            Detener audio
+            {iconOnly ? <Icon name="stop" size={18} /> : 'Detener audio'}
           </button>
         </>
       )}

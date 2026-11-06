@@ -47,6 +47,8 @@ test('each example has an accessible speaker that plays the full sentence', asyn
     await expect(speaker).toBeEnabled();
     await speaker.click();
     await expect(example.getByRole('status')).toContainText('Audio reproducido.');
+    await expect(example.getByRole('status')).toHaveAttribute('title', 'Audio reproducido.');
+    await expect(example.getByRole('status').locator('svg')).toBeVisible();
     await expect
       .poll(() =>
         page.evaluate(

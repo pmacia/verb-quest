@@ -1,0 +1,17 @@
+.audio-controls .audio-played {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 20px;
+  min-height: 20px;
+  color: #237646;
+}
+html[data-theme='dark'] .audio-controls .audio-played {
+  color: #86dfaa;
+}
+@media (prefers-color-scheme: dark) {
+  html[data-theme='system'] .audio-controls .audio-played {
+    color: #86dfaa;
+  }
+}

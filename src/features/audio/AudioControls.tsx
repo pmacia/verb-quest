@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useApp } from '../../app/app-context';
 import { getSpeechService } from './speech-service';
 import { Icon } from '../../shared/ui/Icon';
+import './audio-controls.css';
 export function AudioControls({
   text,
   label,
@@ -18,6 +19,8 @@ export function AudioControls({
   const [playing, setPlaying] = useState(false);
   const [paused, setPaused] = useState(false);
   const [message, setMessage] = useState('');
+  const [completed, setCompleted] = useState(false);
+  const compactSuccess = iconOnly && completed && !settings.showTechnicalDetails;
   useEffect(() => () => service.cancel(), [text]);
   return (
     <div className={`audio-controls${iconOnly ? ' audio-controls-compact' : ''}`}>
@@ -31,6 +34,7 @@ export function AudioControls({
         onClick={async () => {
           setPlaying(true);
           setMessage('');
+          setCompleted(false);
           setPaused(false);
           const r = await service.play({
             text,
@@ -41,6 +45,7 @@ export function AudioControls({
           });
           setPlaying(false);
           if (r.status === 'played') {
+            setCompleted(true);
             setMessage(
               settings.showTechnicalDetails
                 ? `Voz sintética: ${r.voice?.name} · ${r.voice?.lang}${r.fallback ? ' · dialecto alternativo disponible' : ''}${r.voice?.localService ? ' · local' : ' · puede necesitar conexión'}`
@@ -88,7 +93,20 @@ export function AudioControls({
           </button>
         </>
       )}
-      <small role="status">{message}</small>
+      <small
+        role="status"
+        className={compactSuccess ? 'audio-played' : undefined}
+        title={compactSuccess ? message : undefined}
+      >
+        {compactSuccess ? (
+          <>
+            <Icon name="check" size={17} />
+            <span className="sr-only">{message}</span>
+          </>
+        ) : (
+          message
+        )}
+      </small>
     </div>
   );
 }

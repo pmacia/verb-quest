@@ -154,6 +154,7 @@ function CatalogGlyph({ name, size = 16 }: { name: string; size?: number }) {
     archive: 'M3 4h18v5H3Zm2 5v12h14V9M9 13h6',
     pattern: 'M4 4h4v4H4Zm12 0h4v4h-4ZM10 16h4v4h-4ZM6 8v4h12V8M12 12v4',
     tag: 'M3 3h8l10 10-8 8L3 11Zm4 4h.01',
+    save: 'M5 3h12l4 4v14H3V3Zm2 0v6h10V3M7 21v-8h10v8',
   };
   return paths[name] ? (
     <svg
@@ -1062,22 +1063,22 @@ export function CatalogPage() {
                   verbos <span className="cq-count-description">por descubrir</span>
                 </span>
               </strong>
-              {selected.length > 0 ? (
-                <span
-                  className="cq-count-badge cq-result-selected"
-                  title={`${selected.length} seleccionados`}
-                >
-                  <CatalogGlyph name="check" size={13} />
-                  <span className="cq-count-number">{selected.length}</span>
-                  <span className="cq-count-label">seleccionados</span>
-                </span>
-              ) : (
-                <span className="cq-results-hint">Selecciona para crear una lista</span>
-              )}
             </div>
-            <div className="cq-result-actions" role="group" aria-label="Acciones del catálogo">
+            <div
+              className={`cq-result-selection cq-result-actions${selected.length ? ' has-selection' : ''}`}
+              role="group"
+              aria-label="Selección de verbos"
+            >
               {selected.length > 0 && (
                 <>
+                  <span
+                    className="cq-count-badge cq-result-selected"
+                    title={`${selected.length} seleccionados`}
+                  >
+                    <CatalogGlyph name="check" size={13} />
+                    <span className="cq-count-number">{selected.length}</span>
+                    <span className="cq-count-label">seleccionados</span>
+                  </span>
                   <button
                     type="button"
                     className="secondary"
@@ -1085,7 +1086,7 @@ export function CatalogPage() {
                     title="Guardar en lista"
                     onClick={() => setNewList(true)}
                   >
-                    <CatalogGlyph name="book" size={15} />
+                    <CatalogGlyph name="save" size={15} />
                     <span className="cq-control-label">Guardar en lista</span>
                   </button>
                   <button
@@ -1100,6 +1101,11 @@ export function CatalogPage() {
                   </button>
                 </>
               )}
+              {!selected.length && (
+                <span className="cq-results-hint">Selecciona para crear una lista</span>
+              )}
+            </div>
+            <div className="cq-result-help cq-result-actions">
               <IpaHelpButton />
             </div>
           </div>

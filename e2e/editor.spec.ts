@@ -3,8 +3,10 @@ test('new verb persists and dirty edits require confirmation', async ({ page }) 
   await page.goto('/editor/verbs/new');
   await page.getByLabel('Identificador estable').fill('babysit');
   await page.getByLabel('Forma base', { exact: true }).fill('babysit');
+  await page.getByRole('button', { name: 'Formas y sonidos', exact: true }).click();
   await page.getByLabel('Pasado simple (variantes separadas por /)').fill('babysat');
   await page.getByLabel('Participio pasado (variantes separadas por /)').fill('babysat');
+  await page.getByRole('button', { name: 'Datos del verbo', exact: true }).click();
   await page.getByLabel('Significados (separados por ;)').fill('cuidar niños');
   await page.getByRole('button', { name: 'Guardar verbo' }).click();
   await expect(page.getByRole('heading', { name: 'babysit.', exact: true })).toBeVisible();
@@ -32,9 +34,7 @@ test('archived verbs can be found and restored from the library', async ({ page 
 
 test('advanced JSON cannot replace the form with malformed data', async ({ page }) => {
   await page.goto('/editor/verbs/go');
-  await page
-    .getByText('Todos los campos: ejemplos, audio, fuentes y etiquetas', { exact: true })
-    .click();
+  await page.getByRole('button', { name: 'JSON', exact: true }).click();
   await page.getByLabel('Datos completos de la ficha').fill('{"id":"go"}');
   await page.getByRole('button', { name: 'Aplicar JSON al formulario' }).click();
   await expect(page.getByRole('alert')).toBeVisible();

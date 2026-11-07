@@ -1,3 +1,7 @@
+import './verb-editor.css';
+import { Icon } from '../../shared/ui/Icon';
+import { getVerbIcon } from './verb-icons';
+import { VerbEditorFields, editorSections, type EditorSection } from './VerbEditorFields';
 import { validate } from '../../shared/domain/validation';
 import { StatusPanel } from '../../shared/ui/StatusPanel';
 import { useState, useEffect, useRef } from 'react';
@@ -41,17 +45,42 @@ export function VerbEditorPage() {
   const { entries, repos, refresh, settings } = useApp();
   const current = entries.find((e) => e.verb.id === id);
   const [verb, setVerb] = useState<Verb>(() => structuredClone(current?.verb ?? emptyVerb()));
-  const variantMemory = useRef(new Map<string, Variant>());
+  const variantMemory = useRef(
+    new Map<'pastSimple' | 'pastParticiple', { baseline: Variant[]; lastOutput: Variant[] }>(),
+  );
   function editedVariants(form: 'pastSimple' | 'pastParticiple', text: string) {
-    for (const variant of verb.forms[form].variants)
-      variantMemory.current.set(`${form}:${variant.value}`, structuredClone(variant));
-    return text.split('/').map((part) => {
+    const currentVariants = verb.forms[form].variants;
+    let memory = variantMemory.current.get(form);
+    // Keep one baseline throughout typing; an edit through a variant card or JSON starts a new one.
+    if (!memory || memory.lastOutput !== currentVariants) {
+      memory = { baseline: structuredClone(currentVariants), lastOutput: currentVariants };
+      variantMemory.current.set(form, memory);
+    }
+    const occurrences = new Map<string, number>();
+    const next = text.split('/').map((part, index) => {
       const value = part.trim();
-      const stored = variantMemory.current.get(`${form}:${value}`);
+      const occurrence = occurrences.get(value) ?? 0;
+      occurrences.set(value, occurrence + 1);
+      const samePosition = memory.baseline[index];
+      const candidates = memory.baseline.filter((variant) => variant.value === value);
+      const stored =
+        samePosition?.value === value
+          ? samePosition
+          : candidates.length === 1
+            ? candidates[0]
+            : candidates[occurrence];
       return { ...stored, value, dialect: stored?.dialect ?? ('all' as const) };
     });
+    memory.lastOutput = next;
+    return next;
   }
   const [dirty, setDirty] = useState(false);
+  const [section, setSection] = useState<EditorSection>('identity');
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
+  const [editorRevision, setEditorRevision] = useState(0);
+  const expectedVersion = useRef(current?.verb.contentVersion ?? null);
+  const [archiveDraft, setArchiveDraft] = useState(false);
+  const [jsonPending, setJsonPending] = useState(false);
   const [error, setError] = useState('');
   const [ipaUpdating, setIpaUpdating] = useState(false);
   const [ipaUpdated, setIpaUpdated] = useState(false);
@@ -77,306 +106,257 @@ export function VerbEditorPage() {
     setDirty(true);
     setError('');
   }
+  async function persistDraft() {
+    setError('');
+    try {
+      const r = await saveVerb(repos, verb, expectedVersion.current);
+      if (r.status === 'saved') {
+        await refresh();
+        setDirty(false);
+        setSaved(true);
+      } else
+        setError(
+          r.status === 'invalid'
+            ? r.issues.map((i) => `${i.path}: ${i.message}`).join(' · ')
+            : r.status === 'duplicate'
+              ? 'Ya existe un verbo con ese infinitivo. Revisa la ficha existente o cambia el identificador y el lema.'
+              : 'La ficha ha cambiado en otra pestaña. Recarga antes de guardar.',
+        );
+    } catch (e) {
+      setError(String(e));
+    }
+  }
+  useEffect(() => {
+    setVerb(structuredClone(current?.verb ?? emptyVerb()));
+    expectedVersion.current = current?.verb.contentVersion ?? null;
+    variantMemory.current.clear();
+    setEditorRevision((r) => r + 1);
+    setFieldErrors({});
+    setDirty(false);
+    setSaved(false);
+    setError('');
+    setJson('');
+    setJsonPending(false);
+  }, [id]);
   if (id && !current) return <StatusPanel title="Verbo no encontrado" />;
   return (
-    <>
-      <Link className="back-link" to="/verbs">
-        ← Biblioteca
-      </Link>
-      <div className="page-heading">
+    <div className="verb-editor-page">
+      <nav className="ve-topbar" aria-label="Navegación del editor">
+        <Link className="back-link" to={id ? `/verbs/${id}` : '/verbs'}>
+          <span style={{ display: 'inline-flex', transform: 'rotate(180deg)' }}>
+            <Icon name="arrow" size={16} />
+          </span>
+          {id ? 'Volver a la ficha' : 'Biblioteca'}
+        </Link>
+        <Link className="button secondary" to="/editor/import-export">
+          <Icon name="upload" size={16} />
+          <span className="ve-action-label">Importar / exportar</span>
+        </Link>
+      </nav>
+      <div className="page-heading ve-heading">
         <div>
           <span className="eyebrow">MODO EDICIÓN · CONTENIDO LOCAL</span>
-          <h1>{id ? 'Editar verbo' : 'Un nuevo descubrimiento'}</h1>
-          <p>Los cambios afectan al catálogo de este navegador. No es un sistema de permisos.</p>
+          <h1>
+            <span className="ve-verb-icon" aria-hidden="true">
+              {getVerbIcon(verb)}
+            </span>
+            {id ? 'Editar verbo' : 'Un nuevo descubrimiento'}
+          </h1>
+          <p>{id ? verb.lemma : 'Crea una ficha completa'} · Cambios locales en este navegador.</p>
         </div>
-        <Link className="button secondary" to="/editor/import-export">
-          Importar / exportar
-        </Link>
       </div>
-      <section className="panel">
-        <form
-          onSubmit={async (e) => {
-            e.preventDefault();
-            setError('');
-            try {
-              const r = await saveVerb(repos, verb, id ? verb.contentVersion : null);
-              if (r.status === 'saved') {
-                await refresh();
-                setDirty(false);
-                setSaved(true);
-              } else
-                setError(
-                  r.status === 'invalid'
-                    ? r.issues.map((i) => `${i.path}: ${i.message}`).join(' · ')
-                    : r.status === 'duplicate'
-                      ? 'Ya existe un verbo con ese infinitivo. Revisa la ficha existente o cambia el identificador y el lema.'
-                      : 'La ficha ha cambiado en otra pestaña. Recarga antes de guardar.',
-                );
-            } catch (e) {
-              setError(String(e));
-            }
-          }}
-        >
-          <div className="form-grid">
-            <label>
-              Identificador estable
-              <input
-                required
-                pattern="[a-z0-9][a-z0-9-]*"
-                disabled={!!id}
-                value={verb.id}
-                onChange={(e) => change({ ...verb, id: e.target.value })}
-              />
-            </label>
-            <label>
-              Forma base
-              <input
-                required
-                value={verb.lemma}
-                onChange={(e) =>
-                  change({
-                    ...verb,
-                    lemma: e.target.value,
-                    forms: { ...verb.forms, base: { ...verb.forms.base, value: e.target.value } },
-                  })
-                }
-              />
-            </label>
-            {(['pastSimple', 'pastParticiple'] as const).map((f, i) => (
-              <label key={f}>
-                {i ? 'Participio pasado' : 'Pasado simple'} (variantes separadas por /)
-                <input
-                  required
-                  value={verb.forms[f].variants.map((a) => a.value).join(' / ')}
-                  onChange={(e) =>
-                    change({
-                      ...verb,
-                      forms: {
-                        ...verb.forms,
-                        [f]: {
-                          ...verb.forms[f],
-                          variants: editedVariants(f, e.target.value),
-                        },
-                      },
-                    })
-                  }
-                />
-              </label>
-            ))}
-            {(['base', 'pastSimple', 'pastParticiple'] as const).map((form) =>
-              (form === 'base' ? [verb.forms.base] : verb.forms[form].variants).map(
-                (variant, index) => (
-                  <label key={`${form}-${index}`}>
-                    Traducción de {variant.value || form} (
-                    {form === 'base'
-                      ? 'infinitivo'
-                      : form === 'pastSimple'
-                        ? 'pasado'
-                        : 'participio'}
-                    )
-                    <input
-                      value={variant.translation ?? ''}
-                      onChange={(e) => {
-                        const updated = structuredClone(verb);
-                        const target =
-                          form === 'base'
-                            ? updated.forms.base
-                            : updated.forms[form].variants[index];
-                        if (e.target.value.trim()) target.translation = e.target.value;
-                        else delete target.translation;
-                        change(updated);
-                      }}
-                    />
-                  </label>
-                ),
-              ),
-            )}
-            <label className="full">
-              Significados (separados por ;)
-              <input
-                required
-                value={verb.meanings.join('; ')}
-                onChange={(e) =>
-                  change({
-                    ...verb,
-                    meanings: e.target.value
-                      .split(';')
-                      .map((s) => s.trim())
-                      .filter(Boolean),
-                  })
-                }
-              />
-            </label>
-            <label>
-              Relación de formas
-              <select
-                value={verb.classification.formRelation}
-                onChange={(e) =>
-                  change({
-                    ...verb,
-                    classification: {
-                      ...verb.classification,
-                      formRelation: e.target.value as Verb['classification']['formRelation'],
-                    },
-                  })
-                }
-              >
-                {[
-                  ['all_same', 'Tres iguales'],
-                  ['past_participle_same', 'Pasado y participio iguales'],
-                  ['all_different', 'Tres diferentes'],
-                  ['special', 'Especiales'],
-                ].map(([v, l]) => (
-                  <option value={v} key={v}>
-                    {l}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label>
-              Frecuencia
-              <select
-                value={verb.classification.frequencyBand}
-                onChange={(e) =>
-                  change({
-                    ...verb,
-                    classification: {
-                      ...verb.classification,
-                      frequencyBand: e.target.value as Verb['classification']['frequencyBand'],
-                    },
-                  })
-                }
-              >
-                {[
-                  ['essential', 'Esencial'],
-                  ['common', 'Frecuente'],
-                  ['less_common', 'Menos frecuente'],
-                  ['advanced', 'Avanzado'],
-                ].map(([v, l]) => (
-                  <option value={v} key={v}>
-                    {l}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label>
-              Cursos recomendados (1, 2, 3, 4)
-              <input
-                value={verb.classification.recommendedCourses
-                  .map((x) => x.replace('eso', ''))
-                  .join(', ')}
-                onChange={(e) =>
-                  change({
-                    ...verb,
-                    classification: {
-                      ...verb.classification,
-                      recommendedCourses: e.target.value
-                        .split(',')
-                        .map((x) => 'eso' + x.trim())
-                        .filter((x) => /^eso[1-4]$/.test(x)),
-                    },
-                  })
-                }
-              />
-            </label>
-            <label>
-              Estado de revisión
-              <select
-                value={verb.editorialStatus}
-                onChange={(e) =>
-                  change({ ...verb, editorialStatus: e.target.value as Verb['editorialStatus'] })
-                }
-              >
-                <option value="draft">Borrador</option>
-                <option value="needs_review">Pendiente de revisión</option>
-                <option value="validated">Revisado</option>
-              </select>
-            </label>
-            <label className="full">
-              Notas de uso
-              <textarea
-                value={verb.notes?.join('\n') ?? ''}
-                onChange={(e) => change({ ...verb, notes: e.target.value.split('\n') })}
-              />
-            </label>
-          </div>
-          <details>
-            <summary>Todos los campos: ejemplos, audio, fuentes y etiquetas</summary>
-            <p className="small">
-              Editor avanzado JSON. Al aplicar se conservan todos los campos; el guardado validará
-              su estructura. No se ejecuta su contenido.
-            </p>
+      <div className="ve-toolbar">
+        <span className="ve-state" role="status">
+          {dirty ? 'Cambios sin guardar' : current ? 'Ficha guardada' : 'Nueva ficha'}
+          {verb.archivedAt ? ' · Archivado' : ''}
+        </span>
+        <div className="ve-actions">
+          <button
+            type="submit"
+            form="verb-editor-form"
+            aria-label="Guardar verbo"
+            title="Guardar verbo"
+          >
+            <Icon name="check" size={16} />
+            <span className="ve-action-label">Guardar verbo</span>
+          </button>
+          <Link to="/verbs" className="button secondary" aria-label="Cancelar" title="Cancelar">
+            <Icon name="close" size={16} />
+            <span className="ve-action-label">Cancelar</span>
+          </Link>
+          {current && !current.verb.archivedAt && (
             <button
               type="button"
-              className="secondary"
-              onClick={() => setJson(JSON.stringify(verb, null, 2))}
+              className="secondary ve-remove"
+              aria-label="Archivar verbo"
+              title={dirty ? 'Guarda los cambios antes de archivar' : 'Archivar verbo'}
+              disabled={dirty}
+              onClick={async () => {
+                const i = await getArchiveImpact(repos, verb.id);
+                setArchiveDraft(false);
+                setArchive({
+                  lists: i.listIds.length,
+                  plans: i.planIds.length,
+                  sessions: i.sessionIds.length,
+                });
+              }}
             >
-              Cargar datos actuales
+              <Icon name="trash" size={16} />
+              <span className="ve-action-label">Archivar verbo</span>
             </button>
-            <label>
-              Datos completos de la ficha
-              <textarea
-                className="code-editor"
-                value={json}
-                onChange={(e) => setJson(e.target.value)}
-              />
-            </label>
+          )}
+          {current?.verb.archivedAt && (
             <button
               type="button"
               className="secondary"
-              onClick={() => {
+              aria-label="Restaurar verbo"
+              title="Restaurar verbo"
+              disabled={dirty}
+              onClick={async () => {
                 try {
-                  const checked = validate<Verb>('verb', JSON.parse(json));
-                  if (!checked.ok)
-                    throw Error(checked.issues.map((i) => i.path + ': ' + i.message).join(' · '));
-                  const next = checked.value;
-                  if (id && next.id !== id) throw Error('El identificador no se puede cambiar');
-                  change(next);
+                  await restoreVerb(repos, verb.id);
+                  await refresh();
+                  setDirty(false);
+                  setSaved(true);
                 } catch (e) {
                   setError(String(e));
                 }
               }}
             >
-              Aplicar JSON al formulario
+              <Icon name="restore" size={16} />
+              <span className="ve-action-label">Restaurar verbo</span>
             </button>
-          </details>
-          {error && <p role="alert">{error}</p>}
-          <div className="actions">
-            <button>Guardar verbo</button>
-            <Link to="/verbs" className="button secondary">
-              Cancelar
-            </Link>
-            {current && !current.verb.archivedAt && (
-              <button
-                type="button"
-                className="danger"
-                onClick={async () => {
-                  const i = await getArchiveImpact(repos, verb.id);
-                  setArchive({
-                    lists: i.listIds.length,
-                    plans: i.planIds.length,
-                    sessions: i.sessionIds.length,
-                  });
-                }}
-              >
-                Archivar verbo
-              </button>
-            )}
-            {current?.verb.archivedAt && (
+          )}
+        </div>
+      </div>
+      <nav className="ve-nav" aria-label="Secciones del editor">
+        {editorSections.map(([key, label, icon]) => (
+          <button
+            key={key}
+            type="button"
+            aria-label={label}
+            title={label}
+            aria-pressed={section === key}
+            className="secondary"
+            onClick={() => setSection(key)}
+          >
+            <Icon name={icon} size={16} />
+            <span className="ve-nav-label">{label}</span>
+          </button>
+        ))}
+      </nav>
+      {error && (
+        <p className="ve-error" role="alert">
+          {error}
+        </p>
+      )}
+      <section className="panel">
+        <form
+          id="verb-editor-form"
+          noValidate
+          onSubmit={async (e) => {
+            e.preventDefault();
+            setError('');
+            if (Object.values(fieldErrors).some(Boolean)) {
+              setSection('classification');
+              setError(Object.values(fieldErrors).filter(Boolean).join(' · '));
+              return;
+            }
+            if (jsonPending) {
+              setSection('json');
+              setError(
+                'Aplica el JSON al formulario o vuelve a cargar los datos actuales antes de guardar.',
+              );
+              return;
+            }
+            const checked = validate<Verb>('verb', verb);
+            if (!checked.ok) {
+              setError(checked.issues.map((i) => `${i.path}: ${i.message}`).join(' · '));
+              return;
+            }
+            if (verb.archivedAt && !current?.verb.archivedAt) {
+              const i = await getArchiveImpact(repos, verb.id);
+              setArchiveDraft(true);
+              setArchive({
+                lists: i.listIds.length,
+                plans: i.planIds.length,
+                sessions: i.sessionIds.length,
+              });
+              return;
+            }
+            await persistDraft();
+          }}
+        >
+          <VerbEditorFields
+            key={`${id ?? 'new'}:${editorRevision}`}
+            verb={verb}
+            change={change}
+            section={section}
+            existing={!!id}
+            editedVariants={editedVariants}
+            onValidity={(key, message) => {
+              setFieldErrors((errors) => ({ ...errors, [key]: message }));
+              setDirty(true);
+            }}
+          />
+          <section className="ve-section" hidden={section !== 'json'}>
+            <details open className="ve-advanced">
+              <summary>Todos los campos: ejemplos, audio, fuentes y etiquetas</summary>
+              <p className="small">
+                Editor avanzado JSON. Al aplicar se conservan todos los campos; el guardado validará
+                su estructura. No se ejecuta su contenido.
+              </p>
               <button
                 type="button"
                 className="secondary"
-                onClick={async () => {
-                  await restoreVerb(repos, verb.id);
-                  await refresh();
-                  setDirty(false);
-                  setSaved(true);
+                onClick={() => {
+                  setJson(JSON.stringify(verb, null, 2));
+                  setJsonPending(false);
                 }}
               >
-                Restaurar verbo
+                Cargar datos actuales
               </button>
-            )}
-          </div>
+              <label>
+                Datos completos de la ficha
+                <textarea
+                  className="code-editor"
+                  value={json}
+                  onChange={(e) => {
+                    setJson(e.target.value);
+                    setJsonPending(true);
+                    setDirty(true);
+                  }}
+                />
+              </label>
+              <button
+                type="button"
+                className="secondary"
+                onClick={() => {
+                  try {
+                    const checked = validate<Verb>('verb', JSON.parse(json));
+                    if (!checked.ok)
+                      throw Error(checked.issues.map((i) => i.path + ': ' + i.message).join(' · '));
+                    const next = checked.value;
+                    if (id && next.id !== id) throw Error('El identificador no se puede cambiar');
+                    if (
+                      next.contentVersion !== verb.contentVersion ||
+                      next.updatedAt !== verb.updatedAt
+                    )
+                      throw Error('La versión y la fecha de modificación son campos protegidos.');
+                    change(next);
+                    variantMemory.current.clear();
+                    setEditorRevision((r) => r + 1);
+                    setFieldErrors({});
+                    setJsonPending(false);
+                  } catch (e) {
+                    setError(String(e));
+                  }
+                }}
+              >
+                Aplicar JSON al formulario
+              </button>
+            </details>
+          </section>
         </form>
       </section>
       {current?.pendingBase && (
@@ -392,7 +372,11 @@ export function VerbEditorPage() {
                 setError('');
                 try {
                   const updated = await resolveSeedConflict(repos, verb.id, 'ipa_only');
-                  if (updated) setVerb(updated);
+                  if (updated) {
+                    setVerb(updated);
+                    expectedVersion.current = updated.contentVersion;
+                    setEditorRevision((r) => r + 1);
+                  }
                   await refresh();
                   setIpaUpdated(true);
                 } catch (error) {
@@ -409,6 +393,7 @@ export function VerbEditorPage() {
             <button
               key={c}
               className="secondary"
+              disabled={dirty || ipaUpdating}
               onClick={async () => {
                 await resolveSeedConflict(repos, verb.id, c);
                 await refresh();
@@ -436,11 +421,16 @@ export function VerbEditorPage() {
             className="danger"
             onClick={async () => {
               try {
-                await archiveVerb(repos, verb.id, systemClock);
-                await refresh();
-                setArchive(null);
-                setDirty(false);
-                setSaved(true);
+                if (archiveDraft) {
+                  setArchive(null);
+                  await persistDraft();
+                } else {
+                  await archiveVerb(repos, verb.id, systemClock);
+                  await refresh();
+                  setArchive(null);
+                  setDirty(false);
+                  setSaved(true);
+                }
               } catch (e) {
                 setError(String(e));
                 setArchive(null);
@@ -462,6 +452,6 @@ export function VerbEditorPage() {
           </div>
         </Dialog>
       )}
-    </>
+    </div>
   );
 }

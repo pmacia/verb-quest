@@ -52,12 +52,13 @@ export interface Verb {
     base: {
       value: string;
       translation?: string;
-      pronunciation?: Partial<Record<Dialect, Pronunciation>>;
+      pronunciation?: Partial<Record<Dialect, Pronunciation>> & { other?: Pronunciation[] };
     };
     pastSimple: { variants: Variant[]; usageNotes?: string[] };
     pastParticiple: { variants: Variant[]; usageNotes?: string[] };
-    thirdPersonSingular?: { variants: Variant[] };
-    presentParticiple?: { variants: Variant[] };
+    thirdPersonSingular?: { variants: Variant[]; usageNotes?: string[] };
+    presentParticiple?: { variants: Variant[]; usageNotes?: string[] };
+    otherForms?: { label: string; group: { variants: Variant[]; usageNotes?: string[] } }[];
   };
   meanings: string[];
   meaningNotes?: string;

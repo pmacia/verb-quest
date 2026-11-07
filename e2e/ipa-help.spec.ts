@@ -85,7 +85,9 @@ test('edited cards can adopt verified IPA without replacing their local meaning'
   await page
     .getByRole('button', { name: 'Actualizar solo IPA y conservar mi ficha', exact: true })
     .click();
-  await expect(page.getByRole('status')).toContainText('Tus otros cambios se conservan');
+  await expect(
+    page.getByRole('status').filter({ hasText: 'Tus otros cambios se conservan' }),
+  ).toBeVisible();
   await expect(
     page.getByRole('heading', { name: 'Hay una actualización del contenido base', exact: true }),
   ).toHaveCount(0);

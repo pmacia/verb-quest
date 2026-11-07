@@ -1,0 +1,414 @@
+/* Complete verb editor. All presentation is confined to its route. */
+.verb-editor-page {
+  --ve-purple: #6942a5;
+  --ve-teal: #176f66;
+  --ve-gold: #865008;
+  --ve-tone: var(--blue);
+  color: var(--text);
+  min-width: 0;
+  font-size: 13px;
+}
+html[data-theme='dark'] .verb-editor-page {
+  --ve-purple: #d1b7ff;
+  --ve-teal: #85dfd0;
+  --ve-gold: #ffd08a;
+}
+@media (prefers-color-scheme: dark) {
+  html[data-theme='system'] .verb-editor-page {
+    --ve-purple: #d1b7ff;
+    --ve-teal: #85dfd0;
+    --ve-gold: #ffd08a;
+  }
+}
+.verb-editor-page .ve-tone-teal {
+  --ve-tone: var(--ve-teal);
+}
+.verb-editor-page .ve-tone-gold {
+  --ve-tone: var(--ve-gold);
+}
+.verb-editor-page .ve-tone-purple {
+  --ve-tone: var(--ve-purple);
+}
+.verb-editor-page .ve-topbar,
+.verb-editor-page .ve-actions,
+.verb-editor-page .ve-row-head,
+.verb-editor-page .ve-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.verb-editor-page .ve-topbar {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.verb-editor-page .ve-topbar > div,
+.verb-editor-page .ve-topbar nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.verb-editor-page .ve-topbar .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  margin: 0;
+}
+.verb-editor-page .ve-heading {
+  margin-bottom: 12px;
+}
+.verb-editor-page .ve-heading h1 {
+  margin: 0 0 3px;
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.7px;
+  overflow-wrap: anywhere;
+}
+.verb-editor-page .ve-heading p {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 0;
+}
+.verb-editor-page .ve-verb-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  font-size: 32px;
+}
+.verb-editor-page button,
+.verb-editor-page a.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 32px;
+  padding: 5px 9px;
+  margin: 0;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.3;
+}
+.verb-editor-page button svg,
+.verb-editor-page a svg {
+  flex: none;
+}
+.verb-editor-page button:focus-visible,
+.verb-editor-page a:focus-visible,
+.verb-editor-page summary:focus-visible {
+  outline: 2px solid var(--ve-tone);
+  outline-offset: 3px;
+}
+.verb-editor-page .ve-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 9px 12px;
+  margin-bottom: 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.verb-editor-page .ve-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.verb-editor-page .ve-actions {
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+.verb-editor-page .ve-nav {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  overflow-x: auto;
+  padding: 2px 2px 8px;
+  margin-bottom: 5px;
+  scrollbar-width: thin;
+}
+.verb-editor-page .ve-nav button {
+  flex: none;
+  white-space: nowrap;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.verb-editor-page .ve-nav button[aria-pressed='true'] {
+  color: var(--ve-tone);
+  border-color: var(--ve-tone);
+  background: color-mix(in srgb, var(--ve-tone) 9%, var(--surface));
+}
+.verb-editor-page .ve-content,
+.verb-editor-page .ve-section {
+  min-width: 0;
+}
+.verb-editor-page .ve-section[hidden] {
+  display: none;
+}
+.verb-editor-page .ve-grid,
+.verb-editor-page .ve-pronunciation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 12px;
+}
+.verb-editor-page .ve-wide {
+  grid-column: 1 / -1;
+}
+.verb-editor-page .ve-card {
+  min-width: 0;
+  padding: 12px 14px;
+  margin: 0 0 10px;
+  border: 1px solid color-mix(in srgb, var(--ve-tone) 22%, var(--line));
+  border-radius: 12px;
+  background: var(--surface);
+}
+.verb-editor-page .ve-card > legend {
+  padding: 0 5px;
+  color: var(--ve-tone);
+  font-size: 12px;
+  font-weight: 650;
+}
+.verb-editor-page .ve-row-head {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.verb-editor-page .ve-row-head h2,
+.verb-editor-page .ve-row-head h3,
+.verb-editor-page .ve-card > h2,
+.verb-editor-page .ve-card > h3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ve-tone);
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0;
+}
+.verb-editor-page .ve-card > h2,
+.verb-editor-page .ve-card > h3 {
+  margin-bottom: 10px;
+}
+.verb-editor-page .ve-rows {
+  display: grid;
+  gap: 10px;
+}
+.verb-editor-page .ve-rows > .ve-card {
+  margin-bottom: 0;
+  background: var(--bg);
+}
+.verb-editor-page .ve-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+  margin: 0;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 550;
+}
+.verb-editor-page .ve-field label {
+  margin: 0;
+  font-size: 12px;
+}
+.verb-editor-page .ve-field input:not([type='checkbox']):not([type='radio']),
+.verb-editor-page .ve-field select,
+.verb-editor-page .ve-field textarea,
+.verb-editor-page textarea.ve-array {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  min-height: 34px;
+  padding: 7px 9px;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.verb-editor-page .ve-field textarea,
+.verb-editor-page textarea.ve-array {
+  min-height: 72px;
+  resize: vertical;
+}
+.verb-editor-page .ve-field input:focus-visible,
+.verb-editor-page .ve-field select:focus-visible,
+.verb-editor-page .ve-field textarea:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--ve-tone) 45%, transparent);
+  outline-offset: 1px;
+  border-color: var(--ve-tone);
+}
+.verb-editor-page .ve-field small,
+.verb-editor-page .ve-card > p {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+.verb-editor-page .ve-field small {
+  margin: 0;
+}
+.verb-editor-page .ve-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 32px;
+  margin: 0;
+  font-size: 12px;
+  cursor: pointer;
+}
+.verb-editor-page .ve-check input[type='checkbox'] {
+  flex: none;
+  width: 15px;
+  height: 15px;
+  min-height: 15px;
+  margin: 0;
+  padding: 0;
+  accent-color: var(--ve-tone);
+}
+.verb-editor-page .ve-advanced,
+.verb-editor-page .ve-pronunciation {
+  min-width: 0;
+  margin-top: 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 0 10px;
+  background: color-mix(in srgb, var(--ve-tone) 3%, var(--surface));
+}
+.verb-editor-page .ve-advanced > summary,
+.verb-editor-page .ve-pronunciation > summary {
+  min-height: 34px;
+  padding: 8px 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ve-tone);
+  cursor: pointer;
+}
+.verb-editor-page .ve-advanced[open] > summary,
+.verb-editor-page .ve-pronunciation[open] > summary {
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.verb-editor-page .ve-advanced[open],
+.verb-editor-page .ve-pronunciation[open] {
+  padding-bottom: 10px;
+}
+.verb-editor-page .ve-remove {
+  color: var(--error);
+  background: transparent;
+  border: 1px solid transparent;
+}
+.verb-editor-page .ve-remove:hover {
+  color: var(--error);
+  background: color-mix(in srgb, var(--error) 8%, transparent);
+  border-color: color-mix(in srgb, var(--error) 22%, transparent);
+}
+.verb-editor-page .ve-error,
+.verb-editor-page .ve-status {
+  margin: 8px 0;
+  padding: 9px 11px;
+  border-radius: 9px;
+  font-size: 12px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.verb-editor-page .ve-error {
+  color: var(--error);
+  border: 1px solid color-mix(in srgb, var(--error) 28%, var(--line));
+  background: color-mix(in srgb, var(--error) 7%, var(--surface));
+}
+.verb-editor-page .ve-status {
+  color: var(--ve-teal);
+  background: color-mix(in srgb, var(--ve-teal) 8%, var(--surface));
+}
+.verb-editor-page .ve-metadata {
+  color: var(--muted);
+  font-size: 11px;
+}
+.verb-editor-page .ve-readonly input:disabled,
+.verb-editor-page .ve-field input:read-only {
+  color: var(--muted);
+  background: var(--surface);
+  opacity: 1;
+  -webkit-text-fill-color: var(--muted);
+}
+@media (max-width: 640px) {
+  .verb-editor-page {
+    padding-bottom: 12px;
+  }
+  .verb-editor-page .ve-heading h1 {
+    font-size: 23px;
+  }
+  .verb-editor-page .ve-heading p {
+    font-size: 11px;
+  }
+  .verb-editor-page .ve-toolbar {
+    position: static;
+    padding: 8px;
+    gap: 6px;
+  }
+  .verb-editor-page .ve-actions {
+    gap: 4px;
+  }
+  .verb-editor-page .ve-actions button,
+  .verb-editor-page .ve-actions a.button {
+    min-width: 34px;
+    padding: 7px;
+  }
+  .verb-editor-page .ve-action-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+  .verb-editor-page .ve-grid,
+  .verb-editor-page .ve-pronunciation-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .verb-editor-page .ve-card {
+    padding: 12px;
+  }
+  .verb-editor-page .ve-nav {
+    gap: 4px;
+  }
+  .verb-editor-page .ve-nav button {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+}
+@media (max-width: 380px) {
+  .verb-editor-page .ve-nav {
+    justify-content: space-between;
+  }
+  .verb-editor-page .ve-nav button {
+    min-width: 34px;
+  }
+  .verb-editor-page .ve-nav-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}

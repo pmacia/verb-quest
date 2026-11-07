@@ -3,6 +3,7 @@ test('retyping a variant preserves its original dialect IPA translation and lear
   page,
 }) => {
   await page.goto('/editor/verbs/get');
+  await page.getByRole('button', { name: 'Formas y sonidos', exact: true }).click();
   const input = page.getByRole('textbox', {
     name: 'Participio pasado (variantes separadas por /)',
     exact: true,

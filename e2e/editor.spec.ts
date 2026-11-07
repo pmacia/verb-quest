@@ -13,7 +13,7 @@ test('new verb persists and dirty edits require confirmation', async ({ page }) 
   await page.reload();
   await page.getByRole('link', { name: 'Editar ficha' }).click();
   await page.getByLabel('Forma base', { exact: true }).fill('babysit-change');
-  await page.getByRole('link', { name: 'Cancelar', exact: true }).click();
+  await page.getByRole('link', { name: 'Cancelar edición', exact: true }).click();
   await expect(page.getByRole('dialog', { name: 'Cambios sin guardar' })).toBeVisible();
   await page.getByRole('button', { name: 'Salir sin guardar' }).click();
   await expect(page.getByRole('link', { name: /^babysit/ })).toBeVisible();

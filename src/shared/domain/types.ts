@@ -48,6 +48,7 @@ export interface Example {
 export interface Verb {
   id: VerbId;
   lemma: string;
+  icon?: string;
   forms: {
     base: {
       value: string;

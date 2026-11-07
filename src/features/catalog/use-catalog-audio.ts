@@ -13,7 +13,10 @@ import { getSpeechService } from '../audio/speech-service';
 import { recordActivity } from '../gamification/awards';
 
 /** One player owns sequential and individual actions, including cancellation across them. */
-export function useCatalogAudio(visibleIds: string[]) {
+export function useCatalogAudio(
+  visibleIds: string[],
+  { recordActivity: trackActivity = true }: { recordActivity?: boolean } = {},
+) {
   const { settings, repos, profile } = useApp();
   const player = useMemo(() => createVerbAudioPlayer(getSpeechService()), []);
   const [playingId, setPlayingId] = useState<string | null>(null);
@@ -27,6 +30,7 @@ export function useCatalogAudio(visibleIds: string[]) {
     player.cancel();
     setPlayingId(null);
     setPlayingKey(null);
+    setMessage('');
   }
   useEffect(() => () => player.cancel(), [player]);
   useEffect(() => {
@@ -64,14 +68,16 @@ export function useCatalogAudio(visibleIds: string[]) {
         segments,
         { ...settings, dialect: dialect ?? settings.dialect, forceDialect: !!dialect },
         {
-          onCompleted: (completedForm) =>
-            recordActivity(repos, {
-              kind: 'audio_completed',
-              profileId: profile.id,
-              verbId: verb.id,
-              form: completedForm,
-              at: systemClock.now(),
-            }),
+          onCompleted: !trackActivity
+            ? undefined
+            : (completedForm) =>
+                recordActivity(repos, {
+                  kind: 'audio_completed',
+                  profileId: profile.id,
+                  verbId: verb.id,
+                  form: completedForm,
+                  at: systemClock.now(),
+                }),
         },
       );
       if (requestNumber.current !== request) return;
@@ -94,5 +100,5 @@ export function useCatalogAudio(visibleIds: string[]) {
       setMessage(error instanceof Error ? error.message : 'No se pudo completar el audio.');
     }
   }
-  return { playingId, playingKey, message, play };
+  return { playingId, playingKey, message, play, stop };
 }

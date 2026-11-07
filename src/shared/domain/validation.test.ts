@@ -37,3 +37,8 @@ it('rejects whitespace-only linguistic fields', () => {
   const result = adaptLegacyVerb({ ...seed.verbs[1], meanings: ['  '] });
   expect(result.ok).toBe(false);
 });
+it('accepts one custom icon including joined emoji while rejecting multi-symbol labels', () => {
+  expect(adaptLegacyVerb({ ...seed.verbs[1], icon: '🌅' }).ok).toBe(true);
+  expect(adaptLegacyVerb({ ...seed.verbs[1], icon: '👩‍🏫' }).ok).toBe(true);
+  expect(adaptLegacyVerb({ ...seed.verbs[1], icon: 'varios iconos' }).ok).toBe(false);
+});

@@ -104,6 +104,9 @@ html[data-theme='dark'] .verb-editor-page {
   outline-offset: 3px;
 }
 .verb-editor-page .ve-toolbar {
+  position: sticky;
+  top: 8px;
+  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -357,7 +360,6 @@ html[data-theme='dark'] .verb-editor-page {
     font-size: 11px;
   }
   .verb-editor-page .ve-toolbar {
-    position: static;
     padding: 8px;
     gap: 6px;
   }
@@ -411,4 +413,230 @@ html[data-theme='dark'] .verb-editor-page {
     clip-path: inset(50%);
     white-space: nowrap;
   }
+}
+
+/* Editor context and local-only notice. */
+.verb-editor-page .ve-subject {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 12px;
+}
+.verb-editor-page .ve-subject-copy,
+.verb-editor-page .ve-state-copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 2px;
+}
+.verb-editor-page .ve-subject-copy strong {
+  font-size: 22px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.verb-editor-page .ve-subject-copy span {
+  color: var(--muted);
+  font-size: 13px;
+}
+.verb-editor-page .ve-local-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 9px 11px;
+  border: 1px solid color-mix(in srgb, var(--blue) 20%, var(--line));
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--blue) 4%, var(--surface));
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.45;
+}
+.verb-editor-page .ve-local-notice > svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--blue);
+}
+.verb-editor-page .ve-notice-copy {
+  flex: 1;
+  min-width: 0;
+}
+.verb-editor-page .ve-notice-copy p {
+  margin: 0;
+}
+.verb-editor-page .ve-notice-options {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 5px;
+  font-size: 11px;
+}
+.verb-editor-page .ve-notice-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: inherit;
+  cursor: pointer;
+}
+.verb-editor-page .ve-notice-options input[type='checkbox'] {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  accent-color: var(--blue);
+}
+.verb-editor-page .ve-notice-close {
+  flex: none;
+  min-height: 26px;
+  width: 26px;
+  padding: 3px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+}
+.verb-editor-page .ve-notice-close:hover {
+  background: var(--bg);
+  color: var(--text);
+}
+.verb-editor-page .ve-toolbar.is-dirty {
+  border-color: color-mix(in srgb, var(--ve-gold) 42%, var(--line));
+  background: color-mix(in srgb, var(--ve-gold) 7%, var(--surface));
+}
+.verb-editor-page .ve-toolbar.is-saving {
+  border-color: color-mix(in srgb, var(--blue) 40%, var(--line));
+}
+.verb-editor-page .ve-state {
+  gap: 8px;
+}
+.verb-editor-page .ve-state-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: var(--ve-teal);
+  background: color-mix(in srgb, var(--ve-teal) 10%, var(--surface));
+}
+.verb-editor-page .is-dirty .ve-state-icon {
+  color: var(--ve-gold);
+  background: color-mix(in srgb, var(--ve-gold) 12%, var(--surface));
+}
+.verb-editor-page .is-saving .ve-state-icon {
+  color: var(--blue);
+  background: color-mix(in srgb, var(--blue) 10%, var(--surface));
+}
+.verb-editor-page .ve-state-copy strong {
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+}
+.verb-editor-page .ve-state-copy small {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.35;
+}
+.verb-editor-page .ve-archive {
+  color: var(--muted);
+  border: 1px solid var(--line);
+  background: transparent;
+}
+.verb-editor-page .ve-archive:hover {
+  color: var(--ve-gold);
+  border-color: color-mix(in srgb, var(--ve-gold) 40%, var(--line));
+  background: color-mix(in srgb, var(--ve-gold) 6%, var(--surface));
+}
+.verb-editor-page .ve-icon-picker {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
+  gap: 8px;
+  min-width: 0;
+}
+.verb-editor-page .ve-icon-picker input {
+  flex: 1;
+  min-width: 0;
+}
+.verb-editor-page .ve-icon-current {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  font-size: 25px;
+}
+.verb-editor-page .ve-icon-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(34px, 1fr));
+  gap: 4px;
+  max-height: 120px;
+  padding: 4px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.verb-editor-page .ve-icon-choice {
+  min-width: 0;
+  min-height: 34px;
+  padding: 3px;
+  font-size: 21px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+.verb-editor-page .ve-icon-choice[aria-pressed='true'] {
+  border-color: var(--ve-tone);
+  background: color-mix(in srgb, var(--ve-tone) 12%, var(--surface));
+}
+.verb-editor-page .ve-field-preview {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  min-width: 0;
+}
+.verb-editor-page .ve-field-preview > label,
+.verb-editor-page .ve-field-preview > .ve-field {
+  flex: 1;
+  min-width: 0;
+}
+.verb-editor-page .ve-field-preview > button {
+  flex: none;
+  width: 32px;
+  height: 34px;
+  padding: 5px;
+}
+.verb-editor-page .ve-preview-status {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+  margin: 4px 0 0;
+}
+.verb-editor-page .ve-preview-status:empty {
+  display: none;
+}
+.verb-editor-page .ve-example-audio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  min-width: 0;
+}
+.verb-editor-page .ve-example-audio audio {
+  width: min(100%, 280px);
+  height: 32px;
+}
+.verb-editor-page :is(input, textarea, select, summary, .ve-section, .ve-card) {
+  scroll-margin-top: 110px;
+}
+@media (max-width: 640px) {
+  .verb-editor-page :is(input, textarea, select, summary, .ve-section, .ve-card) {
+    scroll-margin-top: 140px;
+  }
+  .verb-editor-page .ve-state-copy small {
+    max-width: 190px;
+  }
+}
+
+.verb-editor-page .is-dirty .ve-state-copy small {
+  color: var(--text);
 }

@@ -29,7 +29,7 @@ export function AudioControls({
         className={iconOnly ? 'secondary icon-button' : 'secondary'}
         title={label}
         aria-busy={playing}
-        disabled={playing}
+        disabled={playing || !text.trim()}
         aria-label={label}
         onClick={async () => {
           setPlaying(true);

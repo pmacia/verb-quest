@@ -1,5 +1,15 @@
+import { EditorAudioPreview, type EditorPreview } from './EditorAudioPreview';
+import { AudioControls } from '../audio/AudioControls';
+import { getVerbIcon, verbIconOptions } from './verb-icons';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import type { Example, Pronunciation, Source, Variant, Verb } from '../../shared/domain/types';
+import type {
+  FormKey,
+  Example,
+  Pronunciation,
+  Source,
+  Variant,
+  Verb,
+} from '../../shared/domain/types';
 import { Icon } from '../../shared/ui/Icon';
 import { createId } from '../../shared/identity/create-id';
 
@@ -23,6 +33,7 @@ export function EditorField({
   required = false,
   disabled = false,
   placeholder,
+  action,
 }: {
   label: string;
   value: string;
@@ -31,6 +42,7 @@ export function EditorField({
   required?: boolean;
   disabled?: boolean;
   placeholder?: string;
+  action?: ReactNode;
 }) {
   const props = {
     'aria-label': label,
@@ -41,11 +53,19 @@ export function EditorField({
     onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
       onChange?.(e.target.value),
   };
-  return (
+  const field = (
     <label className="ve-field">
       {label}
       {multiline ? <textarea rows={3} {...props} /> : <input {...props} />}
     </label>
+  );
+  return action ? (
+    <div className="ve-field-preview">
+      {field}
+      {action}
+    </div>
+  ) : (
+    field
   );
 }
 export function EditorSelect({
@@ -195,15 +215,18 @@ function PronunciationFields({
   label,
   value,
   onChange,
+  action,
 }: {
   label: string;
   value: Pronunciation;
   onChange: (value: Pronunciation) => void;
+  action?: ReactNode;
 }) {
   return (
     <div className="ve-grid">
       <EditorField
         label={`IPA ${label}`}
+        action={action}
         value={value.ipa ?? ''}
         onChange={(v) => onChange(optional(value, 'ipa', v))}
       />
@@ -251,10 +274,12 @@ function Pronunciations({
   name,
   value,
   onChange,
+  preview,
 }: {
   name: string;
   value: Variant['pronunciation'];
   onChange: (value: NonNullable<Variant['pronunciation']>) => void;
+  preview?: { audio: EditorPreview; form: FormKey; value: string };
 }) {
   return (
     <div className="ve-pronunciation-grid">
@@ -262,6 +287,17 @@ function Pronunciations({
         <details className="ve-pronunciation" open key={dialect}>
           <summary>{dialect.toUpperCase()} · Fonética y audio</summary>
           <PronunciationFields
+            action={
+              preview && (
+                <EditorAudioPreview
+                  audio={preview.audio}
+                  form={preview.form}
+                  value={preview.value}
+                  dialect={dialect}
+                  label={`Probar pronunciación ${dialect.toUpperCase()} de ${name}`}
+                />
+              )
+            }
             label={`${dialect.toUpperCase()} ${name === 'infinitivo' ? 'del infinitivo' : `de ${name}`}`}
             value={value?.[dialect] ?? {}}
             onChange={(p) => onChange({ ...value, [dialect]: p })}
@@ -277,11 +313,15 @@ function VariantGroup({
   group,
   onChange,
   quickEdit,
+  audio,
+  form,
 }: {
   title: string;
   group: Group;
   onChange: (group: Group) => void;
   quickEdit?: ReactNode;
+  audio?: EditorPreview;
+  form?: FormKey;
 }) {
   return (
     <section className="ve-card">
@@ -308,6 +348,17 @@ function VariantGroup({
               <div className="ve-grid">
                 <EditorField
                   label={`Escritura de ${name}`}
+                  action={
+                    audio &&
+                    form && (
+                      <EditorAudioPreview
+                        audio={audio}
+                        form={form}
+                        value={variant.value}
+                        label={`Probar ${name}`}
+                      />
+                    )
+                  }
                   value={variant.value}
                   required
                   onChange={(v) => update({ ...variant, value: v })}
@@ -337,6 +388,7 @@ function VariantGroup({
               </div>
               <Pronunciations
                 name={name}
+                preview={audio && form ? { audio, form, value: variant.value } : undefined}
                 value={variant.pronunciation}
                 onChange={(p) => update({ ...variant, pronunciation: p })}
               />
@@ -430,6 +482,7 @@ export function VerbEditorFields({
   existing,
   editedVariants,
   onValidity,
+  preview,
 }: {
   verb: Verb;
   change: Change;
@@ -437,6 +490,7 @@ export function VerbEditorFields({
   existing: boolean;
   editedVariants: (form: 'pastSimple' | 'pastParticiple', text: string) => Variant[];
   onValidity: (key: string, message: string) => void;
+  preview: EditorPreview;
 }) {
   const classification = verb.classification;
   const updateForms = (forms: Verb['forms']) => change({ ...verb, forms });
@@ -452,6 +506,46 @@ export function VerbEditorFields({
     <div className="ve-content">
       <section className="ve-section" hidden={section !== 'identity'}>
         <h2>Datos del verbo</h2>
+        <section className="ve-icon-picker ve-card">
+          <div className="ve-row-head">
+            <h3>Icono del verbo</h3>
+            <span className="ve-icon-current" aria-hidden="true">
+              {getVerbIcon(verb)}
+            </span>
+          </div>
+          <EditorField
+            label="Icono representativo"
+            value={verb.icon ?? ''}
+            placeholder={getVerbIcon({ ...verb, icon: undefined })}
+            onChange={(value) => change(optional(verb, 'icon', value.trim() || undefined))}
+          />
+          <p className="small muted">
+            Elige un icono o escribe un símbolo o emoji. Se mostrará en el catálogo y en la ficha.
+          </p>
+          <div className="ve-icon-options" role="group" aria-label="Iconos disponibles">
+            {verbIconOptions.map((icon) => (
+              <button
+                key={icon}
+                type="button"
+                className="secondary ve-icon-choice"
+                aria-label={`Elegir icono ${icon}`}
+                title={`Elegir icono ${icon}`}
+                aria-pressed={verb.icon === icon}
+                onClick={() => change({ ...verb, icon })}
+              >
+                {icon}
+              </button>
+            ))}
+          </div>
+          <button
+            type="button"
+            className="secondary"
+            disabled={!verb.icon}
+            onClick={() => change(optional(verb, 'icon', undefined))}
+          >
+            Usar icono automático
+          </button>
+        </section>
         <div className="ve-grid">
           <EditorField
             label="Identificador estable"
@@ -513,11 +607,23 @@ export function VerbEditorFields({
       </section>
       <section className="ve-section" hidden={section !== 'forms'}>
         <h2>Formas y sonidos</h2>
+        <p className="small muted">
+          Prueba el borrador con la misma voz que la biblioteca. La IPA no modifica la voz
+          sintética.
+        </p>
         <section className="ve-card">
           <h3>Infinitivo</h3>
           <div className="ve-grid">
             <EditorField
               label="Escritura del infinitivo"
+              action={
+                <EditorAudioPreview
+                  audio={preview}
+                  form="base"
+                  value={verb.forms.base.value}
+                  label="Probar infinitivo"
+                />
+              }
               value={verb.forms.base.value}
               required
               onChange={(value) =>
@@ -537,6 +643,7 @@ export function VerbEditorFields({
           </div>
           <Pronunciations
             name="infinitivo"
+            preview={{ audio: preview, form: 'base', value: verb.forms.base.value }}
             value={verb.forms.base.pronunciation}
             onChange={(pronunciation) =>
               updateForms({
@@ -605,6 +712,8 @@ export function VerbEditorFields({
             key={form}
             title={index ? 'Participio pasado' : 'Pasado simple'}
             group={verb.forms[form]}
+            form={form}
+            audio={preview}
             onChange={(group) => updateForms({ ...verb.forms, [form]: group })}
             quickEdit={
               <EditorField
@@ -871,6 +980,17 @@ export function VerbEditorFields({
                     value={example[key]}
                     onChange={(value) => exampleChange(index, { ...example, [key]: value })}
                     multiline={key === 'sentence' || key === 'translation'}
+                    action={
+                      key === 'sentence' ? (
+                        <div className="ve-example-audio">
+                          <AudioControls
+                            text={example.sentence}
+                            label={`Probar frase del ejemplo ${n}`}
+                            iconOnly
+                          />
+                        </div>
+                      ) : undefined
+                    }
                   />
                 ))}
                 <EditorSelect

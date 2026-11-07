@@ -97,6 +97,14 @@ export function validate<T>(kind: string, input: unknown): ValidationResult<T> {
       }
   }
   scan(input);
+  if ((kind === 'verb' || kind === 'legacyVerb') && typeof (input as any)?.icon === 'string') {
+    const icon = (input as any).icon.trim();
+    if (
+      !icon ||
+      [...new Intl.Segmenter(undefined, { granularity: 'grapheme' }).segment(icon)].length !== 1
+    )
+      errors.push(issue('/icon', 'Usa un solo símbolo o emoji para el icono.'));
+  }
   if (kind === 'backup') {
     const b = input as any;
     if (b?.format !== 'verbquest-backup' || b?.schemaVersion !== 1)

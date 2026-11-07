@@ -1,5 +1,6 @@
 import './verb-editor.css';
 import { Icon } from '../../shared/ui/Icon';
+import { useCatalogAudio } from './use-catalog-audio';
 import { getVerbIcon } from './verb-icons';
 import { VerbEditorFields, editorSections, type EditorSection } from './VerbEditorFields';
 import { validate } from '../../shared/domain/validation';
@@ -45,6 +46,16 @@ export function VerbEditorPage() {
   const { entries, repos, refresh, settings } = useApp();
   const current = entries.find((e) => e.verb.id === id);
   const [verb, setVerb] = useState<Verb>(() => structuredClone(current?.verb ?? emptyVerb()));
+  const draftAudio = useCatalogAudio([verb.id], { recordActivity: false });
+  const [saving, setSaving] = useState(false);
+  const [noticeVisible, setNoticeVisible] = useState(() => {
+    try {
+      return localStorage.getItem('verbquest.editor.hide-local-notice') !== 'true';
+    } catch {
+      return true;
+    }
+  });
+  const [neverShowNotice, setNeverShowNotice] = useState(false);
   const variantMemory = useRef(
     new Map<'pastSimple' | 'pastParticiple', { baseline: Variant[]; lastOutput: Variant[] }>(),
   );
@@ -74,7 +85,7 @@ export function VerbEditorPage() {
     memory.lastOutput = next;
     return next;
   }
-  const [dirty, setDirty] = useState(false);
+  const initialRecord = useRef(JSON.stringify(verb));
   const [section, setSection] = useState<EditorSection>('identity');
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [editorRevision, setEditorRevision] = useState(0);
@@ -89,6 +100,10 @@ export function VerbEditorPage() {
     null,
   );
   const [json, setJson] = useState('');
+  const dirty =
+    JSON.stringify(verb) !== initialRecord.current ||
+    jsonPending ||
+    Object.values(fieldErrors).some(Boolean);
   const navigate = useNavigate();
   const blocker = useBlocker(dirty && !saved);
   useEffect(() => {
@@ -102,17 +117,20 @@ export function VerbEditorPage() {
     if (saved) navigate(`/verbs/${verb.id}`);
   }, [saved]);
   function change(value: Verb) {
+    draftAudio.stop();
     setVerb(value);
-    setDirty(true);
+
     setError('');
   }
   async function persistDraft() {
+    if (saving) return;
+    setSaving(true);
     setError('');
     try {
       const r = await saveVerb(repos, verb, expectedVersion.current);
       if (r.status === 'saved') {
         await refresh();
-        setDirty(false);
+
         setSaved(true);
       } else
         setError(
@@ -124,15 +142,19 @@ export function VerbEditorPage() {
         );
     } catch (e) {
       setError(String(e));
+    } finally {
+      setSaving(false);
     }
   }
   useEffect(() => {
-    setVerb(structuredClone(current?.verb ?? emptyVerb()));
+    const loaded = structuredClone(current?.verb ?? emptyVerb());
+    initialRecord.current = JSON.stringify(loaded);
+    setVerb(loaded);
     expectedVersion.current = current?.verb.contentVersion ?? null;
     variantMemory.current.clear();
     setEditorRevision((r) => r + 1);
     setFieldErrors({});
-    setDirty(false);
+
     setSaved(false);
     setError('');
     setJson('');
@@ -157,37 +179,113 @@ export function VerbEditorPage() {
         <div>
           <span className="eyebrow">MODO EDICIÓN · CONTENIDO LOCAL</span>
           <h1>
-            <span className="ve-verb-icon" aria-hidden="true">
-              {getVerbIcon(verb)}
-            </span>
             {id ? 'Editar verbo' : 'Un nuevo descubrimiento'}
+            <span className="dot">.</span>
           </h1>
-          <p>{id ? verb.lemma : 'Crea una ficha completa'} · Cambios locales en este navegador.</p>
         </div>
       </div>
-      <div className="ve-toolbar">
+      <div className="ve-subject">
+        <span className="ve-verb-icon" aria-hidden="true">
+          {getVerbIcon(verb)}
+        </span>
+        <div className="ve-subject-copy">
+          <strong lang="en">{verb.lemma || 'Verbo nuevo'}</strong>
+          <span>{verb.meanings.join(' · ') || 'Completa los datos de la ficha'}</span>
+        </div>
+      </div>
+      {noticeVisible && (
+        <aside
+          className="ve-local-notice"
+          role="note"
+          aria-label="Información sobre los cambios locales"
+        >
+          <Icon name="info" size={17} />
+          <div className="ve-notice-copy">
+            <span>Los cambios se guardan en este navegador.</span>
+            <label className="ve-notice-options">
+              <input
+                type="checkbox"
+                checked={neverShowNotice}
+                onChange={(e) => setNeverShowNotice(e.target.checked)}
+              />
+              No volver a mostrar este aviso
+            </label>
+          </div>
+          <button
+            type="button"
+            className="secondary ve-notice-close"
+            aria-label="Cerrar aviso"
+            title="Cerrar aviso"
+            onClick={() => {
+              if (neverShowNotice) {
+                try {
+                  localStorage.setItem('verbquest.editor.hide-local-notice', 'true');
+                } catch {
+                  /* The notice still closes for this visit. */
+                }
+              }
+              setNoticeVisible(false);
+            }}
+          >
+            <Icon name="close" size={15} />
+          </button>
+        </aside>
+      )}
+      <div className={`ve-toolbar${dirty ? ' is-dirty' : ''}${saving ? ' is-saving' : ''}`}>
         <span className="ve-state" role="status">
-          {dirty ? 'Cambios sin guardar' : current ? 'Ficha guardada' : 'Nueva ficha'}
-          {verb.archivedAt ? ' · Archivado' : ''}
+          <span className="ve-state-icon">
+            <Icon name={saving ? 'clock' : dirty ? 'edit' : 'check'} size={17} />
+          </span>
+          <span className="ve-state-copy">
+            <strong>
+              {saving
+                ? 'Guardando…'
+                : dirty
+                  ? 'Edición pendiente'
+                  : current
+                    ? 'Sin cambios pendientes'
+                    : 'Nueva ficha'}
+            </strong>
+            <small>
+              {dirty
+                ? 'Guarda para aplicar los cambios'
+                : current
+                  ? 'Puedes empezar a editar'
+                  : 'Completa los datos y guarda'}
+              {verb.archivedAt ? ' · Archivado' : ''}
+            </small>
+          </span>
         </span>
         <div className="ve-actions">
           <button
             type="submit"
             form="verb-editor-form"
             aria-label="Guardar verbo"
-            title="Guardar verbo"
+            title={
+              saving
+                ? 'Guardando los cambios'
+                : !dirty
+                  ? 'No hay cambios pendientes'
+                  : 'Guardar los cambios del verbo'
+            }
+            disabled={!dirty || saving}
           >
-            <Icon name="check" size={16} />
-            <span className="ve-action-label">Guardar verbo</span>
+            <Icon name="save" size={16} />
+            <span className="ve-action-label">{saving ? 'Guardando…' : 'Guardar verbo'}</span>
           </button>
-          <Link to="/verbs" className="button secondary" aria-label="Cancelar" title="Cancelar">
+          <Link
+            to="/verbs"
+            className="button secondary"
+            aria-label="Cancelar edición"
+            title="Cancelar edición"
+          >
             <Icon name="close" size={16} />
-            <span className="ve-action-label">Cancelar</span>
+            <span className="ve-action-label">Cancelar edición</span>
           </Link>
           {current && !current.verb.archivedAt && (
             <button
               type="button"
-              className="secondary ve-remove"
+              className="secondary ve-archive"
               aria-label="Archivar verbo"
               title={dirty ? 'Guarda los cambios antes de archivar' : 'Archivar verbo'}
               disabled={dirty}
@@ -201,7 +299,7 @@ export function VerbEditorPage() {
                 });
               }}
             >
-              <Icon name="trash" size={16} />
+              <Icon name="archive" size={16} />
               <span className="ve-action-label">Archivar verbo</span>
             </button>
           )}
@@ -216,7 +314,7 @@ export function VerbEditorPage() {
                 try {
                   await restoreVerb(repos, verb.id);
                   await refresh();
-                  setDirty(false);
+
                   setSaved(true);
                 } catch (e) {
                   setError(String(e));
@@ -238,7 +336,10 @@ export function VerbEditorPage() {
             title={label}
             aria-pressed={section === key}
             className="secondary"
-            onClick={() => setSection(key)}
+            onClick={() => {
+              draftAudio.stop();
+              setSection(key);
+            }}
           >
             <Icon name={icon} size={16} />
             <span className="ve-nav-label">{label}</span>
@@ -287,16 +388,43 @@ export function VerbEditorPage() {
             await persistDraft();
           }}
         >
+          {section === 'forms' && (
+            <div className="ve-preview-toolbar">
+              <button
+                type="button"
+                className="secondary"
+                disabled={
+                  !verb.forms.base.value.trim() ||
+                  [...verb.forms.pastSimple.variants, ...verb.forms.pastParticiple.variants].some(
+                    (v) => !v.value.trim(),
+                  )
+                }
+                aria-label="Probar las tres formas"
+                title="Probar las tres formas del borrador"
+                onClick={() => void draftAudio.play(verb)}
+              >
+                <Icon name={draftAudio.playingKey === verb.id ? 'stop' : 'sound'} size={16} />
+                Probar las tres formas
+              </button>
+            </div>
+          )}
+          <p className="ve-preview-status" role="status">
+            {draftAudio.message}
+          </p>
           <VerbEditorFields
             key={`${id ?? 'new'}:${editorRevision}`}
             verb={verb}
             change={change}
             section={section}
             existing={!!id}
+            preview={{
+              verbId: verb.id,
+              playingKey: draftAudio.playingKey,
+              play: (form, value, dialect) => void draftAudio.play(verb, form, value, dialect),
+            }}
             editedVariants={editedVariants}
             onValidity={(key, message) => {
               setFieldErrors((errors) => ({ ...errors, [key]: message }));
-              setDirty(true);
             }}
           />
           <section className="ve-section" hidden={section !== 'json'}>
@@ -324,7 +452,6 @@ export function VerbEditorPage() {
                   onChange={(e) => {
                     setJson(e.target.value);
                     setJsonPending(true);
-                    setDirty(true);
                   }}
                 />
               </label>
@@ -374,6 +501,7 @@ export function VerbEditorPage() {
                   const updated = await resolveSeedConflict(repos, verb.id, 'ipa_only');
                   if (updated) {
                     setVerb(updated);
+                    initialRecord.current = JSON.stringify(updated);
                     expectedVersion.current = updated.contentVersion;
                     setEditorRevision((r) => r + 1);
                   }
@@ -428,7 +556,7 @@ export function VerbEditorPage() {
                   await archiveVerb(repos, verb.id, systemClock);
                   await refresh();
                   setArchive(null);
-                  setDirty(false);
+
                   setSaved(true);
                 }
               } catch (e) {

@@ -123,6 +123,8 @@ const catalogueVerbIcons: Record<string, string> = {
   swing: '🏌️',
 };
 
+export const verbIconOptions = [...new Set(Object.values(catalogueVerbIcons))];
+
 export function getVerbIcon(verb: Verb): string {
   const topicIcons: Record<string, string> = {
     school: '📚',
@@ -137,6 +139,7 @@ export function getVerbIcon(verb: Verb): string {
     finance_money: '💰',
   };
   return (
-    catalogueVerbIcons[verb.lemma] ?? topicIcons[verb.classification.topics?.[0] ?? ''] ?? '📘'
+    verb.icon?.trim() ||
+    (catalogueVerbIcons[verb.lemma] ?? topicIcons[verb.classification.topics?.[0] ?? ''] ?? '📘')
   );
 }

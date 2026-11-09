@@ -638,25 +638,6 @@ export function CatalogPage() {
                   </button>
                 </header>
                 <div className="cq-filter-scroll">
-                  {lists.length > 0 && (
-                    <label className="cq-list-filter">
-                      <span>
-                        <CatalogGlyph name="book" /> Lista
-                      </span>
-                      <select
-                        aria-label="Filtrar por lista"
-                        value={q.filter.listIds?.[0] ?? ''}
-                        onChange={(e) => filter('listIds', e.target.value)}
-                      >
-                        <option value="">Todas las listas</option>
-                        {lists.map((list) => (
-                          <option key={list.id} value={list.id}>
-                            {list.name}
-                          </option>
-                        ))}
-                      </select>
-                    </label>
-                  )}
                   <div className="cq-filter-primary">
                     {' '}
                     <CatalogChoices
@@ -856,6 +837,30 @@ export function CatalogPage() {
                       </label>
                     </div>
                   </details>
+                  {lists.length > 0 && (
+                    <details className="cq-filter-group cq-filter-teal">
+                      <summary>
+                        <CatalogGlyph name="book" />
+                        <span>Lista</span>
+                        <CatalogGlyph name="chevron" size={13} />
+                      </summary>
+                      <label className="cq-list-filter">
+                        Seleccionar lista
+                        <select
+                          aria-label="Filtrar por lista"
+                          value={q.filter.listIds?.[0] ?? ''}
+                          onChange={(e) => filter('listIds', e.target.value)}
+                        >
+                          <option value="">Todas las listas</option>
+                          {lists.map((list) => (
+                            <option key={list.id} value={list.id}>
+                              {list.name}
+                            </option>
+                          ))}
+                        </select>
+                      </label>
+                    </details>
+                  )}
                 </div>
                 <footer className="cq-filter-footer">
                   <button type="button" className="cq-reset" onClick={clearFilters}>

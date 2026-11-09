@@ -10,6 +10,11 @@ test('saved lists can be filtered, renamed and deleted without removing verbs', 
   await page.getByLabel('Nombre de la lista', { exact: true }).fill('Mi examen');
   await page.getByRole('button', { name: 'Guardar lista', exact: true }).click();
   await page.getByRole('button', { name: 'Filtros', exact: true }).click();
+  const listGroup = page
+    .locator('details')
+    .filter({ has: page.locator('summary', { hasText: /^Lista$/ }) });
+  await expect(listGroup).not.toHaveAttribute('open');
+  await listGroup.locator('summary').click();
   await page
     .getByRole('combobox', { name: 'Filtrar por lista', exact: true })
     .selectOption({ label: 'Mi examen' });

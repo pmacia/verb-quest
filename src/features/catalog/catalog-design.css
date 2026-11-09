@@ -1426,14 +1426,9 @@ html[data-theme='dark'] .catalog-page {
 .catalog-page .cq-list-filter {
   display: grid;
   gap: 6px;
-  margin-bottom: 12px;
+  margin: 8px 0 0;
   color: var(--cq-teal);
   font-size: 12px;
-}
-.catalog-page .cq-list-filter > span {
-  display: flex;
-  align-items: center;
-  gap: 6px;
 }
 .catalog-page .cq-list-filter select {
   width: 100%;

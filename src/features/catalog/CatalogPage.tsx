@@ -1191,13 +1191,27 @@ export function CatalogPage() {
             </button>
           </div>
           <section
-            className="tip-card cq-tip-carousel"
+            className={`tip-card cq-tip-carousel cq-tip-tone-${tipIndex % 3}`}
             aria-label="Consejos del catálogo"
             aria-roledescription="carrusel"
           >
             <header className="cq-tip-toolbar">
+              <span className="cq-tip-emblem">
+                <CatalogGlyph name={tip.icon} size={23} />
+              </span>
               <span className="cq-tip-label">
-                <CatalogGlyph name="star" /> Un truco para ti
+                Un truco para ti<small>Pequeñas pistas, grandes avances</small>
+              </span>
+            </header>
+            <div aria-live="polite" aria-atomic="true" className="cq-tip-content">
+              <h3>{tip.title}</h3>
+              <p>{tip.text}</p>
+            </div>
+            <footer className="cq-tip-footer">
+              <span className="cq-tip-progress" aria-hidden="true">
+                {catalogTips.map((_, index) => (
+                  <span key={index} className={index === tipIndex ? 'active' : ''} />
+                ))}
               </span>
               <div className="cq-tip-navigation">
                 <button
@@ -1227,14 +1241,7 @@ export function CatalogPage() {
                   <CatalogGlyph name="arrow" size={16} />
                 </button>
               </div>
-            </header>
-            <div aria-live="polite" aria-atomic="true" className="cq-tip-content">
-              <h3>
-                <CatalogGlyph name={tip.icon} size={18} />
-                {tip.title}
-              </h3>
-              <p>{tip.text}</p>
-            </div>
+            </footer>
           </section>
           <Link to="/editor/import-export" className="import-link">
             <Icon name="upload" />

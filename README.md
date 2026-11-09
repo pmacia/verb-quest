@@ -95,6 +95,8 @@ En **Filtros** puedes elegir curso, frecuencia, aprendizaje, tema, relación y f
 
 En **Mis listas** puedes seleccionar, renombrar (lápiz) o eliminar (papelera) cada lista. Cuando existen listas, también puedes seleccionarlas desde **Filtros**; ambas selecciones se mantienen sincronizadas. Eliminar requiere confirmación y conserva los verbos y el historial. Si hay planes vinculados, pasan a selección manual conservando sus verbos actuales.
 
+La tarjeta de consejos del catálogo ofrece siete sugerencias con flechas para avanzar y retroceder e indicador de posición. Al volver al catálogo muestra el siguiente consejo; no cambia automáticamente mientras lees.
+
 En la **ficha**, el significado general aparece arriba y cada forma tiene su traducción específica: por ejemplo, **go → ir**, **went → fui / fue**, **gone → ido**. Son equivalentes orientativos, dependientes de la persona y el contexto. Se conservan todas las variantes (por ejemplo, **was/were** y **got/gotten**), sus notas de uso, los ejemplos escuchables, listas y progreso.
 
 El altavoz de la cabecera reproduce las tres formas seguidas. Los botones **UK/US** reproducen una variante con el dialecto solicitado; la ficha ofrece además un botón por forma con los ajustes habituales. Repetir la pulsación detiene el audio y empezar otra reproducción cancela la anterior. Si el dialecto solicitado no está disponible, se comunica la alternativa. Las grabaciones no se descargan de diccionarios: se sigue utilizando síntesis del dispositivo.

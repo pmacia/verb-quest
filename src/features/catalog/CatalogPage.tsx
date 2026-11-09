@@ -25,6 +25,44 @@ const frequency: Record<string, string> = {
   advanced: 'Avanzado',
 };
 
+const catalogTips = [
+  {
+    icon: 'search',
+    title: 'Busca más allá del infinitivo',
+    text: 'Prueba a escribir went o bought. Encontrarás también sus formas base.',
+  },
+  {
+    icon: 'sound',
+    title: 'Escucha las tres formas',
+    text: 'El altavoz de cada tarjeta lee el infinitivo, el pasado y el participio seguidos. En la vista detallada también puedes escucharlos por separado.',
+  },
+  {
+    icon: 'book',
+    title: 'Prepara tu próxima lista',
+    text: 'Marca los verbos que quieras repasar y pulsa Guardar en lista. Después puedes elegir esa lista desde Mis listas o desde los filtros.',
+  },
+  {
+    icon: 'pattern',
+    title: 'Descubre lo que tienen en común',
+    text: 'En Relación y familias puedes agrupar verbos por sus formas y explorar familias con patrones más concretos.',
+  },
+  {
+    icon: 'compact',
+    title: 'Elige cuánto quieres ver',
+    text: 'Usa la vista compacta para recorrer los verbos rápidamente y la detallada para ver sus etiquetas y su pronunciación.',
+  },
+  {
+    icon: 'study',
+    title: 'Aprende también con las frases',
+    text: 'Abre la ficha de un verbo para ver ejemplos de uso y escuchar sus frases con el altavoz.',
+  },
+  {
+    icon: 'sound',
+    title: 'Una misma escritura, dos sonidos',
+    text: 'Read se escribe igual en las tres formas, pero el infinitivo suena /riːd/ y el pasado y el participio, /red/. Escúchalos y compara.',
+  },
+];
+
 function CatalogGlyph({ name, size = 16 }: { name: string; size?: number }) {
   const paths: Record<string, string> = {
     expanded: 'M4 3h16v7H4Zm0 11h16v7H4Z',
@@ -388,6 +426,25 @@ export function CatalogPage() {
       };
     });
   }, [lists]);
+  const [tipIndex, setTipIndex] = useState(() => {
+    try {
+      const previous = localStorage.getItem('verbquest.catalog-tip');
+      const index = previous === null ? -1 : Number(previous);
+      return Number.isInteger(index) && index >= -1 && index < catalogTips.length
+        ? (index + 1) % catalogTips.length
+        : 0;
+    } catch {
+      return 0;
+    }
+  });
+  useEffect(() => {
+    try {
+      localStorage.setItem('verbquest.catalog-tip', String(tipIndex));
+    } catch {
+      /* Optional reading preference. */
+    }
+  }, [tipIndex]);
+  const tip = catalogTips[tipIndex];
   const [viewMode, setViewMode] = useState<'expanded' | 'compact'>(() => {
     try {
       return localStorage.getItem('verbquest.catalog-density-v2') === 'expanded'
@@ -1133,14 +1190,52 @@ export function CatalogPage() {
               Crear una lista
             </button>
           </div>
-          <div className="tip-card">
-            <span className="tip-icon">✦</span>
-            <h3>Busca más allá del infinitivo</h3>
-            <p>
-              Prueba a escribir <strong>went</strong> o <strong>bought</strong>. Encontrarás también
-              sus formas base.
-            </p>
-          </div>
+          <section
+            className="tip-card cq-tip-carousel"
+            aria-label="Consejos del catálogo"
+            aria-roledescription="carrusel"
+          >
+            <header className="cq-tip-toolbar">
+              <span className="cq-tip-label">
+                <CatalogGlyph name="star" /> Un truco para ti
+              </span>
+              <div className="cq-tip-navigation">
+                <button
+                  type="button"
+                  className="cq-action cq-tip-previous"
+                  aria-label="Consejo anterior"
+                  title="Consejo anterior"
+                  onClick={() =>
+                    setTipIndex((index) => (index - 1 + catalogTips.length) % catalogTips.length)
+                  }
+                >
+                  <CatalogGlyph name="arrow" size={16} />
+                </button>
+                <span
+                  className="cq-tip-position"
+                  aria-label={`Consejo ${tipIndex + 1} de ${catalogTips.length}`}
+                >
+                  {tipIndex + 1}/{catalogTips.length}
+                </span>
+                <button
+                  type="button"
+                  className="cq-action"
+                  aria-label="Consejo siguiente"
+                  title="Consejo siguiente"
+                  onClick={() => setTipIndex((index) => (index + 1) % catalogTips.length)}
+                >
+                  <CatalogGlyph name="arrow" size={16} />
+                </button>
+              </div>
+            </header>
+            <div aria-live="polite" aria-atomic="true" className="cq-tip-content">
+              <h3>
+                <CatalogGlyph name={tip.icon} size={18} />
+                {tip.title}
+              </h3>
+              <p>{tip.text}</p>
+            </div>
+          </section>
           <Link to="/editor/import-export" className="import-link">
             <Icon name="upload" />
             Importar o exportar datos

@@ -1,3 +1,5 @@
+import './dialog.css';
+import { Icon } from './Icon';
 import { useEffect, useRef, type ReactNode } from 'react';
 export function Dialog({
   title,
@@ -20,6 +22,7 @@ export function Dialog({
   return (
     <dialog
       ref={ref}
+      className="app-dialog"
       aria-label={title}
       onCancel={(event) => {
         event.preventDefault();
@@ -31,8 +34,14 @@ export function Dialog({
     >
       <header className="row">
         <h2>{title}</h2>
-        <button className="icon-button" aria-label="Cerrar" onClick={onClose}>
-          ×
+        <button
+          type="button"
+          className="icon-button dialog-close"
+          aria-label="Cerrar"
+          title="Cerrar diálogo"
+          onClick={onClose}
+        >
+          <Icon name="close" size={16} />
         </button>
       </header>
       {children}

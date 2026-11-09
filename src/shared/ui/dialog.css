@@ -1,0 +1,41 @@
+/* Shared by every dialog; the close control does not inherit action-button sizing. */
+dialog.app-dialog > header > h2 {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+dialog.app-dialog > header > button.dialog-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 32px;
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  min-height: 32px;
+  aspect-ratio: 1;
+  padding: 0;
+  margin: 0;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text);
+  line-height: 1;
+  transition:
+    border-color 0.15s,
+    color 0.15s;
+}
+dialog.app-dialog > header > button.dialog-close > svg {
+  flex: none;
+}
+dialog.app-dialog > header > button.dialog-close:hover,
+dialog.app-dialog > header > button.dialog-close:active {
+  background: transparent;
+  border-color: var(--blue);
+  color: var(--blue);
+}
+dialog.app-dialog > header > button.dialog-close:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}

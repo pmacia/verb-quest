@@ -1397,3 +1397,53 @@ html[data-theme='dark'] .catalog-page {
     gap: 0;
   }
 }
+
+/* Saved-list actions share the catalogue's compact controls. */
+.catalog-page .cq-list-row {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.catalog-page .cq-list-row .list-item {
+  min-width: 0;
+  flex: 1;
+  align-items: center;
+}
+.catalog-page .list-item .cq-list-name {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-size: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.catalog-page .cq-list-actions {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.catalog-page .cq-list-filter {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 12px;
+  color: var(--cq-teal);
+  font-size: 12px;
+}
+.catalog-page .cq-list-filter > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.catalog-page .cq-list-filter select {
+  width: 100%;
+  min-height: 34px;
+  padding: 5px 8px;
+  font-size: 12px;
+}
+.cq-list-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}

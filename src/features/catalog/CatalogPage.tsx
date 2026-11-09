@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { useApp } from '../../app/app-context';
 import { queryCatalog, formValues } from './query';
 import { topicLabel } from './classification-labels';
-import { saveList } from './list-service';
+import { saveList, renameList, deleteList, planUsesList } from './list-service';
 import { Icon } from '../../shared/ui/Icon';
 import { Dialog } from '../../shared/ui/Dialog';
 import { useCatalogAudio } from './use-catalog-audio';
@@ -17,7 +17,7 @@ import { FamilyFilter } from './FamilyFilter';
 import { filterFamilyCandidates, type RelationScope } from './family-filter';
 import { IpaHelpButton } from '../phonetics/IpaHelpButton';
 import { restoreVerb } from './editor-service';
-import type { Verb, CatalogQuery, FormKey, Dialect } from '../../shared/domain/types';
+import type { Verb, VerbList, CatalogQuery, FormKey, Dialect } from '../../shared/domain/types';
 const frequency: Record<string, string> = {
   essential: 'Esencial',
   common: 'Frecuente',
@@ -356,13 +356,38 @@ function CatalogEntry({
 }
 
 export function CatalogPage() {
-  const { verbs, lists, progress, repos, profile, refresh, settings } = useApp();
+  const { verbs, lists, plans, progress, repos, profile, refresh, settings } = useApp();
   const [q, setQ] = useState<CatalogQuery>({
     text: '',
     filter: {},
     sort: 'alphabetical',
     direction: 'asc',
   });
+  const [listAction, setListAction] = useState<{
+    type: 'rename' | 'delete';
+    list: VerbList;
+  } | null>(null);
+  const [listName, setListName] = useState('');
+  const [listError, setListError] = useState('');
+  const [listBusy, setListBusy] = useState(false);
+  function manageList(type: 'rename' | 'delete', list: VerbList) {
+    setListName(list.name);
+    setListError('');
+    setListAction({ type, list });
+  }
+  useEffect(() => {
+    setQ((current) => {
+      const ids = current.filter.listIds;
+      if (!ids?.some((id) => !lists.some((list) => list.id === id))) return current;
+      return {
+        ...current,
+        filter: {
+          ...current.filter,
+          listIds: ids.filter((id) => lists.some((list) => list.id === id)),
+        },
+      };
+    });
+  }, [lists]);
   const [viewMode, setViewMode] = useState<'expanded' | 'compact'>(() => {
     try {
       return localStorage.getItem('verbquest.catalog-density-v2') === 'expanded'
@@ -613,6 +638,25 @@ export function CatalogPage() {
                   </button>
                 </header>
                 <div className="cq-filter-scroll">
+                  {lists.length > 0 && (
+                    <label className="cq-list-filter">
+                      <span>
+                        <CatalogGlyph name="book" /> Lista
+                      </span>
+                      <select
+                        aria-label="Filtrar por lista"
+                        value={q.filter.listIds?.[0] ?? ''}
+                        onChange={(e) => filter('listIds', e.target.value)}
+                      >
+                        <option value="">Todas las listas</option>
+                        {lists.map((list) => (
+                          <option key={list.id} value={list.id}>
+                            {list.name}
+                          </option>
+                        ))}
+                      </select>
+                    </label>
+                  )}
                   <div className="cq-filter-primary">
                     {' '}
                     <CatalogChoices
@@ -1045,10 +1089,34 @@ export function CatalogPage() {
               Todos los verbos <span>{verbs.filter((v) => !v.archivedAt).length}</span>
             </button>
             {lists.map((l) => (
-              <button key={l.id} className="list-item" onClick={() => filter('listIds', l.id)}>
-                {l.name}
-                <span>{l.verbIds.length}</span>
-              </button>
+              <div key={l.id} className="cq-list-row">
+                <button
+                  className={q.filter.listIds?.includes(l.id) ? 'list-item active' : 'list-item'}
+                  aria-pressed={!!q.filter.listIds?.includes(l.id)}
+                  onClick={() => filter('listIds', l.id)}
+                >
+                  <span className="cq-list-name">{l.name}</span>
+                  <span>{l.verbIds.length}</span>
+                </button>
+                <div className="cq-list-actions">
+                  <button
+                    className="cq-action"
+                    aria-label={`Renombrar lista ${l.name}`}
+                    title="Renombrar lista"
+                    onClick={() => manageList('rename', l)}
+                  >
+                    <Icon name="edit" size={15} />
+                  </button>
+                  <button
+                    className="cq-action cq-delete"
+                    aria-label={`Eliminar lista ${l.name}`}
+                    title="Eliminar lista"
+                    onClick={() => manageList('delete', l)}
+                  >
+                    <Icon name="trash" size={15} />
+                  </button>
+                </div>
+              </div>
             ))}
             {!lists.length && (
               <p className="muted small">
@@ -1075,6 +1143,73 @@ export function CatalogPage() {
           </Link>
         </aside>
       </div>
+      {listAction && (
+        <Dialog
+          title={listAction.type === 'rename' ? 'Renombrar lista' : 'Eliminar lista'}
+          onClose={() => {
+            if (!listBusy) setListAction(null);
+          }}
+        >
+          <form
+            onSubmit={async (e) => {
+              e.preventDefault();
+              setListBusy(true);
+              setListError('');
+              try {
+                if (listAction.type === 'rename')
+                  await renameList(repos, profile.id, listAction.list.id, listName);
+                else await deleteList(repos, profile.id, listAction.list.id);
+                await refresh();
+                setListAction(null);
+              } catch (error) {
+                setListError(error instanceof Error ? error.message : String(error));
+              } finally {
+                setListBusy(false);
+              }
+            }}
+          >
+            {listAction.type === 'rename' ? (
+              <label>
+                Nombre de la lista
+                <input
+                  required
+                  autoFocus
+                  value={listName}
+                  onChange={(e) => setListName(e.target.value)}
+                />
+              </label>
+            ) : (
+              <>
+                <p>¿Eliminar «{listAction.list.name}»? Los verbos no se eliminarán.</p>
+                {plans.some((plan) => planUsesList(plan, listAction.list.id)) && (
+                  <p>
+                    Los planes vinculados conservarán su selección actual de verbos como selección
+                    manual. Las sesiones y el historial se conservarán.
+                  </p>
+                )}
+              </>
+            )}
+            {listError && <p role="alert">{listError}</p>}
+            <div className="cq-list-dialog-actions">
+              <button
+                type="button"
+                className="secondary"
+                disabled={listBusy}
+                onClick={() => setListAction(null)}
+              >
+                Cancelar
+              </button>
+              <button disabled={listBusy}>
+                {listBusy
+                  ? 'Guardando…'
+                  : listAction.type === 'rename'
+                    ? 'Guardar nombre'
+                    : 'Eliminar lista'}
+              </button>
+            </div>
+          </form>
+        </Dialog>
+      )}
       {newList && (
         <Dialog title="Guardar lista" onClose={() => setNewList(false)}>
           <form

@@ -96,6 +96,6 @@ it('metadata upgrade preserves local edits, lists and learning evidence', async 
   expect((await r.catalog.get('buy'))?.verb.forms.base.pronunciation?.us?.validated).toBe(true);
   expect(await r.progress.get([profile.id, 'go', 'recognition'])).toEqual(progress);
   expect((await r.lists.get('exam'))?.verbIds).toEqual(['go', 'buy']);
-  expect((await r.meta.get('datasetVersion'))?.value).toBe('curated-1.3');
+  expect((await r.meta.get('datasetVersion'))?.value).toBe('curated-1.4');
   r.close();
 });

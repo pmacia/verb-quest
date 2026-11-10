@@ -45,6 +45,12 @@ export interface Example {
   form?: FormKey;
   acceptedAnswers?: string[];
 }
+export interface VerbDefinition {
+  text: string;
+  dialects: Dialect[];
+  sources: Source[];
+  reviewStatus: 'draft' | 'needs_review' | 'validated';
+}
 export interface Verb {
   id: VerbId;
   lemma: string;
@@ -61,6 +67,7 @@ export interface Verb {
     presentParticiple?: { variants: Variant[]; usageNotes?: string[] };
     otherForms?: { label: string; group: { variants: Variant[]; usageNotes?: string[] } }[];
   };
+  definitions?: VerbDefinition[];
   meanings: string[];
   meaningNotes?: string;
   classification: {

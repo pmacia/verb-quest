@@ -4,13 +4,14 @@ import additions from './catalog-enrichment.json';
 import { enrichVerbs, type VerbEnrichment } from './enrichment';
 import { applyPronunciationReview, pronunciationReview } from './pronunciation-review';
 import type { Dataset, Verb } from '../shared/domain/types';
+const version = 'curated-1.4';
 export const curatedDataset: Dataset = {
-  version: 'curated-1.3',
+  version,
   kind: 'curated',
   verbs: applyFormTranslations(
     applyPronunciationReview(
       enrichVerbs(verbs as Verb[], additions.entries as VerbEnrichment[], pronunciationReview),
       pronunciationReview,
     ),
-  ),
+  ).map((verb) => ({ ...verb, contentVersion: version })),
 };

@@ -37,5 +37,5 @@ it('distinguishes conjugated translations and preserves written read and be vari
   ]);
 });
 it('updates editorial version independently of learning revision', () => {
-  expect(dataset.verbs[0].contentVersion).toBe('curated-1.3');
+  expect(dataset.verbs[0].contentVersion).toBe('curated-1.4');
 });

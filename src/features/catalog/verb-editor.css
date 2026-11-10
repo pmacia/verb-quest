@@ -640,3 +640,18 @@ html[data-theme='dark'] .verb-editor-page {
 .verb-editor-page .is-dirty .ve-state-copy small {
   color: var(--text);
 }
+
+.ve-definition-editor {
+  margin-top: 16px;
+}
+.ve-definition-editor h3 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.ve-definition-editor > fieldset {
+  margin: 12px 0;
+}
+.ve-definition-editor .ve-check {
+  margin-right: 14px;
+}

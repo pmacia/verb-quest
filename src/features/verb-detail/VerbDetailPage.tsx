@@ -1,6 +1,7 @@
 import { getVerbIcon } from '../catalog/verb-icons';
 import '../catalog/catalog-design.css';
 import './verb-detail.css';
+import { VerbDefinitions } from './VerbDefinitions';
 import { VerbForms } from '../catalog/VerbForms';
 import { VerbBadges } from '../catalog/VerbBadges';
 import { useCatalogAudio } from '../catalog/use-catalog-audio';
@@ -76,6 +77,7 @@ export function VerbDetailPage() {
           <VerbBadges verb={v} detailed icons />
         </div>
       </div>
+      <VerbDefinitions definitions={v.definitions} showSources={!!settings.showSources} />
       {v.archivedAt && (
         <div className="notice">Este verbo está archivado. Su historial se conserva.</div>
       )}

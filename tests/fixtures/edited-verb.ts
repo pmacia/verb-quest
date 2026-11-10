@@ -3,6 +3,20 @@ import type { Verb } from '../../src/shared/domain/types';
 export function editedVerb(input: Verb): Verb {
   const verb = structuredClone(input);
   verb.forms.base.pronunciation ??= {};
+  verb.definitions = [
+    {
+      text: 'To obtain something or receive it.',
+      dialects: ['uk', 'us'],
+      sources: [
+        {
+          label: 'Referencia de prueba',
+          url: 'https://dictionary.cambridge.org/dictionary/english/get',
+          checkedAt: '2026-11-10',
+        },
+      ],
+      reviewStatus: 'needs_review',
+    },
+  ];
   verb.icon = '🧩';
   verb.meaningNotes = 'Nota de significado';
   verb.forms.base.translation = 'obtener';

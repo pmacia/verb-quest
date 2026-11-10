@@ -109,7 +109,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "Used to identify someone or something, or describe a quality, state, or feeling.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/be",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "Used to describe where someone or something is.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/be",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "go",
@@ -201,7 +227,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To move or travel from one place to another.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/go",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "have",
@@ -293,7 +333,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To own something, or to have a person or thing as part of your life.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/have",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "do",
@@ -385,7 +439,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To carry out an action, activity, or task.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/do",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "get",
@@ -497,7 +565,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To receive something or manage to obtain it.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/get",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "make",
@@ -589,7 +671,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To create something or prepare it so that it can be used.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/make",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "take",
@@ -681,7 +777,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To pick something up or carry it to another place.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/take",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "come",
@@ -773,7 +883,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To move towards the person speaking, or towards the person being spoken to.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/come",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "see",
@@ -865,7 +989,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To notice people or things with your eyes.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/see",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "know",
@@ -957,7 +1095,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To have information in your mind.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/know",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To be familiar with a person, place, or thing.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/know",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "think",
@@ -1049,7 +1213,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To use your mind to consider something.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/think",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To have an idea or opinion about something.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/think",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "say",
@@ -1141,7 +1331,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To use words to express an idea or give information.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/say",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "tell",
@@ -1233,7 +1437,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To give someone information or instructions by speaking.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/tell",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To describe events or a story to someone.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/tell",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "give",
@@ -1325,7 +1555,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To pass something to another person for them to have or use.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/give",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "find",
@@ -1417,7 +1661,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To discover where someone or something is, by looking or by chance.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/find",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "feel",
@@ -1509,7 +1767,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To experience an emotion or a physical sensation.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/feel",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "leave",
@@ -1601,7 +1873,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To go away from a person or place.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/leave",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To let something stay somewhere instead of taking it with you.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/leave",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "put",
@@ -1693,7 +1991,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To move something into a particular place or position.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/put",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "bring",
@@ -1785,7 +2097,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To carry something or take someone towards a person or place.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/bring",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "buy",
@@ -1877,7 +2203,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To pay money so that something becomes yours.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/buy",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "eat",
@@ -1969,7 +2309,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To take food into your mouth and swallow it.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/eat",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "drink",
@@ -2061,7 +2415,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To take liquid into your mouth and swallow it.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/drink",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "sleep",
@@ -2153,7 +2521,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To rest with your eyes closed, without being awake.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/sleep",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "read",
@@ -2265,7 +2647,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To look at written words and understand what they say.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/read",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "write",
@@ -2357,7 +2753,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To form letters and words, or record information using them.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/write",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "speak",
@@ -2449,7 +2859,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To use your voice to say words or talk to someone.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/speak",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "hear",
@@ -2541,7 +2965,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To notice a sound through your ears.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/hear",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "meet",
@@ -2633,7 +3071,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To see and talk to someone for the first time.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/meet",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To come together with someone, by arrangement or by chance.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/meet",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "run",
@@ -2725,7 +3189,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To move on your feet faster than walking, with both feet briefly off the ground.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/run",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "sit",
@@ -2817,7 +3295,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To rest your bottom on a chair or another surface, with your upper body upright.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/sit",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "stand",
@@ -2909,7 +3401,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To be upright on your feet, without sitting or lying down.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/stand",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "understand",
@@ -3001,7 +3507,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To know what something means or how it works.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/understand",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "teach",
@@ -3093,7 +3613,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To help someone gain knowledge or learn how to do something.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/teach",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "learn",
@@ -3193,7 +3727,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To gain knowledge or a new skill through study, practice, or experience.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/learn",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "wear",
@@ -3285,7 +3833,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To have clothes, shoes, or accessories on your body.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/wear",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "lose",
@@ -3377,7 +3939,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To be unable to find something you had.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/lose",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To fail to win a game or competition.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/lose",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "pay",
@@ -3469,7 +4057,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To give someone money for something you buy or for work they do.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/pay",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "send",
@@ -3561,7 +4163,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To make something go to another person or place, for example by post or email.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/send",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "build",
@@ -3653,7 +4269,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To make a structure by joining materials or parts together.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/build",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "keep",
@@ -3745,7 +4375,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To continue to have something instead of giving it away.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/keep",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To make something stay in the same place or condition.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/keep",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "begin",
@@ -3837,7 +4493,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To start doing something, or to start happening.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/begin",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "break",
@@ -3929,7 +4599,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To damage something so that it comes apart or no longer works.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/break",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "choose",
@@ -4021,7 +4705,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To decide which person, thing, or possibility you want.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/choose",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "drive",
@@ -4113,7 +4811,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To control a car or another vehicle as it moves.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/drive",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "fly",
@@ -4205,7 +4917,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To move through the air, using wings or travelling in an aircraft.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/fly",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "forget",
@@ -4297,7 +5023,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To be unable to remember something.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/forget",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To fail to do something because you did not remember it.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/forget",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "grow",
@@ -4389,7 +5141,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To become bigger or develop over time.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/grow",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To plant things and look after them as they develop.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/grow",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "hold",
@@ -4481,7 +5259,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To keep something in your hands or arms.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/hold",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To arrange an event so that it takes place.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/hold",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "catch",
@@ -4573,7 +5377,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To stop and hold something that is moving, often through the air.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/catch",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To reach a bus, train, or other form of transport in time to travel on it.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/catch",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "cut",
@@ -4665,7 +5495,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To divide or open something using a knife, scissors, or another sharp tool.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/cut",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "draw",
@@ -4757,7 +5601,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To create a picture using lines made with a pencil, pen, or similar tool.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/draw",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "fall",
@@ -4849,7 +5707,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To move down to a lower place, often suddenly or by accident.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/fall",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "win",
@@ -4941,7 +5813,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To come first or defeat an opponent in a game or competition.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/win",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "sell",
@@ -5033,7 +5919,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To give someone a product or service in return for money.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/sell",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "spend",
@@ -5125,7 +6025,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To use money to buy something or pay for an activity.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/spend",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To use a period of time doing something or being somewhere.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/spend",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "swim",
@@ -5217,7 +6143,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To move through water by moving your arms, legs, or other parts of your body.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/swim",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "ride",
@@ -5309,7 +6249,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To travel on a bicycle, horse, or similar form of transport, usually controlling it.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/ride",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "sing",
@@ -5401,7 +6355,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To make a tune with your voice, with or without words.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/sing",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "ring",
@@ -5493,7 +6461,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To make a bell-like sound, or make a bell produce that sound.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/ring",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To telephone someone.",
+        "dialects": ["uk"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary (uso principalmente británico)",
+            "url": "https://dictionary.cambridge.org/dictionary/english/ring",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "wake",
@@ -5585,7 +6579,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To stop sleeping, or cause someone to stop sleeping.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/wake",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "feed",
@@ -5677,7 +6685,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To give food to a person or animal.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/feed",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "fight",
@@ -5769,7 +6791,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To use force against another person or group.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/fight",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To make a strong effort to overcome a problem or achieve something.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/fight",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "lend",
@@ -5861,7 +6909,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To let someone use something for a time, expecting them to return it.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/lend",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "show",
@@ -5953,7 +7015,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To let someone see something.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/show",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To explain how to do something, often by doing it yourself.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/show",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "shut",
@@ -6045,7 +7133,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To close something, such as a door, window, or your eyes.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/shut",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "hurt",
@@ -6137,7 +7239,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To cause physical pain or injury, or to feel pain.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/hurt",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To make someone feel unhappy or upset.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/hurt",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "hit",
@@ -6229,7 +7357,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To touch someone or something suddenly and with force.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/hit",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "let",
@@ -6321,7 +7463,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To allow someone to do something, or allow something to happen.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/let",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "mean",
@@ -6413,7 +7569,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To express a particular idea or have a particular meaning.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/mean",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To intend to say or do something.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/mean",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "cost",
@@ -6505,7 +7687,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To have a particular price, or require a particular amount of money.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/cost",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "become",
@@ -6597,7 +7793,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To change so that you start to be something different.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/become",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "bend",
@@ -6689,7 +7899,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To make something curved instead of straight, or move your body into a curved position.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/bend",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "bite",
@@ -6781,7 +8005,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To cut into or hold something with your teeth.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/bite",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "blow",
@@ -6873,7 +8111,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To move as a current of air, or push air out through your mouth.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/blow",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "burn",
@@ -6973,7 +8225,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To damage or destroy something with fire or heat, or be damaged in this way.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/burn",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "deal",
@@ -7065,7 +8331,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To give out cards to the people playing a game.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/deal",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To do business with someone.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/deal",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "dig",
@@ -7157,7 +8449,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To move earth to make a hole, using a tool or your hands.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/dig",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "dream",
@@ -7257,7 +8563,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To experience images and events in your mind while you sleep.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/dream",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To imagine something you hope will happen.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/dream",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "forgive",
@@ -7349,7 +8681,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To stop being angry with someone for something they did wrong.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/forgive",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "freeze",
@@ -7441,7 +8787,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To become solid because of cold, or make something very cold so that it becomes solid.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/freeze",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "hide",
@@ -7533,7 +8893,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To put yourself or something where other people cannot see or find you or it.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/hide",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "lay",
@@ -7627,7 +9001,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To put something down carefully, usually in a flat position.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/lay",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "lead",
@@ -7719,7 +9107,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To guide someone by going in front of them.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/lead",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To be in charge of a group or activity.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/lead",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "lie",
@@ -7813,7 +9227,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To rest or move into a flat position, with your body stretched out on a surface.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/lie",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "light",
@@ -7905,7 +9333,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To make something start burning.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/light",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To provide light so that a place or thing can be seen.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/light",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "rise",
@@ -7997,7 +9451,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To move upwards or become higher.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/rise",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "shake",
@@ -8089,7 +9557,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To move backwards and forwards in quick, short movements, or make something move this way.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/shake",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "shine",
@@ -8181,7 +9663,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To give out or reflect light.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/shine",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To point a light towards a person, place, or thing.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/shine",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "shoot",
@@ -8273,7 +9781,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To record a film or take photographs with a camera.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/shoot",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To fire a gun or send an arrow towards something.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/shoot",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "sink",
@@ -8365,7 +9899,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To go down below the surface of water or another substance, or make something go down.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/sink",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "smell",
@@ -8465,7 +10013,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To notice a scent with your nose.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/smell",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To have a scent that other people can notice.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/smell",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "spell",
@@ -8565,7 +10139,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To say or write the letters of a word in the correct order.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/spell",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "spill",
@@ -8665,7 +10253,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To let liquid or small pieces fall out of a container, often by accident.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/spill",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "stick",
@@ -8757,7 +10359,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To attach something to a surface, for example with glue, or stay attached to it.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/stick",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "steal",
@@ -8849,7 +10465,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To take something that belongs to someone else without permission and keep it.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/steal",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "sweep",
@@ -8941,7 +10571,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To clean a floor or another surface by moving dirt away with a brush.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/sweep",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "tear",
@@ -9033,7 +10677,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To pull something apart or make a hole in it by pulling.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/tear",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "throw",
@@ -9125,7 +10783,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To send something through the air with a movement of your hand and arm.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/throw",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "beat",
@@ -9217,7 +10889,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To defeat someone in a game or competition.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/beat",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To mix food quickly with a fork, spoon, or similar tool.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/beat",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "hang",
@@ -9311,7 +11009,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To attach something at the top so that the rest of it falls down freely.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/hang",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "arise",
@@ -9403,7 +11115,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To begin to happen or appear, especially a problem or situation.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/arise",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "awake",
@@ -9497,7 +11223,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To stop sleeping, or make someone stop sleeping.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/awake",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "bear",
@@ -9591,7 +11331,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To accept or continue to experience something unpleasant or difficult.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/bear",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "bind",
@@ -9689,7 +11443,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To tie things together tightly.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/bind",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To fasten the pages of a book together and add a cover.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/bind",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "bleed",
@@ -9781,7 +11561,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To lose blood from your body, often because of an injury.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/bleed",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "breed",
@@ -9873,7 +11667,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To keep animals so that they produce young.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/breed",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To produce young animals.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/breed",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "burst",
@@ -9965,7 +11785,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To break open suddenly, or cause something to break open.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/burst",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "creep",
@@ -10057,7 +11891,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To move slowly and quietly, often trying not to be noticed.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/creep",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "forbid",
@@ -10155,7 +12003,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To say that something is not allowed, especially through a rule or an instruction.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/forbid",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "kneel",
@@ -10261,7 +12123,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To go down onto one or both knees, or stay in that position.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/kneel",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "lean",
@@ -10361,7 +12237,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To move your body or an object away from an upright position.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/lean",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To rest against something for support.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/lean",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "seek",
@@ -10453,7 +12355,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To try to find or obtain something.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/seek",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "set",
@@ -10545,7 +12461,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To put something in a particular place or position.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/set",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To choose or fix a time, amount, or limit.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/set",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "shrink",
@@ -10637,7 +12579,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To become smaller, or make something smaller.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/shrink",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "slide",
@@ -10729,7 +12685,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To move smoothly along a surface without lifting away from it.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/slide",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "split",
@@ -10827,7 +12797,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To divide something into separate parts, or become divided in this way.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/split",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "spread",
@@ -10919,7 +12903,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To cover a larger area, or make something do this.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/spread",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To put a thin layer of something over a surface, such as butter on bread.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/spread",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "spring",
@@ -11011,7 +13021,33 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To jump or move suddenly.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/spring",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      },
+      {
+        "text": "To appear or develop quickly.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/spring",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "swear",
@@ -11103,7 +13139,21 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To make a serious promise, or firmly say that something is true.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/swear",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   },
   {
     "id": "swing",
@@ -11195,6 +13245,20 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z"
+    "updatedAt": "2026-10-29T00:00:00Z",
+    "definitions": [
+      {
+        "text": "To move backwards and forwards or from side to side around a fixed point.",
+        "dialects": ["uk", "us"],
+        "sources": [
+          {
+            "label": "VerbQuest · paráfrasis propia; referencia: Cambridge Dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/swing",
+            "checkedAt": "2026-11-10"
+          }
+        ],
+        "reviewStatus": "validated"
+      }
+    ]
   }
 ]

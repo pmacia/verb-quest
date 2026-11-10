@@ -12,3 +12,8 @@ Exportar una selección filtrada: guardar la selección como lista y elegirla al
 La sección avanzada de importación/exportación descarga un ZIP con `src/content/catalog.release.json`, `src/content/dataset.ts`, `PUBLICATION_REPORT.json` y `README-PUBLICAR.md`. El JSON contiene un `Dataset` con `version`, `kind` y `verbs`; puede reutilizarse como importación local. La versión debe ser nueva y única.
 
 El paquete conserva el catálogo completo, sus archivados y los iconos resueltos, sin las tablas personales de IndexedDB. Las URL de audio son referencias, no grabaciones incluidas. La validez estructural no acredita revisión editorial: el informe identifica las diferencias de contenido respecto a la base distribuida y contrasta la IPA con la evidencia disponible. Consulta el [README](../README.md#publicar-una-nueva-base-para-todos-los-usuarios) para incorporarlo al código fuente.
+
+
+## Definiciones del verbo
+
+El campo opcional `definitions` contiene registros con `text` (inglés), `dialects` (lista no vacía de `uk`/`us`), `sources` (descripción, URL, licencia y fecha opcionales) y `reviewStatus` (`draft`, `needs_review` o `validated`). Las fichas antiguas sin el campo siguen siendo válidas. La ficha agrupa textos idénticos y combina sus dialectos, procedencias y revisión sin modificar los registros guardados. Las definiciones viajan en JSON, copias completas y ZIP de publicación; no en el CSV simplificado.

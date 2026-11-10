@@ -9,6 +9,7 @@ import type {
   Source,
   Variant,
   Verb,
+  VerbDefinition,
 } from '../../shared/domain/types';
 import { Icon } from '../../shared/ui/Icon';
 import { createId } from '../../shared/identity/create-id';
@@ -475,6 +476,147 @@ function EndingMap({
     </section>
   );
 }
+function DefinitionFields({
+  definitions,
+  onChange,
+}: {
+  definitions: VerbDefinition[];
+  onChange: (next: VerbDefinition[]) => void;
+}) {
+  function update(index: number, patch: Partial<VerbDefinition>, changed = true) {
+    onChange(
+      definitions.map((row, i) =>
+        i === index
+          ? { ...row, ...patch, ...(changed ? { reviewStatus: 'needs_review' as const } : {}) }
+          : row,
+      ),
+    );
+  }
+  return (
+    <section className="ve-card ve-definition-editor">
+      <div className="ve-row-head">
+        <h3>
+          <Icon name="book" size={17} />
+          Definiciones en inglés
+        </h3>
+      </div>
+      <p className="small muted">
+        Sentidos principales en inglés sencillo. Si el texto coincide, la ficha muestra una sola
+        definición con ambas etiquetas. Modificar el contenido lo deja pendiente de revisión.
+      </p>
+      {definitions.map((definition, index) => (
+        <fieldset className="ve-card" key={index}>
+          <legend>Definición {index + 1}</legend>
+          <div className="ve-row-head">
+            <span className="small muted">Sentido {index + 1}</span>
+            <button
+              type="button"
+              className="secondary"
+              aria-label={`Eliminar definición ${index + 1}`}
+              onClick={() => onChange(definitions.filter((_, i) => i !== index))}
+            >
+              <Icon name="trash" size={15} />
+              Eliminar
+            </button>
+          </div>
+          <EditorField
+            label={`Texto de definición ${index + 1}`}
+            value={definition.text}
+            multiline
+            onChange={(text) => update(index, { text })}
+          />
+          <div className="ve-grid">
+            <fieldset className="ve-card">
+              <legend>Uso de definición {index + 1}</legend>
+              {(['uk', 'us'] as const).map((dialect) => (
+                <label className="ve-check" key={dialect}>
+                  <input
+                    type="checkbox"
+                    aria-label={`${dialect.toUpperCase()} de definición ${index + 1}`}
+                    checked={definition.dialects.includes(dialect)}
+                    onChange={(e) =>
+                      update(index, {
+                        dialects: e.target.checked
+                          ? [...definition.dialects, dialect]
+                          : definition.dialects.filter((d) => d !== dialect),
+                      })
+                    }
+                  />
+                  {dialect.toUpperCase()}
+                </label>
+              ))}
+            </fieldset>
+            <EditorSelect
+              label={`Revisión de definición ${index + 1}`}
+              value={definition.reviewStatus}
+              options={[
+                ['draft', 'Borrador'],
+                ['needs_review', 'Pendiente de revisión'],
+                ['validated', 'Revisada'],
+              ]}
+              onChange={(reviewStatus) =>
+                update(
+                  index,
+                  { reviewStatus: reviewStatus as VerbDefinition['reviewStatus'] },
+                  false,
+                )
+              }
+            />
+          </div>
+          {definition.sources.map((source, sourceIndex) => (
+            <fieldset className="ve-card" key={sourceIndex}>
+              <legend>
+                Fuente {sourceIndex + 1} de definición {index + 1}
+              </legend>
+              <div className="ve-grid">
+                {(['label', 'url', 'license', 'checkedAt'] as const).map((key) => (
+                  <EditorField
+                    key={key}
+                    label={`${{ label: 'Descripción', url: 'URL', license: 'Licencia', checkedAt: 'Fecha de consulta (AAAA-MM-DD)' }[key]} de fuente ${sourceIndex + 1} de definición ${index + 1}`}
+                    value={source[key] ?? ''}
+                    onChange={(value) =>
+                      update(index, {
+                        sources: definition.sources.map((row, i) =>
+                          i === sourceIndex ? optional(row, key, value) : row,
+                        ),
+                      })
+                    }
+                  />
+                ))}
+              </div>
+              <button
+                type="button"
+                className="secondary"
+                aria-label={`Eliminar fuente ${sourceIndex + 1} de definición ${index + 1}`}
+                onClick={() =>
+                  update(index, { sources: definition.sources.filter((_, i) => i !== sourceIndex) })
+                }
+              >
+                <Icon name="trash" size={15} />
+                Eliminar fuente
+              </button>
+            </fieldset>
+          ))}
+          <AddButton
+            onClick={() => update(index, { sources: [...definition.sources, { label: '' }] })}
+          >
+            Añadir fuente a definición {index + 1}
+          </AddButton>
+        </fieldset>
+      ))}
+      <AddButton
+        onClick={() =>
+          onChange([
+            ...definitions,
+            { text: '', dialects: ['uk', 'us'], sources: [], reviewStatus: 'needs_review' },
+          ])
+        }
+      >
+        Añadir definición
+      </AddButton>
+    </section>
+  );
+}
 export function VerbEditorFields({
   verb,
   change,
@@ -600,6 +742,10 @@ export function VerbEditorFields({
             }
           />
         </div>
+        <DefinitionFields
+          definitions={verb.definitions ?? []}
+          onChange={(definitions) => change({ ...verb, definitions })}
+        />
         <p className="small muted">
           El lema y la escritura del infinitivo se pueden diferenciar en Formas y sonidos. Cada
           línea de una lista representa un elemento independiente.

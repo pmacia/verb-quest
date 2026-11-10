@@ -5,3 +5,6 @@ dist/
 playwright-report/
 test-results/
 *.local
+
+# Local HTTPS certificates and private keys
+.certs/

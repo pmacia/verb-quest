@@ -17,7 +17,9 @@
     "preview": "vite preview --host 127.0.0.1",
     "content:ipa": "tsx scripts/check-ipa.ts",
     "content:check": "tsx scripts/check-content.ts",
-    "benchmark:catalog": "tsx scripts/benchmark-catalog.ts"
+    "benchmark:catalog": "tsx scripts/benchmark-catalog.ts",
+    "serve:https": "node scripts/serve-https.mjs",
+    "test:https": "node --test scripts/serve-https.test.mjs"
   },
   "dependencies": {
     "@js-temporal/polyfill": "0.5.1",

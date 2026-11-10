@@ -274,6 +274,8 @@ Ejecuta los comandos desde la raíz del repositorio.
 | `npm run content:check`     | Audita el catálogo activo y su revisión editorial          |
 | `npm run build`             | Comprueba tipos y genera `dist`, manifest y service worker |
 | `npm run preview`           | Sirve `dist` localmente para revisión                      |
+| `npm run serve:https`       | Sirve `dist` por HTTPS para la red doméstica                |
+| `npm run test:https`        | Pruebas del servidor HTTPS con certificado temporal        |
 | `npm run test:e2e`          | Construye y prueba la aplicación con Playwright            |
 | `npm run test:dev-hmr`      | Comprueba la recarga en caliente con Vite y Chromium        |
 | `npm run benchmark:catalog` | Mide consultas sobre 10.000 entradas sintéticas de prueba  |
@@ -391,6 +393,15 @@ Un alojamiento de producción debe:
 - Servir `dist/` mediante HTTPS si se quiere instalación PWA y service worker fuera de localhost.
 - Resolver las rutas SPA hacia `index.html`, incluidas `/verbs/go`, `/study` y `/settings` al abrirlas directamente.
 - Alojar la aplicación en la raíz del origen con la configuración actual: manifest, recursos y rutas utilizan `/`.
+
+Para la **red doméstica** se incluye `npm run serve:https`: servidor estático HTTPS en Node 24, con rutas SPA y configuración de certificados, IP y puerto. Después de generar tus certificados en `.certs/`, ejecuta:
+
+```sh
+npm run build
+npm run serve:https
+```
+
+Abre `https://IP_DEL_ORDENADOR:8443/` desde los otros dispositivos. Cada dispositivo debe confiar en la CA del certificado y la dirección utilizada debe estar incluida en él. Los certificados no se generan ni se instalan automáticamente. Consulta la [guía doméstica HTTPS](docs/home-https.md) para configurar mkcert, móviles, actualizaciones y traslado de datos. `npm run test:https` comprueba el servidor con TLS real sin instalar confianza en el sistema.
 
 No se ha elegido un proveedor ni publicado la aplicación. Para usar un subdirectorio hay que adaptar rutas, base y alcance PWA antes de desplegar. Cambiar de dominio, protocolo o puerto exige trasladar los datos mediante copia completa si se quieren conservar en el nuevo origen.
 

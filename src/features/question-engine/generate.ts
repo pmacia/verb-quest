@@ -35,6 +35,10 @@ const labels: Record<FormKey, string> = {
   pastSimple: 'pasado simple',
   pastParticiple: 'participio pasado',
 };
+function containsTarget(sentence: string, target: string): boolean {
+  const escaped = target.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return !!target.trim() && new RegExp(`\\b${escaped}\\b`, 'i').test(sentence);
+}
 export function generateQuestions(
   input: GenerationInput,
   rng: () => number,
@@ -131,7 +135,7 @@ export function generateQuestions(
             prompt +=
               t.contextKey === 'singular' ? ' Sujeto: I/he/she/it.' : ' Sujeto: you/we/they.';
           if (mode === 'sentence_gap') {
-            const ex = v.examples.find(
+            const examples = v.examples.filter(
               (e) =>
                 (!e.dialect || e.dialect === 'neutral' || e.dialect === input.dialect) &&
                 (e.reviewStatus === 'validated' || input.allowFixtures) &&
@@ -141,8 +145,11 @@ export function generateQuestions(
                     : /past/i.test(e.grammarPoint)
                       ? 'pastSimple'
                       : 'base')) === t.form &&
-                (!t.contextKey || e.targetForm === t.variantValue),
+                (!t.contextKey || e.targetForm === t.variantValue) &&
+                accepted.some((value) => value.toLowerCase() === e.targetForm.toLowerCase()) &&
+                containsTarget(e.sentence, e.targetForm),
             );
+            const ex = examples[Math.min(examples.length - 1, Math.floor(rng() * examples.length))];
             if (!ex) {
               result.unavailable.push({
                 verbId: v.id,

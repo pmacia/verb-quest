@@ -1,0 +1,1291 @@
+{
+  "date": "2026-11-10",
+  "version": "curated-1.5",
+  "audit": "examples-audit-2026-11-10.json",
+  "previousSha256": "e3c7b5d18f5a1b39fe13d5f03807e97e47d5543c4fb12701d1117032c201b744",
+  "summary": {
+    "verbs": 120,
+    "beforeExamples": 362,
+    "afterExamples": 453,
+    "draftsReviewed": 99,
+    "addedExamples": 91,
+    "revisedExamples": 12,
+    "verbsWithChanges": 69,
+    "questions": 6,
+    "negativeSentences": 2,
+    "verbExampleCounts": {
+      "3": 55,
+      "4": 38,
+      "5": 26,
+      "6": 1
+    }
+  },
+  "records": [
+    {
+      "id": "be",
+      "beforeCount": 4,
+      "afterCount": 6,
+      "decision": "expand",
+      "addedIds": [
+        "be-original-4",
+        "be-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "go",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "go-original-4",
+        "go-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "have",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "have-original-4",
+        "have-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "do",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "do-original-4",
+        "do-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "get",
+      "beforeCount": 4,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "get-original-4"
+      ],
+      "replacedIds": [
+        "get-original-3"
+      ],
+      "notes": [
+        "Perfecto británico contextualizado como adquisición; el ejemplo US de gotten se conserva."
+      ]
+    },
+    {
+      "id": "make",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "make-original-4",
+        "make-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "take",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "take-original-4",
+        "take-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "come",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "see",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "know",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "revise",
+      "addedIds": [
+        "know-original-4",
+        "know-original-5"
+      ],
+      "replacedIds": [
+        "know-original-2",
+        "know-original-3",
+        "know-original-1"
+      ],
+      "notes": []
+    },
+    {
+      "id": "think",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "think-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "say",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "say-original-4",
+        "say-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "tell",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "tell-original-4",
+        "tell-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "give",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "find",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "feel",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "feel-original-4",
+        "feel-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "leave",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "leave-original-4",
+        "leave-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "put",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "bring",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "buy",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "eat",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "drink",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "sleep",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "read",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "write",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "speak",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "speak-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "hear",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "meet",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "meet-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "run",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "sit",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "stand",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "understand",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "teach",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "teach-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "learn",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "learn-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "wear",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "lose",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "lose-original-4",
+        "lose-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "pay",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "pay-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "send",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "build",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "keep",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "keep-original-4",
+        "keep-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "begin",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "break",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "break-original-4",
+        "break-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "choose",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "drive",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "fly",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "fly-original-4",
+        "fly-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "forget",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "forget-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "grow",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "revise",
+      "addedIds": [
+        "grow-original-4"
+      ],
+      "replacedIds": [
+        "grow-original-2"
+      ],
+      "notes": []
+    },
+    {
+      "id": "hold",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "hold-original-4",
+        "hold-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "catch",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "catch-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "cut",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "draw",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "fall",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "fall-original-4",
+        "fall-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "win",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "sell",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "spend",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "spend-original-4",
+        "spend-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "swim",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "ride",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "sing",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "ring",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "ring-original-4",
+        "ring-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "wake",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "wake-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "feed",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "fight",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "fight-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "lend",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "lend-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "show",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "show-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "shut",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "hurt",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "hurt-original-4",
+        "hurt-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "hit",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "let",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "mean",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "revise",
+      "addedIds": [],
+      "replacedIds": [
+        "mean-original-1",
+        "mean-original-2",
+        "mean-original-3"
+      ],
+      "notes": []
+    },
+    {
+      "id": "cost",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "become",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "become-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "bend",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "bend-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "bite",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "blow",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "blow-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "burn",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "burn-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "deal",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "deal-original-4",
+        "deal-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "dig",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "dream",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "dream-original-4",
+        "dream-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "forgive",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "freeze",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "freeze-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "hide",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "hide-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "lay",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "lay-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "lead",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "lead-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "lie",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "light",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "light-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "rise",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "rise-original-4",
+        "rise-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "shake",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "shake-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "shine",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "shine-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "shoot",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "shoot-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "sink",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "sink-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "smell",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "smell-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "spell",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [
+        "spell-original-2"
+      ],
+      "notes": [
+        "Variante alternativa visible en pasado; participio mantiene la variante anterior y ambas respuestas siguen admitidas."
+      ]
+    },
+    {
+      "id": "spill",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [
+        "spill-original-2"
+      ],
+      "notes": [
+        "Variante alternativa visible en pasado; participio mantiene la variante anterior y ambas respuestas siguen admitidas."
+      ]
+    },
+    {
+      "id": "stick",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "stick-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "steal",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "sweep",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "tear",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "throw",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "beat",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "beat-original-4",
+        "beat-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "hang",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "arise",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "awake",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "bear",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "bear-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "bind",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "bind-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "bleed",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "breed",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "revise",
+      "addedIds": [
+        "breed-original-4"
+      ],
+      "replacedIds": [
+        "breed-original-2"
+      ],
+      "notes": []
+    },
+    {
+      "id": "burst",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "burst-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "creep",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "forbid",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "forbid-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "kneel",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [
+        "kneel-original-2"
+      ],
+      "notes": [
+        "Variante alternativa visible en pasado; participio mantiene la variante anterior y ambas respuestas siguen admitidas."
+      ]
+    },
+    {
+      "id": "lean",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "lean-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "seek",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "set",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "set-original-4",
+        "set-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "shrink",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "shrink-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "slide",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "slide-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "split",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "spread",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "spread-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "spring",
+      "beforeCount": 3,
+      "afterCount": 5,
+      "decision": "expand",
+      "addedIds": [
+        "spring-original-4",
+        "spring-original-5"
+      ],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "swear",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "decision": "sufficient",
+      "addedIds": [],
+      "replacedIds": [],
+      "notes": []
+    },
+    {
+      "id": "swing",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "decision": "expand",
+      "addedIds": [
+        "swing-original-4"
+      ],
+      "replacedIds": [],
+      "notes": []
+    }
+  ],
+  "appliedAt": "2026-11-10T12:28:45.689Z",
+  "sourceAfterSha256": "fdc670c203f65759a92241c860a347cfec8087aa1f2d5974e448805ca2f9aaf9"
+}

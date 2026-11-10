@@ -101,7 +101,7 @@ En la **ficha**, el significado general aparece arriba y cada forma tiene su tra
 
 Entre las etiquetas y las tres formas aparece **Meaning · In simple English**, con 152 definiciones breves para los sentidos principales de los 120 verbos. Son paráfrasis propias contrastadas con Cambridge Dictionary, con revisión asistida documentada; no son textos certificados ni redactados por Cambridge. Los sentidos comunes se muestran una vez con etiquetas **UK · US**. Si el uso difiere, se etiqueta por separado, como *ring* para telefonear, principalmente británico.
 
-Las definiciones se editan en **Datos del verbo → Definiciones en inglés**, junto con sus dialectos, fuentes, fecha de consulta y revisión. Cambiar el contenido lo deja pendiente de revisión. La configuración **Mostrar fuentes y revisión** controla esos metadatos en la ficha; las definiciones permanecen visibles para los estudiantes. JSON, copias completas y publicación ZIP conservan todo el contenido; CSV básico no incluye definiciones. La base `curated-1.4` las incorpora sin invalidar el progreso. Las fichas con cambios locales conservan la protección habitual y reciben la nueva base como pendiente de revisión. Consulta el [registro de revisión](docs/content/definitions-review.md).
+Las definiciones se editan en **Datos del verbo → Definiciones en inglés**, junto con sus dialectos, fuentes, fecha de consulta y revisión. Cambiar el contenido lo deja pendiente de revisión. La configuración **Mostrar fuentes y revisión** controla esos metadatos en la ficha; las definiciones permanecen visibles para los estudiantes. JSON, copias completas y publicación ZIP conservan todo el contenido; CSV básico no incluye definiciones. La base `curated-1.4` incorporó las definiciones sin invalidar el progreso. Las fichas con cambios locales conservan la protección habitual y reciben la nueva base como pendiente de revisión. Consulta el [registro de revisión](docs/content/definitions-review.md).
 
 
 El altavoz de la cabecera reproduce las tres formas seguidas. Los botones **UK/US** reproducen una variante con el dialecto solicitado; la ficha ofrece además un botón por forma con los ajustes habituales. Repetir la pulsación detiene el audio y empezar otra reproducción cancela la anterior. Si el dialecto solicitado no está disponible, se comunica la alternativa. Las grabaciones no se descargan de diccionarios: se sigue utilizando síntesis del dispositivo.
@@ -210,7 +210,9 @@ Las instalaciones existentes reciben la nueva base al cargar la nueva aplicació
 
 La estructura distingue el cargador público (`dataset.ts`) de la composición editorial histórica (`curated-dataset.ts`). Sus pruebas se mantienen separadas: una publicación consolidada no tiene que volver a aplicar las capas históricas, pero sigue pasando las comprobaciones de validez, contenido y procedencia. Importación, copia/restauración y creación del paquete también permanecen separadas por responsabilidad.
 
-La [auditoría de ejemplos del 10/11/2026](docs/content/examples-audit-2026-11-10.md) evalúa los 120 verbos y 362 frases del catálogo base: 54 con cantidad suficiente, 62 para ampliar y cuatro para reformular primero. Incluye propuestas editoriales pendientes de validación; estas no forman parte todavía del catálogo publicado.
+La [auditoría de ejemplos del 10/11/2026](docs/content/examples-audit-2026-11-10.md) evalúa los 120 verbos y 362 frases del catálogo base: 54 con cantidad suficiente, 62 para ampliar y cuatro para reformular primero. La [ampliación aplicada](docs/content/examples-enrichment-2026-11-10.md) desarrolla esa auditoría: 91 ejemplos añadidos y 12 revisiones, con 453 frases finales. El informe original se conserva como evidencia de la evaluación previa.
+
+En `curated-1.5`, los ejemplos incorporan más sentidos, sujetos, preguntas, imperativos y contextos temporales. «Completa la frase» elige entre ejemplos revisados compatibles con la forma, el dialecto y el sujeto, usando el generador aleatorio de la sesión; la misma secuencia aleatoria reproduce la selección. Las preguntas generadas quedan guardadas en la sesión. Una actualización de ejemplos puede requerir nueva evidencia en la habilidad de contexto, sin borrar el historial ni invalidar las otras habilidades. Las fichas modificadas localmente siguen protegidas frente a la nueva base.
 
 ## Información avanzada
 
@@ -307,7 +309,7 @@ Para limitar el uso de recursos de las pruebas unitarias puedes ejecutar `npm te
 
 Los fallos E2E generan evidencias en `test-results/`, incluidas trazas cuando corresponda. El benchmark es orientativo y depende del equipo; no es una garantía de rendimiento de todos los dispositivos.
 
-Última verificación del rediseño, **04/11/2026**: 127 pruebas unitarias/integración, 135 E2E en Chromium/Firefox/WebKit, auditoría de contenido e IPA y regresión de recarga en caliente. El catálogo mantiene 120 verbos, 362 ejemplos y 756 transcripciones contrastadas. Incluye HTTP sin `crypto.randomUUID`, accesibilidad automática, tema Sistema, variantes, lectura individual/secuencial y edición sin pérdida de metadatos. Véase el [informe del rediseño](docs/catalog-redesign-2026-11-04.md).
+Última verificación del rediseño, **04/11/2026**: 127 pruebas unitarias/integración, 135 E2E en Chromium/Firefox/WebKit, auditoría de contenido e IPA y regresión de recarga en caliente. En esa verificación el catálogo tenía 120 verbos, 362 ejemplos y 756 transcripciones contrastadas. Incluye HTTP sin `crypto.randomUUID`, accesibilidad automática, tema Sistema, variantes, lectura individual/secuencial y edición sin pérdida de metadatos. Véase el [informe del rediseño](docs/catalog-redesign-2026-11-04.md).
 
 ## Organización del proyecto
 
@@ -344,7 +346,7 @@ Tecnologías principales: React, TypeScript, Vite, React Router, Dexie/IndexedDB
 
 ## Contenido y revisión editorial
 
-El catálogo activo contiene **120 verbos y 362 ejemplos originales**. Las selecciones por curso son acumulativas: 40/70/100/120 para 1.º–4.º ESO. Son decisiones editoriales configurables, no listas oficiales ni frecuencias medidas mediante un corpus.
+El catálogo activo contiene **120 verbos y 453 ejemplos originales**. Las selecciones por curso son acumulativas: 40/70/100/120 para 1.º–4.º ESO. Son decisiones editoriales configurables, no listas oficiales ni frecuencias medidas mediante un corpus.
 
 La revisión es asistida y está documentada; no se ha realizado una validación docente humana independiente. Los ejemplos originales del paquete se conservan en `tests/fixtures/original` y no se presentan como catálogo final.
 

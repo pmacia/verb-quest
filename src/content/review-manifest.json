@@ -13,7 +13,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/us/dictionary/english/be",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 6,
+        "addedIds": ["be-original-4", "be-original-5"],
+        "revisedIds": []
+      }
     },
     "go": {
       "forms": "checked",
@@ -25,7 +32,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["go-original-4", "go-original-5"],
+        "revisedIds": []
+      }
     },
     "have": {
       "forms": "checked",
@@ -37,7 +51,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["have-original-4", "have-original-5"],
+        "revisedIds": []
+      }
     },
     "do": {
       "forms": "checked",
@@ -49,7 +70,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["do-original-4", "do-original-5"],
+        "revisedIds": []
+      }
     },
     "get": {
       "forms": "checked",
@@ -61,7 +89,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/us/dictionary/english/get",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["get-original-4"],
+        "revisedIds": ["get-original-3"]
+      }
     },
     "make": {
       "forms": "checked",
@@ -73,7 +108,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["make-original-4", "make-original-5"],
+        "revisedIds": []
+      }
     },
     "take": {
       "forms": "checked",
@@ -85,7 +127,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["take-original-4", "take-original-5"],
+        "revisedIds": []
+      }
     },
     "come": {
       "forms": "checked",
@@ -121,7 +170,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["know-original-4", "know-original-5"],
+        "revisedIds": ["know-original-2", "know-original-3", "know-original-1"]
+      }
     },
     "think": {
       "forms": "checked",
@@ -133,7 +189,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["think-original-4"],
+        "revisedIds": []
+      }
     },
     "say": {
       "forms": "checked",
@@ -145,7 +208,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["say-original-4", "say-original-5"],
+        "revisedIds": []
+      }
     },
     "tell": {
       "forms": "checked",
@@ -157,7 +227,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["tell-original-4", "tell-original-5"],
+        "revisedIds": []
+      }
     },
     "give": {
       "forms": "checked",
@@ -193,7 +270,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["feel-original-4", "feel-original-5"],
+        "revisedIds": []
+      }
     },
     "leave": {
       "forms": "checked",
@@ -205,7 +289,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["leave-original-4", "leave-original-5"],
+        "revisedIds": []
+      }
     },
     "put": {
       "forms": "checked",
@@ -313,7 +404,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["speak-original-4"],
+        "revisedIds": []
+      }
     },
     "hear": {
       "forms": "checked",
@@ -337,7 +435,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["meet-original-4"],
+        "revisedIds": []
+      }
     },
     "run": {
       "forms": "checked",
@@ -397,7 +502,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["teach-original-4"],
+        "revisedIds": []
+      }
     },
     "learn": {
       "forms": "checked",
@@ -409,7 +521,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/us/dictionary/english/learn",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["learn-original-4"],
+        "revisedIds": []
+      }
     },
     "wear": {
       "forms": "checked",
@@ -433,7 +552,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["lose-original-4", "lose-original-5"],
+        "revisedIds": []
+      }
     },
     "pay": {
       "forms": "checked",
@@ -445,7 +571,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["pay-original-4"],
+        "revisedIds": []
+      }
     },
     "send": {
       "forms": "checked",
@@ -481,7 +614,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["keep-original-4", "keep-original-5"],
+        "revisedIds": []
+      }
     },
     "begin": {
       "forms": "checked",
@@ -505,7 +645,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["break-original-4", "break-original-5"],
+        "revisedIds": []
+      }
     },
     "choose": {
       "forms": "checked",
@@ -541,7 +688,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["fly-original-4", "fly-original-5"],
+        "revisedIds": []
+      }
     },
     "forget": {
       "forms": "checked",
@@ -553,7 +707,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["forget-original-4"],
+        "revisedIds": []
+      }
     },
     "grow": {
       "forms": "checked",
@@ -565,7 +726,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["grow-original-4"],
+        "revisedIds": ["grow-original-2"]
+      }
     },
     "hold": {
       "forms": "checked",
@@ -577,7 +745,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["hold-original-4", "hold-original-5"],
+        "revisedIds": []
+      }
     },
     "catch": {
       "forms": "checked",
@@ -589,7 +764,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["catch-original-4"],
+        "revisedIds": []
+      }
     },
     "cut": {
       "forms": "checked",
@@ -625,7 +807,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["fall-original-4", "fall-original-5"],
+        "revisedIds": []
+      }
     },
     "win": {
       "forms": "checked",
@@ -661,7 +850,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["spend-original-4", "spend-original-5"],
+        "revisedIds": []
+      }
     },
     "swim": {
       "forms": "checked",
@@ -709,7 +905,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["ring-original-4", "ring-original-5"],
+        "revisedIds": []
+      }
     },
     "wake": {
       "forms": "checked",
@@ -721,7 +924,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["wake-original-4"],
+        "revisedIds": []
+      }
     },
     "feed": {
       "forms": "checked",
@@ -745,7 +955,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["fight-original-4"],
+        "revisedIds": []
+      }
     },
     "lend": {
       "forms": "checked",
@@ -757,7 +974,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["lend-original-4"],
+        "revisedIds": []
+      }
     },
     "show": {
       "forms": "checked",
@@ -769,7 +993,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["show-original-4"],
+        "revisedIds": []
+      }
     },
     "shut": {
       "forms": "checked",
@@ -793,7 +1024,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["hurt-original-4", "hurt-original-5"],
+        "revisedIds": []
+      }
     },
     "hit": {
       "forms": "checked",
@@ -829,7 +1067,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 3,
+        "addedIds": [],
+        "revisedIds": ["mean-original-1", "mean-original-2", "mean-original-3"]
+      }
     },
     "cost": {
       "forms": "checked",
@@ -853,7 +1098,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["become-original-4"],
+        "revisedIds": []
+      }
     },
     "bend": {
       "forms": "checked",
@@ -865,7 +1117,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["bend-original-4"],
+        "revisedIds": []
+      }
     },
     "bite": {
       "forms": "checked",
@@ -889,7 +1148,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["blow-original-4"],
+        "revisedIds": []
+      }
     },
     "burn": {
       "forms": "checked",
@@ -901,7 +1167,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["burn-original-4"],
+        "revisedIds": []
+      }
     },
     "deal": {
       "forms": "checked",
@@ -913,7 +1186,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/us/dictionary/english/deal",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["deal-original-4", "deal-original-5"],
+        "revisedIds": []
+      }
     },
     "dig": {
       "forms": "checked",
@@ -937,7 +1217,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["dream-original-4", "dream-original-5"],
+        "revisedIds": []
+      }
     },
     "forgive": {
       "forms": "checked",
@@ -961,7 +1248,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["freeze-original-4"],
+        "revisedIds": []
+      }
     },
     "hide": {
       "forms": "checked",
@@ -973,7 +1267,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["hide-original-4"],
+        "revisedIds": []
+      }
     },
     "lay": {
       "forms": "checked",
@@ -985,7 +1286,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["lay-original-4"],
+        "revisedIds": []
+      }
     },
     "lead": {
       "forms": "checked",
@@ -997,7 +1305,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["lead-original-4"],
+        "revisedIds": []
+      }
     },
     "lie": {
       "forms": "checked",
@@ -1021,7 +1336,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/us/dictionary/english/light",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["light-original-4"],
+        "revisedIds": []
+      }
     },
     "rise": {
       "forms": "checked",
@@ -1033,7 +1355,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["rise-original-4", "rise-original-5"],
+        "revisedIds": []
+      }
     },
     "shake": {
       "forms": "checked",
@@ -1045,7 +1374,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["shake-original-4"],
+        "revisedIds": []
+      }
     },
     "shine": {
       "forms": "checked",
@@ -1057,7 +1393,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["shine-original-4"],
+        "revisedIds": []
+      }
     },
     "shoot": {
       "forms": "checked",
@@ -1069,7 +1412,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["shoot-original-4"],
+        "revisedIds": []
+      }
     },
     "sink": {
       "forms": "checked",
@@ -1081,7 +1431,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["sink-original-4"],
+        "revisedIds": []
+      }
     },
     "smell": {
       "forms": "checked",
@@ -1093,7 +1450,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/us/dictionary/english/smell",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["smell-original-4"],
+        "revisedIds": []
+      }
     },
     "spell": {
       "forms": "checked",
@@ -1105,7 +1469,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/us/dictionary/english/spell",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 3,
+        "addedIds": [],
+        "revisedIds": ["spell-original-2"]
+      }
     },
     "spill": {
       "forms": "checked",
@@ -1117,7 +1488,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 3,
+        "addedIds": [],
+        "revisedIds": ["spill-original-2"]
+      }
     },
     "stick": {
       "forms": "checked",
@@ -1129,7 +1507,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["stick-original-4"],
+        "revisedIds": []
+      }
     },
     "steal": {
       "forms": "checked",
@@ -1189,7 +1574,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/uk/grammar/british-grammar/table-of-irregular-verbs",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["beat-original-4", "beat-original-5"],
+        "revisedIds": []
+      }
     },
     "hang": {
       "forms": "checked",
@@ -1237,7 +1629,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/us/dictionary/english/bear",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["bear-original-4"],
+        "revisedIds": []
+      }
     },
     "bind": {
       "forms": "checked",
@@ -1249,7 +1648,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/us/dictionary/english/bind",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["bind-original-4"],
+        "revisedIds": []
+      }
     },
     "bleed": {
       "forms": "checked",
@@ -1273,7 +1679,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/us/dictionary/english/breed",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["breed-original-4"],
+        "revisedIds": ["breed-original-2"]
+      }
     },
     "burst": {
       "forms": "checked",
@@ -1285,7 +1698,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/us/dictionary/english/burst",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["burst-original-4"],
+        "revisedIds": []
+      }
     },
     "creep": {
       "forms": "checked",
@@ -1309,7 +1729,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/us/dictionary/english/forbid",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["forbid-original-4"],
+        "revisedIds": []
+      }
     },
     "kneel": {
       "forms": "checked",
@@ -1321,7 +1748,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/us/dictionary/english/kneel",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 3,
+        "addedIds": [],
+        "revisedIds": ["kneel-original-2"]
+      }
     },
     "lean": {
       "forms": "checked",
@@ -1333,7 +1767,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/us/dictionary/english/lean",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["lean-original-4"],
+        "revisedIds": []
+      }
     },
     "seek": {
       "forms": "checked",
@@ -1357,7 +1798,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/us/dictionary/english/set",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["set-original-4", "set-original-5"],
+        "revisedIds": []
+      }
     },
     "shrink": {
       "forms": "checked",
@@ -1369,7 +1817,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/us/dictionary/english/shrink",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["shrink-original-4"],
+        "revisedIds": []
+      }
     },
     "slide": {
       "forms": "checked",
@@ -1381,7 +1836,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/us/dictionary/english/slide",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["slide-original-4"],
+        "revisedIds": []
+      }
     },
     "split": {
       "forms": "checked",
@@ -1405,7 +1867,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/us/dictionary/english/spread",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["spread-original-4"],
+        "revisedIds": []
+      }
     },
     "spring": {
       "forms": "checked",
@@ -1417,7 +1886,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/us/dictionary/english/spring",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 5,
+        "addedIds": ["spring-original-4", "spring-original-5"],
+        "revisedIds": []
+      }
     },
     "swear": {
       "forms": "checked",
@@ -1441,7 +1917,14 @@
       "reviewer": "Codex · revisión asistida, no certificación docente independiente",
       "date": "2026-10-29",
       "source": "https://dictionary.cambridge.org/us/dictionary/english/swing",
-      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10"
+      "definitions": "original-simple-english-paraphrase-source-checked-assisted-2026-11-10",
+      "examplesEnrichment": {
+        "checkedAt": "2026-11-10",
+        "method": "original-contextual-examples-assisted-editorial-review",
+        "count": 4,
+        "addedIds": ["swing-original-4"],
+        "revisedIds": []
+      }
     }
   }
 }

@@ -160,3 +160,51 @@ it('matching checks every association, including repeated identical forms', () =
     }).correct,
   ).toBe(false);
 });
+
+it('uses the supplied RNG to vary compatible contextual examples reproducibly', () => {
+  const verb = structuredClone((curated as Verb[]).find((v) => v.id === 'go')!);
+  const first = verb.examples.find((e) => e.form === 'base')!;
+  verb.examples = [
+    first,
+    {
+      ...first,
+      id: 'different-base',
+      sentence: 'Please go home before dark.',
+      translation: 'Por favor, vuelve a casa antes de que anochezca.',
+    },
+  ];
+  const input = {
+    verbs: [verb],
+    skills: ['context'] as const,
+    modes: ['sentence_gap'] as const,
+    dialect: 'uk' as const,
+    allowFixtures: false,
+  };
+  const generate = (value: number) =>
+    generateQuestions({ ...input, skills: [...input.skills], modes: [...input.modes] }, () => value)
+      .questions;
+  expect(generate(0).find((q) => q.target === 'base')!.prompt).not.toBe(
+    generate(0.999).find((q) => q.target === 'base')!.prompt,
+  );
+  expect(generate(0.999).map((q) => q.prompt)).toEqual(generate(0.999).map((q) => q.prompt));
+});
+it('never selects invalid or unreviewed contextual candidates when varying examples', () => {
+  const verb = structuredClone((curated as Verb[]).find((v) => v.id === 'go')!);
+  const first = verb.examples.find((e) => e.form === 'base')!;
+  verb.examples = [
+    { ...first, id: 'bad-target', sentence: 'There is no target here.' },
+    { ...first, id: 'draft', sentence: 'We go to the beach.', reviewStatus: 'draft' },
+    first,
+  ];
+  const result = generateQuestions(
+    {
+      verbs: [verb],
+      skills: ['context'],
+      modes: ['sentence_gap'],
+      dialect: 'uk',
+      allowFixtures: false,
+    },
+    () => 0,
+  );
+  expect(result.questions.find((q) => q.target === 'base')?.explanation).toContain(first.sentence);
+});

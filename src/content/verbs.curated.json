@@ -91,6 +91,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original"
+      },
+      {
+        "id": "be-original-4",
+        "sentence": "The keys were on the kitchen table.",
+        "translation": "Las llaves estaban en la mesa de la cocina.",
+        "targetForm": "were",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["were"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "be-original-5",
+        "sentence": "I want to be a scientist.",
+        "translation": "Quiero ser científico.",
+        "targetForm": "be",
+        "grammarPoint": "infinitive · base form",
+        "form": "base",
+        "acceptedAnswers": ["be"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -109,7 +133,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "Used to identify someone or something, or describe a quality, state, or feeling.",
@@ -211,6 +235,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "go-original-4",
+        "sentence": "Marta has gone to the library; she will be back at six.",
+        "translation": "Marta ha ido a la biblioteca; volverá a las seis.",
+        "targetForm": "gone",
+        "grammarPoint": "present perfect",
+        "form": "pastParticiple",
+        "acceptedAnswers": ["gone"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "go-original-5",
+        "sentence": "We need to go home before dark.",
+        "translation": "Tenemos que ir a casa antes de que anochezca.",
+        "targetForm": "go",
+        "grammarPoint": "infinitive · base form",
+        "form": "base",
+        "acceptedAnswers": ["go"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -227,7 +275,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To move or travel from one place to another.",
@@ -317,6 +365,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "have-original-4",
+        "sentence": "I had a blue bicycle when I was ten.",
+        "translation": "Tenía una bicicleta azul cuando tenía diez años.",
+        "targetForm": "had",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["had"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "have-original-5",
+        "sentence": "We have had this dog for three years.",
+        "translation": "Tenemos este perro desde hace tres años.",
+        "targetForm": "had",
+        "grammarPoint": "present perfect",
+        "form": "pastParticiple",
+        "acceptedAnswers": ["had"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -333,7 +405,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To own something, or to have a person or thing as part of your life.",
@@ -423,6 +495,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "do-original-4",
+        "sentence": "Did you do your homework after dinner?",
+        "translation": "¿Hiciste los deberes después de cenar?",
+        "targetForm": "do",
+        "grammarPoint": "question · base form",
+        "form": "base",
+        "acceptedAnswers": ["do"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "do-original-5",
+        "sentence": "I have done the washing-up.",
+        "translation": "He fregado los platos.",
+        "targetForm": "done",
+        "grammarPoint": "present perfect",
+        "form": "pastParticiple",
+        "acceptedAnswers": ["done"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -439,7 +535,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To carry out an action, activity, or task.",
@@ -526,15 +622,15 @@
       },
       {
         "id": "get-original-3",
-        "sentence": "We have got help at the library.",
-        "translation": "Hemos conseguido ayuda en la biblioteca.",
+        "sentence": "We have just got some help from the librarian.",
+        "translation": "Acabamos de recibir ayuda del bibliotecario.",
         "targetForm": "got",
-        "grammarPoint": "present perfect",
+        "grammarPoint": "present perfect · UK",
         "form": "pastParticiple",
         "acceptedAnswers": ["got"],
         "dialect": "uk",
         "reviewStatus": "validated",
-        "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       },
       {
         "id": "get-original-us",
@@ -547,6 +643,18 @@
         "dialect": "us",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original"
+      },
+      {
+        "id": "get-original-4",
+        "sentence": "I got a message from my cousin this morning.",
+        "translation": "Esta mañana recibí un mensaje de mi primo.",
+        "targetForm": "got",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["got"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -565,7 +673,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To receive something or manage to obtain it.",
@@ -655,6 +763,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "make-original-4",
+        "sentence": "We made a poster for the school concert.",
+        "translation": "Hicimos un cartel para el concierto del colegio.",
+        "targetForm": "made",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["made"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "make-original-5",
+        "sentence": "It is normal to make mistakes when you learn.",
+        "translation": "Es normal cometer errores cuando aprendes.",
+        "targetForm": "make",
+        "grammarPoint": "infinitive · base form",
+        "form": "base",
+        "acceptedAnswers": ["make"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -671,7 +803,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To create something or prepare it so that it can be used.",
@@ -761,6 +893,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "take-original-4",
+        "sentence": "Please take your books to the classroom.",
+        "translation": "Por favor, lleva tus libros al aula.",
+        "targetForm": "take",
+        "grammarPoint": "imperative · base form",
+        "form": "base",
+        "acceptedAnswers": ["take"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "take-original-5",
+        "sentence": "She took her little brother to the park.",
+        "translation": "Llevó a su hermano pequeño al parque.",
+        "targetForm": "took",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["took"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -777,7 +933,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To pick something up or carry it to another place.",
@@ -1046,39 +1202,63 @@
     "examples": [
       {
         "id": "know-original-1",
-        "sentence": "We can know the answer.",
-        "translation": "Podemos saber la respuesta.",
+        "sentence": "How can you know the answer without reading the question?",
+        "translation": "¿Cómo puedes saber la respuesta sin leer la pregunta?",
         "targetForm": "know",
-        "grammarPoint": "modal + base form",
+        "grammarPoint": "question · base form",
         "form": "base",
         "acceptedAnswers": ["know"],
         "dialect": "neutral",
         "reviewStatus": "validated",
-        "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       },
       {
         "id": "know-original-2",
-        "sentence": "We knew the answer yesterday.",
-        "translation": "Ayer supimos la respuesta.",
+        "sentence": "I knew the answer, but I was too shy to speak.",
+        "translation": "Sabía la respuesta, pero me daba demasiada vergüenza hablar.",
         "targetForm": "knew",
         "grammarPoint": "past simple",
         "form": "pastSimple",
         "acceptedAnswers": ["knew"],
         "dialect": "neutral",
         "reviewStatus": "validated",
-        "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       },
       {
         "id": "know-original-3",
-        "sentence": "We have known the answer.",
-        "translation": "Hemos sabido la respuesta.",
+        "sentence": "I have known Sara since primary school.",
+        "translation": "Conozco a Sara desde primaria.",
         "targetForm": "known",
         "grammarPoint": "present perfect",
         "form": "pastParticiple",
         "acceptedAnswers": ["known"],
         "dialect": "neutral",
         "reviewStatus": "validated",
-        "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "know-original-4",
+        "sentence": "I know the way to the station.",
+        "translation": "Sé el camino a la estación.",
+        "targetForm": "know",
+        "grammarPoint": "present simple",
+        "form": "base",
+        "acceptedAnswers": ["know"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "know-original-5",
+        "sentence": "We knew our neighbours well.",
+        "translation": "Conocíamos bien a nuestros vecinos.",
+        "targetForm": "knew",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["knew"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -1095,7 +1275,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To have information in your mind.",
@@ -1197,6 +1377,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "think-original-4",
+        "sentence": "I thought the film was very funny.",
+        "translation": "Pensé que la película era muy divertida.",
+        "targetForm": "thought",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["thought"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -1213,7 +1405,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To use your mind to consider something.",
@@ -1315,6 +1507,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "say-original-4",
+        "sentence": "She said that the test was easy.",
+        "translation": "Dijo que el examen era fácil.",
+        "targetForm": "said",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["said"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "say-original-5",
+        "sentence": "What did you say to the teacher?",
+        "translation": "¿Qué le dijiste al profesor?",
+        "targetForm": "say",
+        "grammarPoint": "question · base form",
+        "form": "base",
+        "acceptedAnswers": ["say"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -1331,7 +1547,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To use words to express an idea or give information.",
@@ -1421,6 +1637,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "tell-original-4",
+        "sentence": "I told my sister the truth.",
+        "translation": "Le dije la verdad a mi hermana.",
+        "targetForm": "told",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["told"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "tell-original-5",
+        "sentence": "The teacher has told us to bring a notebook.",
+        "translation": "El profesor nos ha dicho que traigamos un cuaderno.",
+        "targetForm": "told",
+        "grammarPoint": "present perfect",
+        "form": "pastParticiple",
+        "acceptedAnswers": ["told"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -1437,7 +1677,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To give someone information or instructions by speaking.",
@@ -1751,6 +1991,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "feel-original-4",
+        "sentence": "I felt cold after the swim.",
+        "translation": "Tuve frío después de nadar.",
+        "targetForm": "felt",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["felt"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "feel-original-5",
+        "sentence": "Can you feel the wind on your face?",
+        "translation": "¿Puedes sentir el viento en la cara?",
+        "targetForm": "feel",
+        "grammarPoint": "question · base form",
+        "form": "base",
+        "acceptedAnswers": ["feel"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -1767,7 +2031,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To experience an emotion or a physical sensation.",
@@ -1857,6 +2121,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "leave-original-4",
+        "sentence": "We left school at half past three.",
+        "translation": "Salimos del colegio a las tres y media.",
+        "targetForm": "left",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["left"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "leave-original-5",
+        "sentence": "The bus has already left.",
+        "translation": "El autobús ya ha salido.",
+        "targetForm": "left",
+        "grammarPoint": "present perfect",
+        "form": "pastParticiple",
+        "acceptedAnswers": ["left"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -1873,7 +2161,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To go away from a person or place.",
@@ -2843,6 +3131,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "speak-original-4",
+        "sentence": "I spoke to our new teacher after class.",
+        "translation": "Hablé con nuestro nuevo profesor después de clase.",
+        "targetForm": "spoke",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["spoke"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -2859,7 +3159,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To use your voice to say words or talk to someone.",
@@ -3055,6 +3355,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "meet-original-4",
+        "sentence": "I met my best friend on the first day of school.",
+        "translation": "Conocí a mi mejor amigo el primer día de clase.",
+        "targetForm": "met",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["met"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -3071,7 +3383,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To see and talk to someone for the first time.",
@@ -3597,6 +3909,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "teach-original-4",
+        "sentence": "My grandfather taught me how to ride a bike.",
+        "translation": "Mi abuelo me enseñó a montar en bicicleta.",
+        "targetForm": "taught",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["taught"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -3613,7 +3937,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To help someone gain knowledge or learn how to do something.",
@@ -3711,6 +4035,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "learn-original-4",
+        "sentence": "I learned to swim when I was eight.",
+        "translation": "Aprendí a nadar cuando tenía ocho años.",
+        "targetForm": "learned",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["learnt", "learned"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -3727,7 +4063,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To gain knowledge or a new skill through study, practice, or experience.",
@@ -3923,6 +4259,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "lose-original-4",
+        "sentence": "I have lost my keys; can you help me look for them?",
+        "translation": "He perdido las llaves; ¿puedes ayudarme a buscarlas?",
+        "targetForm": "lost",
+        "grammarPoint": "present perfect",
+        "form": "pastParticiple",
+        "acceptedAnswers": ["lost"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "lose-original-5",
+        "sentence": "Our team lost the match by one point.",
+        "translation": "Nuestro equipo perdió el partido por un punto.",
+        "targetForm": "lost",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["lost"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -3939,7 +4299,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To be unable to find something you had.",
@@ -4041,6 +4401,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "pay-original-4",
+        "sentence": "I paid the driver five euros.",
+        "translation": "Le pagué cinco euros al conductor.",
+        "targetForm": "paid",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["paid"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -4057,7 +4429,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To give someone money for something you buy or for work they do.",
@@ -4359,6 +4731,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "keep-original-4",
+        "sentence": "Please keep the classroom tidy.",
+        "translation": "Por favor, mantén el aula ordenada.",
+        "targetForm": "keep",
+        "grammarPoint": "imperative · base form",
+        "form": "base",
+        "acceptedAnswers": ["keep"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "keep-original-5",
+        "sentence": "I have kept all your letters.",
+        "translation": "He conservado todas tus cartas.",
+        "targetForm": "kept",
+        "grammarPoint": "present perfect",
+        "form": "pastParticiple",
+        "acceptedAnswers": ["kept"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -4375,7 +4771,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To continue to have something instead of giving it away.",
@@ -4583,6 +4979,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "break-original-4",
+        "sentence": "I broke a glass while washing up.",
+        "translation": "Rompí un vaso mientras fregaba.",
+        "targetForm": "broke",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["broke"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "break-original-5",
+        "sentence": "The washing machine has broken again.",
+        "translation": "La lavadora se ha vuelto a estropear.",
+        "targetForm": "broken",
+        "grammarPoint": "present perfect",
+        "form": "pastParticiple",
+        "acceptedAnswers": ["broken"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -4599,7 +5019,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To damage something so that it comes apart or no longer works.",
@@ -4901,6 +5321,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "fly-original-4",
+        "sentence": "The birds flew over the lake.",
+        "translation": "Los pájaros volaron sobre el lago.",
+        "targetForm": "flew",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["flew"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "fly-original-5",
+        "sentence": "I have flown to London twice.",
+        "translation": "He viajado en avión a Londres dos veces.",
+        "targetForm": "flown",
+        "grammarPoint": "present perfect",
+        "form": "pastParticiple",
+        "acceptedAnswers": ["flown"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -4917,7 +5361,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To move through the air, using wings or travelling in an aircraft.",
@@ -5007,6 +5451,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "forget-original-4",
+        "sentence": "I forgot to bring my homework.",
+        "translation": "Olvidé traer los deberes.",
+        "targetForm": "forgot",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["forgot"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -5023,7 +5479,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To be unable to remember something.",
@@ -5104,15 +5560,15 @@
       },
       {
         "id": "grow-original-2",
-        "sentence": "We grew tomatoes in the school garden yesterday.",
-        "translation": "Ayer cultivamos tomates en el huerto escolar.",
+        "sentence": "We grew tomatoes in the school garden last summer.",
+        "translation": "El verano pasado cultivamos tomates en el huerto escolar.",
         "targetForm": "grew",
         "grammarPoint": "past simple",
         "form": "pastSimple",
         "acceptedAnswers": ["grew"],
         "dialect": "neutral",
         "reviewStatus": "validated",
-        "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       },
       {
         "id": "grow-original-3",
@@ -5125,6 +5581,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "grow-original-4",
+        "sentence": "The tree has grown a lot this year.",
+        "translation": "El árbol ha crecido mucho este año.",
+        "targetForm": "grown",
+        "grammarPoint": "present perfect",
+        "form": "pastParticiple",
+        "acceptedAnswers": ["grown"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -5141,7 +5609,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To become bigger or develop over time.",
@@ -5243,6 +5711,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "hold-original-4",
+        "sentence": "Please hold the ladder while I climb up.",
+        "translation": "Por favor, sujeta la escalera mientras subo.",
+        "targetForm": "hold",
+        "grammarPoint": "imperative · base form",
+        "form": "base",
+        "acceptedAnswers": ["hold"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "hold-original-5",
+        "sentence": "She held my hand when I felt nervous.",
+        "translation": "Me cogió de la mano cuando me puse nervioso.",
+        "targetForm": "held",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["held"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -5259,7 +5751,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To keep something in your hands or arms.",
@@ -5361,6 +5853,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "catch-original-4",
+        "sentence": "She caught the ball with one hand.",
+        "translation": "Atrapó la pelota con una mano.",
+        "targetForm": "caught",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["caught"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -5377,7 +5881,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To stop and hold something that is moving, often through the air.",
@@ -5691,6 +6195,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "fall-original-4",
+        "sentence": "My phone fell out of my pocket.",
+        "translation": "El móvil se me cayó del bolsillo.",
+        "targetForm": "fell",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["fell"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "fall-original-5",
+        "sentence": "The leaves have fallen from the trees.",
+        "translation": "Las hojas han caído de los árboles.",
+        "targetForm": "fallen",
+        "grammarPoint": "present perfect",
+        "form": "pastParticiple",
+        "acceptedAnswers": ["fallen"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -5707,7 +6235,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To move down to a lower place, often suddenly or by accident.",
@@ -6009,6 +6537,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "spend-original-4",
+        "sentence": "I spent five euros on a notebook.",
+        "translation": "Gasté cinco euros en un cuaderno.",
+        "targetForm": "spent",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["spent"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "spend-original-5",
+        "sentence": "We have spent the morning making a poster.",
+        "translation": "Hemos pasado la mañana haciendo un cartel.",
+        "targetForm": "spent",
+        "grammarPoint": "present perfect",
+        "form": "pastParticiple",
+        "acceptedAnswers": ["spent"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -6025,7 +6577,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To use money to buy something or pay for an activity.",
@@ -6445,6 +6997,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "ring-original-4",
+        "sentence": "The school bell rang at nine.",
+        "translation": "El timbre del colegio sonó a las nueve.",
+        "targetForm": "rang",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["rang"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "ring-original-5",
+        "sentence": "I have rung my grandmother to thank her.",
+        "translation": "He llamado por teléfono a mi abuela para darle las gracias.",
+        "targetForm": "rung",
+        "grammarPoint": "present perfect · UK",
+        "form": "pastParticiple",
+        "acceptedAnswers": ["rung"],
+        "dialect": "uk",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -6461,7 +7037,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To make a bell-like sound, or make a bell produce that sound.",
@@ -6563,6 +7139,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "wake-original-4",
+        "sentence": "The alarm woke me up at seven.",
+        "translation": "La alarma me despertó a las siete.",
+        "targetForm": "woke",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["woke"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -6579,7 +7167,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To stop sleeping, or cause someone to stop sleeping.",
@@ -6775,6 +7363,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "fight-original-4",
+        "sentence": "The two boys fought, but a teacher stopped them.",
+        "translation": "Los dos chicos se pelearon, pero un profesor los separó.",
+        "targetForm": "fought",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["fought"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -6791,7 +7391,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To use force against another person or group.",
@@ -6893,6 +7493,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "lend-original-4",
+        "sentence": "My sister lent me her dictionary.",
+        "translation": "Mi hermana me prestó su diccionario.",
+        "targetForm": "lent",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["lent"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -6909,7 +7521,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To let someone use something for a time, expecting them to return it.",
@@ -6999,6 +7611,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "show-original-4",
+        "sentence": "Our teacher showed us how to use the microscope.",
+        "translation": "Nuestro profesor nos enseñó a usar el microscopio.",
+        "targetForm": "showed",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["showed"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -7015,7 +7639,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To let someone see something.",
@@ -7223,6 +7847,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "hurt-original-4",
+        "sentence": "My feet hurt after the long walk.",
+        "translation": "Me dolieron los pies después de la larga caminata.",
+        "targetForm": "hurt",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["hurt"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "hurt-original-5",
+        "sentence": "His unkind words have hurt her feelings.",
+        "translation": "Sus palabras desagradables han herido sus sentimientos.",
+        "targetForm": "hurt",
+        "grammarPoint": "present perfect",
+        "form": "pastParticiple",
+        "acceptedAnswers": ["hurt"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -7239,7 +7887,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To cause physical pain or injury, or to feel pain.",
@@ -7520,39 +8168,39 @@
     "examples": [
       {
         "id": "mean-original-1",
-        "sentence": "We can mean something different.",
-        "translation": "Podemos querer decir algo diferente.",
+        "sentence": "What does this word mean?",
+        "translation": "¿Qué significa esta palabra?",
         "targetForm": "mean",
-        "grammarPoint": "modal + base form",
+        "grammarPoint": "question · base form",
         "form": "base",
         "acceptedAnswers": ["mean"],
         "dialect": "neutral",
         "reviewStatus": "validated",
-        "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       },
       {
         "id": "mean-original-2",
-        "sentence": "We meant something different yesterday.",
-        "translation": "Ayer quisimos decir algo diferente.",
+        "sentence": "I meant to call you, but I forgot.",
+        "translation": "Tenía intención de llamarte, pero se me olvidó.",
         "targetForm": "meant",
         "grammarPoint": "past simple",
         "form": "pastSimple",
         "acceptedAnswers": ["meant"],
         "dialect": "neutral",
         "reviewStatus": "validated",
-        "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       },
       {
         "id": "mean-original-3",
-        "sentence": "We have meant something different.",
-        "translation": "Hemos querido decir algo diferente.",
+        "sentence": "The red light has always meant 'stop'.",
+        "translation": "La luz roja siempre ha significado parar.",
         "targetForm": "meant",
         "grammarPoint": "present perfect",
         "form": "pastParticiple",
         "acceptedAnswers": ["meant"],
         "dialect": "neutral",
         "reviewStatus": "validated",
-        "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -7569,7 +8217,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To express a particular idea or have a particular meaning.",
@@ -7777,6 +8425,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "become-original-4",
+        "sentence": "The sky became dark before the storm.",
+        "translation": "El cielo se oscureció antes de la tormenta.",
+        "targetForm": "became",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["became"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -7793,7 +8453,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To change so that you start to be something different.",
@@ -7883,6 +8543,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "bend-original-4",
+        "sentence": "Bend your knees before you jump.",
+        "translation": "Dobla las rodillas antes de saltar.",
+        "targetForm": "bend",
+        "grammarPoint": "imperative · base form",
+        "form": "base",
+        "acceptedAnswers": ["bend"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -7899,7 +8571,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To make something curved instead of straight, or move your body into a curved position.",
@@ -8095,6 +8767,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "blow-original-4",
+        "sentence": "The wind blew all night.",
+        "translation": "El viento sopló toda la noche.",
+        "targetForm": "blew",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["blew"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -8111,7 +8795,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To move as a current of air, or push air out through your mouth.",
@@ -8209,6 +8893,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "burn-original-4",
+        "sentence": "The paper burned quickly in the fire.",
+        "translation": "El papel se quemó rápidamente en el fuego.",
+        "targetForm": "burned",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["burnt", "burned"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -8225,7 +8921,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To damage or destroy something with fire or heat, or be damaged in this way.",
@@ -8315,6 +9011,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "deal-original-4",
+        "sentence": "We dealt with the problem together.",
+        "translation": "Abordamos el problema juntos.",
+        "targetForm": "dealt",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["dealt"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "deal-original-5",
+        "sentence": "Our school has dealt with the same book supplier for years.",
+        "translation": "Nuestro colegio lleva años trabajando con el mismo proveedor de libros.",
+        "targetForm": "dealt",
+        "grammarPoint": "present perfect",
+        "form": "pastParticiple",
+        "acceptedAnswers": ["dealt"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -8331,7 +9051,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To give out cards to the people playing a game.",
@@ -8547,6 +9267,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "dream-original-4",
+        "sentence": "Last night, I dreamed that my dog could talk.",
+        "translation": "Anoche soñé que mi perro podía hablar.",
+        "targetForm": "dreamed",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["dreamt", "dreamed"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "dream-original-5",
+        "sentence": "I have always dreamt of becoming a scientist.",
+        "translation": "Siempre he soñado con ser científico.",
+        "targetForm": "dreamt",
+        "grammarPoint": "present perfect",
+        "form": "pastParticiple",
+        "acceptedAnswers": ["dreamt", "dreamed"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -8563,7 +9307,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To experience images and events in your mind while you sleep.",
@@ -8771,6 +9515,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "freeze-original-4",
+        "sentence": "The lake froze during the cold night.",
+        "translation": "El lago se congeló durante la fría noche.",
+        "targetForm": "froze",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["froze"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -8787,7 +9543,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To become solid because of cold, or make something very cold so that it becomes solid.",
@@ -8877,6 +9633,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "hide-original-4",
+        "sentence": "I hid behind a tree during the game.",
+        "translation": "Me escondí detrás de un árbol durante el juego.",
+        "targetForm": "hid",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["hid"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -8893,7 +9661,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To put yourself or something where other people cannot see or find you or it.",
@@ -8983,6 +9751,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "lay-original-4",
+        "sentence": "Please lay the map flat on the desk.",
+        "translation": "Por favor, coloca el mapa extendido sobre el escritorio.",
+        "targetForm": "lay",
+        "grammarPoint": "imperative · base form",
+        "form": "base",
+        "acceptedAnswers": ["lay"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -9001,7 +9781,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To put something down carefully, usually in a flat position.",
@@ -9091,6 +9871,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "lead-original-4",
+        "sentence": "Marta led our team during the science project.",
+        "translation": "Marta lideró nuestro equipo durante el proyecto de ciencias.",
+        "targetForm": "led",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["led"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -9107,7 +9899,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To guide someone by going in front of them.",
@@ -9317,6 +10109,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "light-original-4",
+        "sentence": "Dad lit a candle when the lights went out.",
+        "translation": "Papá encendió una vela cuando se fue la luz.",
+        "targetForm": "lit",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["lit"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -9333,7 +10137,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To make something start burning.",
@@ -9435,6 +10239,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "rise-original-4",
+        "sentence": "The sun rose above the hills.",
+        "translation": "El sol salió por encima de las colinas.",
+        "targetForm": "rose",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["rose"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "rise-original-5",
+        "sentence": "The temperature has risen by five degrees.",
+        "translation": "La temperatura ha subido cinco grados.",
+        "targetForm": "risen",
+        "grammarPoint": "present perfect",
+        "form": "pastParticiple",
+        "acceptedAnswers": ["risen"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -9451,7 +10279,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To move upwards or become higher.",
@@ -9541,6 +10369,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "shake-original-4",
+        "sentence": "My hands shook before the performance.",
+        "translation": "Me temblaban las manos antes de la actuación.",
+        "targetForm": "shook",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["shook"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -9557,7 +10397,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To move backwards and forwards in quick, short movements, or make something move this way.",
@@ -9647,6 +10487,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "shine-original-4",
+        "sentence": "The stars shone brightly last night.",
+        "translation": "Las estrellas brillaron con intensidad anoche.",
+        "targetForm": "shone",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["shone"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -9663,7 +10515,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To give out or reflect light.",
@@ -9765,6 +10617,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "shoot-original-4",
+        "sentence": "The archer shot an arrow at the target.",
+        "translation": "La arquera disparó una flecha hacia la diana.",
+        "targetForm": "shot",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["shot"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -9781,7 +10645,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To record a film or take photographs with a camera.",
@@ -9883,6 +10747,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "sink-original-4",
+        "sentence": "The stone sank to the bottom of the pond.",
+        "translation": "La piedra se hundió hasta el fondo del estanque.",
+        "targetForm": "sank",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["sank"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -9899,7 +10775,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To go down below the surface of water or another substance, or make something go down.",
@@ -9997,6 +10873,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "smell-original-4",
+        "sentence": "The soup smelled delicious.",
+        "translation": "La sopa olía muy bien.",
+        "targetForm": "smelled",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["smelt", "smelled"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -10013,7 +10901,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To notice a scent with your nose.",
@@ -10102,15 +10990,15 @@
       },
       {
         "id": "spell-original-2",
-        "sentence": "We spelt our names in English yesterday.",
+        "sentence": "We spelled our names in English yesterday.",
         "translation": "Ayer deletreamos nuestros nombres en inglés.",
-        "targetForm": "spelt",
+        "targetForm": "spelled",
         "grammarPoint": "past simple",
         "form": "pastSimple",
         "acceptedAnswers": ["spelt", "spelled"],
         "dialect": "neutral",
         "reviewStatus": "validated",
-        "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       },
       {
         "id": "spell-original-3",
@@ -10139,7 +11027,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To say or write the letters of a word in the correct order.",
@@ -10216,15 +11104,15 @@
       },
       {
         "id": "spill-original-2",
-        "sentence": "We spilt a little water by accident yesterday.",
+        "sentence": "We spilled a little water by accident yesterday.",
         "translation": "Ayer derramamos un poco de agua sin querer.",
-        "targetForm": "spilt",
+        "targetForm": "spilled",
         "grammarPoint": "past simple",
         "form": "pastSimple",
         "acceptedAnswers": ["spilt", "spilled"],
         "dialect": "neutral",
         "reviewStatus": "validated",
-        "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       },
       {
         "id": "spill-original-3",
@@ -10253,7 +11141,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To let liquid or small pieces fall out of a container, often by accident.",
@@ -10343,6 +11231,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "stick-original-4",
+        "sentence": "The label stuck to my sleeve.",
+        "translation": "La etiqueta se quedó pegada a mi manga.",
+        "targetForm": "stuck",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["stuck"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -10359,7 +11259,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To attach something to a surface, for example with glue, or stay attached to it.",
@@ -10873,6 +11773,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "beat-original-4",
+        "sentence": "Our team beat the champions in the final.",
+        "translation": "Nuestro equipo venció a los campeones en la final.",
+        "targetForm": "beat",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["beat"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "beat-original-5",
+        "sentence": "Beat the eggs before adding the flour.",
+        "translation": "Bate los huevos antes de añadir la harina.",
+        "targetForm": "beat",
+        "grammarPoint": "imperative · base form",
+        "form": "base",
+        "acceptedAnswers": ["beat"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -10889,7 +11813,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To defeat someone in a game or competition.",
@@ -11313,6 +12237,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "bear-original-4",
+        "sentence": "I cannot bear the noise from the building work.",
+        "translation": "No soporto el ruido de las obras.",
+        "targetForm": "bear",
+        "grammarPoint": "modal + base form",
+        "form": "base",
+        "acceptedAnswers": ["bear"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -11331,7 +12267,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To accept or continue to experience something unpleasant or difficult.",
@@ -11427,6 +12363,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "bind-original-4",
+        "sentence": "We bound the sticks together with string.",
+        "translation": "Atamos los palos con cordel.",
+        "targetForm": "bound",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["bound"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -11443,7 +12391,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To tie things together tightly.",
@@ -11630,15 +12578,15 @@
       },
       {
         "id": "breed-original-2",
-        "sentence": "We bred sheep on the farm yesterday.",
-        "translation": "Ayer criamos ovejas en la granja.",
+        "sentence": "My grandparents bred sheep for many years.",
+        "translation": "Mis abuelos criaron ovejas durante muchos años.",
         "targetForm": "bred",
         "grammarPoint": "past simple",
         "form": "pastSimple",
         "acceptedAnswers": ["bred"],
         "dialect": "neutral",
         "reviewStatus": "validated",
-        "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       },
       {
         "id": "breed-original-3",
@@ -11651,6 +12599,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "breed-original-4",
+        "sentence": "These birds have bred successfully in the reserve.",
+        "translation": "Estas aves se han reproducido con éxito en la reserva.",
+        "targetForm": "bred",
+        "grammarPoint": "present perfect",
+        "form": "pastParticiple",
+        "acceptedAnswers": ["bred"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -11667,7 +12627,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To keep animals so that they produce young.",
@@ -11769,6 +12729,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "burst-original-4",
+        "sentence": "A balloon burst during the party.",
+        "translation": "Un globo estalló durante la fiesta.",
+        "targetForm": "burst",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["burst"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -11785,7 +12757,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To break open suddenly, or cause something to break open.",
@@ -11987,6 +12959,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "forbid-original-4",
+        "sentence": "The coach forbade us to enter the pool alone.",
+        "translation": "El entrenador nos prohibió entrar solos en la piscina.",
+        "targetForm": "forbade",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["forbade"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -12003,7 +12987,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To say that something is not allowed, especially through a rule or an instruction.",
@@ -12086,15 +13070,15 @@
       },
       {
         "id": "kneel-original-2",
-        "sentence": "We knelt beside the flower bed yesterday.",
+        "sentence": "We kneeled beside the flower bed yesterday.",
         "translation": "Ayer nos arrodillamos junto al parterre.",
-        "targetForm": "knelt",
+        "targetForm": "kneeled",
         "grammarPoint": "past simple",
         "form": "pastSimple",
         "acceptedAnswers": ["knelt", "kneeled"],
         "dialect": "neutral",
         "reviewStatus": "validated",
-        "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       },
       {
         "id": "kneel-original-3",
@@ -12123,7 +13107,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To go down onto one or both knees, or stay in that position.",
@@ -12221,6 +13205,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "lean-original-4",
+        "sentence": "I leaned the ladder against the wall.",
+        "translation": "Apoyé la escalera contra la pared.",
+        "targetForm": "leaned",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["leant", "leaned"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -12237,7 +13233,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To move your body or an object away from an upright position.",
@@ -12445,6 +13441,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "set-original-4",
+        "sentence": "Set the bowl on the table.",
+        "translation": "Pon el cuenco sobre la mesa.",
+        "targetForm": "set",
+        "grammarPoint": "imperative · base form",
+        "form": "base",
+        "acceptedAnswers": ["set"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "set-original-5",
+        "sentence": "I have set the alarm for seven.",
+        "translation": "He puesto la alarma para las siete.",
+        "targetForm": "set",
+        "grammarPoint": "present perfect",
+        "form": "pastParticiple",
+        "acceptedAnswers": ["set"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -12461,7 +13481,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To put something in a particular place or position.",
@@ -12563,6 +13583,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "shrink-original-4",
+        "sentence": "My T-shirt shrank in the wash.",
+        "translation": "Mi camiseta encogió al lavarla.",
+        "targetForm": "shrank",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["shrank"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -12579,7 +13611,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To become smaller, or make something smaller.",
@@ -12669,6 +13701,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "slide-original-4",
+        "sentence": "The children slid down the snowy hill.",
+        "translation": "Los niños se deslizaron por la colina nevada.",
+        "targetForm": "slid",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["slid"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -12685,7 +13729,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To move smoothly along a surface without lifting away from it.",
@@ -12887,6 +13931,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "spread-original-4",
+        "sentence": "The news spread quickly through the school.",
+        "translation": "La noticia se extendió rápidamente por el colegio.",
+        "targetForm": "spread",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["spread"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -12903,7 +13959,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To cover a larger area, or make something do this.",
@@ -13005,6 +14061,30 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "spring-original-4",
+        "sentence": "The cat sprang onto the wall.",
+        "translation": "El gato saltó al muro.",
+        "targetForm": "sprang",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["sprang"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
+      },
+      {
+        "id": "spring-original-5",
+        "sentence": "New shops have sprung up near the station.",
+        "translation": "Han surgido nuevas tiendas cerca de la estación.",
+        "targetForm": "sprung",
+        "grammarPoint": "present perfect",
+        "form": "pastParticiple",
+        "acceptedAnswers": ["sprung"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -13021,7 +14101,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To jump or move suddenly.",
@@ -13229,6 +14309,18 @@
         "dialect": "neutral",
         "reviewStatus": "validated",
         "source": "VerbQuest · ejemplo original · revisión asistida documentada"
+      },
+      {
+        "id": "swing-original-4",
+        "sentence": "She swung the bag gently from side to side.",
+        "translation": "Balanceó suavemente la bolsa de un lado a otro.",
+        "targetForm": "swung",
+        "grammarPoint": "past simple",
+        "form": "pastSimple",
+        "acceptedAnswers": ["swung"],
+        "dialect": "neutral",
+        "reviewStatus": "validated",
+        "source": "VerbQuest · ejemplo original · revisión asistida documentada (2026-11-10)"
       }
     ],
     "mnemonics": [],
@@ -13245,7 +14337,7 @@
     "archivedAt": null,
     "contentVersion": "curated-1.0",
     "createdAt": "2026-10-29T00:00:00Z",
-    "updatedAt": "2026-10-29T00:00:00Z",
+    "updatedAt": "2026-11-10T12:28:45.689Z",
     "definitions": [
       {
         "text": "To move backwards and forwards or from side to side around a fixed point.",

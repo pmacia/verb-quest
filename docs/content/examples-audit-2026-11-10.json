@@ -1,0 +1,2440 @@
+{
+  "date": "2026-11-10",
+  "scope": "Catálogo base curated-1.4; no incluye ediciones locales del navegador.",
+  "sourceCommit": "2199367f583618370a2585f84473c11796360301",
+  "sourceSha256": "e3c7b5d18f5a1b39fe13d5f03807e97e47d5543c4fb12701d1117032c201b744",
+  "status": "editorial-assessment-and-unvalidated-proposals",
+  "summary": {
+    "verbs": 120,
+    "currentExamples": 362,
+    "verdicts": {
+      "expand": 62,
+      "sufficient": 54,
+      "revise": 4
+    },
+    "priorities": {
+      "high": 25,
+      "medium": 41,
+      "low": 54
+    },
+    "proposedExamples": 97,
+    "indicativeTargetExamples": 453,
+    "weCanSentences": 117,
+    "weSubjectSentences": 351,
+    "questions": 0,
+    "negativeSentences": 1,
+    "verbsWithMultipleDefinitions": 32
+  },
+  "verbs": [
+    {
+      "id": "be",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 4,
+      "recommendedCount": 6,
+      "assessment": "Las cuatro frases son correctas y cubren be/was/were/been, pero tres repiten ser amable y ninguna ilustra la ubicación de la segunda definición.",
+      "gaps": [
+        "Ubicación con estar; identidad personal."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "The keys were on the kitchen table.",
+          "translation": "Las llaves estaban en la mesa de la cocina.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Ubicación: estar.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "I want to be a scientist.",
+          "translation": "Quiero ser científico.",
+          "form": "base",
+          "dialect": "neutral",
+          "purpose": "Identidad/profesión e infinitivo con to.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "go",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Las tres formas y traducciones son correctas. Gone resulta válido en ese contexto, aunque la frase aislada no explica si los hablantes siguen fuera; conviene añadir contexto y otra estructura cotidiana.",
+      "gaps": [
+        "Contexto que haga transparente gone; infinitivo de finalidad."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "Marta has gone to the library; she will be back at six.",
+          "translation": "Marta ha ido a la biblioteca; volverá a las seis.",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "Propuesta para contextualizar ausencia actual, sin enseñar been como forma de go.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "We need to go home before dark.",
+          "translation": "Tenemos que ir a casa antes de que anochezca.",
+          "form": "base",
+          "dialect": "neutral",
+          "purpose": "Destino sin to: go home.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "have",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Las tres frases sobre descansar son gramaticales y las respuestas correctas, pero no ilustran directamente la posesión que enseña la definición. La traducción puede sonar más natural como tomar/hacer un breve descanso.",
+      "gaps": [
+        "Posesión; contraste con have a break."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "I had a blue bicycle when I was ten.",
+          "translation": "Tenía una bicicleta azul cuando tenía diez años.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Posesión en pasado.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "We have had this dog for three years.",
+          "translation": "Tenemos este perro desde hace tres años.",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "Posesión continuada y traducción natural con desde hace.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "do",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "El ejercicio escolar representa bien realizar una tarea; las tres formas, traducciones y respuestas son correctas. Para un verbo tan frecuente conviene otra colocación y una pregunta, sin exigir todos los usos auxiliares.",
+      "gaps": [
+        "Colocaciones domésticas; base tras auxiliar."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "Did you do your homework after dinner?",
+          "translation": "¿Hiciste los deberes después de cenar?",
+          "form": "base",
+          "dialect": "neutral",
+          "purpose": "Pregunta: did + do; contraste con pasado léxico did.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "I have done the washing-up.",
+          "translation": "He fregado los platos.",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "Otra tarea cotidiana.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "get",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 4,
+      "recommendedCount": 5,
+      "assessment": "Los cuatro ejemplos cubren get/got/got/gotten y distinguen correctamente UK/US para obtener ayuda. El sentido enseñado está cubierto, pero todo depende del mismo complemento.",
+      "gaps": [
+        "Recibir un objeto; contexto temporal del perfecto."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "I got a message from my cousin this morning.",
+          "translation": "Esta mañana recibí un mensaje de mi primo.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Recepción, dentro de la definición actual.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "make",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Preparar comida está bien explicado y las tres formas son correctas; falta crear un objeto, la otra parte de la definición.",
+      "gaps": [
+        "Creación frente a preparación; colocación make a mistake."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "We made a poster for the school concert.",
+          "translation": "Hicimos un cartel para el concierto del colegio.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Crear un objeto.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "It is normal to make mistakes when you learn.",
+          "translation": "Es normal cometer errores cuando aprendes.",
+          "form": "base",
+          "dialect": "neutral",
+          "purpose": "Colocación frecuente: make mistakes.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "take",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Tomar el autobús es natural y las tres formas y traducciones son válidas. No ejemplifica llevar o coger un objeto, que sí están en la definición.",
+      "gaps": [
+        "Llevar un objeto a otro lugar."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "Please take your books to the classroom.",
+          "translation": "Por favor, lleva tus libros al aula.",
+          "form": "base",
+          "dialect": "neutral",
+          "purpose": "Llevar a otro lugar; imperativo.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "She took her little brother to the park.",
+          "translation": "Llevó a su hermano pequeño al parque.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Llevar a una persona.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "come",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Las tres formas son correctas y venir al concierto es adecuado si el punto de referencia es el lugar del hablante o interlocutor. Las traducciones mantienen esa perspectiva. La repetición reduce variedad, pero cubre el sentido único enseñado.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "see",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Las tres frases cubren la percepción visual definida; saw/seen y sus respuestas son correctos. Ver montañas desde aquí funciona también en pasado o como experiencia; no se requiere ampliar a visitar o entender, sentidos no enseñados.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "know",
+      "verdict": "revise",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Las formas y respuestas know/knew/known son correctas, pero el molde produce ejemplos poco informativos: can know carece de situación clara y have known mejora con duración. Knew the answer expresa normalmente sabíamos la respuesta; supimos puede inducir la lectura de enterarse. Falta conocer personas.",
+      "gaps": [
+        "Contraste saber/conocer; estado durativo con for/since; contexto real para know."
+      ],
+      "corrections": [
+        "Revisar know-original-2: para el estado de conocer una respuesta, preferir «Ayer sabíamos la respuesta»; «supimos» puede sugerir adquisición de información.",
+        "Recontextualizar know-original-1 y know-original-3 para evitar una posibilidad abstracta y un perfecto de estado sin duración o consecuencia. No son errores de forma verbal."
+      ],
+      "proposals": [
+        {
+          "sentence": "I knew the answer, but I was too shy to speak.",
+          "translation": "Sabía la respuesta, pero me daba demasiada vergüenza hablar.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "aclarar estado, no adquisición de información.",
+          "status": "draft",
+          "action": "replace"
+        },
+        {
+          "sentence": "I have known Sara since primary school.",
+          "translation": "Conozco a Sara desde primaria.",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "Conocer y duración.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "How can you know the answer without reading the question?",
+          "translation": "¿Cómo puedes saber la respuesta sin leer la pregunta?",
+          "form": "base",
+          "dialect": "neutral",
+          "purpose": "Can know con contexto comunicativo natural.",
+          "status": "draft",
+          "action": "replace"
+        }
+      ]
+    },
+    {
+      "id": "think",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Think about está bien usado en las tres formas y las traducciones son correctas; falta el sentido de opinión de la segunda definición.",
+      "gaps": [
+        "Opinión con think (that)."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "I thought the film was very funny.",
+          "translation": "Pensé que la película era muy divertida.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Opinión con oración subordinada.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "say",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Say hello y sus tres formas son correctos; la serie solo muestra una fórmula de saludo. Conviene mostrar palabras o información y el destinatario con to, útil frente a tell.",
+      "gaps": [
+        "Contenido proposicional; say to alguien."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "She said that the test was easy.",
+          "translation": "Dijo que el examen era fácil.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Expresar información.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "What did you say to the teacher?",
+          "translation": "¿Qué le dijiste al profesor?",
+          "form": "base",
+          "dialect": "neutral",
+          "purpose": "Say to + destinatario; base después de did.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "tell",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Contar una historia es natural y las formas son correctas. Falta el destinatario y el sentido de informar/instruir que enseña la primera definición; es una oportunidad importante para diferenciar tell de say.",
+      "gaps": [
+        "Tell + persona + información; tell + persona + to."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "I told my sister the truth.",
+          "translation": "Le dije la verdad a mi hermana.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Información y objeto personal.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "The teacher has told us to bring a notebook.",
+          "translation": "El profesor nos ha dicho que traigamos un cuaderno.",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "Instrucción: tell someone to do something.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "give",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "La tarjeta ilustra bien transferir algo a una persona y la construcción de doble objeto. Las tres formas y traducciones son correctas; no hay un hueco de significado obligatorio en el alcance actual.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "find",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Encontrar la llave ilustra el único sentido definido y las tres formas con traducciones y respuestas correctas. Otros usos como find something difficult serían ampliación de alcance, no carencia de esta definición.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "feel",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Las tres frases son naturales y correctas para sentirse orgulloso; no muestran sensación física ni sentir con objeto, ambos incluidos en el significado.",
+      "gaps": [
+        "Sensación física frente a emoción."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "I felt cold after the swim.",
+          "translation": "Tuve frío después de nadar.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Sensación física.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "Can you feel the wind on your face?",
+          "translation": "¿Puedes sentir el viento en la cara?",
+          "form": "base",
+          "dialect": "neutral",
+          "purpose": "Sentir + objeto; pregunta.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "leave",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Dejar las mochilas está bien representado y las formas/traducciones son correctas. No aparece salir de un lugar, segunda acepción básica enseñada.",
+      "gaps": [
+        "Salir/marcharse de un lugar."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "We left school at half past three.",
+          "translation": "Salimos del colegio a las tres y media.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Leave + lugar sin from.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "The bus has already left.",
+          "translation": "El autobús ya ha salido.",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "Uso intransitivo de salida.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "put",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Las tres frases muestran con claridad poner algo en un lugar. Put coincide en las tres formas y ayer/have desambiguan correctamente pasado y participio; traducciones y respuestas correctas.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "bring",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Traer fruta representa el sentido enseñado y sus tres formas; la perspectiva hacia el lugar compartido es plausible y las traducciones correctas. Explicitar un destino sería opcional, no una corrección.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "buy",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Comprar entradas ilustra bien la definición con tres formas correctas y traducciones claras. No hace falta aumentar el número solo por repetir el molde cuando no faltan sentidos enseñados.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "eat",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "La serie es adecuada para ESO, ilustra comer y muestra ate/eaten correctamente. Las traducciones y respuestas son correctas; más alimentos darían variedad sin añadir una necesidad conceptual.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "drink",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Beber agua tras ejercicio es natural, apropiado para ESO y cubre drink/drank/drunk. El perfecto es admisible como experiencia; no exige un adverbio para ser correcto.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "sleep",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Dormir en tienda es un contexto comprensible para las tres formas y traducciones correctas. Yesterday no obliga a interpretar dormir de día: last night sería más específico, no una corrección necesaria.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "read",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Leer un libro sobre espacio cubre el sentido y las tres formas escritas idénticas; yesterday y have indican su función. Las respuestas son correctas. La diferencia de pronunciación debe sostenerse con el audio/IPA, no con más frases escritas.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "write",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Escribir un mensaje representa bien el significado y las tres formas, con traducciones correctas. Un contexto escolar adicional sería variedad opcional.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "speak",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Hablar inglés con visitantes es natural y correcto en las tres formas. Conviene enseñar también speak to/with sin idioma para no asociar el verbo solo a competencia lingüística.",
+      "gaps": [
+        "Hablar con una persona sin objeto de idioma."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "I spoke to our new teacher after class.",
+          "translation": "Hablé con nuestro nuevo profesor después de clase.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Interlocutor con speak to.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "hear",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Oír los pájaros ilustra percepción auditiva sin confundirla con listen. Las tres formas y traducciones son correctas; los pájaros de fuera es comprensible aunque los pájaros fuera resulte más fluido.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "meet",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Reunirse con amigos está correctamente expresado en las tres formas. Falta conocer a alguien por primera vez, acepción explícita y frecuente.",
+      "gaps": [
+        "Primer encuentro frente a reunión."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "I met my best friend on the first day of school.",
+          "translation": "Conocí a mi mejor amigo el primer día de clase.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Conocer por primera vez; contraste con know.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "run",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Correr por la pista ilustra el sentido físico enseñado y run/ran/run correctamente; las traducciones mantienen la actividad. No hace falta introducir dirigir o funcionar, fuera de las definiciones actuales.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "sit",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "La serie cubre sentarse/estar sentado con formas correctas. La traducción del perfecto como hemos estado sentados respeta el estado y evita forzar una acción puntual; no hay error por variar el aspecto español.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "stand",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Estar de pie junto al escenario ilustra con claridad el sentido definido y stand/stood/stood, con traducciones y respuestas correctas. Otros sentidos no son necesarios para esta ficha.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "understand",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Las instrucciones ilustran entender significado; las tres formas son correctas. Have understood es válido como comprensión alcanzada; no debe marcarse incorrecto por preferir un presente en otro contexto.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "teach",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Enseñar un juego a amigos es natural y cubre las tres formas con respuestas correctas. Una segunda construcción con habilidad e infinitivo aportaría detalle real en lugar de repetir otro objeto.",
+      "gaps": [
+        "Teach someone how to + habilidad."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "My grandfather taught me how to ride a bike.",
+          "translation": "Mi abuelo me enseñó a montar en bicicleta.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Enseñar una habilidad; how to.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "learn",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Las tres frases son correctas y acceptedAnswers admite learnt/learned en pasado y participio. Falta una habilidad con learn to, útil en ESO; no se deben rechazar variantes correctas por preferencia dialectal.",
+      "gaps": [
+        "Aprender a hacer algo; visibilidad de learned además de admitirlo."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "I learned to swim when I was eight.",
+          "translation": "Aprendí a nadar cuando tenía ocho años.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Habilidad con learn to; propuesta con variante learned, aceptar también learnt.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "wear",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Llevar camisetas ilustra ropa puesta y las tres formas correctamente. El español llevar es natural en este contexto y no necesita puesto para ser válido; más prendas solo aportarían variedad.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "lose",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Perder un punto es una construcción válida, con formas y traducciones correctas. No muestra extraviar un objeto ni equivale necesariamente a perder un partido, los dos sentidos definidos.",
+      "gaps": [
+        "Objeto extraviado; derrota en competición."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "I have lost my keys; can you help me look for them?",
+          "translation": "He perdido las llaves; ¿puedes ayudarme a buscarlas?",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "Extraviar y consecuencia presente.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "Our team lost the match by one point.",
+          "translation": "Nuestro equipo perdió el partido por un punto.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Perder una competición.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "pay",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Pay for the tickets está correctamente construido y traducido en las tres formas. Conviene añadir pay + persona/cantidad para enseñar una alternancia útil, sin introducir sentidos ajenos.",
+      "gaps": [
+        "Pay someone una cantidad frente a pay for una compra."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "I paid the driver five euros.",
+          "translation": "Le pagué cinco euros al conductor.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Destinatario y cantidad sin for.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "send",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "La postal a los abuelos ilustra envío con destinatario y las tres formas/traducciones correctas. Un correo electrónico sería variación contemporánea útil pero no un hueco del significado enseñado.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "build",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Construir un puente en miniatura es apropiado para ESO, representa unir piezas y muestra build/built/built correctamente. No se necesita más cantidad para este alcance unívoco.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "keep",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Guardar apuntes es natural y las formas/respuestas correctas; la serie no muestra mantener una condición ni conservar frente a regalar/devolver, partes de las definiciones actuales.",
+      "gaps": [
+        "Mantener un estado; conservar posesión."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "Please keep the classroom tidy.",
+          "translation": "Por favor, mantén el aula ordenada.",
+          "form": "base",
+          "dialect": "neutral",
+          "purpose": "Keep + objeto + adjetivo.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "I have kept all your letters.",
+          "translation": "He conservado todas tus cartas.",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "Conservar algo a lo largo del tiempo.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "begin",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "El inicio de una clase ilustra bien empezar y distingue began/begun; tres frases paralelas bastan para este sentido introductorio.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "break",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Las tres frases son correctas, pero solo enseñan batir un récord, mientras significado y definición enseñan romper.",
+      "gaps": [
+        "Falta el sentido central romper y un contexto material."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "I broke a glass while washing up.",
+          "translation": "Rompí un vaso mientras fregaba.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Romper físicamente; alinear con la definición.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "The washing machine has broken again.",
+          "translation": "La lavadora se ha vuelto a estropear.",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "Funcionamiento de un aparato; uso intransitivo.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "choose",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Elegir un tema es natural, escolar y coherente con la definición; chose/chosen quedan claros aunque el contexto se repite.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "drive",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "El simulador hace apropiado para ESO un ejemplo de conducción; las tres formas y traducciones son correctas y cubren el sentido enseñado.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "fly",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Volar una cometa es correcto, pero no ejemplifica directamente ni desplazarse con alas ni viajar en avión, que son los usos definidos.",
+      "gaps": [
+        "Volar de un ave.",
+        "Viajar en avión."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "The birds flew over the lake.",
+          "translation": "Los pájaros volaron sobre el lago.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Volar con alas; sujeto distinto de we.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "I have flown to London twice.",
+          "translation": "He viajado en avión a Londres dos veces.",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "Viajar en avión; experiencia personal.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "forget",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Olvidar una contraseña está bien expresado en las tres formas, pero no cubre olvidar hacer algo.",
+      "gaps": [
+        "Construcción forget to + infinitivo."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "I forgot to bring my homework.",
+          "translation": "Olvidé traer los deberes.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "No realizar una acción por olvido; forget to.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "grow",
+      "verdict": "revise",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Cultivar tomates es adecuado, pero grew tomatoes yesterday presenta un proceso largo como un episodio de un día sin contexto. No es imposible gramaticalmente; resulta poco ilustrativo. Falta crecer.",
+      "gaps": [
+        "Crecer frente a cultivar.",
+        "Marco temporal natural para el cultivo."
+      ],
+      "corrections": [
+        "Sustituir yesterday por last summer en el pasado de cultivar para evitar un marco temporal poco representativo."
+      ],
+      "proposals": [
+        {
+          "sentence": "We grew tomatoes in the school garden last summer.",
+          "translation": "El verano pasado cultivamos tomates en el huerto escolar.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "periodo de cultivo plausible.",
+          "status": "draft",
+          "action": "replace"
+        },
+        {
+          "sentence": "The tree has grown a lot this year.",
+          "translation": "El árbol ha crecido mucho este año.",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "Crecer; uso intransitivo.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "hold",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Celebrar reuniones es correcto, pero falta sujetar, primer significado y uso físico básico.",
+      "gaps": [
+        "Sujetar algo con las manos."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "Please hold the ladder while I climb up.",
+          "translation": "Por favor, sujeta la escalera mientras subo.",
+          "form": "base",
+          "dialect": "neutral",
+          "purpose": "Sujetar; imperativo.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "She held my hand when I felt nervous.",
+          "translation": "Me cogió de la mano cuando me puse nervioso.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Sujetar una mano; otro sujeto.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "catch",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Coger el autobús es natural y está bien traducido; falta atrapar un objeto, explícito en la definición.",
+      "gaps": [
+        "Atrapar algo en movimiento."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "She caught the ball with one hand.",
+          "translation": "Atrapó la pelota con una mano.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Atrapar; contexto deportivo.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "cut",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Cortar papel es un contexto escolar claro. Can/yesterday/have permiten reconocer las funciones de la forma idéntica cut sin errores de traducción.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "draw",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Dibujar un mapa ilustra exactamente el sentido seleccionado y distingue drew/drawn. Neighbourhood es grafía británica, no un problema del verbo ni de respuestas.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "fall",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Fall asleep y sus traducciones son correctos, pero todas las frases enseñan quedarse dormido y ninguna caer, el significado y definición visibles.",
+      "gaps": [
+        "Caer físicamente."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "My phone fell out of my pocket.",
+          "translation": "El móvil se me cayó del bolsillo.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Caer desde un lugar; fall out of.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "The leaves have fallen from the trees.",
+          "translation": "Las hojas han caído de los árboles.",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "Caer; sujeto no humano.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "win",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Ganar un premio es una realización clara del sentido competitivo; las tres formas son correctas, apropiadas para ESO y suficientes como introducción.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "sell",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "La feria escolar concreta el intercambio por dinero sin vocabulario difícil. Sold está correctamente identificado como pasado y participio.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "spend",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Pasar tiempo en un museo está bien, pero deja sin ejemplo gastar dinero, uno de los dos sentidos enseñados.",
+      "gaps": [
+        "Gastar dinero; spend money on.",
+        "Tiempo seguido de verbo en -ing."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "I spent five euros on a notebook.",
+          "translation": "Gasté cinco euros en un cuaderno.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Dinero; spend on.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "We have spent the morning making a poster.",
+          "translation": "Hemos pasado la mañana haciendo un cartel.",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "Tiempo; spend + periodo + -ing.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "swim",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "La piscina cubierta ilustra nadar con un contexto accesible y sin ambigüedad; swam/swum están bien usados.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "ride",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Ir en bici corresponde bien a ride our bikes; cubre el medio de transporte más relevante para ESO y las tres formas, sin exigir añadir montar a caballo.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "sing",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "El coro escolar ilustra cantar de forma directa y segura; sang/sung y las traducciones son correctos aunque las tres frases compartan situación.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "ring",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Llamar al timbre es correcto; faltan el timbre que suena como sujeto y el uso telefónico que aparece en la definición.",
+      "gaps": [
+        "Sonar de una campana o teléfono.",
+        "Ring someone: telefonear, especialmente británico."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "The school bell rang at nine.",
+          "translation": "El timbre del colegio sonó a las nueve.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Sonar; uso intransitivo.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "I have rung my grandmother to thank her.",
+          "translation": "He llamado por teléfono a mi abuela para darle las gracias.",
+          "form": "pastParticiple",
+          "dialect": "uk",
+          "purpose": "Telefonear; marcar dialecto UK.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "wake",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Wake up temprano es natural y las tres formas son correctas. Falta causar que otra persona se despierte, incluido en la definición.",
+      "gaps": [
+        "Despertar a alguien; posición de up con pronombre."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "The alarm woke me up at seven.",
+          "translation": "La alarma me despertó a las siete.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Wake someone up; uso transitivo.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "feed",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Dar de comer a animales es una ilustración precisa y adecuada. Fed queda correctamente distinguido por el auxiliar y el marcador temporal.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "fight",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "La lucha por el planeta es un uso figurado correcto y adecuado; falta el sentido físico explícito en la definición. Ayer es posible con una acción concreta, no un error.",
+      "gaps": [
+        "Sentido físico sin glorificar la violencia."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "The two boys fought, but a teacher stopped them.",
+          "translation": "Los dos chicos se pelearon, pero un profesor los separó.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Pelearse; contexto escolar con intervención adulta.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "lend",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Las tres frases son correctas y enseñan lend something to someone. Una segunda construcción aporta más que repetir otro tiempo del mismo préstamo.",
+      "gaps": [
+        "Lend someone something; distinguir quién presta."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "My sister lent me her dictionary.",
+          "translation": "Mi hermana me prestó su diccionario.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Doble objeto; dirección del préstamo.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "show",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Mostrar dibujos es correcto; falta enseñar cómo hacer algo, segundo sentido de la definición.",
+      "gaps": [
+        "Show someone how to."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "Our teacher showed us how to use the microscope.",
+          "translation": "Nuestro profesor nos enseñó a usar el microscopio.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Enseñar un procedimiento; how to.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "shut",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Cerrar ventanas cubre bien el sentido básico y la forma invariable. Las traducciones y auxiliares son correctos; repetir contexto no exige por sí solo ampliación.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "hurt",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Los ejemplos son correctos y ya cambian de persona, pero solo presentan hacerse daño. Faltan doler y daño emocional, ambos enseñados.",
+      "gaps": [
+        "Doler como verbo intransitivo.",
+        "Herir sentimientos."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "My feet hurt after the long walk.",
+          "translation": "Me dolieron los pies después de la larga caminata.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Doler; pasado contextualizado, forma invariable.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "His unkind words have hurt her feelings.",
+          "translation": "Sus palabras desagradables han herido sus sentimientos.",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "Daño emocional.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "hit",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Golpear una pelota es una realización clara, apropiada y no violenta del sentido físico. La forma hit y las traducciones están bien.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "let",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Let everyone share muestra correctamente let + objeto + infinitivo sin to y el sentido de permitir. No hay error por no mostrar otras personas o negación.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "mean",
+      "verdict": "revise",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Las tres frases son gramaticalmente posibles, pero something different carece de referente; el perfecto resulta especialmente poco informativo aislado. No enseñan con claridad significar ni mean to do.",
+      "gaps": [
+        "Significado de una palabra o señal.",
+        "Intención con mean to.",
+        "Contexto concreto en lugar de something different."
+      ],
+      "corrections": [
+        "Reformular los ejemplos vagos para que una frase aislada permita entender significar e intención. No son errores de conjugación."
+      ],
+      "proposals": [
+        {
+          "sentence": "What does this word mean?",
+          "translation": "¿Qué significa esta palabra?",
+          "form": "base",
+          "dialect": "neutral",
+          "purpose": "significar; pregunta con does.",
+          "status": "draft",
+          "action": "replace"
+        },
+        {
+          "sentence": "I meant to call you, but I forgot.",
+          "translation": "Tenía intención de llamarte, pero se me olvidó.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Intención; mean to + infinitivo.",
+          "status": "draft",
+          "action": "replace"
+        },
+        {
+          "sentence": "The red light has always meant 'stop'.",
+          "translation": "La luz roja siempre ha significado parar.",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "significado estable en perfecto.",
+          "status": "draft",
+          "action": "replace"
+        }
+      ]
+    },
+    {
+      "id": "cost",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Las tres frases son correctas y concretan el precio. Has cost es posible aunque otro tiempo también lo fuera; la variación de sujeto/contexto mejora la serie.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "become",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Convertirse en un equipo más fuerte es correcto; falta become + adjetivo, construcción central para cambios de estado.",
+      "gaps": [
+        "Become + adjetivo."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "The sky became dark before the storm.",
+          "translation": "El cielo se oscureció antes de la tormenta.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Cambio de estado; become + adjetivo.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "bend",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Doblar alambre es correcto pero solo cubre deformar un objeto; la definición incluye movimiento corporal.",
+      "gaps": [
+        "Doblar una parte del cuerpo."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "Bend your knees before you jump.",
+          "translation": "Dobla las rodillas antes de saltar.",
+          "form": "base",
+          "dialect": "neutral",
+          "purpose": "Movimiento corporal; imperativo.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "bite",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Morder una manzana presenta un uso literal claro y apropiado. Bite into y las traducciones son correctos; no se necesita introducir mordeduras para cubrir este sentido.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "blow",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Hacer pompas soplando es una traducción adecuada; falta el viento como sujeto, incluido en la definición.",
+      "gaps": [
+        "Soplar del viento."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "The wind blew all night.",
+          "translation": "El viento sopló toda la noche.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Corriente de aire; sujeto no humano.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "burn",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Quemar tostadas es natural. Burnt/burned figuran correctamente como respuestas aceptadas en pasado y participio; falta ver la variante regular dentro de una frase y el uso intransitivo.",
+      "gaps": [
+        "Mostrar burned en contexto sin excluir burnt.",
+        "Quemarse sin objeto directo."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "The paper burned quickly in the fire.",
+          "translation": "El papel se quemó rápidamente en el fuego.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Uso intransitivo; variante burned, admitir también burnt.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "deal",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Repartir cartas es correcto, pero no muestra tratar y el segundo sentido definido, hacer negocios. Deal with es una combinación pedagógicamente relevante que debe delimitarse.",
+      "gaps": [
+        "Deal with a problem para tratar un asunto.",
+        "Hacer negocios con alguien, si se mantiene esa definición."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "We dealt with the problem together.",
+          "translation": "Abordamos el problema juntos.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Tratar un problema; sentido adicional que requiere alinear definición.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "Our school has dealt with the same book supplier for years.",
+          "translation": "Nuestro colegio lleva años trabajando con el mismo proveedor de libros.",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "Relación comercial; sentido definido.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "dig",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Cavar un hoyo para plantar un árbol ilustra de forma precisa el sentido literal, con lenguaje escolar y las tres formas correctas.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "dream",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Soñar con viajar a la luna admite tanto sueño dormido como aspiración; las tres frases repiten esa ambigüedad. Dreamt/dreamed están correctamente aceptados.",
+      "gaps": [
+        "Separar sueño nocturno y aspiración.",
+        "Mostrar dreamed como variante en una frase."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "Last night, I dreamed that my dog could talk.",
+          "translation": "Anoche soñé que mi perro podía hablar.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Sueño dormido; dreamed, admitir dreamt.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "I have always dreamt of becoming a scientist.",
+          "translation": "Siempre he soñado con ser científico.",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "Aspiración; dream of + -ing.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "forgive",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Perdonarse tras una discusión es natural, coherente y adecuado para ESO. Forgave/forgiven y la traducción recíproca están bien.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "freeze",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Congelar fruta es correcto y útil; falta el cambio de estado intransitivo que incluye la definición.",
+      "gaps": [
+        "Congelarse por el frío."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "The lake froze during the cold night.",
+          "translation": "El lago se congeló durante la fría noche.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Cambio de estado; uso intransitivo.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "hide",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "El regalo ilustra bien esconder y las tres formas; falta esconderse, incluido explícitamente en la definición.",
+      "gaps": [
+        "Uso intransitivo/reflexivo y otro sujeto."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "I hid behind a tree during the game.",
+          "translation": "Me escondí detrás de un árbol durante el juego.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Esconderse; contexto de juego.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "lay",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Poner la mesa es idiomático y las traducciones son válidas; las tres frases no muestran colocar algo horizontalmente, que es la definición enseñada.",
+      "gaps": [
+        "Colocación física con objeto directo; contraste pedagógico con lie."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "Please lay the map flat on the desk.",
+          "translation": "Por favor, coloca el mapa extendido sobre el escritorio.",
+          "form": "base",
+          "dialect": "neutral",
+          "purpose": "Imperativo transitivo; colocar en posición horizontal.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "lead",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Las tres frases de guiar hasta la estación son correctas; no representan liderar una actividad.",
+      "gaps": [
+        "Segunda definición: estar al frente de un grupo."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "Marta led our team during the science project.",
+          "translation": "Marta lideró nuestro equipo durante el proyecto de ciencias.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Liderar una actividad, sujeto distinto de we.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "lie",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Lie–lay–lain y las traducciones muestran bien tumbarse/estar tumbado, sin confundir este verbo con mentir. La repetición sirve aquí para comparar las tres formas.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "light",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Iluminar el escenario es correcto en las tres formas, pero encender algo que arde está en los significados y queda sin ejemplo.",
+      "gaps": [
+        "Encender frente a iluminar."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "Dad lit a candle when the lights went out.",
+          "translation": "Papá encendió una vela cuando se fue la luz.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Encender una llama en un contexto doméstico.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "rise",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Rise to the challenge está bien traducido; es una locución figurada y ninguna frase demuestra subir/elevarse, única definición actual.",
+      "gaps": [
+        "Movimiento ascendente literal; aumento de una magnitud."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "The sun rose above the hills.",
+          "translation": "El sol salió por encima de las colinas.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Ascenso literal.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "The temperature has risen by five degrees.",
+          "translation": "La temperatura ha subido cinco grados.",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "Aumento de una magnitud.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "shake",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Agitar la botella cubre correctamente las tres formas; todos los ejemplos son transitivos y idénticos en contexto.",
+      "gaps": [
+        "Sacudirse o temblar sin objeto directo."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "My hands shook before the performance.",
+          "translation": "Me temblaban las manos antes de la actuación.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Movimiento intransitivo; pasado simple inglés admite imperfecto español.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "shine",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Alumbrar con una linterna está bien construido y traducido; falta brillar por emitir o reflejar luz.",
+      "gaps": [
+        "Primera definición: brillar."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "The stars shone brightly last night.",
+          "translation": "Las estrellas brillaron con intensidad anoche.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Emitir luz; sujeto no humano.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "shoot",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "El cortometraje ofrece un contexto escolar apropiado y las tres formas son correctas; falta la acepción disparar enseñada.",
+      "gaps": [
+        "Disparar en un contexto deportivo seguro; variación de contexto."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "The archer shot an arrow at the target.",
+          "translation": "La arquera disparó una flecha hacia la diana.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Disparar una flecha en tiro con arco.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "sink",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Hundir un barco de juguete está bien y es adecuado para ESO; no muestra hundirse sin un agente causante.",
+      "gaps": [
+        "Alternancia transitiva e intransitiva."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "The stone sank to the bottom of the pond.",
+          "translation": "La piedra se hundió hasta el fondo del estanque.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Hundirse; sujeto no humano.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "smell",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Oler pan resulta natural; smelt/smelled están admitidos en pasado y participio. Solo se muestra percibir un olor, no tenerlo.",
+      "gaps": [
+        "Segunda definición: desprender olor."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "The soup smelled delicious.",
+          "translation": "La sopa olía muy bien.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Verbo de enlace más adjetivo; realiza la variante regular admitida.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "spell",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Los nombres propios son un contexto escolar claro para deletrear; las tres formas y ambas variantes spelt/spelled están bien cubiertas por acceptedAnswers. Otro ejemplo escrito sería opcional.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "spill",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Agua derramada accidentalmente es un contexto suficiente para la acepción enseñada; pasado y participio admiten correctamente spilt/spilled. Can expresa posibilidad, por lo que no hay error por tratarse de un accidente.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "stick",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Pegar fotos es correcto y concreto; la definición también incluye permanecer pegado, que no aparece.",
+      "gaps": [
+        "Uso intransitivo: quedarse adherido."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "The label stuck to my sleeve.",
+          "translation": "La etiqueta se quedó pegada a mi manga.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Permanecer adherido, sin agente que pegue.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "steal",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "El modal negativo y el robo de una bicicleta aportan ya dos situaciones y sujetos distintos. Steal–stole–stolen, los objetivos y las traducciones son correctos y apropiados.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "sweep",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Barrer el aula representa con claridad la definición concreta enseñada; las tres formas y las traducciones son correctas. La repetición no exige aumentar un verbo de alcance tan acotado.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "tear",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Romper papel en tiras ilustra bien rasgar por tracción; tear–tore–torn y las traducciones son coherentes. Una prenda rota aportaría variedad opcional, no una necesidad semántica.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "throw",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Lanzar una pelota a un amigo representa exactamente la definición enseñada y resulta adecuado para ESO. Las tres formas son correctas; no es necesario añadir phrasal verbs ajenos al alcance.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "beat",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Batir una marca es válido y está bien traducido, pero no ejemplifica de manera directa ninguna de las dos definiciones: vencer a alguien y batir alimentos.",
+      "gaps": [
+        "Vencer a un adversario; batir ingredientes."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "Our team beat the champions in the final.",
+          "translation": "Nuestro equipo venció a los campeones en la final.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Definición: vencer en una competición.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "Beat the eggs before adding the flour.",
+          "translation": "Bate los huevos antes de añadir la harina.",
+          "form": "base",
+          "dialect": "neutral",
+          "purpose": "Imperativo; definición culinaria.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "hang",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Colgar abrigos ilustra el sentido delimitado por la nota editorial; hung es correcto en pasado y participio. No procede introducir hanged, excluido del alcance actual.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "arise",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Las preguntas que surgen en un debate son un buen ejemplo de aparecer situaciones. Se cubren arise–arose–arisen con sujetos adecuados; tres frases bastan para este sentido avanzado acotado.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "awake",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Despertarse por una alarma es coherente con la definición y con awoke–awoken, serie explícitamente seleccionada. Can awake resulta posible aunque poco conversacional; no lo considero un error ni imprescindible ampliar.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "bear",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Soportar el peso es correcto, con borne y no born; sin embargo, la definición actual se centra en tolerar experiencias difíciles, ausente en las tres frases.",
+      "gaps": [
+        "Tolerar algo desagradable en lugar de sostener peso."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "I cannot bear the noise from the building work.",
+          "translation": "No soporto el ruido de las obras.",
+          "form": "base",
+          "dialect": "neutral",
+          "purpose": "Tolerar una experiencia desagradable; negativo frecuente.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "bind",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Encuadernar páginas muestra bien una definición; falta atar cosas, también enseñado.",
+      "gaps": [
+        "Atar y unir objetos físicamente."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "We bound the sticks together with string.",
+          "translation": "Atamos los palos con cordel.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Atar objetos; segunda situación concreta.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "bleed",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "El corte pequeño permite entender sangrar sin imágenes gráficas. Las tres formas y traducciones son válidas; we tras un corte es algo genérico, pero no un error y no exige más ejemplos.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "breed",
+      "verdict": "revise",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Las formas bred y las traducciones son correctas. Criar ovejas ayer puede interpretarse como una actuación de reproducción concreta, pero sin contexto sugiere un proceso largo comprimido artificialmente por la plantilla.",
+      "gaps": [
+        "Marco temporal más informativo para la cría; reproducción de los propios animales."
+      ],
+      "corrections": [
+        "Mejora pedagógica y de contexto, no error gramatical: sustituir el marcador yesterday del ejemplo2 por una duración o situación reproductiva concreta."
+      ],
+      "proposals": [
+        {
+          "sentence": "My grandparents bred sheep for many years.",
+          "translation": "Mis abuelos criaron ovejas durante muchos años.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "duración natural de la cría.",
+          "status": "draft",
+          "action": "replace"
+        },
+        {
+          "sentence": "These birds have bred successfully in the reserve.",
+          "translation": "Estas aves se han reproducido con éxito en la reserva.",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "Definición intransitiva: reproducirse.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "burst",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Reventar globos ilustra correctamente el uso causativo y sus formas idénticas; falta estallar por sí solo.",
+      "gaps": [
+        "Uso intransitivo de estallar."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "A balloon burst during the party.",
+          "translation": "Un globo estalló durante la fiesta.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Estallar sin objeto directo.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "creep",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Pasar sigilosamente junto al gato es claro, natural y adecuado; quietly refuerza el significado sin invalidarlo. Crept y las traducciones funcionan en ambas formas pasadas.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "forbid",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Prohibir móviles es correcto; las tres frases repiten el objeto nominal y un we con autoridad poco contextualizado.",
+      "gaps": [
+        "Patrón forbid someone to do something."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "The coach forbade us to enter the pool alone.",
+          "translation": "El entrenador nos prohibió entrar solos en la piscina.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Persona más infinitivo; autoridad explícita.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "kneel",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Arrodillarse junto al parterre cubre la acción y el estado; knelt/kneeled están bien admitidos. Parterre es preciso aunque puede simplificarse para lectores jóvenes; no es error de traducción.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "lean",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Apoyarse contra la pared es correcto, incluidas leant/leaned. No se ve inclinar un objeto ni inclinar el cuerpo sin apoyarse.",
+      "gaps": [
+        "Construcción transitiva con objeto."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "I leaned the ladder against the wall.",
+          "translation": "Apoyé la escalera contra la pared.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Apoyar un objeto; realiza variante regular admitida.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "seek",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Seek advice es una colocación pertinente para el registro del verbo. Buscar el consejo es comprensible aunque pedir consejo sería más idiomático en español; no constituye error que obligue a ampliar.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "set",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Fijar un objetivo es válido, pero el verbo es muy polisémico y ninguna frase muestra colocar físicamente ni fijar una hora.",
+      "gaps": [
+        "Colocar algo en un lugar; ajustar una hora."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "Set the bowl on the table.",
+          "translation": "Pon el cuenco sobre la mesa.",
+          "form": "base",
+          "dialect": "neutral",
+          "purpose": "Colocación física mediante imperativo.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "I have set the alarm for seven.",
+          "translation": "He puesto la alarma para las siete.",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "Fijar una hora; situación cotidiana.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "shrink",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Encoger un jersey por error ilustra correctamente el uso transitivo; el modal expresa posibilidad y no es un error. Falta encogerse.",
+      "gaps": [
+        "Cambio intransitivo de tamaño."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "My T-shirt shrank in the wash.",
+          "translation": "Mi camiseta encogió al lavarla.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Encogerse; causa cotidiana.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "slide",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Deslizar una caja bajo la cama es correcto; la traducción mantiene el movimiento hacia debajo. Falta deslizarse, que figura en los significados.",
+      "gaps": [
+        "Movimiento intransitivo de una persona u objeto."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "The children slid down the snowy hill.",
+          "translation": "Los niños se deslizaron por la colina nevada.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Deslizarse; contexto recreativo.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "split",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Dividir la clase en equipos es un contexto escolar claro y muestra el patrón split into. Las tres formas coincidentes están correctamente distinguidas por la sintaxis; la acepción central queda cubierta.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "spread",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Untar mermelada es correcto y accesible; falta extenderse por un área, otra definición explícita.",
+      "gaps": [
+        "Extenderse sin objeto directo."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "The news spread quickly through the school.",
+          "translation": "La noticia se extendió rápidamente por el colegio.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Propagación de información; ampliación figurada accesible.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "spring",
+      "verdict": "expand",
+      "priority": "high",
+      "currentCount": 3,
+      "recommendedCount": 5,
+      "assessment": "Spring into action es una locución válida y las traducciones son aceptables, aunque no explicitan la rapidez. No muestra claramente saltar ni surgir, los significados enseñados.",
+      "gaps": [
+        "Salto físico; aparición rápida."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "The cat sprang onto the wall.",
+          "translation": "El gato saltó al muro.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Salto repentino literal.",
+          "status": "draft",
+          "action": "add"
+        },
+        {
+          "sentence": "New shops have sprung up near the station.",
+          "translation": "Han surgido nuevas tiendas cerca de la estación.",
+          "form": "pastParticiple",
+          "dialect": "neutral",
+          "purpose": "Surgir mediante spring up; requiere reconocer up como parte del patrón, sin cambiar el modelo de formas.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    },
+    {
+      "id": "swear",
+      "verdict": "sufficient",
+      "priority": "low",
+      "currentCount": 3,
+      "recommendedCount": 3,
+      "assessment": "Jurar decir la verdad cubre la promesa seria enseñada. Swear–swore–sworn y las traducciones son correctos; no hace falta añadir palabrotas, que no figuran en el alcance.",
+      "gaps": [],
+      "corrections": [],
+      "proposals": []
+    },
+    {
+      "id": "swing",
+      "verdict": "expand",
+      "priority": "medium",
+      "currentCount": 3,
+      "recommendedCount": 4,
+      "assessment": "Balancearse en columpios resulta claro aunque swing/swings repite la raíz. Las tres formas son correctas; falta balancear un objeto, presente en los significados.",
+      "gaps": [
+        "Alternancia transitiva: balancear algo."
+      ],
+      "corrections": [],
+      "proposals": [
+        {
+          "sentence": "She swung the bag gently from side to side.",
+          "translation": "Balanceó suavemente la bolsa de un lado a otro.",
+          "form": "pastSimple",
+          "dialect": "neutral",
+          "purpose": "Movimiento transitivo de un objeto; traducción explicativa.",
+          "status": "draft",
+          "action": "add"
+        }
+      ]
+    }
+  ]
+}

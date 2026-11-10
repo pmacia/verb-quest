@@ -210,6 +210,8 @@ Las instalaciones existentes reciben la nueva base al cargar la nueva aplicació
 
 La estructura distingue el cargador público (`dataset.ts`) de la composición editorial histórica (`curated-dataset.ts`). Sus pruebas se mantienen separadas: una publicación consolidada no tiene que volver a aplicar las capas históricas, pero sigue pasando las comprobaciones de validez, contenido y procedencia. Importación, copia/restauración y creación del paquete también permanecen separadas por responsabilidad.
 
+La [auditoría de ejemplos del 10/11/2026](docs/content/examples-audit-2026-11-10.md) evalúa los 120 verbos y 362 frases del catálogo base: 54 con cantidad suficiente, 62 para ampliar y cuatro para reformular primero. Incluye propuestas editoriales pendientes de validación; estas no forman parte todavía del catálogo publicado.
+
 ## Información avanzada
 
 En **Configuración → Información avanzada** se agrupan las opciones pensadas para consultar información profesional. Se guardan por separado y empiezan desactivadas:

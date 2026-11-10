@@ -118,3 +118,20 @@ it('accepts legacy backups without IPA mode and preserves the explicit strict se
   r.close();
   other.close();
 });
+
+import { editedVerb } from '../../../tests/fixtures/edited-verb';
+it('complete backup and restore preserve every current editable verb field', async () => {
+  const db = await openAppDatabase(crypto.randomUUID());
+  const clock = { now: () => '2026-11-10T00:00:00Z' };
+  const profile = await bootstrap(db, dataset, clock);
+  const verb = editedVerb(dataset.verbs[0]);
+  const entry = { verb, baseVersion: 'old', locallyModified: true, pendingBase: null };
+  await db.catalog.put(entry);
+  const backup = JSON.parse(JSON.stringify(await exportBackup(db, profile.id, clock)));
+  expect(previewRestore(backup).ok).toBe(true);
+  const target = await openAppDatabase(crypto.randomUUID());
+  await restoreBackup(target, backup, 'replace_local_profile');
+  expect(await target.catalog.get(verb.id)).toEqual(entry);
+  db.close();
+  target.close();
+});

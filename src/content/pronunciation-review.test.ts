@@ -6,7 +6,7 @@ import {
   reviewedSources,
 } from './pronunciation-review';
 import base from './verbs.curated.json';
-import { dataset } from './dataset';
+import { curatedDataset as dataset } from './curated-dataset';
 import type { Verb } from '../shared/domain/types';
 const go = base.find((v) => v.id === 'go') as Verb;
 const record = {

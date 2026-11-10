@@ -88,7 +88,7 @@ it('preserves previously reviewed pronunciation and ignores unknown verb identit
   expect(v.forms.base.pronunciation?.uk?.validated).toBe(true);
   expect(v.id).toBe('go');
 });
-import { dataset } from './dataset';
+import { curatedDataset as dataset } from './curated-dataset';
 import { learningRevision } from '../features/question-engine/revision';
 it('enriches the production dataset without changing any assessed linguistic content', () => {
   expect(dataset.version).toBe('curated-1.3');

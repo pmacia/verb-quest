@@ -173,7 +173,7 @@ En **Importar / exportar** puedes previsualizar archivos, mapear columnas CSV y 
 
 | Formato             | Qué conserva                                                | Uso recomendado                                        |
 | ------------------- | ----------------------------------------------------------- | ------------------------------------------------------ |
-| JSON de catálogo    | Fichas, variantes, IPA, fuentes, ejemplos y clasificaciones | Trasladar o editar contenido; no incluye progreso      |
+| JSON de catálogo    | Todos los campos: iconos, traducciones por forma, variantes, IPA, fuentes, ejemplos y clasificaciones | Trasladar o editar contenido; no incluye progreso      |
 | CSV de catálogo     | Campos básicos de las fichas; pierde metadatos              | Trabajar con hojas de cálculo                          |
 | Copia completa JSON | Catálogo local y datos de estudio del perfil                | Seguridad, restauración y cambio de dispositivo/origen |
 
@@ -187,6 +187,23 @@ go,go,went,gone,ir
 Las variantes se separan con `/` y los significados o cursos con `;`. El CSV admite BOM, comillas, saltos de línea y delimitadores habituales. Las entradas sin estado editorial se importan como pendientes de revisión; no se convierten automáticamente en contenido evaluable. Si `go` ya existe, la vista previa pedirá resolver el duplicado.
 
 El catálogo importado admite hasta **5 MiB**, **10.000 filas** y **20.000 caracteres por campo**. Para conservar todos los metadatos utiliza JSON. Los detalles están en [Formatos y copias](docs/data-formats.md).
+
+### Publicar una nueva base para todos los usuarios
+
+**Importar / exportar → Publicar catálogo base** genera un ZIP para incorporar los cambios locales al código fuente. Introduce una versión nueva y única, por ejemplo `school-2026.11`. Siempre incluye **todo el catálogo local y sus archivados**, aunque hayas elegido una lista para la exportación normal. No incluye las tablas de perfil, listas, planes ni progreso; revisa los textos y URL escritos en los verbos antes de compartirlos.
+
+El paquete contiene:
+
+- `src/content/catalog.release.json`: catálogo consolidado con todos sus campos y los iconos visibles.
+- `src/content/dataset.ts`: cargador directo que evita que las capas históricas sobrescriban tus cambios.
+- `PUBLICATION_REPORT.json`: informe estructural, editorial y de IPA. Los textos nuevos o modificados respecto a la base distribuida se señalan para revisión; exportarlos no los valida automáticamente.
+- `README-PUBLICAR.md`: pasos de incorporación y comprobación.
+
+Para incorporarlo, crea una rama o copia de seguridad del repositorio y copia los dos archivos de `src/content/` en sus mismas rutas. Conserva las fuentes y evidencias históricas. Revisa el informe, documenta la revisión de cualquier contenido cambiado y corrige las incidencias. Ejecuta `npm ci`, `npm test`, `npm run content:check` y `npm run build`; después revisa el resultado y despliega la nueva aplicación. **Descargar el ZIP no publica ni modifica el repositorio.**
+
+Las instalaciones existentes reciben la nueva base al cargar la nueva aplicación y mantienen protegidas sus modificaciones locales. Para retirar un verbo, inclúyelo archivado: omitirlo no lo elimina de los navegadores anteriores. Las URL de audio se conservan como referencias; el ZIP no incorpora grabaciones externas.
+
+La estructura distingue el cargador público (`dataset.ts`) de la composición editorial histórica (`curated-dataset.ts`). Sus pruebas se mantienen separadas: una publicación consolidada no tiene que volver a aplicar las capas históricas, pero sigue pasando las comprobaciones de validez, contenido y procedencia. Importación, copia/restauración y creación del paquete también permanecen separadas por responsabilidad.
 
 ## Información avanzada
 

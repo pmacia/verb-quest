@@ -9,13 +9,14 @@ import {
 } from './transfer/parse';
 import { previewImport } from './transfer/preview';
 import { applyImport, type ImportDecision } from './transfer/apply';
-import { exportBackup, previewRestore, restoreBackup } from '../persistence/backup';
 import { downloadFile } from '../../shared/files/download';
-import { systemClock } from '../../shared/time/clock';
 import { Dialog } from '../../shared/ui/Dialog';
-import type { BackupV1 } from '../../shared/domain/types';
+import { Icon } from '../../shared/ui/Icon';
+import { BackupTransferPanel } from './BackupTransferPanel';
+import { ReleaseExportPanel } from './ReleaseExportPanel';
+import './import-export.css';
 export function ImportExportPage() {
-  const { repos, verbs, profile, lists } = useApp();
+  const { repos, verbs, lists, refresh } = useApp();
   const [file, setFile] = useState<{ text: string; format: 'json' | 'csv' } | null>(null);
   const [preview, setPreview] = useState<ImportPreview | null>(null);
   const [mapping, setMapping] = useState<ColumnMapping>({});
@@ -24,8 +25,6 @@ export function ImportExportPage() {
   const [message, setMessage] = useState('');
   const [confirm, setConfirm] = useState(false);
   const [busy, setBusy] = useState(false);
-  const [backup, setBackup] = useState<BackupV1 | null>(null);
-  const [restoreStep, setRestoreStep] = useState(0);
   const [scope, setScope] = useState('all');
   async function parse(text: string, format: 'json' | 'csv', map: ColumnMapping = {}) {
     setPreview(await previewImport(repos, parseCatalogFile(text, format, map)));
@@ -35,24 +34,31 @@ export function ImportExportPage() {
     if (!f) return;
     setError('');
     setMessage('');
+    setPreview(null);
+    setFile(null);
     if (f.size > 5 * 1024 * 1024) {
       setError('Máximo 5 MiB para catálogo.');
       return;
     }
-    const text = await f.text();
-    const format = f.name.toLowerCase().endsWith('.csv') ? 'csv' : 'json';
-    setFile({ text, format });
-    setMapping({});
-    await parse(text, format);
+    setBusy(true);
+    try {
+      const text = await f.text();
+      const format = f.name.toLowerCase().endsWith('.csv') ? 'csv' : 'json';
+      setFile({ text, format });
+      setMapping({});
+      await parse(text, format);
+    } finally {
+      setBusy(false);
+    }
   }
   const selected =
     scope === 'all'
       ? verbs
       : verbs.filter((v) => lists.find((l) => l.id === scope)?.verbIds.includes(v.id));
   return (
-    <>
+    <div className="transfer-page">
       <Link className="back-link" to="/verbs">
-        ← Biblioteca
+        <Icon name="arrow" size={15} /> Biblioteca
       </Link>
       <div className="page-heading">
         <div>
@@ -63,16 +69,41 @@ export function ImportExportPage() {
           <p>Revisa cada cambio antes de guardarlo. Nunca sobrescribimos sin tu decisión.</p>
         </div>
       </div>
-      <div className="detail-columns">
+      <nav className="transfer-navigation" aria-label="Opciones de transferencia">
+        <a href="#intercambiar-catalogo">
+          <Icon name="book" size={16} />
+          Catálogo
+        </a>
+        <a href="#copia-seguridad">
+          <Icon name="save" size={16} />
+          Copia completa
+        </a>
+        <a href="#publicar-base">
+          <Icon name="upload" size={16} />
+          Publicar base
+        </a>
+      </nav>
+      <div className="detail-columns transfer-columns" id="intercambiar-catalogo">
         <section className="panel">
-          <h2>Ampliar el catálogo</h2>
+          <h2>
+            <Icon name="upload" />
+            Importar catálogo
+          </h2>
           <p>Archivos CSV o JSON, hasta 5 MiB y 10.000 filas.</p>
           <label>
             Archivo del catálogo
             <input
+              disabled={busy}
               type="file"
               accept=".csv,.json"
-              onChange={(e) => void upload(e.target.files?.[0]).catch((e) => setError(String(e)))}
+              onChange={(e) => {
+                const input = e.target;
+                void upload(input.files?.[0])
+                  .catch((e) => setError(String(e)))
+                  .finally(() => {
+                    input.value = '';
+                  });
+              }}
             />
           </label>
           {preview?.columns && (
@@ -110,7 +141,7 @@ export function ImportExportPage() {
             </details>
           )}
           {preview && (
-            <div>
+            <div className="transfer-preview">
               <h3 className="section-heading">
                 Vista previa · {preview.rows.length} entradas válidas
               </h3>
@@ -126,7 +157,7 @@ export function ImportExportPage() {
                   </ul>
                 </div>
               )}
-              <div style={{ maxHeight: 300, overflow: 'auto' }}>
+              <div className="transfer-preview-rows">
                 {preview.rows.slice(0, 100).map((row) => (
                   <div className="skill-row" key={row.row}>
                     <strong>{row.verb.lemma}</strong>
@@ -193,7 +224,10 @@ export function ImportExportPage() {
         </section>
         <aside>
           <section className="panel">
-            <h2>Exportar catálogo o lista</h2>
+            <h2>
+              <Icon name="book" />
+              Exportar catálogo o lista
+            </h2>
             <label>
               Selección
               <select value={scope} onChange={(e) => setScope(e.target.value)}>
@@ -205,9 +239,12 @@ export function ImportExportPage() {
                 ))}
               </select>
             </label>
+            <div className="transfer-selection-count">
+              {selected.length} verbos · {selected.filter((v) => !!v.archivedAt).length} archivados
+            </div>
             <p className="small">
-              JSON conserva todos los metadatos. CSV es una vista simplificada y omite ejemplos,
-              audio y fuentes.
+              JSON conserva todos los campos, incluidos iconos, traducciones y pronunciación. CSV es
+              simplificado: omite estos campos, ejemplos, audio y fuentes.
             </p>
             <div className="actions">
               {(['json', 'csv'] as const).map((f) => (
@@ -222,51 +259,16 @@ export function ImportExportPage() {
                     )
                   }
                 >
+                  <Icon name="save" size={16} />
                   {f.toUpperCase()}
                 </button>
               ))}
             </div>
           </section>
-          <section className="panel">
-            <h2>Una copia de toda tu aventura</h2>
-            <p>
-              Incluye perfil, progreso, listas, planes, ajustes y catálogo local. Guárdala fuera del
-              navegador.
-            </p>
-            <button
-              className="secondary"
-              onClick={() =>
-                void exportBackup(repos, profile.id, systemClock)
-                  .then((b) => downloadFile('verbquest-copia.json', JSON.stringify(b, null, 2)))
-                  .catch((e) => setError(String(e)))
-              }
-            >
-              Descargar copia completa
-            </button>
-            <label style={{ marginTop: 20 }}>
-              Restaurar copia JSON
-              <input
-                type="file"
-                accept=".json"
-                onChange={async (e) => {
-                  const f = e.target.files?.[0];
-                  if (!f) return;
-                  try {
-                    if (f.size > 25 * 1024 * 1024) throw Error('Máximo 25 MiB para copia.');
-                    const r = previewRestore(JSON.parse(await f.text()));
-                    if (!r.ok)
-                      throw Error(r.issues.map((i) => `${i.path}: ${i.message}`).join(' · '));
-                    setBackup(r.value);
-                    setRestoreStep(1);
-                  } catch (e) {
-                    setError(String(e));
-                  }
-                }}
-              />
-            </label>
-          </section>
+          <BackupTransferPanel />
         </aside>
       </div>
+      <ReleaseExportPanel />
       {error && (
         <p className="notice" role="alert">
           {error}
@@ -278,7 +280,12 @@ export function ImportExportPage() {
         </p>
       )}
       {confirm && preview && (
-        <Dialog title="Confirmar importación" onClose={() => setConfirm(false)}>
+        <Dialog
+          title="Confirmar importación"
+          onClose={() => {
+            if (!busy) setConfirm(false);
+          }}
+        >
           <p>
             Se procesarán {preview.rows.length} filas. Las decisiones de duplicados se aplicarán en
             una única operación.
@@ -289,6 +296,7 @@ export function ImportExportPage() {
               setBusy(true);
               try {
                 const r = await applyImport(repos, preview, decisions);
+                await refresh();
                 setMessage(`${r.applied} entradas importadas; ${r.skipped} omitidas.`);
                 setPreview(null);
                 setConfirm(false);
@@ -304,55 +312,6 @@ export function ImportExportPage() {
           </button>
         </Dialog>
       )}
-      {backup && restoreStep > 0 && (
-        <Dialog
-          title={restoreStep === 1 ? 'Revisar copia' : 'Reemplazar los datos locales'}
-          onClose={() => {
-            setBackup(null);
-            setRestoreStep(0);
-          }}
-        >
-          <p>
-            Perfil: {backup.profile.name}. {backup.verbs.length} verbos, {backup.attempts.length}{' '}
-            intentos, {backup.lists.length} listas.
-          </p>
-          <p>Esto sustituirá todos los datos de este navegador. No se mezclan perfiles.</p>
-          {restoreStep === 1 ? (
-            <>
-              <button
-                className="secondary"
-                onClick={() =>
-                  void exportBackup(repos, profile.id, systemClock).then((b) =>
-                    downloadFile('verbquest-antes-restaurar.json', JSON.stringify(b)),
-                  )
-                }
-              >
-                Descargar copia actual
-              </button>
-              <button onClick={() => setRestoreStep(2)}>Continuar</button>
-            </>
-          ) : (
-            <button
-              className="danger"
-              disabled={busy}
-              onClick={async () => {
-                setBusy(true);
-                try {
-                  await restoreBackup(repos, backup, 'replace_local_profile');
-                  window.location.href = '/';
-                } catch (e) {
-                  setError(String(e));
-                  setBackup(null);
-                  setRestoreStep(0);
-                  setBusy(false);
-                }
-              }}
-            >
-              Confirmar reemplazo definitivo
-            </button>
-          )}
-        </Dialog>
-      )}
-    </>
+    </div>
   );
 }

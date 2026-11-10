@@ -47,3 +47,17 @@ it('requires a duplicate decision and rolls back the whole import', async () => 
   expect(report).toEqual({ applied: 1, skipped: 1 });
   db.close();
 });
+
+import { editedVerb } from '../../../../tests/fixtures/edited-verb';
+it('current editor fields survive JSON export, parsing and effective import', async () => {
+  const verb = editedVerb(dataset.verbs[0]);
+  const parsed = parseCatalogFile(exportCatalog([verb], 'json'), 'json');
+  expect(parsed.issues).toEqual([]);
+  expect(parsed.rows[0].verb).toEqual(verb);
+  const db = await openAppDatabase(crypto.randomUUID());
+  await applyImport(db, await previewImport(db, parsed), []);
+  const saved = (await db.catalog.get(verb.id))!.verb;
+  expect(saved).toEqual({ ...verb, contentVersion: saved.contentVersion });
+  expect(saved.contentVersion).not.toBe(verb.contentVersion);
+  db.close();
+});

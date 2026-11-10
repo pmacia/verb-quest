@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest';
-import { dataset } from './dataset';
+import { curatedDataset as dataset } from './curated-dataset';
 import { learningRevision } from '../features/question-engine/revision';
 import { validate } from '../shared/domain/validation';
 it('covers all 120 verbs and variants without changing learning evidence or legacy validity', () => {

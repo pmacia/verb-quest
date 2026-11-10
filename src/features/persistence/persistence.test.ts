@@ -65,7 +65,7 @@ it('unsupported future migration does not reset database', async () => {
   expect(await saved.table('kept').get('keep')).toEqual({ id: 'keep' });
   saved.close();
 });
-import { dataset as production } from '../../content/dataset';
+import { curatedDataset as production } from '../../content/curated-dataset';
 import original from '../../content/verbs.curated.json';
 import type { Verb } from '../../shared/domain/types';
 import { emptyProgress } from '../learning-engine/progress';

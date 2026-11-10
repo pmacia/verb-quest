@@ -1,0 +1,312 @@
+.transfer-page {
+  --transfer-accent: var(--blue);
+}
+.transfer-page .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.transfer-page .back-link svg {
+  transform: rotate(180deg);
+}
+.transfer-page .page-heading {
+  margin-bottom: 18px;
+}
+.transfer-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+.transfer-navigation a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 11px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface);
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+}
+.transfer-navigation a:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: var(--sky);
+}
+.transfer-page .transfer-columns {
+  align-items: start;
+  gap: 18px;
+}
+.transfer-page .transfer-columns > aside {
+  min-width: 0;
+  display: grid;
+  gap: 18px;
+}
+.transfer-page .panel {
+  padding: 20px;
+  margin-bottom: 0;
+  min-width: 0;
+}
+.transfer-page h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  margin: 0 0 12px;
+}
+.transfer-page h2 svg {
+  flex-shrink: 0;
+  color: var(--transfer-accent);
+}
+.transfer-page .panel p {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.transfer-page .panel p.small {
+  font-size: 12px;
+}
+.transfer-page label {
+  font-size: 12px;
+  gap: 6px;
+}
+.transfer-page input,
+.transfer-page select {
+  min-width: 0;
+  max-width: 100%;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+.transfer-page input[type='file'] {
+  width: 100%;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  padding: 10px;
+  font-size: 11px;
+}
+.transfer-page input[type='file']::file-selector-button {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 6px 8px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+.transfer-page button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 12px;
+  font-size: 12px;
+  min-height: 35px;
+}
+.transfer-page .actions {
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.transfer-page .transfer-backup {
+  --transfer-accent: #176f66;
+}
+[data-theme='dark'] .transfer-page .transfer-backup {
+  --transfer-accent: #85dfd0;
+}
+@media (prefers-color-scheme: dark) {
+  [data-theme='system'] .transfer-page .transfer-backup {
+    --transfer-accent: #85dfd0;
+  }
+}
+.transfer-page .transfer-restore-field {
+  margin-top: 18px;
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+}
+.transfer-page .transfer-release {
+  margin-top: 18px;
+  border-color: color-mix(in srgb, var(--blue) 25%, var(--line));
+  padding: 0;
+  scroll-margin-top: 80px;
+}
+.transfer-release-summary {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  cursor: pointer;
+  padding: 17px 20px;
+  list-style: none;
+}
+.transfer-release-summary::-webkit-details-marker {
+  display: none;
+}
+.transfer-release-summary > span:nth-child(2) {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+.transfer-release-summary strong {
+  font-size: 15px;
+  color: var(--text);
+}
+.transfer-release-summary small {
+  font-size: 11px;
+  color: var(--muted);
+}
+.transfer-section-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 36px;
+  height: 36px;
+  background: var(--sky);
+  color: var(--blue);
+  border-radius: 11px;
+}
+.transfer-expand {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 19px;
+}
+.transfer-release[open] .transfer-expand {
+  transform: rotate(180deg);
+}
+.transfer-release[open] .transfer-release-summary {
+  border-bottom: 1px solid var(--line);
+}
+.transfer-release-body {
+  padding: 0 20px 18px;
+}
+.transfer-scope {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 9px 11px;
+  color: var(--blue);
+  background: var(--sky);
+  border-radius: 8px;
+  font-size: 12px;
+}
+.transfer-page code {
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.transfer-release-form {
+  display: flex;
+  align-items: end;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.transfer-release-form label {
+  flex: 1 1 220px;
+  max-width: 380px;
+}
+.transfer-release-form button {
+  margin-bottom: 0;
+}
+.transfer-report {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--blue);
+  background: var(--sky);
+  padding: 12px;
+  border-radius: 9px;
+  margin-top: 15px;
+}
+.transfer-report > svg {
+  flex-shrink: 0;
+  color: var(--blue);
+  margin-top: 2px;
+}
+.transfer-report strong {
+  font-size: 13px;
+}
+.transfer-page .transfer-report p {
+  font-size: 12px;
+  margin: 5px 0 0;
+}
+.transfer-package-guide {
+  border-top: 1px solid var(--line);
+  margin-top: 18px;
+  padding-top: 15px;
+  font-size: 13px;
+}
+.transfer-package-guide ol {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+.transfer-package-guide li {
+  padding-left: 3px;
+  margin-bottom: 8px;
+  line-height: 1.6;
+  font-size: 12px;
+}
+.transfer-page .notice {
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+.transfer-page #copia-seguridad,
+.transfer-page #intercambiar-catalogo {
+  scroll-margin-top: 80px;
+}
+@media (max-width: 700px) {
+  .transfer-page .transfer-columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+  .transfer-page .panel {
+    padding: 15px;
+  }
+  .transfer-page .transfer-release {
+    padding: 0;
+  }
+  .transfer-release-summary {
+    padding: 15px;
+  }
+  .transfer-release-body {
+    padding: 0 15px 15px;
+  }
+  .transfer-release-form {
+    align-items: stretch;
+  }
+  .transfer-release-form label {
+    max-width: none;
+  }
+  .transfer-release-form button {
+    width: 100%;
+  }
+  .transfer-navigation a {
+    padding: 7px 9px;
+    font-size: 11px;
+  }
+}
+.transfer-preview {
+  margin-top: 18px;
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+.transfer-preview-rows {
+  max-height: 240px;
+  overflow: auto;
+}
+.transfer-selection-count {
+  display: inline-flex;
+  padding: 3px 8px;
+  margin-top: 9px;
+  border-radius: 6px;
+  font-size: 11px;
+  color: var(--blue);
+  background: var(--sky);
+}
+.transfer-scope > svg {
+  flex-shrink: 0;
+}
+.transfer-scope > span {
+  flex: 1;
+  min-width: 0;
+}

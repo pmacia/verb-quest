@@ -491,6 +491,9 @@ export function CatalogPage() {
     strictIpa: settings.strictIpa === true,
     today: toLocalDate(new Date().toISOString(), settings.timeZone),
   });
+  const resultNoun = result.total === 1 ? 'verbo' : 'verbos';
+  const archiveQualifier = result.total === 1 ? 'archivado' : 'archivados';
+  const resultSummary = `${result.total} ${resultNoun}${showArchived ? ` ${archiveQualifier}` : ''}`;
   const audio = useCatalogAudio(result.items.map((v) => v.id));
   function filter(key: string, value: string) {
     setQ({ ...q, filter: { ...q.filter, [key]: value ? [value] : [] } });
@@ -508,7 +511,7 @@ export function CatalogPage() {
           <span className="eyebrow">EXPLORA · DESCUBRE · APRENDE</span>
           <h1>
             Verbos irregulares<span className="dot">.</span>
-            <span className="catalog-total" aria-label={`${result.total} verbos`}>
+            <span className="catalog-total" aria-label={resultSummary}>
               {result.total}
             </span>
           </h1>
@@ -925,7 +928,7 @@ export function CatalogPage() {
                     <span>Restablecer</span>
                   </button>
                   <button type="button" className="cq-done" onClick={() => setFilters(false)}>
-                    Ver {result.total} verbos <CatalogGlyph name="check" />
+                    Ver {resultSummary} <CatalogGlyph name="check" />
                   </button>
                 </footer>
               </section>
@@ -1032,7 +1035,12 @@ export function CatalogPage() {
                 <CatalogGlyph name="book" size={13} />
                 <span className="cq-count-number">{result.total}</span>
                 <span>
-                  verbos <span className="cq-count-description">por descubrir</span>
+                  {resultNoun}{' '}
+                  {showArchived ? (
+                    archiveQualifier
+                  ) : (
+                    <span className="cq-count-description">por descubrir</span>
+                  )}
                 </span>
               </strong>
             </div>
@@ -1117,7 +1125,9 @@ export function CatalogPage() {
             ))}
             {!result.total && (
               <div className="empty">
-                <h2>No hay coincidencias</h2>
+                <h2>
+                  {showArchived ? 'No hay verbos archivados que coincidan' : 'No hay coincidencias'}
+                </h2>
                 <p>Prueba otra búsqueda o elimina algún filtro.</p>
                 <button
                   onClick={() => {

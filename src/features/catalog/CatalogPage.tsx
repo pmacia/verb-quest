@@ -671,7 +671,7 @@ export function CatalogPage() {
                   onChange={(e) => setShowArchived(e.target.checked)}
                 />
                 <CatalogGlyph name="archive" />
-                <span className="cq-control-label">Archivados</span>
+                <span className="cq-control-label">Ver archivados</span>
               </label>
             </div>
             {filters && (

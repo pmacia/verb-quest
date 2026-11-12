@@ -83,6 +83,8 @@ Sin `--strictPort`, Vite puede escoger otro puerto si el configurado está ocupa
 | Audio Detective   | Escucha; ofrece alternativa visual si no puedes utilizar audio     |
 | Completa la frase | Uso del verbo en un contexto escrito                               |
 
+Al revelar una tarjeta o mostrar la corrección de un ejercicio se reproduce la solución en inglés. En **Completa la frase** se escucha la frase completa y en **Emparejar formas**, las formas correctas. El altavoz permite repetirla, con controles de pausa y detención; avanzar o salir detiene la reproducción. Se respetan los ajustes de voz, dialecto, volumen y velocidad. La alternativa visual de Audio Detective no inicia audio automáticamente. Esta escucha de apoyo no añade evidencias de dominio ni XP.
+
 Las sesiones de estudio también incorporan ejercicios de respuesta escrita. Los temas claro/oscuro, movimiento reducido, voz y duración se ajustan desde **Configuración**.
 
 ![Catálogo renovado con tres formas, etiquetas y controles de audio](docs/screenshots/catalog-redesign-desktop.png)

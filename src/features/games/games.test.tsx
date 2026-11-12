@@ -89,3 +89,18 @@ it('written recall has no answer options and prevents duplicate pending sends', 
   view.rerender(<WrittenRecallExercise question={q} onSubmit={async () => {}} disabled={true} />);
   expect(screen.getByRole('button', { name: 'Comprobar' })).toBeDisabled();
 });
+
+it('notifies the session only when a flashcard solution is revealed', async () => {
+  const revealed = vi.fn();
+  render(
+    <FlashcardsGame
+      question={{ ...q, mode: 'flashcards' }}
+      onSubmit={async () => {}}
+      disabled={false}
+      onReveal={revealed}
+    />,
+  );
+  expect(revealed).not.toHaveBeenCalled();
+  await userEvent.click(screen.getByRole('button', { name: 'Revelar respuesta' }));
+  expect(revealed).toHaveBeenCalledTimes(1);
+});

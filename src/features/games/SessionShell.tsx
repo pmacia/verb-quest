@@ -20,6 +20,8 @@ import {
 } from './exercises';
 import { modeLabels } from '../study-plans/plan-presentation';
 import type { StudySession, Question } from '../../shared/domain/types';
+import { AudioControls } from '../audio/AudioControls';
+import { getSolutionAudioText } from './solution-audio';
 export function SessionShell({ session }: { session: StudySession }) {
   const { repos, refresh } = useApp();
   const navigate = useNavigate();
@@ -27,10 +29,12 @@ export function SessionShell({ session }: { session: StudySession }) {
     question: Question;
     correct: boolean | null;
     text: string;
+    autoAudio: boolean;
   } | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [paused, setPaused] = useState(false);
+  const [revealedQuestionId, setRevealedQuestionId] = useState<string | null>(null);
   const question = feedback?.question ?? session.queue[session.cursor];
   async function saveAction(action: () => Promise<void>) {
     if (busy) return;
@@ -71,7 +75,12 @@ export function SessionShell({ session }: { session: StudySession }) {
         },
         systemClock,
       );
-      setFeedback({ question, correct: r.attempt.correct, text: r.feedback });
+      setFeedback({
+        question,
+        correct: r.attempt.correct,
+        text: r.feedback,
+        autoAudio: !response.visualFallback,
+      });
       await refresh();
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
@@ -156,6 +165,7 @@ export function SessionShell({ session }: { session: StudySession }) {
             onClick={() =>
               void saveAction(async () => {
                 await pauseSession(repos, session.id);
+                setRevealedQuestionId(null);
                 setPaused(true);
               })
             }
@@ -183,7 +193,13 @@ export function SessionShell({ session }: { session: StudySession }) {
           {question.prompt}
         </h2>
         {!feedback && (
-          <Exercise key={question.id} question={question} onSubmit={submit} disabled={busy} />
+          <Exercise
+            key={question.id}
+            question={question}
+            onSubmit={submit}
+            disabled={busy}
+            onReveal={() => setRevealedQuestionId(question.id)}
+          />
         )}
         <p role="status" className="small muted">
           {busy ? 'Guardando respuesta…' : ''}
@@ -194,35 +210,44 @@ export function SessionShell({ session }: { session: StudySession }) {
           </div>
         )}
         {feedback && (
-          <>
-            <div
-              className={`feedback ${feedback.correct === false ? 'incorrect' : 'correct'}`}
-              role="status"
-            >
-              <h3>
-                {feedback.correct === null
-                  ? 'Valoración guardada'
-                  : feedback.correct
-                    ? '¡Bien recordado!'
-                    : 'Vamos a darle otra vuelta'}
-              </h3>
-              <p>{feedback.text}</p>
-              {feedback.correct === false && (
-                <p>Volverá a aparecer al final y mañana tendrás un repaso.</p>
-              )}
-            </div>
-            <button
-              disabled={busy}
-              onClick={() =>
-                void saveAction(async () => {
-                  if (session.cursor >= session.queue.length) await finish();
-                  else setFeedback(null);
-                })
-              }
-            >
-              {session.cursor >= session.queue.length ? 'Ver resumen' : 'Siguiente pregunta'} →
-            </button>
-          </>
+          <div
+            className={`feedback ${feedback.correct === false ? 'incorrect' : 'correct'}`}
+            role="status"
+          >
+            <h3>
+              {feedback.correct === null
+                ? 'Valoración guardada'
+                : feedback.correct
+                  ? '¡Bien recordado!'
+                  : 'Vamos a darle otra vuelta'}
+            </h3>
+            <p>{feedback.text}</p>
+            {feedback.correct === false && (
+              <p>Volverá a aparecer al final y mañana tendrás un repaso.</p>
+            )}
+          </div>
+        )}
+        {(feedback || revealedQuestionId === question.id) && (
+          <AudioControls
+            key={question.id}
+            text={getSolutionAudioText(question)}
+            label="Escuchar solución"
+            iconOnly
+            autoPlay={feedback?.autoAudio ?? true}
+          />
+        )}
+        {feedback && (
+          <button
+            disabled={busy}
+            onClick={() =>
+              void saveAction(async () => {
+                if (session.cursor >= session.queue.length) await finish();
+                else setFeedback(null);
+              })
+            }
+          >
+            {session.cursor >= session.queue.length ? 'Ver resumen' : 'Siguiente pregunta'} →
+          </button>
         )}
       </section>
     </>

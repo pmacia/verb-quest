@@ -16,8 +16,12 @@ export function spokenForm(verb: Verb, form: FormKey, value: string): string {
     verb.forms.base.value.trim().toLowerCase() === 'read' &&
     value.trim().toLowerCase() === 'read'
   )
-    return form === 'base' ? 'reed' : 'red';
+    return spokenFormText(value, form);
   return value;
+}
+/** Also works with the answer snapshot of a game, without reading a changed catalogue record. */
+export function spokenFormText(value: string, form: FormKey): string {
+  return value.trim().toLowerCase() === 'read' ? (form === 'base' ? 'reed' : 'red') : value;
 }
 export function getVariantAudioSegment(verb: Verb, form: FormKey, value: string): VerbAudioSegment {
   const targets = form === 'base' ? [verb.forms.base] : verb.forms[form].variants;

@@ -8,6 +8,7 @@ export interface GameProps {
   question: Question;
   onSubmit: (input: GameResponse) => Promise<void>;
   disabled: boolean;
+  onReveal?: () => void;
 }
 const response = (answer: string): GameResponse => ({ answer, hintsUsed: false, revealed: false });
 export function QuizGame({ question, onSubmit, disabled }: GameProps) {
@@ -113,7 +114,7 @@ export function MatchingGame({ question, onSubmit, disabled }: GameProps) {
     </>
   );
 }
-export function FlashcardsGame({ question, onSubmit, disabled }: GameProps) {
+export function FlashcardsGame({ question, onSubmit, disabled, onReveal }: GameProps) {
   const [revealed, setRevealed] = useState(false);
   return revealed ? (
     <>
@@ -145,7 +146,13 @@ export function FlashcardsGame({ question, onSubmit, disabled }: GameProps) {
   ) : (
     <div className="empty">
       <p>Intenta recordarlo antes de mirar.</p>
-      <button disabled={disabled} onClick={() => setRevealed(true)}>
+      <button
+        disabled={disabled}
+        onClick={() => {
+          setRevealed(true);
+          onReveal?.();
+        }}
+      >
         Revelar respuesta
       </button>
     </div>

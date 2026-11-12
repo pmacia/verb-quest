@@ -17,7 +17,7 @@ const plan = {
   selectionPolicy: 'resolve_at_start',
   createdAt: '2026-10-29T00:00:00Z',
 } as any;
-it('offers nine editable templates', () => expect(templates).toHaveLength(9));
+it('offers ten editable templates', () => expect(templates).toHaveLength(10));
 it('resolves saved lists and excludes archived verbs with explanation', () => {
   const r = resolvePlanSelection(plan, {
     verbs: dataset.verbs.map((v) =>
@@ -126,4 +126,39 @@ it('uses the same normal/strict pronunciation policy for filtered plans', () => 
     verb.id,
   ]);
   expect(resolvePlanSelection(filtered, { ...context, strictIpa: true }).verbIds).toEqual([]);
+});
+
+import { curatedDataset } from '../../content/curated-dataset';
+import { validate } from '../../shared/domain/validation';
+it('prepared plans have distinct executable practice and honest source filters', () => {
+  const context = { verbs: curatedDataset.verbs, lists: [], progress: [] };
+  const patterns = templates.find((p) => p.id === 'template-patterns')!;
+  const ids = resolvePlanSelection(patterns, context).verbIds;
+  expect(ids.length).toBeGreaterThan(0);
+  expect(ids.length).toBeLessThan(20);
+  expect(
+    ids.every((id) =>
+      curatedDataset.verbs.find((v) => v.id === id)!.classification.patternGroups.includes('ought'),
+    ),
+  ).toBe(true);
+  const phrases = templates.find((p) => p.id === 'template-context')!;
+  expect(phrases.goals).toEqual(['context']);
+  expect(phrases.questionModes).toEqual(['sentence_gap']);
+  expect(templates.find((p) => p.id === 'template-difficult')!.schedule.newVerbsPerSession).toBe(0);
+  for (const template of templates) {
+    expect(validate('plan', template).ok, template.id).toBe(true);
+    if (['template-exam', 'template-difficult'].includes(template.id)) continue;
+    const selected = resolvePlanSelection(template, context).verbIds;
+    const available = generateQuestions(
+      {
+        verbs: curatedDataset.verbs.filter((v) => selected.includes(v.id)),
+        skills: ['recognition', 'recall', 'listening', 'spelling', 'context'],
+        modes: template.questionModes,
+        dialect: 'uk',
+        allowFixtures: false,
+      },
+      () => 0.5,
+    );
+    expect(validatePlanCompatibility(template, available), template.id).toEqual([]);
+  }
 });

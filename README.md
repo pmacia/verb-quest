@@ -72,7 +72,7 @@ Sin `--strictPort`, Vite puede escoger otro puerto si el configurado está ocupa
 1. Abre **Verbos** y busca una forma o un significado: buscar `went` encuentra `go`.
 2. Consulta la ficha, sus variantes, ejemplos y transcripciones disponibles. Combina filtros por curso, relación de formas y familias, tema o aprendizaje.
 3. Marca varios verbos y pulsa **Guardar selección** para crear una lista.
-4. En **Estudiar**, utiliza una de las nueve plantillas o configura un plan. Desde **Juegos**, elige biblioteca, lista, plan guardado o selección manual.
+4. En **Estudiar**, elige uno de los diez planes preparados o configura uno propio. Desde **Juegos**, elige biblioteca, lista, plan guardado o selección manual.
 5. Revisa las habilidades y próximas fechas en **Progreso**. Puedes pausar una sesión y continuarla después.
 
 | Actividad         | Qué practica                                                       |
@@ -86,6 +86,27 @@ Sin `--strictPort`, Vite puede escoger otro puerto si el configurado está ocupa
 Las sesiones de estudio también incorporan ejercicios de respuesta escrita. Los temas claro/oscuro, movimiento reducido, voz y duración se ajustan desde **Configuración**.
 
 ![Catálogo renovado con tres formas, etiquetas y controles de audio](docs/screenshots/catalog-redesign-desktop.png)
+
+## Planes de estudio
+
+En **Estudiar** aparecen directamente **Mis planes** y **Planes preparados**. Cada tarjeta muestra la selección actual de verbos activos, lo que se practica, los minutos orientativos y el límite de verbos nuevos. Las cantidades cambian con tu catálogo, listas y progreso; no indican cuántos verbos terminarás en una sesión.
+
+| Propuesta | Selección | Práctica | Minutos |
+| --- | --- | --- | ---: |
+| Empiezo desde cero | Esenciales | Reconocimiento y memoria | 5 |
+| 1.º ESO · Básicos | Curso acumulativo | Todas las habilidades | 10 |
+| 2.º ESO · Consolidación | Curso acumulativo | Todas las habilidades | 10 |
+| 3.º ESO · Ampliación | Curso acumulativo | Todas las habilidades | 15 |
+| 4.º ESO · Repaso general | Curso acumulativo | Todas las habilidades | 15 |
+| Preparación de examen | Una lista guardada | Memoria, escritura y frases | 15 |
+| Entrenamiento auditivo | Catálogo activo | Escucha | 5 |
+| Patrones y terminaciones | Familia -ought | Reconocimiento y escritura | 10 |
+| Mis verbos difíciles | Necesitan refuerzo | Repaso completo, sin verbos nuevos | 5 |
+| Verbos en contexto | Catálogo activo | Completar frases | 10 |
+
+**Empezar** inicia la sesión con la propuesta sin crear un plan personal. **Personalizar** abre una copia editable que solo se guarda al confirmarla. El plan de examen requiere elegir una lista; si no tienes listas, puedes crearla desde el catálogo. El plan de refuerzo estará disponible cuando haya verbos que necesiten revisión. Las sesiones pendientes se reanudan antes de empezar otra y conservan sus preguntas.
+
+El editor permite ajustar curso, lista o selección manual y filtros de frecuencia, familia y estado de aprendizaje. Cambiar uno de esos filtros conserva los demás. Los objetivos de reconocimiento y memoria se pueden elegir por separado; los planes generales siguen incluyendo todas las habilidades. Las selecciones por curso son recomendaciones editoriales adaptables, no programas oficiales cerrados.
 
 ## Catálogo y fichas
 

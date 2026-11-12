@@ -1,27 +1,33 @@
+import { stateLabels } from '../progress/selectors';
 import { createId } from '../../shared/identity/create-id';
 import { useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { useApp } from '../../app/app-context';
 import { templates, savePlan } from './plan-service';
-import type { StudyPlan, PlanGoal, QuestionMode, PlanSource } from '../../shared/domain/types';
+import type {
+  StudyPlan,
+  PlanGoal,
+  QuestionMode,
+  PlanSource,
+  LearningState,
+} from '../../shared/domain/types';
 import { StatusPanel } from '../../shared/ui/StatusPanel';
-export const modeLabels: Record<QuestionMode, string> = {
-  flashcards: 'Flashcards',
-  matching: 'Emparejar',
-  quiz: 'Quiz',
-  written_recall: 'Memoria y escritura',
-  audio_detective: 'Audio Detective',
-  sentence_gap: 'Completa la frase',
-};
+import { modeLabels } from './plan-presentation';
+import { patternLabel } from '../catalog/classification-labels';
+import './study-plans.css';
 export function PlanEditorPage() {
   const { id } = useParams();
+  const [search] = useSearchParams();
   const { plans, profile, repos, lists, verbs, refresh } = useApp();
   const original = plans.find((p) => p.id === id) || templates.find((p) => p.id === id);
   const [plan, setPlan] = useState<StudyPlan>(() => ({
-    ...structuredClone(original ?? templates[0]),
+    ...structuredClone(original ?? templates.find((p) => p.id === 'template-eso1')!),
     id: original && !original.isTemplate ? original.id : createId(),
     profileId: profile.id,
     isTemplate: false,
+    ...(original?.id === 'template-exam' && lists.some((list) => list.id === search.get('list'))
+      ? { source: { type: 'saved_list' as const, listId: search.get('list')! } }
+      : {}),
     createdAt: new Date().toISOString(),
   }));
   const [error, setError] = useState('');
@@ -41,7 +47,7 @@ export function PlanEditorPage() {
     });
   }
   return (
-    <>
+    <div className="plan-editor-page">
       <Link className="back-link" to="/plans">
         ← Planes de estudio
       </Link>
@@ -127,25 +133,83 @@ export function PlanEditorPage() {
               </label>
             )}
             {plan.source.type === 'filter' && (
-              <label>
-                Frecuencia
-                <select
-                  value={plan.source.filter.frequencies?.[0] ?? ''}
-                  onChange={(e) =>
-                    setPlan({
-                      ...plan,
-                      source: {
-                        type: 'filter',
-                        filter: e.target.value ? { frequencies: [e.target.value] } : {},
-                      },
-                    })
-                  }
-                >
-                  <option value="">Todas</option>
-                  <option value="essential">Esenciales</option>
-                  <option value="common">Frecuentes</option>
-                </select>
-              </label>
+              <>
+                <label>
+                  Frecuencia
+                  <select
+                    value={plan.source.filter.frequencies?.[0] ?? ''}
+                    onChange={(e) =>
+                      setPlan({
+                        ...plan,
+                        source: {
+                          type: 'filter',
+                          filter: {
+                            ...(plan.source.type === 'filter' ? plan.source.filter : {}),
+                            frequencies: e.target.value ? [e.target.value] : [],
+                          },
+                        },
+                      })
+                    }
+                  >
+                    <option value="">Todas</option>
+                    <option value="essential">Esenciales</option>
+                    <option value="common">Frecuentes</option>
+                    <option value="less_common">Menos frecuentes</option>
+                  </select>
+                </label>
+                <label>
+                  Familia de formas
+                  <select
+                    value={plan.source.filter.families?.[0] ?? ''}
+                    onChange={(e) =>
+                      setPlan({
+                        ...plan,
+                        source: {
+                          type: 'filter',
+                          filter: {
+                            ...(plan.source.type === 'filter' ? plan.source.filter : {}),
+                            families: e.target.value ? [e.target.value] : [],
+                          },
+                        },
+                      })
+                    }
+                  >
+                    <option value="">Todas las familias</option>
+                    {[...new Set(verbs.flatMap((v) => v.classification.patternGroups))]
+                      .sort()
+                      .map((family) => (
+                        <option value={family} key={family}>
+                          {patternLabel(family)}
+                        </option>
+                      ))}
+                  </select>
+                </label>
+                <label>
+                  Estado de aprendizaje
+                  <select
+                    value={plan.source.filter.states?.[0] ?? ''}
+                    onChange={(e) =>
+                      setPlan({
+                        ...plan,
+                        source: {
+                          type: 'filter',
+                          filter: {
+                            ...(plan.source.type === 'filter' ? plan.source.filter : {}),
+                            states: e.target.value ? [e.target.value as LearningState] : [],
+                          },
+                        },
+                      })
+                    }
+                  >
+                    <option value="">Todos</option>
+                    {Object.entries(stateLabels).map(([state, label]) => (
+                      <option key={state} value={state}>
+                        {label}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </>
             )}
             {(plan.source.type === 'manual' || plan.source.type === 'imported') && (
               <fieldset className="full">
@@ -254,6 +318,8 @@ export function PlanEditorPage() {
                 [
                   ['mixed', 'Aprender y repasar todas las habilidades'],
                   ['review', 'Repasar'],
+                  ['recognition', 'Reconocer formas'],
+                  ['recall', 'Recordar formas'],
                   ['listening', 'Escucha'],
                   ['spelling', 'Escritura'],
                   ['context', 'Frases'],
@@ -336,6 +402,6 @@ export function PlanEditorPage() {
           <button>Guardar y preparar sesión</button>
         </form>
       </section>
-    </>
+    </div>
   );
 }

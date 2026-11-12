@@ -6,7 +6,6 @@ import type {
   SkillProgress,
   EvaluatedSkill,
   ValidationIssue,
-  QuestionMode,
   PlanSource,
 } from '../../shared/domain/types';
 import type { AppRepositories } from '../persistence/repositories';
@@ -24,53 +23,7 @@ export function planSkills(p: StudyPlan): EvaluatedSkill[] {
   if (p.goals.some((g) => ['learn', 'review', 'mixed'].includes(g))) return allSkills;
   return p.goals.filter((g) => allSkills.includes(g as EvaluatedSkill)) as EvaluatedSkill[];
 }
-const modes: QuestionMode[] = [
-  'flashcards',
-  'matching',
-  'quiz',
-  'written_recall',
-  'audio_detective',
-  'sentence_gap',
-];
-export const templates: StudyPlan[] = [
-  ['zero', 'Empiezo desde cero', 'Primeros pasos con los verbos esenciales.'],
-  ['eso1', '1.º ESO · Básicos', 'Los verbos de cada día.'],
-  ['eso2', '2.º ESO · Consolidación', 'Afianza tu base y sigue creciendo.'],
-  ['eso3', '3.º ESO · Ampliación', 'Nuevas formas para contar más historias.'],
-  ['eso4', '4.º ESO · Repaso general', 'Conecta todo lo que has aprendido.'],
-  ['exam', 'Preparación de examen', 'Tu lista, a tu ritmo.'],
-  ['audio', 'Entrenamiento auditivo', 'Aprende a reconocer cada sonido.'],
-  ['patterns', 'Patrones y terminaciones', 'Descubre lo que tienen en común.'],
-  ['difficult', 'Mis verbos difíciles', 'Una nueva oportunidad para tus errores.'],
-].map(([id, name, description]) => ({
-  id: `template-${id}`,
-  profileId: 'template',
-  name,
-  description,
-  source:
-    id === 'zero'
-      ? { type: 'filter', filter: { frequencies: ['essential'] } }
-      : id.startsWith('eso')
-        ? { type: 'course', course: id }
-        : id === 'difficult'
-          ? { type: 'filter', filter: { states: ['needs_review'] } }
-          : id === 'exam'
-            ? { type: 'manual', verbIds: [] }
-            : { type: 'filter', filter: {} },
-  goals: id === 'audio' ? ['listening'] : ['mixed'],
-  schedule: {
-    minutesPerSession: 10,
-    newVerbsPerSession: 4,
-    daysPerWeek: ['mon', 'tue', 'wed', 'thu', 'fri'],
-    remindersEnabled: false,
-  },
-  questionModes: id === 'audio' ? ['audio_detective'] : modes,
-  order: 'adaptive',
-  difficulty: 'all',
-  selectionPolicy: 'resolve_at_start',
-  isTemplate: true,
-  createdAt: '2026-10-29T00:00:00Z',
-}));
+export { templates } from './plan-templates';
 export function resolvePlanSelection(
   plan: StudyPlan,
   context: {

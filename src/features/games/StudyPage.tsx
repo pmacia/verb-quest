@@ -1,14 +1,18 @@
 import { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useApp } from '../../app/app-context';
-import { startSession, resumeSession, completeSession } from '../learning-engine/session-service';
-import { systemClock } from '../../shared/time/clock';
-import { templates } from '../study-plans/plan-service';
+import { resumeSession } from '../learning-engine/session-service';
+import { templates, resolvePlanSelection } from '../study-plans/plan-service';
 import { SessionShell } from './SessionShell';
 import { Icon } from '../../shared/ui/Icon';
+import { usePlanStarter } from '../study-plans/use-plan-starter';
+import { PlanLibrary } from '../study-plans/PlanLibrary';
+import { sourceLabel, practiceLabel, withExamList } from '../study-plans/plan-presentation';
+import { toLocalDate } from '../../shared/time/calendar';
 export function StudyPage() {
-  const { sessions, plans, profile, repos, refresh, verbs } = useApp();
+  const { sessions, plans, profile, repos, refresh, verbs, lists, progress, settings } = useApp();
   const [search] = useSearchParams();
+  const starter = usePlanStarter();
   const active = sessions.find((s) => s.status !== 'completed');
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
@@ -23,8 +27,8 @@ export function StudyPage() {
     try {
       await resumeSession(repos, profile.id);
       await refresh();
-    } catch (e) {
-      setError(e instanceof Error ? e.message : String(e));
+    } catch (error) {
+      setError(error instanceof Error ? error.message : String(error));
     } finally {
       setBusy(false);
     }
@@ -48,76 +52,86 @@ export function StudyPage() {
         <SessionShell key={active.id} session={active} />
       </>
     );
-  const plan = plans.find((p) => p.id === search.get('plan')) ?? plans[0] ?? templates[0];
+  const plan =
+    plans.find((p) => p.id === search.get('plan')) ??
+    templates.find((p) => p.id === search.get('plan')) ??
+    plans[0] ??
+    templates[0];
+  const examList =
+    plan.isTemplate && plan.id === 'template-exam' ? (search.get('list') ?? undefined) : undefined;
+  const effective = withExamList(plan, examList);
+  const count = resolvePlanSelection(effective, {
+    verbs,
+    lists,
+    progress,
+    today: toLocalDate(new Date().toISOString(), settings.timeZone),
+    strictIpa: settings.strictIpa === true,
+  }).verbIds.length;
+  const customUrl = `/plans/${plan.id}${examList ? `?list=${encodeURIComponent(examList)}` : ''}`;
   return (
-    <>
+    <div className="study-page">
       <div className="page-heading">
         <div>
           <span className="eyebrow">HOY ES UN BUEN DÍA PARA RECORDAR</span>
           <h1>
             Un pequeño paso adelante<span className="dot">.</span>
           </h1>
-          <p>Primero lo pendiente. Después, algo nuevo.</p>
+          <p>Elige qué quieres practicar. Primero lo pendiente; después, algo nuevo.</p>
         </div>
         <Link className="button secondary" to="/plans">
-          Cambiar de plan
+          <Icon name="settings" size={16} />
+          Gestionar planes
         </Link>
       </div>
-      <section className="hero">
-        <div className="hero-content">
+      <section className="sp-next-session" aria-label="Tu próxima sesión">
+        <div>
           <span className="eyebrow">TU PRÓXIMA SESIÓN</span>
-          <h2 className="hero-headline">{plan.name}</h2>
+          <h2>{plan.name}</h2>
           <p>
-            {plan.schedule.minutesPerSession} minutos orientativos · hasta{' '}
-            {plan.schedule.newVerbsPerSession} verbos nuevos.
+            {sourceLabel(effective, lists)} · {count} {count === 1 ? 'verbo' : 'verbos'} en la
+            selección
           </p>
-          <button
-            disabled={busy}
-            onClick={async () => {
-              setBusy(true);
-              try {
-                await startSession(
-                  repos,
-                  { kind: 'plan', profileId: profile.id, planId: plan.id },
-                  systemClock,
-                  Math.random,
-                );
-                await refresh();
-              } catch (e) {
-                setError(e instanceof Error ? e.message : String(e));
-              } finally {
-                setBusy(false);
-              }
-            }}
-          >
-            Comenzar sesión <Icon name="arrow" size={18} />
-          </button>
+          <div className="sp-next-facts">
+            <span>
+              <Icon name="clock" size={14} />
+              {plan.schedule.minutesPerSession} min orientativos
+            </span>
+            <span>{practiceLabel(plan)}</span>
+          </div>
+          {!count && (
+            <p className="sp-empty-reason">
+              {plan.id === 'template-exam'
+                ? 'Elige una lista en la tarjeta de Preparación de examen.'
+                : 'No hay verbos activos para este plan. Puedes personalizarlo o elegir otra propuesta.'}
+            </p>
+          )}
         </div>
-        <div className="hero-art" aria-hidden="true">
-          <strong>learn</strong>
-          <span>learnt</span>
-          <span>learnt</span>
+        <div className="sp-next-actions">
+          <button
+            disabled={!!starter.startingId || !count}
+            onClick={() => void starter.start(plan, examList)}
+          >
+            <Icon name="play" size={16} />
+            Comenzar sesión
+          </button>
+          <Link to={customUrl} className="button secondary">
+            <Icon name="edit" size={15} />
+            {plan.isTemplate ? 'Personalizar' : 'Editar plan'}
+          </Link>
         </div>
       </section>
-      {error && (
-        <p role="alert" className="notice">
-          {error}
+      {(error || starter.error) && (
+        <p className="notice" role="alert">
+          {error || starter.error}
         </p>
       )}
-      <div className="stats-grid">
-        {[
-          ['clock', 'A tu ritmo', 'Sin cuenta atrás'],
-          ['study', 'Repaso inteligente', 'Tus errores orientan el camino'],
-          ['check', 'Cada habilidad cuenta', 'Evidencias separadas'],
-        ].map(([icon, title, text]) => (
-          <section className="panel" key={title}>
-            <Icon name={icon} />
-            <h2 style={{ marginTop: 14, fontSize: 16 }}>{title}</h2>
-            <p className="small">{text}</p>
-          </section>
-        ))}
-      </div>
-      <Link to="/games">¿Prefieres elegir un juego? →</Link>
-    </>
+      <PlanLibrary
+        startingId={starter.startingId}
+        onStart={(plan, listId) => void starter.start(plan, listId)}
+      />
+      <Link className="sp-games-link" to="/games">
+        ¿Prefieres elegir un juego? <Icon name="arrow" size={15} />
+      </Link>
+    </div>
   );
 }

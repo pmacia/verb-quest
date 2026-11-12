@@ -170,3 +170,39 @@ it('semantic form edits reset active progress while keeping historical attempts'
   expect(await r.attempts.count()).toBe(1);
   r.close();
 });
+it('starts exam from an owned saved list without creating or mutating a personal plan', async () => {
+  const r = await openAppDatabase(crypto.randomUUID());
+  const profile = await bootstrap(r, dataset, clock);
+  await r.lists.put({ id: 'exam-list', profileId: profile.id, name: 'Examen', verbIds: ['go'] });
+  const session = await startSession(
+    r,
+    { kind: 'plan', profileId: profile.id, planId: 'template-exam', listId: 'exam-list' },
+    clock,
+    () => 0.5,
+  );
+  expect(session.selection).toEqual(['go']);
+  expect(session.queue.length).toBeGreaterThan(0);
+  expect(session.queue.every((q) => ['recall', 'spelling', 'context'].includes(q.skill))).toBe(
+    true,
+  );
+  expect(await r.plans.count()).toBe(0);
+  await completeSession(r, session.id, clock);
+  await r.lists.put({ id: 'foreign', profileId: 'other', name: 'Otra', verbIds: ['go'] });
+  await expect(
+    startSession(
+      r,
+      { kind: 'plan', profileId: profile.id, planId: 'template-exam', listId: 'foreign' },
+      clock,
+      () => 0.5,
+    ),
+  ).rejects.toThrow('este perfil');
+  await expect(
+    startSession(
+      r,
+      { kind: 'plan', profileId: profile.id, planId: 'template-zero', listId: 'exam-list' },
+      clock,
+      () => 0.5,
+    ),
+  ).rejects.toThrow('solo se admite');
+  r.close();
+});

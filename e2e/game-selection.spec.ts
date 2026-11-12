@@ -3,7 +3,11 @@ test('games can use an existing plan or a manual verb selection', async ({ page 
   await page.goto('/plans/template-eso1');
   await page.getByLabel('Nombre del plan').fill('Plan para juegos');
   await page.getByRole('button', { name: 'Guardar y preparar sesión' }).click();
-  await expect(page.getByRole('heading', { name: 'Plan para juegos', exact: true })).toBeVisible();
+  await expect(
+    page
+      .getByRole('region', { name: 'Tu próxima sesión' })
+      .getByRole('heading', { name: 'Plan para juegos', exact: true }),
+  ).toBeVisible();
   await page.getByRole('link', { name: 'Juegos', exact: true }).click();
   await page.getByLabel('Selección de verbos').selectOption({ label: 'Plan · Plan para juegos' });
   await page

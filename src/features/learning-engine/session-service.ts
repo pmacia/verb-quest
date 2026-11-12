@@ -25,7 +25,7 @@ import {
 import { buildSession } from './build-session';
 import { applyAttempt, emptyProgress } from './progress';
 export type SessionRequest =
-  | { kind: 'plan'; profileId: string; planId: string }
+  | { kind: 'plan'; profileId: string; planId: string; listId?: string }
   | {
       kind: 'free';
       profileId: string;
@@ -60,7 +60,14 @@ export async function startSession(
         (await repos.plans.get(input.planId)) || templates.find((p) => p.id === input.planId);
       if (!existing || (existing.profileId !== profile.id && !existing.isTemplate))
         throw Error('Plan no encontrado');
-      plan = { ...existing, profileId: profile.id };
+      plan = structuredClone({ ...existing, profileId: profile.id });
+      if (input.listId !== undefined) {
+        if (!existing.isTemplate || existing.id !== 'template-exam')
+          throw Error('La lista rápida solo se admite en el plan preparado de examen.');
+        if (!lists.some((list) => list.id === input.listId))
+          throw Error('Elige una lista de este perfil.');
+        plan.source = { type: 'saved_list', listId: input.listId };
+      }
     } else {
       const sourcePlan = input.planId ? await repos.plans.get(input.planId) : undefined;
       if (input.planId && (!sourcePlan || sourcePlan.profileId !== profile.id))

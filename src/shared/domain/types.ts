@@ -218,7 +218,15 @@ export type PlanSource =
   | { type: 'imported'; verbIds: VerbId[] }
   | { type: 'filter'; filter: CatalogFilter };
 export type PlanGoal =
-  'learn' | 'review' | 'listening' | 'spelling' | 'pronunciation' | 'context' | 'mixed';
+  | 'learn'
+  | 'review'
+  | 'recognition'
+  | 'recall'
+  | 'listening'
+  | 'spelling'
+  | 'pronunciation'
+  | 'context'
+  | 'mixed';
 export interface StudyPlan {
   id: PlanId;
   profileId: ProfileId;

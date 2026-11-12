@@ -18,7 +18,7 @@ import {
   WrittenRecallExercise,
   type GameResponse,
 } from './exercises';
-import { modeLabels } from '../study-plans/PlanEditorPage';
+import { modeLabels } from '../study-plans/plan-presentation';
 import type { StudySession, Question } from '../../shared/domain/types';
 export function SessionShell({ session }: { session: StudySession }) {
   const { repos, refresh } = useApp();

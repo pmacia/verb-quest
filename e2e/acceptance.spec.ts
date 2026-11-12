@@ -51,7 +51,11 @@ test('four spaced written sessions cover base past and participle without improv
   for (const check of await field.getByRole('checkbox').all()) await check.uncheck();
   await page.getByLabel('Memoria y escritura', { exact: true }).check();
   await page.getByRole('button', { name: 'Guardar y preparar sesión' }).click();
-  await expect(page.getByRole('heading', { name: 'Solo go · escritura' })).toBeVisible();
+  await expect(
+    page
+      .getByRole('region', { name: 'Tu próxima sesión' })
+      .getByRole('heading', { name: 'Solo go · escritura', exact: true }),
+  ).toBeVisible();
   const url = page.url();
   for (const date of ['2026-10-29', '2026-10-30', '2026-11-02', '2026-11-09']) {
     await page.clock.setFixedTime(new Date(date + 'T12:00:00Z'));

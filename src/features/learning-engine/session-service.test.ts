@@ -183,6 +183,7 @@ it('starts exam from an owned saved list without creating or mutating a personal
     () => 0.5,
   );
   expect(session.selection).toEqual(['go']);
+  expect(session.planContext?.listId).toBe('exam-list');
   expect(session.queue.length).toBeGreaterThan(0);
   expect(session.queue.every((q) => ['recall', 'spelling', 'context'].includes(q.skill))).toBe(
     true,

@@ -258,7 +258,7 @@ export interface StudySession {
   profileId: ProfileId;
   planId: string | null;
   /** Full plan selection at start, before the daily limit on new verbs. */
-  planContext?: { id: string; name: string; verbIds: VerbId[] };
+  planContext?: { id: string; name: string; verbIds: VerbId[]; listId?: string };
   selection: VerbId[];
   queue: Question[];
   cursor: number;

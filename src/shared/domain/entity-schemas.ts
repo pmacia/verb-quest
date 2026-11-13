@@ -98,11 +98,15 @@ export const entitySchemas = {
       id: string,
       profileId: string,
       planId: nullable(string),
-      planContext: object({
-        id: string,
-        name: string,
-        verbIds: { ...array(string), uniqueItems: true },
-      }),
+      planContext: object(
+        {
+          id: string,
+          name: string,
+          verbIds: { ...array(string), uniqueItems: true },
+          listId: string,
+        },
+        ['listId'],
+      ),
       selection: array(string),
       queue: array(questionSchema),
       cursor: { type: 'integer', minimum: 0 },

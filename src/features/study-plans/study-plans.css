@@ -296,3 +296,18 @@ html[data-theme='dark'] .study-page {
     font-size: 17px;
   }
 }
+
+.sp-next-session .sp-resume-note {
+  color: var(--blue);
+}
+.sp-history {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--blue);
+  margin: 8px 0;
+}
+.sp-history > svg {
+  flex-shrink: 0;
+}

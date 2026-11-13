@@ -128,7 +128,12 @@ export async function startSession(
         'No hay actividades aptas. Revisa el límite de nuevos, las modalidades o el contenido.',
       );
     if (input.kind === 'plan' || input.planId)
-      session.planContext = { id: plan.id, name: plan.name, verbIds: [...selection.verbIds] };
+      session.planContext = {
+        id: plan.id,
+        name: plan.name,
+        verbIds: [...selection.verbIds],
+        ...(plan.source.type === 'saved_list' ? { listId: plan.source.listId } : {}),
+      };
     await repos.sessions.put(session);
     return session;
   });

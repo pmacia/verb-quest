@@ -93,6 +93,10 @@ Las sesiones de estudio también incorporan ejercicios de respuesta escrita. Los
 
 ## Planes de estudio
 
+En **Inicio**, la tarjeta azul propone **Continuar con mi plan** cuando ya has utilizado alguno, incluso si terminaste la sesión anterior. Una sesión pendiente siempre tiene prioridad. **Planes recientes** muestra hasta tres planes, con la última sesión, verbos practicados y repasos pendientes; **Retomar** prepara su siguiente sesión sin reiniciar el progreso. Estudio recuerda el último plan utilizado y respeta una elección distinta. Las tarjetas de planes ya iniciados muestran **Continuar** y explican que el progreso se conserva.
+
+Los planes de examen conservan también la lista elegida. Si esa lista se ha eliminado, se pide elegir otra; no se sustituye por una diferente. Las copias completas conservan esta información y admiten sesiones antiguas sin ella. El historial de planes personales antiguos se reconoce por su identificador; las sesiones preparadas antiguas que no guardaban su identidad no se pueden atribuir con seguridad a un plan.
+
 En **Estudiar** aparecen directamente **Mis planes** y **Planes preparados**. Cada tarjeta muestra la selección actual de verbos activos, lo que se practica, los minutos orientativos y el límite de verbos nuevos. Las cantidades cambian con tu catálogo, listas y progreso; no indican cuántos verbos terminarás en una sesión.
 
 | Propuesta | Selección | Práctica | Minutos |

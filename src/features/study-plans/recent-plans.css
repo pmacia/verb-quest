@@ -1,0 +1,72 @@
+.recent-plans .section-heading > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+}
+.rp-list {
+  display: grid;
+  gap: 10px;
+}
+.recent-plans .rp-plan {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 18px;
+  border-left: 3px solid var(--blue);
+}
+.rp-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--sky);
+  color: var(--blue);
+}
+.rp-content {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.rp-content h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.rp-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 14px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.rp-content .rp-review {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: var(--muted);
+}
+.recent-plans .rp-action {
+  min-height: 34px;
+  padding: 6px 10px;
+  font-size: 12px;
+  gap: 5px;
+}
+@media (max-width: 480px) {
+  .recent-plans .rp-plan {
+    gap: 9px;
+    padding: 12px;
+  }
+  .rp-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .rp-content h3 {
+    font-size: 13px;
+  }
+  .recent-plans .rp-action {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+}

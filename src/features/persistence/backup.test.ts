@@ -135,3 +135,23 @@ it('complete backup and restore preserve every current editable verb field', asy
   db.close();
   target.close();
 });
+
+it('retains the list needed to continue an exam plan across a backup restore', async () => {
+  const clock = { now: () => '2026-11-13T12:00:00Z' };
+  const source = await openAppDatabase(crypto.randomUUID());
+  const profile = await bootstrap(source, dataset, clock);
+  await source.lists.put({ id: 'exam', profileId: profile.id, name: 'Mi examen', verbIds: ['go'] });
+  const session = await startSession(
+    source,
+    { kind: 'plan', profileId: profile.id, planId: 'template-exam', listId: 'exam' },
+    clock,
+    () => 0.5,
+  );
+  const backup = await exportBackup(source, profile.id, clock);
+  expect(previewRestore(backup).ok).toBe(true);
+  const target = await openAppDatabase(crypto.randomUUID());
+  await restoreBackup(target, backup, 'replace_local_profile');
+  expect((await target.sessions.get(session.id))?.planContext?.listId).toBe('exam');
+  source.close();
+  target.close();
+});

@@ -4,14 +4,26 @@ import { Icon } from '../shared/ui/Icon';
 import { toLocalDate } from '../shared/time/calendar';
 import { progressSummary } from '../features/progress/progress-model';
 import { ProgressStats } from '../features/progress/ProgressStats';
+import { RecentPlans } from '../features/study-plans/RecentPlans';
+import { recentStudyPlans } from '../features/study-plans/recent-plans';
 import { gameCards } from '../features/games/GamesPage';
 export function HomePage() {
-  const { verbs, progress, settings, sessions, xp } = useApp();
+  const { verbs, progress, settings, sessions, xp, plans, lists } = useApp();
   const today = toLocalDate(new Date().toISOString(), settings.timeZone);
   const summary = progressSummary(verbs, progress, today);
   const due = summary.due.length;
   const active = sessions.find((s) => s.status !== 'completed');
   const practiced = summary.practicedIds.size;
+  const recent = recentStudyPlans({
+    verbs,
+    lists,
+    plans,
+    sessions,
+    progress,
+    today,
+    strictIpa: settings.strictIpa === true,
+  });
+  const latest = recent[0];
   return (
     <>
       <div className="page-heading">
@@ -24,31 +36,43 @@ export function HomePage() {
         </div>
         <span className="tag">APRENDE A TU RITMO</span>
       </div>
-      <section className="hero">
+      <section className="hero" aria-label="Tu próxima aventura">
         <div className="hero-content">
           <span className="eyebrow">
             {active
               ? 'TU MISIÓN SIGUE AQUÍ'
-              : due
-                ? 'HOY TOCA VOLVER A RECORDAR'
-                : '¿LISTO PARA UN NUEVO DESCUBRIMIENTO?'}
+              : latest
+                ? 'TU PLAN SIGUE CONTIGO'
+                : due
+                  ? 'HOY TOCA VOLVER A RECORDAR'
+                  : '¿LISTO PARA UN NUEVO DESCUBRIMIENTO?'}
           </span>
           <h2 className="hero-headline">
             {active
               ? 'Sigamos donde lo dejaste.'
-              : due
-                ? 'Dale otra vuelta a lo aprendido.'
-                : 'Los grandes progresos empiezan en pequeño.'}
+              : latest
+                ? 'Sigamos con tu plan.'
+                : due
+                  ? 'Dale otra vuelta a lo aprendido.'
+                  : 'Los grandes progresos empiezan en pequeño.'}
           </h2>
           <p>
             {active
               ? `${active.attemptIds.length} respuestas guardadas. Continúa sin empezar de cero.`
-              : due
-                ? `${due} habilidades necesitan refuerzo. Tu próxima sesión les dará prioridad.`
-                : `Tu próxima misión: ${settings.minutes} minutos para descubrir nuevas formas y practicar lo que sabes.`}
+              : latest
+                ? `${latest.title}. Tu progreso está guardado. ${latest.needsList ? 'Elige la lista para preparar la siguiente sesión.' : latest.due ? `${latest.due} repasos pendientes en este plan.` : 'Continúa con tu próxima sesión cuando quieras.'}`
+                : due
+                  ? `${due} habilidades necesitan refuerzo. Tu próxima sesión les dará prioridad.`
+                  : `Tu próxima misión: ${settings.minutes} minutos para descubrir nuevas formas y practicar lo que sabes.`}
           </p>
-          <Link className="button" to="/study">
-            {active ? 'Continuar mi sesión' : 'Empezar a estudiar'}
+          <Link className="button" to={active ? '/study' : (latest?.href ?? '/study')}>
+            {active
+              ? 'Continuar mi sesión'
+              : latest
+                ? latest.needsList
+                  ? 'Elegir lista'
+                  : 'Continuar con mi plan'
+                : 'Empezar a estudiar'}
             <Icon name="arrow" size={18} />
           </Link>
         </div>
@@ -64,6 +88,7 @@ export function HomePage() {
         due={due}
         points={xp.reduce((n, a) => n + a.points, 0)}
       />
+      <RecentPlans plans={recent} />
       <div className="section-heading">
         <h2>Elige cómo descubrir</h2>
         <Link to="/games">Ver todos los juegos →</Link>

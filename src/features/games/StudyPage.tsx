@@ -8,6 +8,7 @@ import { Icon } from '../../shared/ui/Icon';
 import { usePlanStarter } from '../study-plans/use-plan-starter';
 import { PlanLibrary } from '../study-plans/PlanLibrary';
 import { sourceLabel, practiceLabel, withExamList } from '../study-plans/plan-presentation';
+import { recentStudyPlans } from '../study-plans/recent-plans';
 import { toLocalDate } from '../../shared/time/calendar';
 export function StudyPage() {
   const { sessions, plans, profile, repos, refresh, verbs, lists, progress, settings } = useApp();
@@ -52,13 +53,30 @@ export function StudyPage() {
         <SessionShell key={active.id} session={active} />
       </>
     );
+  const recent = recentStudyPlans({
+    verbs,
+    lists,
+    plans,
+    sessions,
+    progress,
+    today: toLocalDate(new Date().toISOString(), settings.timeZone),
+    strictIpa: settings.strictIpa === true,
+  });
   const plan =
     plans.find((p) => p.id === search.get('plan')) ??
     templates.find((p) => p.id === search.get('plan')) ??
+    recent[0]?.plan ??
     plans[0] ??
     templates[0];
   const examList =
-    plan.isTemplate && plan.id === 'template-exam' ? (search.get('list') ?? undefined) : undefined;
+    plan.isTemplate && plan.id === 'template-exam'
+      ? search.has('list')
+        ? search.get('list') || undefined
+        : recent.find((r) => r.plan.id === plan.id)?.listId
+      : undefined;
+  const continuing = recent.find(
+    (r) => r.plan.id === plan.id && (plan.id !== 'template-exam' || r.listId === examList),
+  );
   const effective = withExamList(plan, examList);
   const count = resolvePlanSelection(effective, {
     verbs,
@@ -85,8 +103,13 @@ export function StudyPage() {
       </div>
       <section className="sp-next-session" aria-label="Tu próxima sesión">
         <div>
-          <span className="eyebrow">TU PRÓXIMA SESIÓN</span>
+          <span className="eyebrow">{continuing ? 'SIGUE CON TU PLAN' : 'TU PRÓXIMA SESIÓN'}</span>
           <h2>{plan.name}</h2>
+          {continuing && (
+            <p className="sp-resume-note">
+              Tu progreso se conserva. Vas a preparar otra sesión del mismo plan.
+            </p>
+          )}
           <p>
             {sourceLabel(effective, lists)} · {count} {count === 1 ? 'verbo' : 'verbos'} en la
             selección

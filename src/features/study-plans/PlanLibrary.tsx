@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useApp } from '../../app/app-context';
 import { templates, resolvePlanSelection } from './plan-service';
 import { planIcon, planTone, sourceLabel, practiceLabel, withExamList } from './plan-presentation';
+import { recentStudyPlans } from './recent-plans';
 import { Icon } from '../../shared/ui/Icon';
 import { toLocalDate } from '../../shared/time/calendar';
 import type { StudyPlan } from '../../shared/domain/types';
@@ -14,8 +15,7 @@ export function PlanLibrary({
   onStart: (plan: StudyPlan, listId?: string) => void;
   startingId: string | null;
 }) {
-  const { verbs, lists, plans, progress, settings } = useApp();
-  const [listId, setListId] = useState('');
+  const { verbs, lists, plans, progress, settings, sessions } = useApp();
   const context = {
     verbs,
     lists,
@@ -23,9 +23,14 @@ export function PlanLibrary({
     strictIpa: settings.strictIpa === true,
     today: toLocalDate(new Date().toISOString(), settings.timeZone),
   };
+  const recent = recentStudyPlans({ ...context, plans, sessions });
+  const [listId, setListId] = useState(
+    () => recent.find((r) => r.plan.id === 'template-exam')?.listId ?? '',
+  );
   function card(plan: StudyPlan) {
     const exam = plan.isTemplate && plan.id === 'template-exam';
     const selectedList = exam && lists.some((list) => list.id === listId) ? listId : undefined;
+    const used = recent.find((r) => r.plan.id === plan.id && (!exam || r.listId === selectedList));
     const effective = withExamList(plan, selectedList);
     const count = resolvePlanSelection(effective, context).verbIds.length;
     const customUrl = `/plans/${plan.id}${exam && selectedList ? `?list=${encodeURIComponent(selectedList)}` : ''}`;
@@ -93,15 +98,21 @@ export function PlanLibrary({
                 : 'No hay verbos activos que coincidan. Puedes ajustar la selección.'}
           </p>
         )}
+        {used && (
+          <p className="sp-history">
+            <Icon name="restore" size={13} />
+            Plan iniciado · tu progreso se conserva
+          </p>
+        )}
         <div className="sp-card-actions">
           <button
             type="button"
             disabled={!!startingId || !count}
             onClick={() => onStart(plan, selectedList)}
-            aria-label={`Empezar ${plan.name}`}
+            aria-label={`${used ? 'Continuar' : 'Empezar'} ${plan.name}`}
           >
             <Icon name="play" size={15} />
-            {startingId === plan.id ? 'Preparando…' : 'Empezar'}
+            {startingId === plan.id ? 'Preparando…' : used ? 'Continuar' : 'Empezar'}
           </button>
           <Link
             to={customUrl}

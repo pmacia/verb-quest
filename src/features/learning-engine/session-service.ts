@@ -34,6 +34,12 @@ export type SessionRequest =
       modes: QuestionMode[];
       skills: EvaluatedSkill[];
     };
+export class ActiveSessionError extends Error {
+  constructor(public readonly session: StudySession) {
+    super('Ya tienes una sesión pendiente. Continúala o termínala antes de empezar otra.');
+    this.name = 'ActiveSessionError';
+  }
+}
 export async function startSession(
   repos: AppRepositories,
   input: SessionRequest,
@@ -49,8 +55,7 @@ export async function startSession(
       .equals(profile.id)
       .filter((s) => s.status !== 'completed')
       .first();
-    if (active)
-      throw Error('Ya tienes una sesión pendiente. Continúala o termínala antes de empezar otra.');
+    if (active) throw new ActiveSessionError(active);
     const verbs = (await repos.catalog.toArray()).map((e) => e.verb);
     const lists = await repos.lists.where('profileId').equals(profile.id).toArray();
     const progress = await repos.progress.where('profileId').equals(profile.id).toArray();
@@ -126,6 +131,28 @@ export async function startSession(
       session.planContext = { id: plan.id, name: plan.name, verbIds: [...selection.verbIds] };
     await repos.sessions.put(session);
     return session;
+  });
+}
+/** Replace only the confirmed session; a failed new start rolls the entire change back. */
+export async function replaceSession(
+  repos: AppRepositories,
+  input: SessionRequest,
+  previousSessionId: string,
+  clock: Clock,
+  rng: () => number,
+): Promise<StudySession> {
+  return repos.runAtomic(async () => {
+    const previous = await repos.sessions.get(previousSessionId);
+    if (!previous || previous.profileId !== input.profileId)
+      throw Error('La sesión anterior no está disponible para este perfil.');
+    const active = await repos.sessions
+      .where('profileId')
+      .equals(input.profileId)
+      .filter((session) => session.status !== 'completed')
+      .first();
+    if (active && active.id !== previousSessionId) throw new ActiveSessionError(active);
+    if (active) await completeSession(repos, previousSessionId, clock);
+    return startSession(repos, input, clock, rng);
   });
 }
 export function pruneArchivedQuestions(session: StudySession, archived: string[]): StudySession {

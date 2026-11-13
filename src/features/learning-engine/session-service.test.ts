@@ -4,6 +4,8 @@ import { bootstrap } from '../persistence/bootstrap';
 import { dataset } from '../../../tests/fixtures/dataset';
 import {
   startSession,
+  replaceSession,
+  ActiveSessionError,
   submitAnswer,
   pauseSession,
   resumeSession,
@@ -269,5 +271,77 @@ it('preserves the name and difficulty scope of a saved plan when starting a game
   );
   expect(s.planContext).toEqual({ id: 'mine', name: 'Mi plan básico', verbIds: ['go'] });
   expect(s.queue.every((q) => q.verbId === 'go')).toBe(true);
+  r.close();
+});
+
+const nextGame = (profileId: string) => ({
+  kind: 'free' as const,
+  profileId,
+  verbIds: ['go'],
+  modes: ['flashcards' as const],
+  skills: ['recall' as const],
+});
+it('exposes the pending session without modifying it when another game is requested', async () => {
+  const { r, p, s } = await setup();
+  try {
+    await startSession(r, nextGame(p.id), clock, () => 0.5);
+    throw Error('Expected a session conflict');
+  } catch (error) {
+    expect(error).toBeInstanceOf(ActiveSessionError);
+    expect((error as ActiveSessionError).session.id).toBe(s.id);
+  }
+  expect(await r.sessions.count()).toBe(1);
+  expect((await r.sessions.get(s.id))?.status).toBe('active');
+  r.close();
+});
+it('replaces a confirmed paused session while preserving attempts and learning progress', async () => {
+  const { r, p, s } = await setup();
+  await submitAnswer(r, input(s), clock);
+  await pauseSession(r, s.id);
+  const progress = await r.progress.toArray();
+  const next = await replaceSession(r, nextGame(p.id), s.id, clock, () => 0.5);
+  expect((await r.sessions.get(s.id))?.status).toBe('completed');
+  expect(next.id).not.toBe(s.id);
+  expect(next.status).toBe('active');
+  expect(await r.attempts.count()).toBe(1);
+  expect(await r.progress.toArray()).toEqual(progress);
+  expect(await r.sessions.filter((s) => s.status !== 'completed').count()).toBe(1);
+  r.close();
+});
+it('rolls back completion and rewards if the requested replacement cannot start', async () => {
+  const { r, p, s } = await setup();
+  await submitAnswer(r, input(s), clock);
+  const before = {
+    session: await r.sessions.get(s.id),
+    progress: await r.progress.toArray(),
+    xp: await r.xpLedger.toArray(),
+  };
+  await expect(
+    replaceSession(r, { ...nextGame(p.id), verbIds: [] }, s.id, clock, () => 0.5),
+  ).rejects.toThrow('La selección no tiene verbos disponibles');
+  expect(await r.sessions.count()).toBe(1);
+  expect(await r.sessions.get(s.id)).toEqual(before.session);
+  expect(await r.progress.toArray()).toEqual(before.progress);
+  expect(await r.xpLedger.toArray()).toEqual(before.xp);
+  r.close();
+});
+it('requires confirmation again if a different session was started in the meantime', async () => {
+  const { r, p, s } = await setup();
+  await completeSession(r, s.id, clock);
+  const newer = await startSession(r, nextGame(p.id), clock, () => 0.5);
+  await expect(replaceSession(r, nextGame(p.id), s.id, clock, () => 0.5)).rejects.toBeInstanceOf(
+    ActiveSessionError,
+  );
+  expect((await r.sessions.get(newer.id))?.status).toBe('active');
+  expect(await r.sessions.count()).toBe(2);
+  r.close();
+});
+it('cannot close a session belonging to another profile', async () => {
+  const { r, s } = await setup();
+  await expect(replaceSession(r, nextGame('someone-else'), s.id, clock, () => 0.5)).rejects.toThrow(
+    'este perfil',
+  );
+  expect((await r.sessions.get(s.id))?.status).toBe('active');
+  expect(await r.sessions.count()).toBe(1);
   r.close();
 });

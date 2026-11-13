@@ -1,10 +1,16 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../../app/app-context';
-import { startSession } from '../learning-engine/session-service';
+import {
+  ActiveSessionError,
+  replaceSession,
+  startSession,
+  type SessionRequest,
+} from '../learning-engine/session-service';
+import { Dialog } from '../../shared/ui/Dialog';
 import { systemClock } from '../../shared/time/clock';
 import { Icon } from '../../shared/ui/Icon';
-import type { QuestionMode, EvaluatedSkill } from '../../shared/domain/types';
+import type { QuestionMode, EvaluatedSkill, StudySession } from '../../shared/domain/types';
 export const gameCards: {
   mode: QuestionMode;
   title: string;
@@ -61,6 +67,38 @@ export function GamesPage() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const launchLock = useRef(false);
+  const [pending, setPending] = useState<{
+    session: StudySession;
+    request: SessionRequest;
+    title: string;
+  } | null>(null);
+  function closePending() {
+    if (launchLock.current) return;
+    setPending(null);
+    setError('');
+  }
+  async function launch(request: SessionRequest, title: string, previousSessionId?: string) {
+    if (launchLock.current) return;
+    launchLock.current = true;
+    setBusy(true);
+    setError('');
+    try {
+      if (previousSessionId)
+        await replaceSession(repos, request, previousSessionId, systemClock, Math.random);
+      else await startSession(repos, request, systemClock, Math.random);
+      await refresh();
+      setPending(null);
+      navigate('/study');
+    } catch (error) {
+      if (error instanceof ActiveSessionError)
+        setPending({ session: error.session, request, title });
+      else setError(error instanceof Error ? error.message : String(error));
+    } finally {
+      launchLock.current = false;
+      setBusy(false);
+    }
+  }
   return (
     <>
       <div className="page-heading">
@@ -122,12 +160,9 @@ export function GamesPage() {
           </div>
         </fieldset>
       )}
-      {error && (
+      {error && !pending && (
         <div role="alert" className="notice">
           {error}
-          <p>
-            <a href="/study">Continuar mi sesión pendiente →</a>
-          </p>
         </div>
       )}
       <div className="cards-grid">
@@ -141,36 +176,24 @@ export function GamesPage() {
             <p>{g.description}</p>
             <button
               disabled={busy}
-              onClick={async () => {
-                setBusy(true);
-                setError('');
-                try {
-                  const ids =
-                    scope === 'manual'
-                      ? manual
-                      : scope === 'all'
-                        ? verbs.filter((v) => !v.archivedAt).map((v) => v.id)
-                        : (lists.find((l) => l.id === scope)?.verbIds ?? []);
-                  await startSession(
-                    repos,
-                    {
-                      kind: 'free',
-                      ...(scope.startsWith('plan:') ? { planId: scope.slice(5) } : {}),
-                      profileId: profile.id,
-                      verbIds: ids,
-                      modes: [g.mode],
-                      skills: g.skills,
-                    },
-                    systemClock,
-                    Math.random,
-                  );
-                  await refresh();
-                  navigate('/study');
-                } catch (e) {
-                  setError(e instanceof Error ? e.message : String(e));
-                } finally {
-                  setBusy(false);
-                }
+              onClick={() => {
+                const ids =
+                  scope === 'manual'
+                    ? manual
+                    : scope === 'all'
+                      ? verbs.filter((v) => !v.archivedAt).map((v) => v.id)
+                      : (lists.find((l) => l.id === scope)?.verbIds ?? []);
+                void launch(
+                  {
+                    kind: 'free',
+                    ...(scope.startsWith('plan:') ? { planId: scope.slice(5) } : {}),
+                    profileId: profile.id,
+                    verbIds: ids,
+                    modes: [g.mode],
+                    skills: g.skills,
+                  },
+                  g.title,
+                );
               }}
             >
               Jugar ahora <Icon name="arrow" size={18} />
@@ -178,6 +201,55 @@ export function GamesPage() {
           </article>
         ))}
       </div>
+      {pending && (
+        <Dialog title="Ya tienes una sesión en marcha" onClose={closePending}>
+          <p>
+            Tu sesión anterior{' '}
+            {pending.session.status === 'paused' ? 'está en pausa' : 'sigue pendiente'} y tiene{' '}
+            <strong>
+              {pending.session.attemptIds.length}{' '}
+              {pending.session.attemptIds.length === 1
+                ? 'respuesta guardada'
+                : 'respuestas guardadas'}
+            </strong>
+            .
+          </p>
+          <p>
+            Para empezar <strong>{pending.title}</strong>, puedes cerrar la sesión anterior. Tus
+            respuestas y tu progreso se conservarán.
+          </p>
+          {error && (
+            <p className="notice" role="alert">
+              {error}
+            </p>
+          )}
+          <div className="actions">
+            <button type="button" className="secondary" disabled={busy} onClick={closePending}>
+              Cancelar
+            </button>
+            <button
+              type="button"
+              className="secondary"
+              disabled={busy}
+              onClick={() => {
+                setPending(null);
+                navigate('/study');
+              }}
+            >
+              <Icon name="play" size={18} />
+              Continuar sesión anterior
+            </button>
+            <button
+              type="button"
+              disabled={busy}
+              onClick={() => void launch(pending.request, pending.title, pending.session.id)}
+            >
+              <Icon name="game" size={18} />
+              {busy ? 'Cambiando de juego…' : 'Cerrar sesión y empezar'}
+            </button>
+          </div>
+        </Dialog>
+      )}
     </>
   );
 }

@@ -75,6 +75,8 @@ export async function startSession(
       plan = {
         ...templates[0],
         id: sourcePlan?.id ?? 'free',
+        name: sourcePlan?.name ?? templates[0].name,
+        difficulty: sourcePlan?.difficulty ?? 'all',
         profileId: profile.id,
         source: sourcePlan?.source ?? { type: 'manual', verbIds: input.verbIds },
         questionModes: input.modes,
@@ -120,6 +122,8 @@ export async function startSession(
       throw Error(
         'No hay actividades aptas. Revisa el límite de nuevos, las modalidades o el contenido.',
       );
+    if (input.kind === 'plan' || input.planId)
+      session.planContext = { id: plan.id, name: plan.name, verbIds: [...selection.verbIds] };
     await repos.sessions.put(session);
     return session;
   });

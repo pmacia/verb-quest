@@ -144,6 +144,10 @@ Reconocimiento, memoria, escucha, escritura y contexto se evalúan por separado.
 - Un error objetivo reinicia el ciclo de esa habilidad y programa refuerzo para el día siguiente.
 - Cambiar formas o ejemplos relevantes reinicia la evidencia afectada sin borrar el historial. Una pregunta pendiente sobre contenido antiguo no acredita las formas nuevas.
 
+En **Progreso**, el selector **Progreso de** permite consultar la biblioteca activa, el plan actual o cualquier plan guardado o preparado. Las gráficas, verbos practicados y repasos se calculan sobre los verbos de esa selección; los XP siguen siendo el total de la aventura. Los indicadores de Inicio y Progreso son accesos directos a los verbos practicados y a las habilidades pendientes. Un verbo que se ha intentado practicar cuenta aunque todavía tenga errores o no haya avanzado de etapa.
+
+**Plan actual** utiliza la selección completa guardada al iniciar la sesión del plan, antes de limitar los verbos nuevos del día. Se conserva tras terminar la sesión o jugar libremente. Las sesiones antiguas de planes personales se consultan con la configuración actual de su plan; para las antiguas sesiones de planes preparados, cuya identidad no se guardaba, basta iniciar una sesión nueva. Antes de empezar, se muestra el próximo plan con un aviso. Los verbos archivados conservan su historial y se excluyen de estos recuentos. Las copias completas conservan el ámbito del plan y siguen admitiendo sesiones anteriores sin este dato.
+
 Las reglas completas están en [Reglas de aprendizaje](docs/learning-rules.md).
 
 ## Datos y copias de seguridad

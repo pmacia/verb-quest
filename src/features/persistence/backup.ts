@@ -121,6 +121,8 @@ export function previewRestore(input: unknown): ValidationResult<BackupV1> {
       if (row.verbId && !ids.has(row.verbId)) fail('/' + name, 'Referencia de verbo rota');
       if (row.verbIds?.some((id: string) => !ids.has(id)))
         fail('/' + name, 'Referencia de verbo rota');
+      if (name === 'sessions' && row.planContext?.verbIds?.some((id: string) => !ids.has(id)))
+        fail('/sessions/planContext', 'Referencia de verbo rota');
       if (row.sessionId && !sessionIds.has(row.sessionId))
         fail('/' + name, 'Referencia de sesión rota');
       if (name === 'plans' && !validate('plan', row).ok) fail('/plans', 'Plan no válido');

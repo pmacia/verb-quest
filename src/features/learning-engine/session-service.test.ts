@@ -206,3 +206,68 @@ it('starts exam from an owned saved list without creating or mutating a personal
   ).rejects.toThrow('solo se admite');
   r.close();
 });
+it('keeps the full study-plan scope even when the daily session admits only one new verb', async () => {
+  const r = await openAppDatabase(crypto.randomUUID());
+  const profile = await bootstrap(r, dataset, clock);
+  const plan = {
+    ...(await import('../study-plans/plan-service')).templates[0],
+    id: 'small-plan',
+    profileId: profile.id,
+    isTemplate: false,
+    name: 'Tres verbos',
+    source: { type: 'manual' as const, verbIds: ['go', 'take', 'buy'] },
+    schedule: {
+      minutesPerSession: 5 as const,
+      newVerbsPerSession: 1,
+      remindersEnabled: false as const,
+    },
+  };
+  await r.plans.put(plan);
+  const session = await startSession(
+    r,
+    { kind: 'plan', profileId: profile.id, planId: plan.id },
+    clock,
+    () => 0.5,
+  );
+  expect(session.selection).toHaveLength(1);
+  expect(session.planContext).toEqual({
+    id: 'small-plan',
+    name: 'Tres verbos',
+    verbIds: ['go', 'take', 'buy'],
+  });
+  const { exportBackup, previewRestore } = await import('../persistence/backup');
+  const backup = await exportBackup(r, profile.id, clock);
+  expect(previewRestore(backup).ok).toBe(true);
+  expect(backup.sessions[0].planContext?.verbIds).toEqual(['go', 'take', 'buy']);
+  r.close();
+});
+it('preserves the name and difficulty scope of a saved plan when starting a game from it', async () => {
+  const r = await openAppDatabase(crypto.randomUUID());
+  const profile = await bootstrap(r, dataset, clock);
+  const { templates } = await import('../study-plans/plan-service');
+  await r.plans.put({
+    ...templates[0],
+    id: 'mine',
+    profileId: profile.id,
+    name: 'Mi plan básico',
+    isTemplate: false,
+    difficulty: 'introductory',
+    source: { type: 'manual', verbIds: ['go', 'write'] },
+  });
+  const s = await startSession(
+    r,
+    {
+      kind: 'free',
+      profileId: profile.id,
+      verbIds: [],
+      planId: 'mine',
+      modes: ['written_recall'],
+      skills: ['recall'],
+    },
+    clock,
+    () => 0.5,
+  );
+  expect(s.planContext).toEqual({ id: 'mine', name: 'Mi plan básico', verbIds: ['go'] });
+  expect(s.queue.every((q) => q.verbId === 'go')).toBe(true);
+  r.close();
+});

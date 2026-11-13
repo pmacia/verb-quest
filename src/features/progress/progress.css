@@ -1,0 +1,49 @@
+.progress-stat-link {
+  color: var(--text);
+  text-decoration: none;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+.progress-stat-link:hover,
+.progress-stat-link:focus-visible {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 2px var(--sky);
+}
+.progress-stat-link > svg {
+  margin-left: auto;
+  flex-shrink: 0;
+  color: var(--blue);
+}
+.progress-toolbar {
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.progress-toolbar label {
+  flex: 1 1 220px;
+  margin: 0;
+}
+.progress-toolbar select {
+  margin-bottom: 0;
+}
+.progress-scope-note {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.progress-results-heading {
+  scroll-margin-top: 90px;
+}
+@media (max-width: 600px) {
+  .progress-stat-link {
+    gap: 8px;
+  }
+  .progress-stat-link > svg {
+    display: none;
+  }
+  .progress-toolbar {
+    gap: 10px;
+  }
+}

@@ -2,14 +2,16 @@ import { Link } from 'react-router-dom';
 import { useApp } from './app-context';
 import { Icon } from '../shared/ui/Icon';
 import { toLocalDate } from '../shared/time/calendar';
-import { deriveVisibleState } from '../features/learning-engine/progress';
+import { progressSummary } from '../features/progress/progress-model';
+import { ProgressStats } from '../features/progress/ProgressStats';
 import { gameCards } from '../features/games/GamesPage';
 export function HomePage() {
   const { verbs, progress, settings, sessions, xp } = useApp();
   const today = toLocalDate(new Date().toISOString(), settings.timeZone);
-  const due = progress.filter((p) => deriveVisibleState(p, today) === 'needs_review').length;
+  const summary = progressSummary(verbs, progress, today);
+  const due = summary.due.length;
   const active = sessions.find((s) => s.status !== 'completed');
-  const practiced = new Set(progress.filter((p) => p.stage > 0).map((p) => p.verbId)).size;
+  const practiced = summary.practicedIds.size;
   return (
     <>
       <div className="page-heading">
@@ -57,23 +59,11 @@ export function HomePage() {
           <small>✦</small>
         </div>
       </section>
-      <div className="stats-grid">
-        {[
-          [practiced, 'Verbos practicados', 'book'],
-          [due, 'Repasos pendientes', 'clock'],
-          [xp.reduce((n, a) => n + a.points, 0), 'XP de tu aventura', 'bolt'],
-        ].map(([n, label, icon]) => (
-          <div className="panel stat" key={label}>
-            <span className="stat-icon">
-              <Icon name={String(icon)} size={24} />
-            </span>
-            <div>
-              <strong>{n}</strong>
-              <small>{label}</small>
-            </div>
-          </div>
-        ))}
-      </div>
+      <ProgressStats
+        practiced={practiced}
+        due={due}
+        points={xp.reduce((n, a) => n + a.points, 0)}
+      />
       <div className="section-heading">
         <h2>Elige cómo descubrir</h2>
         <Link to="/games">Ver todos los juegos →</Link>

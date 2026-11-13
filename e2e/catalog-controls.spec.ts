@@ -142,7 +142,8 @@ test('the central toolbar selects all filtered verbs and stays compact on mobile
   });
   const rows = page.locator('.catalog-items');
   await expect(selectAll).toBeVisible();
-  await expect(selectAll.locator('.cq-control-label')).toBeHidden();
+  await expect(selectAll).toHaveText('Seleccionar todos');
+  await expect(selectAll.locator('span')).toBeVisible();
   await search.fill('ought');
   const count = await rows.getByRole('checkbox').count();
   expect(count).toBeGreaterThan(1);

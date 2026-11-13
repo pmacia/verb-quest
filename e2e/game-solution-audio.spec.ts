@@ -122,3 +122,29 @@ test('visual listening fallback remains silent until the student asks for audio'
   await page.getByRole('button', { name: 'Escuchar solución' }).click();
   await expect.poll(async () => (await speech(page)).spoken.length).toBe(1);
 });
+
+test('each flashcard replaces the previous answer and starts hidden throughout the session', async ({
+  page,
+}) => {
+  await start(page, 'Flashcards', 'go · ir');
+  for (let index = 0; index < 3; index++) {
+    await expect(page.locator('.question-prompt')).toHaveCount(1);
+    await expect(page.locator('.flashcard-answer')).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Revelar respuesta' })).toHaveCount(1);
+    await expect(page.getByRole('button', { name: 'Escuchar solución' })).toHaveCount(0);
+    await page.getByRole('button', { name: 'Revelar respuesta' }).click();
+    await expect(page.locator('.flashcard-answer')).toHaveCount(1);
+    await expect(page.getByRole('button', { name: 'Lo sabía', exact: true })).toHaveCount(1);
+    await page.getByRole('button', { name: 'Lo sabía', exact: true }).click();
+    await expect(page.getByRole('heading', { name: 'Valoración guardada' })).toBeVisible();
+    await expect(page.locator('.flashcard-answer')).toHaveCount(0);
+    await page
+      .getByRole('button', {
+        name: index === 2 ? 'Ver resumen →' : 'Siguiente pregunta →',
+        exact: true,
+      })
+      .click();
+  }
+  await expect(page.getByRole('heading', { name: 'Lo de hoy ya cuenta.' })).toBeVisible();
+  await expect(page.locator('.flashcard-answer')).toHaveCount(0);
+});

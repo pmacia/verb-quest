@@ -194,7 +194,7 @@ export function SessionShell({ session }: { session: StudySession }) {
         </h2>
         {!feedback && (
           <Exercise
-            key={question.id}
+            key={`exercise:${question.id}`}
             question={question}
             onSubmit={submit}
             disabled={busy}
@@ -229,7 +229,7 @@ export function SessionShell({ session }: { session: StudySession }) {
         )}
         {(feedback || revealedQuestionId === question.id) && (
           <AudioControls
-            key={question.id}
+            key={`solution-audio:${question.id}`}
             text={getSolutionAudioText(question)}
             label="Escuchar solución"
             iconOnly

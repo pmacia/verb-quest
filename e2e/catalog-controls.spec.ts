@@ -129,3 +129,48 @@ test('the library speaker plays three forms without navigating or evaluating mas
   await expect(page.locator('.level-card')).toContainText('0 XP');
   await expect(page.getByText('0 de 120 verbos', { exact: true })).toHaveCount(5);
 });
+
+test('the central toolbar selects all filtered verbs and stays compact on mobile', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/verbs');
+  const search = page.getByRole('searchbox', { name: 'Buscar verbos' });
+  const selectAll = page.getByRole('button', {
+    name: 'Seleccionar todos los verbos de la lista',
+    exact: true,
+  });
+  const rows = page.locator('.catalog-items');
+  await expect(selectAll).toBeVisible();
+  await expect(selectAll.locator('.cq-control-label')).toBeHidden();
+  await search.fill('ought');
+  const count = await rows.getByRole('checkbox').count();
+  expect(count).toBeGreaterThan(1);
+  expect(count).toBeLessThan(120);
+  await selectAll.focus();
+  await page.keyboard.press('Space');
+  await expect(selectAll).toHaveCount(0);
+  await expect(rows.locator('input[type="checkbox"]:checked')).toHaveCount(count);
+  await expect(page.locator('.cq-result-selected .cq-count-number')).toHaveText(String(count));
+  await page.getByRole('button', { name: 'Guardar en lista', exact: true }).click();
+  await expect(page.getByRole('dialog', { name: 'Guardar lista', exact: true })).toContainText(
+    `${count} verbos seleccionados`,
+  );
+  await page.keyboard.press('Escape');
+  await search.clear();
+  await expect(rows.getByRole('checkbox')).toHaveCount(120);
+  await expect(rows.locator('input[type="checkbox"]:checked')).toHaveCount(count);
+  await page.getByRole('button', { name: 'Deseleccionar todos', exact: true }).click();
+  await expect(selectAll).toBeVisible();
+  await selectAll.click();
+  await expect(rows.locator('input[type="checkbox"]:checked')).toHaveCount(120);
+  await page.getByRole('button', { name: 'Deseleccionar todos', exact: true }).click();
+  await search.fill('zz-no-verb');
+  await expect(selectAll).toBeDisabled();
+  for (const width of [320, 390, 768, 1440]) {
+    await page.setViewportSize({ width, height: 844 });
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
+      true,
+    );
+  }
+});

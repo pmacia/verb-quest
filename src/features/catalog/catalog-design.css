@@ -1375,6 +1375,11 @@ html[data-theme='dark'] .catalog-page {
   background: color-mix(in srgb, var(--cq-purple) 12%, var(--surface));
   border-color: var(--cq-purple);
 }
+.catalog-page .cq-result-selection .cq-select-all {
+  border-color: color-mix(in srgb, var(--cq-purple) 25%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--cq-purple) 10%, var(--surface));
+}
 .catalog-page .cq-result-help {
   justify-self: end;
 }

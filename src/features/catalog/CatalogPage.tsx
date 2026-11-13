@@ -73,6 +73,7 @@ function CatalogGlyph({ name, size = 16 }: { name: string; size?: number }) {
     pattern: 'M4 4h4v4H4Zm12 0h4v4h-4ZM10 16h4v4h-4ZM6 8v4h12V8M12 12v4',
     tag: 'M3 3h8l10 10-8 8L3 11Zm4 4h.01',
     save: 'M5 3h12l4 4v14H3V3Zm2 0v6h10V3M7 21v-8h10v8',
+    selectAll: 'M4 4h16v16H4Z',
   };
   return paths[name] ? (
     <svg
@@ -1082,7 +1083,17 @@ export function CatalogPage() {
                 </>
               )}
               {!selected.length && (
-                <span className="cq-results-hint">Selecciona para crear una lista</span>
+                <button
+                  type="button"
+                  className="secondary cq-select-all"
+                  aria-label="Seleccionar todos los verbos de la lista"
+                  title="Seleccionar todos los verbos de la lista filtrada"
+                  disabled={!result.items.length}
+                  onClick={() => setSelected(result.items.map((verb) => verb.id))}
+                >
+                  <CatalogGlyph name="selectAll" size={15} />
+                  <span className="cq-control-label">Seleccionar todos</span>
+                </button>
               )}
             </div>
             <div className="cq-result-help cq-result-actions">

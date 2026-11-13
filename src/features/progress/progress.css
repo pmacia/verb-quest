@@ -47,3 +47,65 @@
     gap: 10px;
   }
 }
+
+.progress-review-details.panel {
+  padding: 0;
+}
+.progress-review-details > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 48px;
+  padding: 14px 18px;
+  border-radius: inherit;
+  cursor: pointer;
+  list-style: none;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 650;
+}
+.progress-review-details > summary::-webkit-details-marker {
+  display: none;
+}
+.progress-review-details > summary:hover {
+  background: var(--sky);
+}
+.progress-review-details > summary:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+.progress-review-count,
+.progress-review-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.progress-review-count {
+  min-width: 0;
+}
+.progress-review-count > svg,
+.progress-review-toggle {
+  flex-shrink: 0;
+  color: var(--blue);
+}
+.progress-review-hide {
+  display: none;
+}
+.progress-review-details[open] .progress-review-show {
+  display: none;
+}
+.progress-review-details[open] .progress-review-hide {
+  display: inline;
+}
+.progress-review-details[open] .progress-review-toggle > svg {
+  transform: rotate(90deg);
+}
+.progress-review-content {
+  padding: 0 18px 18px;
+}
+@media (max-width: 480px) {
+  .progress-review-action {
+    display: none !important;
+  }
+}

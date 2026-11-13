@@ -66,6 +66,53 @@ export function ProgressPage() {
     });
   }
   const total = xp.reduce((n, x) => n + x.points, 0);
+  const detailContent = (
+    <>
+      {!displayedVerbs.length && (
+        <p>
+          {view === 'due'
+            ? 'No hay repasos pendientes en esta selección.'
+            : 'Todavía no has practicado verbos en esta selección. Empieza por una sesión de estudio.'}
+        </p>
+      )}
+      {displayedVerbs.map((v) => (
+        <article className="example" key={v.id}>
+          <div className="row">
+            <Link className="verb-base" to={`/verbs/${v.id}`}>
+              {v.lemma}
+              {v.archivedAt ? ' · archivado' : ''}
+            </Link>
+            <small>
+              {
+                summarizeVerb(
+                  summary.records.filter((p) => p.verbId === v.id),
+                  today,
+                ).label
+              }
+            </small>
+          </div>
+          {displayedRecords
+            .filter((p) => p.verbId === v.id)
+            .map((p) => (
+              <div className="skill-row" key={p.skill}>
+                <span>
+                  {skillLabels[p.skill]}
+                  <small className="muted" style={{ display: 'block' }}>
+                    Cobertura: {p.coverage.length} objetivos · {p.stage} avances
+                  </small>
+                </span>
+                <span>
+                  {stateLabels[deriveVisibleState(p, today)]}
+                  <small className="muted" style={{ display: 'block', textAlign: 'right' }}>
+                    Próximo repaso: {p.dueDate ?? 'sin programar'}
+                  </small>
+                </span>
+              </div>
+            ))}
+        </article>
+      ))}
+    </>
+  );
   const details = (
     <section aria-label="Detalle del progreso">
       <div className="section-heading">
@@ -77,51 +124,27 @@ export function ProgressPage() {
               : 'Tu progreso, verbo a verbo'}
         </h2>
       </div>
-      <section className="panel">
-        {!displayedVerbs.length && (
-          <p>
-            {view === 'due'
-              ? 'No hay repasos pendientes en esta selección.'
-              : 'Todavía no has practicado verbos en esta selección. Empieza por una sesión de estudio.'}
-          </p>
-        )}
-        {displayedVerbs.map((v) => (
-          <article className="example" key={v.id}>
-            <div className="row">
-              <Link className="verb-base" to={`/verbs/${v.id}`}>
-                {v.lemma}
-                {v.archivedAt ? ' · archivado' : ''}
-              </Link>
-              <small>
-                {
-                  summarizeVerb(
-                    summary.records.filter((p) => p.verbId === v.id),
-                    today,
-                  ).label
-                }
-              </small>
-            </div>
-            {displayedRecords
-              .filter((p) => p.verbId === v.id)
-              .map((p) => (
-                <div className="skill-row" key={p.skill}>
-                  <span>
-                    {skillLabels[p.skill]}
-                    <small className="muted" style={{ display: 'block' }}>
-                      Cobertura: {p.coverage.length} objetivos · {p.stage} avances
-                    </small>
-                  </span>
-                  <span>
-                    {stateLabels[deriveVisibleState(p, today)]}
-                    <small className="muted" style={{ display: 'block', textAlign: 'right' }}>
-                      Próximo repaso: {p.dueDate ?? 'sin programar'}
-                    </small>
-                  </span>
-                </div>
-              ))}
-          </article>
-        ))}
-      </section>
+      {view === 'due' ? (
+        <details className="panel progress-review-details" key={scope}>
+          <summary>
+            <span className="progress-review-count">
+              <Icon name="clock" size={18} />
+              <span>
+                {summary.due.length} {summary.due.length === 1 ? 'repaso' : 'repasos'} ·{' '}
+                {displayedVerbs.length} {displayedVerbs.length === 1 ? 'verbo' : 'verbos'}
+              </span>
+            </span>
+            <span className="progress-review-toggle">
+              <span className="progress-review-action progress-review-show">Ver detalle</span>
+              <span className="progress-review-action progress-review-hide">Ocultar detalle</span>
+              <Icon name="arrow" size={17} />
+            </span>
+          </summary>
+          <div className="progress-review-content">{detailContent}</div>
+        </details>
+      ) : (
+        <section className="panel">{detailContent}</section>
+      )}
     </section>
   );
   return (

@@ -69,6 +69,17 @@ test('quick indicators open practiced verbs and specific pending skills', async 
   await expect(details.getByRole('link', { name: 'take', exact: true })).toBeVisible();
   await page.locator('.progress-stat-link').filter({ hasText: 'Repasos pendientes' }).click();
   await expect(page.getByRole('combobox', { name: 'Mostrar', exact: true })).toHaveValue('due');
+  const reviewPanel = details.locator('details');
+  await expect(reviewPanel).not.toHaveAttribute('open');
+  await expect(details.getByRole('link', { name: 'go', exact: true })).toBeHidden();
+  await reviewPanel.locator('summary').focus();
+  await page.keyboard.press('Enter');
+  await expect(reviewPanel).toHaveAttribute('open');
+  await expect(details.getByRole('link', { name: 'go', exact: true })).toBeVisible();
+  await page.keyboard.press('Space');
+  await expect(reviewPanel).not.toHaveAttribute('open');
+  await reviewPanel.locator('summary').click();
+  await expect(reviewPanel).toHaveAttribute('open');
   await expect(details.locator('.skill-row')).toHaveCount(2);
   await expect(
     details.locator('article').filter({ has: page.getByRole('link', { name: 'go', exact: true }) }),
@@ -112,6 +123,8 @@ test('plan charts use the full scope and keep it when opening pending reviews', 
   await page.locator('.progress-stat-link').filter({ hasText: 'Repasos pendientes' }).click();
   await expect(page.getByRole('combobox', { name: 'Mostrar', exact: true })).toHaveValue('due');
   const details = page.getByRole('region', { name: 'Detalle del progreso' });
+  await expect(details.locator('details')).not.toHaveAttribute('open');
+  await details.locator('summary').click();
   await expect(details.locator('article')).toHaveCount(1);
   await expect(details.getByRole('link', { name: 'go', exact: true })).toBeVisible();
   await expect(details.getByRole('link', { name: 'take', exact: true })).toHaveCount(0);
@@ -122,6 +135,7 @@ test('plan charts use the full scope and keep it when opening pending reviews', 
   await expect(memory).toHaveAttribute('max', '120');
   await expect(page.getByRole('combobox', { name: 'Mostrar', exact: true })).toHaveValue('due');
   await expect(details.locator('article')).toHaveCount(2);
+  await expect(details.locator('details')).not.toHaveAttribute('open');
   for (const width of [320, 390, 768, 1440]) {
     await page.setViewportSize({ width, height: 900 });
     expect(

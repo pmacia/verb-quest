@@ -1,0 +1,141 @@
+.verb-review-game {
+  margin: 12px 0;
+}
+.vr-prompt-audio {
+  display: inline-flex;
+}
+.vr-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.vr-column {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  background: var(--surface);
+}
+.vr-column label {
+  margin: 0;
+  font-size: 12px;
+}
+.vr-column input {
+  margin: 5px 0;
+  font-size: 18px;
+  font-weight: 650;
+  width: 100%;
+}
+.vr-column .vr-mic {
+  min-height: 30px;
+  padding: 5px 8px;
+}
+.vr-column.is-correct {
+  border-color: var(--teal);
+  background: color-mix(in srgb, var(--teal) 7%, var(--surface));
+}
+.vr-column.is-incorrect {
+  border-color: var(--error);
+  background: color-mix(in srgb, var(--error) 7%, var(--surface));
+}
+.vr-column.is-incorrect input {
+  text-decoration: line-through;
+}
+.vr-column-result {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  margin: 8px 0 0;
+  overflow-wrap: anywhere;
+}
+.is-correct .vr-column-result {
+  color: var(--text);
+}
+.is-correct .vr-column-result > svg {
+  color: var(--teal);
+}
+.is-incorrect .vr-column-result {
+  color: var(--error);
+}
+.vr-mic {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.vr-mic[aria-pressed='true'] {
+  outline: 2px solid var(--blue);
+  background: var(--sky);
+  color: var(--text);
+}
+.vr-actions {
+  margin-top: 12px;
+}
+.vr-actions button {
+  padding: 7px 10px;
+  min-height: 38px;
+  font-size: 12px;
+}
+.vr-status {
+  min-height: 1.5em;
+  margin: 8px 0;
+}
+.vr-help {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 8px 0;
+}
+.vr-help summary {
+  cursor: pointer;
+}
+.vr-help p {
+  margin: 6px 0;
+}
+.vr-suggestion {
+  font-size: 11px;
+  padding: 4px 7px;
+}
+@media (max-width: 600px) {
+  .vr-columns {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .vr-column {
+    padding: 10px;
+  }
+  .vr-column label {
+    display: grid;
+    grid-template-columns: 75px minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
+  }
+  .vr-column input {
+    min-width: 0;
+    font-size: 16px;
+  }
+}
+
+.vr-session .feedback p {
+  color: var(--text);
+}
+
+.vr-session .question-prompt {
+  margin: 18px 0 8px;
+}
+.verb-review-game > .small {
+  margin: 8px 0 12px;
+  font-size: 12px;
+}
+@media (max-width: 600px) {
+  .vr-column {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px;
+  }
+  .vr-column-result,
+  .vr-column .vr-suggestion {
+    grid-column: 1 / -1;
+  }
+}

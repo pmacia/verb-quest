@@ -6,6 +6,7 @@ import { updateSettings, resetProgress, deleteAllLocalData } from './settings-se
 import { exportBackup } from '../persistence/backup';
 import { downloadFile } from '../../shared/files/download';
 import { systemClock } from '../../shared/time/clock';
+import { Icon } from '../../shared/ui/Icon';
 import { Dialog } from '../../shared/ui/Dialog';
 import type { AppSettings } from '../../shared/domain/types';
 export function SettingsPage() {
@@ -104,6 +105,44 @@ export function SettingsPage() {
               </small>
             </label>
           </div>
+        </section>
+        <section className="panel settings-section">
+          <h2>
+            <Icon name="mic" size={20} /> Voz y repaso de verbos
+          </h2>
+          <div className="form-grid">
+            <label>
+              Comprobación de respuestas dictadas
+              <select
+                aria-label="Comprobación de respuestas dictadas"
+                value={s.reviewCheck ?? 'automatic'}
+                onChange={(e) =>
+                  change({ reviewCheck: e.target.value as AppSettings['reviewCheck'] })
+                }
+              >
+                <option value="automatic">Automática con ayuda</option>
+                <option value="manual">Revisar antes de comprobar</option>
+              </select>
+            </label>
+            <label>
+              Idioma preferido de la pista
+              <select
+                aria-label="Idioma preferido de la pista"
+                value={s.reviewLanguage ?? 'es'}
+                onChange={(e) =>
+                  change({ reviewLanguage: e.target.value as AppSettings['reviewLanguage'] })
+                }
+              >
+                <option value="es">Castellano</option>
+                <option value="en">Inglés</option>
+              </select>
+            </label>
+          </div>
+          <p className="small muted">
+            En automático se comprueban las respuestas dictadas claras y válidas; las dudas se
+            revisan antes de registrar un fallo. El teclado siempre usa «Comprobar». El dictado no
+            evalúa pronunciación ni ortografía.
+          </p>
         </section>
         <section className="panel settings-section">
           <h2>Información avanzada</h2>

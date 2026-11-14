@@ -59,10 +59,21 @@ export const gameCards: {
     tag: 'CONTEXTO · ESCRITURA',
     skills: ['context'],
   },
+  {
+    mode: 'verb_review',
+    title: 'Repaso de verbos',
+    description: 'Recuerda el infinitivo, pasado y participio. Escribe o usa tu voz.',
+    icon: 'restore',
+    tag: 'TRES FORMAS · MEMORIA',
+    skills: ['recall'],
+  },
 ];
 export function GamesPage() {
-  const { lists, plans, verbs, repos, profile, refresh } = useApp();
+  const { lists, plans, verbs, repos, profile, refresh, settings } = useApp();
   const [scope, setScope] = useState('all');
+  const [reviewLanguage, setReviewLanguage] = useState<'es' | 'en'>(
+    settings.reviewLanguage ?? 'es',
+  );
   const [manual, setManual] = useState<string[]>([]);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
@@ -174,6 +185,19 @@ export function GamesPage() {
             <span className="eyebrow">{g.tag}</span>
             <h2>{g.title}</h2>
             <p>{g.description}</p>
+            {g.mode === 'verb_review' && (
+              <label>
+                Idioma de la pista
+                <select
+                  aria-label="Idioma de la pista"
+                  value={reviewLanguage}
+                  onChange={(e) => setReviewLanguage(e.target.value as 'es' | 'en')}
+                >
+                  <option value="es">Castellano</option>
+                  <option value="en">Inglés</option>
+                </select>
+              </label>
+            )}
             <button
               disabled={busy}
               onClick={() => {
@@ -186,6 +210,7 @@ export function GamesPage() {
                 void launch(
                   {
                     kind: 'free',
+                    ...(g.mode === 'verb_review' ? { reviewLanguage } : {}),
                     ...(scope.startsWith('plan:') ? { planId: scope.slice(5) } : {}),
                     profileId: profile.id,
                     verbIds: ids,

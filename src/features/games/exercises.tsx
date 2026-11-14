@@ -1,10 +1,20 @@
 import { useState } from 'react';
-import type { AnswerInput, Question } from '../../shared/domain/types';
+import type { AnswerInput, Question, ReviewDraft } from '../../shared/domain/types';
 export type GameResponse = Pick<
   AnswerInput,
-  'answer' | 'selfRating' | 'hintsUsed' | 'revealed' | 'visualFallback'
+  | 'answer'
+  | 'selfRating'
+  | 'hintsUsed'
+  | 'revealed'
+  | 'visualFallback'
+  | 'inputMethod'
+  | 'voiceConfirmed'
+  | 'fieldMethods'
 >;
 export interface GameProps {
+  reviewDraft?: ReviewDraft;
+  onReviewDraft?: (draft: ReviewDraft) => void;
+  reviewFeedback?: GameResponse;
   question: Question;
   onSubmit: (input: GameResponse) => Promise<void>;
   disabled: boolean;

@@ -97,7 +97,13 @@ export interface CoverageTarget {
   contextKey: string | null;
 }
 export type QuestionMode =
-  'flashcards' | 'matching' | 'quiz' | 'audio_detective' | 'sentence_gap' | 'written_recall';
+  | 'flashcards'
+  | 'matching'
+  | 'quiz'
+  | 'audio_detective'
+  | 'sentence_gap'
+  | 'written_recall'
+  | 'verb_review';
 export interface MatchingPair {
   id: string;
   left: string;
@@ -106,7 +112,25 @@ export interface MatchingPair {
   coverageTargetIds: string[];
   target: FormKey;
 }
+export type InputMethod = 'keyboard' | 'voice' | 'mixed';
+export interface ReviewForm {
+  form: FormKey;
+  answers: { value: string; coverageTargetIds: string[] }[];
+}
+export interface ReviewSnapshot {
+  dialect: Dialect;
+  language: 'es' | 'en';
+  forms: ReviewForm[];
+}
+export interface ReviewDraft {
+  fieldMethods?: InputMethod[];
+  questionId: string;
+  values: string[];
+  inputMethod: InputMethod;
+  assisted: boolean;
+}
 export interface Question {
+  review?: ReviewSnapshot;
   coverageVersion?: string;
   matchingPairs?: MatchingPair[];
   id: string;
@@ -128,6 +152,9 @@ export interface Question {
   retryOf?: string;
 }
 export interface AnswerInput {
+  fieldMethods?: InputMethod[];
+  inputMethod?: InputMethod;
+  voiceConfirmed?: boolean;
   attemptId: AttemptId;
   sessionId: SessionId;
   questionId: string;
@@ -254,6 +281,7 @@ export interface ResolvedSelection {
   reasons: string[];
 }
 export interface StudySession {
+  reviewDraft?: ReviewDraft;
   id: SessionId;
   profileId: ProfileId;
   planId: string | null;
@@ -269,6 +297,8 @@ export interface StudySession {
   completedAt: ISOInstant | null;
 }
 export interface AppSettings {
+  reviewCheck?: 'automatic' | 'manual';
+  reviewLanguage?: 'es' | 'en';
   strictIpa?: boolean;
   showSources?: boolean;
   showTechnicalDetails?: boolean;

@@ -1,3 +1,4 @@
+import { makeReviewQuestion } from './verb-review';
 import { spokenForm } from '../audio/verb-audio';
 import { createId } from '../../shared/identity/create-id';
 import type {
@@ -17,6 +18,7 @@ export interface GenerationInput {
   modes: QuestionMode[];
   dialect: Dialect;
   allowFixtures: boolean;
+  reviewLanguage?: 'es' | 'en';
 }
 export interface QuestionGenerationResult {
   questions: Question[];
@@ -51,6 +53,18 @@ export function generateQuestions(
       continue;
     }
     for (const mode of input.modes) {
+      if (mode === 'verb_review') {
+        if (input.skills.includes('recall')) {
+          const question = makeReviewQuestion(v, input.dialect, input.reviewLanguage ?? 'es');
+          if (question) result.questions.push(question);
+          else
+            result.unavailable.push({
+              verbId: v.id,
+              reason: 'Faltan formas válidas para el dialecto elegido.',
+            });
+        }
+        continue;
+      }
       const skills: EvaluatedSkill[] =
         mode === 'flashcards'
           ? ['recall']

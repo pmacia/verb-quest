@@ -20,6 +20,27 @@ export const questionSchema = object(
     verbId: string,
     contentVersion: string,
     coverageVersion: string,
+    review: object({
+      dialect: enumeration('uk', 'us'),
+      language: enumeration('es', 'en'),
+      forms: {
+        type: 'array',
+        minItems: 3,
+        maxItems: 3,
+        prefixItems: ['base', 'pastSimple', 'pastParticiple'].map((name) =>
+          object({
+            form: { const: name },
+            answers: {
+              ...array(
+                object({ value: string, coverageTargetIds: { ...array(string), minItems: 1 } }),
+              ),
+              minItems: 1,
+            },
+          }),
+        ),
+        items: false,
+      },
+    }),
     matchingPairs: array(
       object({
         id: string,
@@ -37,6 +58,7 @@ export const questionSchema = object(
       'audio_detective',
       'sentence_gap',
       'written_recall',
+      'verb_review',
     ),
     skill,
     target: form,
@@ -51,12 +73,22 @@ export const questionSchema = object(
     isWritten: boolean,
     retryOf: string,
   },
-  ['audioText', 'visualPrompt', 'retryOf', 'coverageVersion', 'matchingPairs'],
+  ['audioText', 'visualPrompt', 'retryOf', 'coverageVersion', 'matchingPairs', 'review'],
 );
+Object.assign(questionSchema, {
+  allOf: [
+    {
+      if: { properties: { mode: { const: 'verb_review' } } },
+      then: { required: ['review'], properties: { skill: { const: 'recall' } } },
+    },
+  ],
+});
 export const entitySchemas = {
   profile: object({ id: string, name: string, timeZone: string, createdAt: instant }),
   settings: object(
     {
+      reviewCheck: enumeration('automatic', 'manual'),
+      reviewLanguage: enumeration('es', 'en'),
       strictIpa: boolean,
       showSources: boolean,
       showTechnicalDetails: boolean,
@@ -84,7 +116,7 @@ export const entitySchemas = {
         maxRetryPerQuestion: { const: 1 },
       }),
     },
-    ['strictIpa', 'showSources', 'showTechnicalDetails'],
+    ['strictIpa', 'showSources', 'showTechnicalDetails', 'reviewCheck', 'reviewLanguage'],
   ),
   list: object({
     id: string,
@@ -97,6 +129,26 @@ export const entitySchemas = {
     {
       id: string,
       profileId: string,
+      reviewDraft: object(
+        {
+          fieldMethods: {
+            type: 'array',
+            items: enumeration('keyboard', 'voice', 'mixed'),
+            minItems: 3,
+            maxItems: 3,
+          },
+          questionId: string,
+          values: {
+            type: 'array',
+            items: { type: 'string', maxLength: 100 },
+            minItems: 3,
+            maxItems: 3,
+          },
+          inputMethod: enumeration('keyboard', 'voice', 'mixed'),
+          assisted: boolean,
+        },
+        ['fieldMethods'],
+      ),
       planId: nullable(string),
       planContext: object(
         {
@@ -116,10 +168,18 @@ export const entitySchemas = {
       createdAt: instant,
       completedAt: nullable(instant),
     },
-    ['planContext'],
+    ['planContext', 'reviewDraft'],
   ),
   attempt: object(
     {
+      fieldMethods: {
+        type: 'array',
+        items: enumeration('keyboard', 'voice', 'mixed'),
+        minItems: 3,
+        maxItems: 3,
+      },
+      inputMethod: enumeration('keyboard', 'voice', 'mixed'),
+      voiceConfirmed: boolean,
       attemptId: string,
       sessionId: string,
       questionId: string,
@@ -144,6 +204,7 @@ export const entitySchemas = {
         'audio_detective',
         'sentence_gap',
         'written_recall',
+        'verb_review',
       ),
       evidenceKind: enumeration('objective', 'self_report'),
       correct: nullable(boolean),
@@ -153,7 +214,7 @@ export const entitySchemas = {
       localDate: date,
       snapshot: questionSchema,
     },
-    ['selfRating', 'visualFallback', 'superseded'],
+    ['selfRating', 'visualFallback', 'superseded', 'inputMethod', 'voiceConfirmed', 'fieldMethods'],
   ),
   progress: object(
     {

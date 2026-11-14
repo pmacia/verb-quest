@@ -3,6 +3,12 @@ import { spokenFormText } from '../audio/verb-audio';
 
 /** Read only the English solution from the question snapshot, never its Spanish feedback. */
 export function getSolutionAudioText(question: Question): string {
+  if (question.review)
+    return question.review.forms
+      .map((form) =>
+        form.answers.map((answer) => spokenFormText(answer.value, form.form)).join(', '),
+      )
+      .join('. ');
   if (question.mode === 'audio_detective' && question.audioText) return question.audioText;
   if (question.mode === 'matching' && question.matchingPairs)
     return question.matchingPairs

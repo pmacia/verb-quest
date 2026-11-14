@@ -12,6 +12,8 @@ export const defaultLearning = {
 export function defaultSettings(p: Profile): AppSettings {
   return {
     profileId: p.id,
+    reviewCheck: 'automatic',
+    reviewLanguage: 'es',
     strictIpa: false,
     showSources: false,
     showTechnicalDetails: false,

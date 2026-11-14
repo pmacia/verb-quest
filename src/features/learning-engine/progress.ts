@@ -74,7 +74,12 @@ export function applyAttempt(
   const apt =
     a.correct === true &&
     !a.assisted &&
-    (!['recall', 'spelling'].includes(a.skill) || (a.isWritten && !a.hasOptions));
+    (!['recall', 'spelling'].includes(a.skill) ||
+      (a.isWritten && !a.hasOptions) ||
+      (a.mode === 'verb_review' &&
+        a.skill === 'recall' &&
+        (a.inputMethod === 'voice' || a.inputMethod === 'mixed') &&
+        !a.hasOptions));
   if (!apt || p.lastAdvanceDate === a.localDate || (p.dueDate && a.localDate < p.dueDate)) return p;
   p.stage = Math.min(4, p.stage + 1) as SkillProgress['stage'];
   p.lastAdvanceDate = a.localDate;

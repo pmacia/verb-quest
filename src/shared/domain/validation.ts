@@ -29,7 +29,7 @@ Object.assign(planSchema.properties, {
   difficulty: { enum: ['all', 'introductory', 'intermediate', 'advanced'] },
   selectionPolicy: { const: 'resolve_at_start' },
 });
-planSchema.properties.questionModes.items.enum.push('written_recall');
+planSchema.properties.questionModes.items.enum.push('written_recall', 'verb_review');
 planSchema.allOf = ['course', 'saved_list', 'manual', 'filter', 'imported'].map((type) => ({
   if: { properties: { source: { properties: { type: { const: type } } } } },
   then: {

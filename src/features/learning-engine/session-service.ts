@@ -10,6 +10,7 @@ import type {
   QuestionMode,
   EvaluatedSkill,
   StudyPlan,
+  ReviewDraft,
 } from '../../shared/domain/types';
 import { toLocalDate } from '../../shared/time/calendar';
 import { generateQuestions } from '../question-engine/generate';
@@ -28,6 +29,7 @@ export type SessionRequest =
   | { kind: 'plan'; profileId: string; planId: string; listId?: string }
   | {
       kind: 'free';
+      reviewLanguage?: 'es' | 'en';
       profileId: string;
       verbIds: string[];
       planId?: string;
@@ -111,6 +113,10 @@ export async function startSession(
         modes: plan.questionModes,
         dialect: settings.dialect,
         allowFixtures: (await repos.meta.get('datasetKind'))?.value === 'fixture',
+        reviewLanguage:
+          input.kind === 'free'
+            ? (input.reviewLanguage ?? settings.reviewLanguage ?? 'es')
+            : (settings.reviewLanguage ?? 'es'),
       },
       rng,
     );
@@ -119,7 +125,16 @@ export async function startSession(
       if (issues.length) throw Error(issues.map((i) => i.message).join(' '));
     }
     const session = buildSession(
-      { profileId: profile.id, plan, selection, questions: generated.questions, progress, today },
+      {
+        profileId: profile.id,
+        plan,
+        selection,
+        questions: generated.questions,
+        progress,
+        today,
+        fullReview:
+          input.kind === 'free' && input.modes.length === 1 && input.modes[0] === 'verb_review',
+      },
       clock,
       rng,
     );
@@ -212,12 +227,26 @@ export async function submitAnswer(repos: AppRepositories, input: AnswerInput, c
           }
         : q;
     const result = evaluateAnswer(effective, input);
+    const hasVoice =
+      !!input.fieldMethods?.some((method) => method !== 'keyboard') ||
+      (input.inputMethod !== undefined && input.inputMethod !== 'keyboard');
+    if (q.mode === 'verb_review' && hasVoice && !result.correct && !input.voiceConfirmed)
+      throw Error('Revisa lo que ha entendido el micrófono antes de comprobar.');
     const currentRevision = learningRevision(entry.verb, effective.skill);
     const superseded = effective.coverageVersion
       ? effective.coverageVersion !== currentRevision
       : effective.contentVersion !== entry.verb.contentVersion;
     const a: Attempt = {
       ...input,
+      ...(q.mode === 'verb_review' && input.fieldMethods
+        ? {
+            inputMethod: input.fieldMethods.every((method) => method === 'keyboard')
+              ? ('keyboard' as const)
+              : input.fieldMethods.every((method) => method === 'voice')
+                ? ('voice' as const)
+                : ('mixed' as const),
+          }
+        : {}),
       superseded,
       at,
       profileId: s.profileId,
@@ -226,12 +255,15 @@ export async function submitAnswer(repos: AppRepositories, input: AnswerInput, c
       contentVersion: q.contentVersion,
       skill: effective.skill,
       target: q.target,
-      coverageTargetIds: q.coverageTargetIds,
+      coverageTargetIds:
+        q.mode === 'verb_review' && 'coverageTargetIds' in result
+          ? (result.coverageTargetIds ?? [])
+          : q.coverageTargetIds,
       mode: effective.mode,
       evidenceKind: effective.evidenceKind,
       correct: result.correct,
       hasOptions: q.options.length > 0,
-      isWritten: q.isWritten,
+      isWritten: q.mode === 'verb_review' ? !hasVoice : q.isWritten,
       assisted: result.assisted,
       localDate: toLocalDate(at, settings.timeZone),
       snapshot: structuredClone(effective),
@@ -261,13 +293,21 @@ export async function submitAnswer(repos: AppRepositories, input: AnswerInput, c
     await repos.awards.bulkPut(
       computeAwards({ previous: [before], next: [after], activity: [], existing: existingAwards }),
     );
+    delete s.reviewDraft;
     s.attemptIds.push(a.attemptId);
     s.cursor++;
     s.status = 'active';
     const root = q.retryOf ?? q.id;
-    if (!superseded && a.correct === false && !s.retriedQuestionIds.includes(root)) {
-      s.queue.push({ ...q, id: createId(), retryOf: root });
-      s.retriedQuestionIds.push(root);
+    if (
+      !superseded &&
+      a.correct === false &&
+      (q.mode === 'verb_review' || !s.retriedQuestionIds.includes(root))
+    ) {
+      const retry = { ...q, id: createId(), retryOf: root };
+      if (q.mode === 'verb_review')
+        s.queue.splice(Math.min(s.cursor + 3, s.queue.length), 0, retry);
+      else s.queue.push(retry);
+      if (!s.retriedQuestionIds.includes(root)) s.retriedQuestionIds.push(root);
     }
     await repos.sessions.put(s);
     return {
@@ -332,5 +372,29 @@ export async function completeSession(repos: AppRepositories, id: string, clock:
       correct: attempts.filter((a) => a.correct === true).length,
       skills: [...new Set(attempts.map((a) => a.skill))],
     };
+  });
+}
+
+export async function saveReviewDraft(
+  repos: AppRepositories,
+  sessionId: string,
+  draft: ReviewDraft,
+) {
+  if (
+    draft.values.length !== 3 ||
+    draft.values.some((value) => typeof value !== 'string' || value.length > 100)
+  )
+    throw Error('Borrador de repaso no válido');
+  await repos.runAtomic(async () => {
+    const session = await repos.sessions.get(sessionId);
+    if (
+      !session ||
+      session.status === 'completed' ||
+      session.queue[session.cursor]?.id !== draft.questionId ||
+      session.queue[session.cursor]?.mode !== 'verb_review'
+    )
+      return;
+    session.reviewDraft = structuredClone(draft);
+    await repos.sessions.put(session);
   });
 }

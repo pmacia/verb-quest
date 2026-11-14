@@ -1,6 +1,7 @@
+import { VerbReviewGame } from './VerbReviewGame';
 import { AudioDetectiveGame } from './AudioDetectiveGame';
 import { SentenceGapGame } from './SentenceGapGame';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useApp } from '../../app/app-context';
 import {
@@ -8,6 +9,7 @@ import {
   pauseSession,
   completeSession,
   resumeSession,
+  saveReviewDraft,
 } from '../learning-engine/session-service';
 import { systemClock } from '../../shared/time/clock';
 import { skillLabels } from '../progress/selectors';
@@ -30,17 +32,21 @@ export function SessionShell({ session }: { session: StudySession }) {
     correct: boolean | null;
     text: string;
     autoAudio: boolean;
+    reviewResponse?: GameResponse;
   } | null>(null);
+  const draftWrite = useRef<Promise<unknown>>(Promise.resolve());
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [paused, setPaused] = useState(false);
   const [revealedQuestionId, setRevealedQuestionId] = useState<string | null>(null);
   const question = feedback?.question ?? session.queue[session.cursor];
+  const reviewPending = new Set(session.queue.slice(session.cursor).map((q) => q.verbId)).size;
   async function saveAction(action: () => Promise<void>) {
     if (busy) return;
     setBusy(true);
     setError('');
     try {
+      await draftWrite.current;
       await action();
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
@@ -79,7 +85,10 @@ export function SessionShell({ session }: { session: StudySession }) {
         question,
         correct: r.attempt.correct,
         text: r.feedback,
-        autoAudio: !response.visualFallback,
+        autoAudio:
+          !response.visualFallback &&
+          (question.mode !== 'verb_review' || r.attempt.correct === false),
+        reviewResponse: response,
       });
       await refresh();
     } catch (e) {
@@ -140,17 +149,19 @@ export function SessionShell({ session }: { session: StudySession }) {
       </div>
     );
   const Exercise =
-    question.mode === 'flashcards'
-      ? FlashcardsGame
-      : question.mode === 'quiz'
-        ? QuizGame
-        : question.mode === 'matching'
-          ? MatchingGame
-          : question.mode === 'audio_detective'
-            ? AudioDetectiveGame
-            : question.mode === 'sentence_gap'
-              ? SentenceGapGame
-              : WrittenRecallExercise;
+    question.mode === 'verb_review'
+      ? VerbReviewGame
+      : question.mode === 'flashcards'
+        ? FlashcardsGame
+        : question.mode === 'quiz'
+          ? QuizGame
+          : question.mode === 'matching'
+            ? MatchingGame
+            : question.mode === 'audio_detective'
+              ? AudioDetectiveGame
+              : question.mode === 'sentence_gap'
+                ? SentenceGapGame
+                : WrittenRecallExercise;
   return (
     <>
       <div className="page-heading">
@@ -177,28 +188,48 @@ export function SessionShell({ session }: { session: StudySession }) {
           </button>
         </div>
       </div>
-      <section className="panel session-card">
+      <section className={`panel session-card${question.review ? ' vr-session' : ''}`}>
         <div className="row small muted">
-          <span>Tu sesión de hoy</span>
           <span>
-            {Math.min(session.cursor + 1, session.queue.length)} / {session.queue.length}
+            {question.mode === 'verb_review' ? 'Repaso libre · tres formas' : 'Tu sesión de hoy'}
+          </span>
+          <span>
+            {question.mode === 'verb_review'
+              ? `${reviewPending} ${reviewPending === 1 ? 'verbo pendiente' : 'verbos pendientes'}`
+              : `${Math.min(session.cursor + 1, session.queue.length)} / ${session.queue.length}`}
           </span>
         </div>
-        <progress
-          max={session.queue.length || 1}
-          value={session.cursor}
-          aria-label="Avance de la sesión"
-        />
-        <h2 className="question-prompt" lang={question.mode === 'sentence_gap' ? 'en' : 'es'}>
+        {question.mode !== 'verb_review' && (
+          <progress
+            max={session.queue.length || 1}
+            value={session.cursor}
+            aria-label="Avance de la sesión"
+          />
+        )}
+        <h2
+          className="question-prompt"
+          lang={question.review?.language ?? (question.mode === 'sentence_gap' ? 'en' : 'es')}
+        >
           {question.prompt}
         </h2>
-        {!feedback && (
+        {(!feedback || question.mode === 'verb_review') && (
           <Exercise
             key={`exercise:${question.id}`}
             question={question}
             onSubmit={submit}
             disabled={busy}
             onReveal={() => setRevealedQuestionId(question.id)}
+            reviewDraft={
+              session.reviewDraft?.questionId === question.id ? session.reviewDraft : undefined
+            }
+            reviewFeedback={feedback?.reviewResponse}
+            onReviewDraft={(draft) => {
+              draftWrite.current = saveReviewDraft(repos, session.id, draft).catch(() =>
+                setError(
+                  'No se ha podido guardar el borrador. Mantén esta página abierta e inténtalo de nuevo.',
+                ),
+              );
+            }}
           />
         )}
         <p role="status" className="small muted">
@@ -223,7 +254,11 @@ export function SessionShell({ session }: { session: StudySession }) {
             </h3>
             <p>{feedback.text}</p>
             {feedback.correct === false && (
-              <p>Volverá a aparecer al final y mañana tendrás un repaso.</p>
+              <p>
+                {question.mode === 'verb_review'
+                  ? 'Volverá a aparecer más adelante en esta partida. Puedes pausar o terminar cuando quieras.'
+                  : 'Volverá a aparecer al final y mañana tendrás un repaso.'}
+              </p>
             )}
           </div>
         )}
@@ -232,6 +267,8 @@ export function SessionShell({ session }: { session: StudySession }) {
             key={`solution-audio:${question.id}`}
             text={getSolutionAudioText(question)}
             label="Escuchar solución"
+            dialect={question.review?.dialect}
+            forceDialect={!!question.review}
             iconOnly
             autoPlay={feedback?.autoAudio ?? true}
           />

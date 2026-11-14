@@ -1,5 +1,6 @@
 export function Icon({ name, size = 22 }: { name: string; size?: number }) {
   const paths: Record<string, string> = {
+    mic: 'M9 5a3 3 0 0 1 6 0v7a3 3 0 0 1-6 0ZM5 10v2a7 7 0 0 0 14 0v-2M12 19v3m-4 0h8',
     save: 'M5 3h12l4 4v14H3V3Zm2 0v6h10V3M7 21v-8h10v8',
     archive: 'M3 4h18v5H3Zm2 5v12h14V9M9 13h6',
     info: 'M12 17v-5M12 7h.01M22 12a10 10 0 1 0-20 0 10 10 0 0 0 20 0Z',

@@ -1,6 +1,6 @@
 # Diseño: Repaso de verbos
 
-Estado: propuesta completa para aprobación. Todavía no implementada.
+Estado: aprobado por el usuario e implementado el 14 de noviembre de 2026. Comprobación del micrófono en dispositivos físicos pendiente; véanse el plan de implementación y el README.
 
 ## Objetivo y acuerdos
 

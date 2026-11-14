@@ -1,6 +1,6 @@
 # VerbQuest
 
-Aplicación educativa para practicar verbos irregulares en inglés, con interfaz en español y contenidos orientados a la ESO. Incluye catálogo editable, planes, cinco juegos y repaso espaciado por habilidad.
+Aplicación educativa para practicar verbos irregulares en inglés, con interfaz en español y contenidos orientados a la ESO. Incluye catálogo editable, planes, seis juegos y repaso espaciado por habilidad.
 
 **Estado:** MVP local para navegador. Los datos se guardan en el dispositivo; no se necesitan cuentas, claves API ni un backend. Las recomendaciones por curso son orientativas y editables, no un listado curricular oficial.
 
@@ -82,6 +82,27 @@ Sin `--strictPort`, Vite puede escoger otro puerto si el configurado está ocupa
 | Quiz de verbos    | Reconocimiento con opciones de respuesta                           |
 | Audio Detective   | Escucha; ofrece alternativa visual si no puedes utilizar audio     |
 | Completa la frase | Uso del verbo en un contexto escrito                               |
+| Repaso de verbos  | Memoria de infinitivo, pasado y participio, por teclado o voz       |
+
+### Repaso de verbos
+
+En **Juegos → Repaso de verbos**, elige biblioteca, lista o selección manual y el idioma de la pista: castellano o inglés. Responde en las casillas **Infinitivo**, **Pasado** y **Participio**. La partida libre incluye un verbo por cada elemento seleccionado y permite pausar o terminar cuando quieras; la duración configurada es orientativa.
+
+Puedes escribir o mantener pulsado **Mantén para hablar** y decir, por ejemplo, `buy bought bought`. También hay un micrófono por casilla. Si el motor corta la escucha, las palabras recibidas permanecen editables; puedes continuar por una casilla o escribir. Para teclado y lectores de pantalla, el micrófono admite Espacio/Intro y el control **Terminar dictado**. El dispositivo deja de leer antes de abrir la escucha.
+
+En **Configuración → Voz y repaso de verbos**, elige y guarda:
+
+- **Automática con ayuda** (predeterminada): comprueba una respuesta final válida si sus alternativas son compatibles. Una captura incompleta, discrepante o con demasiadas interpretaciones pide revisión y no registra un fallo automáticamente.
+- **Revisar antes de comprobar**: conserva la transcripción en las tres casillas hasta pulsar **Comprobar**.
+- **Idioma preferido de la pista**: castellano o inglés; se puede cambiar al preparar una partida. El dialecto UK/US, velocidad y volumen utilizan los ajustes de voz habituales.
+
+La escritura siempre usa **Comprobar**. Cada columna indica el resultado con texto e icono además del color; cuando fallas, se leen las tres formas correctas. El verbo vuelve tras hasta tres preguntas pendientes, tantas veces como haga falta. Las repeticiones después de ver la solución son práctica asistida. **Pausar** conserva la cola y el borrador; **Terminar sesión** conserva lo registrado y cierra esa cola definitivamente. Se puede volver desde Inicio a la sesión pendiente.
+
+Se aceptan las variantes del dialecto elegido, formas comunes y homófonos de voz controlados, conservando el orden de las columnas. Los errores escritos no se corrigen por similitud. Las sugerencias aproximadas son ayudas explícitas, no aciertos objetivos; `come` nunca se sustituye automáticamente por `came`. La voz y las respuestas mixtas solo pueden aportar evidencia de **memoria**, no de ortografía ni pronunciación. Con pista inglesa no se acredita la base que ya se ha proporcionado. Se mantienen los límites diarios y los intervalos del aprendizaje; el resto de juegos conserva su límite de reintentos.
+
+El dictado utiliza `SpeechRecognition`/`webkitSpeechRecognition`, sin API de pago ni clave externa. Su disponibilidad depende del navegador, permisos, contexto HTTPS y servicio del dispositivo; puede necesitar Internet y enviar audio al proveedor del navegador. La aplicación no guarda grabaciones. Una denegación o problema de captura conserva el teclado y no crea un intento fallido; si tu teclado tiene dictado, también puedes utilizarlo. No se reinicia el micrófono automáticamente ni se repiten solicitudes de permiso en bucle.
+
+**Comprobación en dispositivos reales pendiente:** las pruebas automáticas verifican el servicio con un reconocedor simulado en Chromium, Firefox y WebKit. Para verificar el motor real, abre por HTTPS en Safari de iPhone y Chrome de Android, también como PWA instalada; comprueba primer permiso, pausas entre palabras, liberación durante el permiso, denegación, pérdida de red y volver tras bloquear el teléfono. Hasta realizar esa prueba, no se garantiza el comportamiento del micrófono en un modelo concreto.
 
 Al revelar una tarjeta o mostrar la corrección de un ejercicio se reproduce la solución en inglés. En **Completa la frase** se escucha la frase completa y en **Emparejar formas**, las formas correctas. El altavoz permite repetirla, con controles de pausa y detención; avanzar o salir detiene la reproducción. Se respetan los ajustes de voz, dialecto, volumen y velocidad. La alternativa visual de Audio Detective no inicia audio automáticamente. Esta escucha de apoyo no añade evidencias de dominio ni XP.
 
@@ -259,7 +280,7 @@ Pulsa **Guardar preferencias** para aplicar los cambios. Sin estas opciones, se 
 
 ## Audio y pronunciación
 
-La reproducción utiliza síntesis de voz del navegador/sistema. No se usa micrófono ni se redistribuyen grabaciones de terceros.
+La reproducción utiliza síntesis de voz del navegador/sistema. El micrófono se activa únicamente al elegir dictar en **Repaso de verbos**; no se redistribuyen grabaciones de terceros. Las pistas castellanas buscan una voz española y las respuestas se leen con el dialecto inglés elegido, cuando el dispositivo dispone de esas voces.
 
 - Puedes configurar dialecto, voz, volumen y velocidad. La voz disponible depende del dispositivo y puede necesitar Internet.
 - Cada frase de ejemplo tiene un **icono de altavoz** a su derecha para escucharla completa. Permite pausar, continuar y detener; usa los mismos ajustes y la misma opción de detalles técnicos que los demás controles. Escuchar ejemplos no añade XP ni acredita dominio.

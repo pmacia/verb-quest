@@ -5,6 +5,7 @@ export interface VoiceInfo {
   localService: boolean;
 }
 export interface SpeechRequest {
+  language?: 'en' | 'es';
   forceDialect?: boolean;
   text: string;
   voiceURI: string | null;
@@ -41,7 +42,8 @@ export function createSpeechService(port: SpeechPort) {
     finish = null;
     f?.(result);
   }
-  const listVoices = () => port.getVoices().filter((v) => /^en(?:-|$)/i.test(v.lang));
+  const listVoices = (language: 'en' | 'es' = 'en') =>
+    port.getVoices().filter((v) => new RegExp(`^${language}(?:-|$)`, 'i').test(v.lang));
   return {
     listVoices,
     subscribeVoices(fn: () => void) {
@@ -57,8 +59,9 @@ export function createSpeechService(port: SpeechPort) {
       const settle = (result: SpeechResult) => {
         if (token === serial) done(result);
       };
-      const voices = listVoices();
-      const preferred = request.preferredDialect === 'uk' ? 'en-GB' : 'en-US';
+      const voices = listVoices(request.language ?? 'en');
+      const preferred =
+        request.language === 'es' ? 'es-ES' : request.preferredDialect === 'uk' ? 'en-GB' : 'en-US';
       const voice =
         voices.find(
           (v) =>

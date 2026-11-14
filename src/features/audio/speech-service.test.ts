@@ -84,3 +84,37 @@ it('explicit UK/US actions override an incompatible pinned voice', async () => {
     await s.play({ ...req, voiceURI: 'uk', preferredDialect: 'us', forceDialect: true }),
   ).toMatchObject({ voice: us, fallback: false });
 });
+
+it('reads Spanish prompts with a Spanish voice while keeping English voice defaults', async () => {
+  const languages: string[] = [];
+  const service = createSpeechService({
+    getVoices: () => [
+      { uri: 'english', name: 'English', lang: 'en-GB', localService: true },
+      { uri: 'spanish', name: 'Español', lang: 'es-ES', localService: true },
+    ],
+    onVoices: () => () => {},
+    speak: (request, callbacks) => {
+      languages.push(request.voice.lang);
+      callbacks.end();
+    },
+    pause() {},
+    resume() {},
+    cancel() {},
+  });
+  await service.play({
+    text: 'comprar',
+    language: 'es',
+    voiceURI: 'english',
+    preferredDialect: 'uk',
+    volume: 1,
+    rate: 1,
+  } as any);
+  await service.play({
+    text: 'buy',
+    voiceURI: 'english',
+    preferredDialect: 'uk',
+    volume: 1,
+    rate: 1,
+  });
+  expect(languages).toEqual(['es-ES', 'en-GB']);
+});

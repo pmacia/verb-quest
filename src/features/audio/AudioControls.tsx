@@ -9,12 +9,18 @@ export function AudioControls({
   onPlayed,
   iconOnly = false,
   autoPlay = false,
+  language = 'en',
+  dialect,
+  forceDialect = false,
 }: {
   text: string;
   label: string;
   onPlayed?: () => void;
   iconOnly?: boolean;
   autoPlay?: boolean;
+  language?: 'en' | 'es';
+  dialect?: 'uk' | 'us';
+  forceDialect?: boolean;
 }) {
   const { settings } = useApp();
   const service = getSpeechService();
@@ -29,7 +35,7 @@ export function AudioControls({
       currentRequest.current++;
       service.cancel();
     },
-    [service, text],
+    [service, text, language],
   );
   async function play() {
     const request = ++currentRequest.current;
@@ -40,7 +46,9 @@ export function AudioControls({
     const r = await service.play({
       text,
       voiceURI: settings.voiceURI,
-      preferredDialect: settings.dialect,
+      preferredDialect: dialect ?? settings.dialect,
+      language,
+      forceDialect,
       volume: settings.volume,
       rate: settings.rate,
     });
@@ -60,7 +68,7 @@ export function AudioControls({
   // Start once when this text is revealed, rather than when unrelated settings rerender.
   useEffect(() => {
     if (autoPlay && text.trim()) void play();
-  }, [autoPlay, text]);
+  }, [autoPlay, text, language]);
   return (
     <div className={`audio-controls${iconOnly ? ' audio-controls-compact' : ''}`}>
       <button

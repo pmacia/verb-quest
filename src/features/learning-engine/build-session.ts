@@ -16,6 +16,7 @@ export function buildSession(
     questions: Question[];
     progress: SkillProgress[];
     today: string;
+    fullReview?: boolean;
   },
   clock: Clock,
   rng: () => number,
@@ -40,9 +41,9 @@ export function buildSession(
       : rank(a) - rank(b) || date(a).localeCompare(date(b)) || a.localeCompare(b),
   );
   let added = 0;
-  const allowed = ids.filter(
-    (id) => ps(id).length > 0 || added++ < input.plan.schedule.newVerbsPerSession,
-  );
+  const allowed = input.fullReview
+    ? ids
+    : ids.filter((id) => ps(id).length > 0 || added++ < input.plan.schedule.newVerbsPerSession);
   const skills = ['recall', 'recognition', 'listening', 'spelling', 'context'] as const;
   const pools = allowed.map((id) => {
     const groups = skills.map((skill) =>
@@ -93,7 +94,7 @@ export function buildSession(
             )
           : 0),
     );
-  const limit = input.plan.schedule.minutesPerSession * 2;
+  const limit = input.fullReview ? queue.length : input.plan.schedule.minutesPerSession * 2;
   return {
     id: createId(),
     profileId: input.profileId,

@@ -1,6 +1,7 @@
 import { patternLabel } from '../catalog/classification-labels';
 import type { QuestionMode, StudyPlan, VerbList } from '../../shared/domain/types';
 export const modeLabels: Record<QuestionMode, string> = {
+  verb_review: 'Repaso de verbos',
   flashcards: 'Flashcards',
   matching: 'Emparejar',
   quiz: 'Quiz',

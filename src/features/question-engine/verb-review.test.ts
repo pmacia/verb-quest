@@ -76,7 +76,7 @@ it('keeps retries assisted even if the browser does not send a revealed flag', (
   ).toBe(true);
 });
 
-it('does not automatically choose an expected answer from conflicting speech alternatives', async () => {
+it('checks the displayed transcript without choosing a correct secondary alternative', async () => {
   const { resolveReviewSpeech } = await import('./verb-review');
   const verb = {
     ...buy,
@@ -88,6 +88,9 @@ it('does not automatically choose an expected answer from conflicting speech alt
     },
   };
   expect(resolveReviewSpeech(question(verb), ['come came come', 'came came come']).automatic).toBe(
+    true,
+  );
+  expect(resolveReviewSpeech(question(verb), ['came came come', 'come came come']).automatic).toBe(
     false,
   );
   expect(resolveReviewSpeech(question(), ['buy bought bought', 'by bought bought']).automatic).toBe(
@@ -150,6 +153,15 @@ it('snapshots only the selected dialect and keeps the tense-specific read sounds
   };
   expect(resolveReviewSpeech(question(read), ['reed red red']).automatic).toBe(true);
   expect(resolveReviewSpeech(question(read), ['red red red']).automatic).toBe(false);
+});
+it('automatically accepts the displayed be variants even when secondary interpretations differ', async () => {
+  const { resolveReviewSpeech } = await import('./verb-review');
+  const be = question(dataset.verbs.find((verb) => verb.id === 'be')!);
+  for (const transcript of ['be was/were been', 'be was were been']) {
+    const result = resolveReviewSpeech(be, [transcript, 'be were was been', 'bee was bean']);
+    expect(result.automatic).toBe(true);
+    expect(result.values).toEqual(['be', 'was / were', 'been']);
+  }
 });
 it('rejects imported review snapshots with columns in a different order', async () => {
   const { validate } = await import('../../shared/domain/validation');

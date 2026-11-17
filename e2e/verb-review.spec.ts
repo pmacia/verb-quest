@@ -259,7 +259,7 @@ test('keyboard review restores a paused draft, corrects columns and repeats unti
   await page.screenshot({ animations: 'disabled' });
   expect((await new AxeBuilder({ page }).include('main').analyze()).violations).toEqual([]);
 });
-test('automatic voice accepts equivalent alternatives but asks to review disagreement', async ({
+test('automatic voice checks the visible transcript and leaves incorrect primary answers for review', async ({
   page,
 }) => {
   await speechBrowser(page);
@@ -284,7 +284,7 @@ test('automatic voice accepts equivalent alternatives but asks to review disagre
   await finish(page);
   await start(page);
   await page.evaluate(() => {
-    (window as any).reviewSpeech.alternatives = ['buy bought bought', 'buy bot bought'];
+    (window as any).reviewSpeech.alternatives = ['buy bot bought', 'buy bought bought'];
   });
   await page.getByRole('button', { name: 'Dictar las tres formas', exact: true }).click();
   await expect(
@@ -292,6 +292,8 @@ test('automatic voice accepts equivalent alternatives but asks to review disagre
   ).toBeVisible();
   data = await records(page);
   expect(data.attempts).toHaveLength(1);
+  await expect(page.getByRole('textbox', { name: 'Pasado', exact: true })).toHaveValue('bot');
+  await page.getByRole('textbox', { name: 'Pasado', exact: true }).fill('bought');
   await page.getByRole('button', { name: 'Comprobar', exact: true }).click();
   await expect(page.getByRole('heading', { name: '¡Bien recordado!' })).toBeVisible();
   expect((await records(page)).attempts).toHaveLength(2);
@@ -376,4 +378,31 @@ test('denied microphone permission keeps keyboard input available without record
   await page.evaluate(() => (document.documentElement.dataset.theme = 'dark'));
   await page.screenshot({ animations: 'disabled' });
   expect((await new AxeBuilder({ page }).include('main').analyze()).violations).toEqual([]);
+});
+
+test('be with both past forms goes directly to OK after release despite secondary alternatives', async ({
+  page,
+}) => {
+  await speechBrowser(page);
+  await start(page, 'be');
+  await page.evaluate(() => {
+    (window as any).reviewSpeech.alternatives = [
+      'be was were been',
+      'be were was been',
+      'bee was bean',
+    ];
+  });
+  const mic = page.getByRole('button', { name: 'Dictar las tres formas', exact: true });
+  await mic.focus();
+  await page.keyboard.down('Space');
+  expect((await records(page)).attempts).toHaveLength(0);
+  await page.keyboard.up('Space');
+  await expect(page.getByRole('heading', { name: '¡Bien recordado!' })).toBeVisible();
+  await expect(page.getByRole('textbox', { name: 'Pasado', exact: true })).toHaveValue(
+    'was / were',
+  );
+  const attempts = (await records(page)).attempts;
+  expect(attempts).toHaveLength(1);
+  expect(attempts[0].coverageTargetIds).toContain('pastSimple:was');
+  expect(attempts[0].coverageTargetIds).toContain('pastSimple:were');
 });

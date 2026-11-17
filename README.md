@@ -92,7 +92,7 @@ Puedes escribir o mantener pulsado **Mantén para hablar** y decir, por ejemplo,
 
 En **Configuración → Voz y repaso de verbos**, elige y guarda:
 
-- **Automática con ayuda** (predeterminada): comprueba una respuesta final válida si sus alternativas son compatibles. Una captura incompleta, discrepante o con demasiadas interpretaciones pide revisión y no registra un fallo automáticamente.
+- **Automática con ayuda** (predeterminada): comprueba automáticamente la respuesta final que aparece en las casillas cuando las tres formas son válidas. Las interpretaciones secundarias no bloquean un acierto ni se usan para sustituir una respuesta principal incorrecta. Una captura incompleta, incorrecta o con demasiadas interpretaciones pide revisión y no registra un fallo automáticamente.
 - **Revisar antes de comprobar**: conserva la transcripción en las tres casillas hasta pulsar **Comprobar**.
 - **Idioma preferido de la pista**: castellano o inglés; se puede cambiar al preparar una partida. El dialecto UK/US, velocidad y volumen utilizan los ajustes de voz habituales.
 

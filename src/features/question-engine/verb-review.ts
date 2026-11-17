@@ -170,25 +170,16 @@ export function resolveReviewSpeech(
     field === undefined
       ? ['voice', 'voice', 'voice']
       : methods.map((method, index) => (index === field ? 'voice' : method));
-  const candidates = alternatives
-    .slice(0, 12)
-    .map((text) => speechDraftValues(question, text, values, field));
-  const evaluations = candidates.map((answer) =>
-    evaluateReview(question, { answer, fieldMethods }),
-  );
-  const keys = new Set(
-    evaluations.map((result) => JSON.stringify(result.columns.map((column) => column.canonical))),
-  );
-  const automatic =
-    alternatives.length <= 12 &&
-    evaluations.length > 0 &&
-    evaluations.every((result) => result.correct) &&
-    keys.size === 1;
+  // The first transcript is the answer shown to the learner. Check that same
+  // answer, rather than vetoing it because of unused secondary interpretations.
+  const displayed = alternatives.length
+    ? speechDraftValues(question, alternatives[0], values, field)
+    : values;
+  const evaluation = evaluateReview(question, { answer: displayed, fieldMethods });
+  const automatic = alternatives.length > 0 && alternatives.length <= 12 && evaluation.correct;
   return {
     automatic,
-    values: automatic
-      ? evaluations[0].columns.map((column) => column.canonical)
-      : (candidates[0] ?? values),
+    values: automatic ? evaluation.columns.map((column) => column.canonical) : displayed,
     fieldMethods,
   };
 }

@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'react';
+import { useId, useMemo, useRef } from 'react';
 import { useApp } from '../../app/app-context';
 import { Icon } from '../../shared/ui/Icon';
 import { AudioControls } from '../audio/AudioControls';
@@ -6,9 +6,12 @@ import { evaluateReview, reviewFormLabels, reviewSuggestion } from '../question-
 import { useReviewInput } from './use-review-input';
 import type { GameProps } from './exercises';
 import './verb-review.css';
+
 export function VerbReviewGame(props: GameProps) {
   const input = useReviewInput(props);
-  const { verbs } = useApp();
+  const { verbs, settings } = useApp();
+  const id = useId();
+  const help = useRef<HTMLDetailsElement>(null);
   const vocabulary = useMemo(
     () =>
       verbs.flatMap((verb) => [
@@ -27,17 +30,57 @@ export function VerbReviewGame(props: GameProps) {
     props.reviewFeedback && Array.isArray(props.reviewFeedback.answer)
       ? props.reviewFeedback.answer
       : input.draft.values;
-  function microphone(field?: number) {
+  const complete = values.every((value) => value.trim());
+  const voiceAvailable = input.supported && !input.blocked;
+  const hasDictation =
+    values.some((value) => value.trim()) && input.draft.inputMethod !== 'keyboard';
+  const canDiscard = input.canDiscard && hasDictation;
+  const dockHadCheck = useRef(false);
+  const showCheck = recording ? dockHadCheck.current : !voiceAvailable || complete || hasDictation;
+  const micHint =
+    input.state === 'preparing'
+      ? 'Preparando…'
+      : input.state === 'processing'
+        ? 'Procesando…'
+        : input.state === 'listening'
+          ? 'Suelta al terminar'
+          : 'Mantén para hablar';
+  function focusWriting() {
+    input.abort();
+    (fields.current.find((field) => !field?.value) ?? fields.current[0])?.focus();
+  }
+  function showHelp() {
+    if (help.current) {
+      help.current.open = !help.current.open;
+      if (help.current.open) help.current.scrollIntoView({ block: 'nearest', behavior: 'auto' });
+    }
+  }
+  function microphone(field?: number, repeat = false) {
+    const label =
+      field === undefined
+        ? repeat
+          ? 'Repetir dictado de las tres formas'
+          : 'Dictar las tres formas'
+        : `Dictar ${reviewFormLabels[field]}`;
     return (
       <button
         type="button"
-        className="secondary vr-mic"
-        aria-label={
-          field === undefined ? 'Dictar las tres formas' : `Dictar ${reviewFormLabels[field]}`
+        key={field === undefined ? (repeat ? 'repeat-mic' : 'main-mic') : `field-mic-${field}`}
+        className={
+          field !== undefined
+            ? 'vr-mic vr-field-mic'
+            : repeat
+              ? 'vr-side-action vr-repeat vr-mic'
+              : 'vr-mic vr-main-mic'
         }
+        aria-label={label}
+        title={label}
         aria-pressed={recording && input.field === field}
         disabled={
-          props.disabled || !!feedback || input.blocked || (recording && input.field !== field)
+          props.disabled ||
+          !!feedback ||
+          input.blocked ||
+          (recording && (input.field !== field || input.state === 'processing'))
         }
         onContextMenu={(event) => event.preventDefault()}
         onPointerDown={(event) => {
@@ -46,8 +89,9 @@ export function VerbReviewGame(props: GameProps) {
           try {
             event.currentTarget.setPointerCapture(event.pointerId);
           } catch {
-            /* The gesture can survive unavailable pointer capture. */
+            /* Capture is optional. */
           }
+          dockHadCheck.current = showCheck;
           input.start(field);
         }}
         onPointerUp={(event) => {
@@ -60,7 +104,10 @@ export function VerbReviewGame(props: GameProps) {
         onKeyDown={(event) => {
           if ([' ', 'Enter'].includes(event.key)) {
             event.preventDefault();
-            if (!event.repeat) input.start(field);
+            if (!event.repeat) {
+              dockHadCheck.current = showCheck;
+              input.start(field);
+            }
           }
         }}
         onKeyUp={(event) => {
@@ -70,59 +117,60 @@ export function VerbReviewGame(props: GameProps) {
           }
         }}
         onClick={(event) => {
-          if (event.detail === 0) input.start(field);
+          if (event.detail === 0) {
+            if (recording && input.field === field) input.stop();
+            else {
+              dockHadCheck.current = showCheck;
+              input.start(field);
+            }
+          }
         }}
       >
-        <Icon name="mic" size={17} />
-        {field === undefined && (
-          <span>
-            {recording
-              ? input.state === 'preparing'
-                ? 'Preparando…'
-                : input.state === 'processing'
-                  ? 'Procesando…'
-                  : 'Escuchando…'
-              : 'Mantén para hablar'}
-          </span>
+        {repeat ? (
+          <>
+            <span className="vr-side-circle">
+              <Icon name="mic" size={20} />
+            </span>
+            <span>Repetir</span>
+          </>
+        ) : (
+          <Icon name="mic" size={field === undefined ? 30 : 17} />
         )}
       </button>
     );
   }
   return (
-    <div className="verb-review-game">
-      {!feedback && (
-        <>
-          <div className="vr-prompt-audio" onClickCapture={input.abort}>
-            <AudioControls
-              text={props.question.prompt.replace(/·|\//g, ', ')}
-              label="Escuchar pregunta"
-              language={props.question.review?.language ?? 'es'}
-              dialect={props.question.review?.dialect}
-              forceDialect
-              iconOnly
-              autoPlay
-            />
-          </div>
-          <p className="small muted">
-            Responde con infinitivo, pasado y participio. Puedes escribir o dictar en inglés.
-          </p>
-        </>
-      )}
-      {!feedback && input.supported && !input.blocked && (
-        <div className="actions vr-actions">
-          {input.supported && !input.blocked && microphone()}
-          {recording && (
-            <button type="button" className="secondary" onClick={input.stop}>
-              <Icon name="stop" size={16} />
-              Terminar dictado
-            </button>
+    <div className={`verb-review-game${feedback ? ' has-feedback' : ''}`} data-state={input.state}>
+      <div className="vr-question">
+        <span className="vr-question-label">
+          {props.question.review?.language === 'en'
+            ? 'Recuerda las tres formas'
+            : '¿Cómo se dice en inglés?'}
+        </span>
+        <div className="vr-question-word">
+          <h2 className="question-prompt" lang={props.question.review?.language ?? 'es'}>
+            {props.question.prompt}
+          </h2>
+          {!feedback && (
+            <div className="vr-prompt-audio" onClickCapture={input.abort}>
+              <AudioControls
+                text={props.question.prompt.replace(/·|\//g, ', ')}
+                label="Escuchar pregunta"
+                language={props.question.review?.language ?? 'es'}
+                dialect={props.question.review?.dialect}
+                forceDialect
+                iconOnly
+                autoPlay
+              />
+            </div>
           )}
         </div>
-      )}
+        <p>Infinitivo, pasado y participio. Tú puedes.</p>
+      </div>
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          if (!feedback) void input.check();
+          if (!feedback && !recording && complete && !props.disabled) void input.check();
         }}
       >
         <div className="vr-columns">
@@ -138,10 +186,20 @@ export function VerbReviewGame(props: GameProps) {
               <div
                 className={`vr-column${result ? (result.correct ? ' is-correct' : ' is-incorrect') : ''}`}
                 key={index}
+                onClick={(event) => {
+                  if (!feedback && !(event.target as HTMLElement).closest('button'))
+                    fields.current[index]?.focus();
+                }}
               >
-                <label>
-                  <span>{reviewFormLabels[index]}</span>
+                <label htmlFor={`${id}-${index}`}>
+                  <span className="vr-form-number" aria-hidden="true">
+                    {index + 1}
+                  </span>
+                  {reviewFormLabels[index]}
+                </label>
+                <div className="vr-entry">
                   <input
+                    id={`${id}-${index}`}
                     aria-label={reviewFormLabels[index]}
                     ref={(element) => {
                       fields.current[index] = element;
@@ -151,13 +209,15 @@ export function VerbReviewGame(props: GameProps) {
                     autoComplete="off"
                     autoCapitalize="off"
                     spellCheck={false}
+                    placeholder="…"
                     lang="en"
                     readOnly={!!feedback}
                     disabled={props.disabled}
+                    onFocus={input.abort}
                     onChange={(event) => input.write(index, event.target.value)}
                   />
-                </label>
-                {!feedback && input.supported && !input.blocked && microphone(index)}
+                  {!feedback && voiceAvailable && microphone(index)}
+                </div>
                 {result && (
                   <p className="vr-column-result">
                     <Icon name={result.correct ? 'check' : 'close'} size={16} />
@@ -165,7 +225,7 @@ export function VerbReviewGame(props: GameProps) {
                       'Correcto'
                     ) : (
                       <>
-                        <span>Respuesta: </span>
+                        <span>Respuesta:</span>
                         <strong lang="en">{result.accepted.join(' / ')}</strong>
                       </>
                     )}
@@ -174,7 +234,7 @@ export function VerbReviewGame(props: GameProps) {
                 {suggestion && (
                   <button
                     type="button"
-                    className="secondary vr-suggestion"
+                    className="vr-suggestion"
                     onClick={() => input.suggest(index, suggestion)}
                   >
                     Usar «{suggestion}»{' '}
@@ -187,51 +247,105 @@ export function VerbReviewGame(props: GameProps) {
         </div>
         {!feedback && (
           <>
-            <div className="actions vr-actions">
+            <div
+              className="vr-dock"
+              data-state={input.state}
+              onPointerDownCapture={(event) => {
+                // Keep the mobile dock in place while a focused input's keyboard is open.
+                // Losing input focus on pointerdown would move a sticky button before click.
+                if ((event.target as HTMLElement).closest('button')) event.preventDefault();
+              }}
+            >
               <button
                 type="button"
-                className="secondary"
-                onClick={() => {
-                  input.abort();
-                  fields.current.find((field) => !field?.value)?.focus();
-                  if (fields.current.every((field) => field?.value)) fields.current[0]?.focus();
-                }}
+                className="vr-side-action"
+                disabled={props.disabled || recording}
+                aria-label={canDiscard ? 'Descartar dictado' : 'Escribir'}
+                onClick={canDiscard ? input.discard : focusWriting}
               >
-                <Icon name="edit" size={16} />
-                Escribir
+                <span className="vr-side-circle">
+                  <Icon name={canDiscard ? 'close' : 'edit'} size={20} />
+                </span>
+                <span>{canDiscard ? 'Descartar' : 'Escribir'}</span>
               </button>
-              <button
-                type="submit"
-                disabled={props.disabled || recording || values.some((value) => !value.trim())}
-              >
-                <Icon name="check" size={16} />
-                Comprobar
-              </button>
+              <div className="vr-central">
+                {showCheck ? (
+                  <button
+                    type="submit"
+                    key="check-answer"
+                    className="vr-check"
+                    aria-label="Comprobar"
+                    title="Comprobar"
+                    disabled={props.disabled || recording || !complete}
+                  >
+                    <Icon name="check" size={28} />
+                  </button>
+                ) : (
+                  microphone()
+                )}
+                <span className="vr-control-hint">
+                  {recording ? micHint : showCheck ? 'Comprobar' : micHint}
+                </span>
+              </div>
+              {showCheck && voiceAvailable ? (
+                microphone(undefined, true)
+              ) : !showCheck ? (
+                <button
+                  type="submit"
+                  className="vr-side-action vr-side-check"
+                  aria-label="Comprobar"
+                  disabled={props.disabled || recording || !complete}
+                >
+                  <span className="vr-side-circle">
+                    <Icon name="check" size={20} />
+                  </span>
+                  <span>Comprobar</span>
+                </button>
+              ) : (
+                <button type="button" className="vr-side-action" onClick={showHelp}>
+                  <span className="vr-side-circle">
+                    <Icon name="info" size={20} />
+                  </span>
+                  <span>Ayuda</span>
+                </button>
+              )}
             </div>
-            <p className="vr-status small" role="status">
-              {input.heard ? `Estoy escuchando: ${input.heard}` : input.message}
+            <p className="vr-status" role="status">
+              {input.heard
+                ? `Estoy escuchando: ${input.heard}`
+                : input.message ||
+                  (recording ? micHint : 'También puedes escribir en las tres casillas.')}
             </p>
             {!input.supported && (
-              <p className="small muted">
+              <p className="vr-fallback">
                 Este navegador no ofrece dictado aquí. Puedes escribir o usar el micrófono de tu
                 teclado si está disponible.
               </p>
             )}
             {input.blocked && (
-              <button type="button" className="secondary" onClick={input.unblock}>
+              <button type="button" className="secondary vr-retry" onClick={input.unblock}>
                 Volver a probar el micrófono
               </button>
             )}
-            {input.supported && (
-              <details className="vr-help">
-                <summary>Ayuda con el micrófono</summary>
-                <p>
-                  Mantén el botón mientras hablas y suéltalo al terminar. Si la escucha se corta,
-                  conserva las casillas y continúa en una de ellas. El dictado puede necesitar
-                  Internet y utilizar el servicio del navegador. Puedes usar siempre el teclado.
-                </p>
-              </details>
-            )}
+            <div className="vr-footer">
+              <span>
+                {props.question.review?.dialect === 'us' ? 'Inglés americano' : 'Inglés británico'}{' '}
+                ·{' '}
+                {settings.reviewCheck === 'manual' ? 'Revisión manual' : 'Comprobación automática'}
+              </span>
+              <button type="button" onClick={showHelp} aria-controls={`${id}-help`}>
+                <Icon name="info" size={15} /> Dictado
+              </button>
+            </div>
+            <details className="vr-help" ref={help} id={`${id}-help`}>
+              <summary>Ayuda con el micrófono</summary>
+              <p>
+                Mantén el botón mientras hablas y suéltalo al terminar. Con un lector de pantalla,
+                activa el botón para empezar y actívalo de nuevo para terminar. Si la escucha se
+                corta, conserva las casillas y continúa en una de ellas. El dictado puede necesitar
+                Internet y utilizar el servicio del navegador. Puedes usar siempre el teclado.
+              </p>
+            </details>
           </>
         )}
       </form>

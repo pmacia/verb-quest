@@ -88,7 +88,7 @@ Sin `--strictPort`, Vite puede escoger otro puerto si el configurado está ocupa
 
 En **Juegos → Repaso de verbos**, elige biblioteca, lista o selección manual y el idioma de la pista: castellano o inglés. Responde en las casillas **Infinitivo**, **Pasado** y **Participio**. La partida libre incluye un verbo por cada elemento seleccionado y permite pausar o terminar cuando quieras; la duración configurada es orientativa.
 
-Puedes escribir o mantener pulsado **Mantén para hablar** y decir, por ejemplo, `buy bought bought`. También hay un micrófono por casilla. Si el motor corta la escucha, las palabras recibidas permanecen editables; puedes continuar por una casilla o escribir. Para teclado y lectores de pantalla, el micrófono admite Espacio/Intro y el control **Terminar dictado**. El dispositivo deja de leer antes de abrir la escucha.
+Puedes escribir o mantener pulsado **Mantén para hablar** y decir, por ejemplo, `buy bought bought`. También hay un micrófono por casilla. Si el motor corta la escucha, las palabras recibidas permanecen editables; puedes continuar por una casilla o escribir. Con teclado, mantén Espacio/Intro y suelta para terminar. Con lectores de pantalla, activa el micrófono una vez para empezar y otra para terminar. El botón se vuelve rojo con un halo suave mientras escucha; respeta la preferencia de reducir movimiento. Tras el dictado puedes comprobar, repetir o descartar la última captura para recuperar el borrador anterior. Las tres fichas permiten pulsar para escribir y muestran un foco integrado; en móvil, los controles flotantes respetan la navegación inferior y dejan espacio al teclado. El dispositivo deja de leer antes de abrir la escucha.
 
 En **Configuración → Voz y repaso de verbos**, elige y guarda:
 

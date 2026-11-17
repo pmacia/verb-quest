@@ -25,11 +25,13 @@ export function useReviewInput(props: GameProps) {
       },
   );
   const current = useRef(draft);
+  const beforeDictation = useRef<ReviewDraft | null>(null);
   const controller = useMemo(() => createRecognitionController(), []);
   const [state, setState] = useState<RecognitionState>('idle');
   const [field, setField] = useState<number | undefined>();
   const [message, setMessage] = useState('');
   const [heard, setHeard] = useState('');
+  const [canDiscard, setCanDiscard] = useState(false);
   const [blocked, setBlocked] = useState(false);
   const alive = useRef(true);
   const sending = useRef(false);
@@ -71,6 +73,8 @@ export function useReviewInput(props: GameProps) {
     if (disabled || reviewFeedback || blocked || !controller.supported) return;
     getSpeechService().cancel();
     const before = current.current;
+    beforeDictation.current = before;
+    setCanDiscard(true);
     const methods = before.fieldMethods ?? ['keyboard', 'keyboard', 'keyboard'];
     const captureMethods: InputMethod[] =
       index === undefined
@@ -140,6 +144,16 @@ export function useReviewInput(props: GameProps) {
       inputMethod: overall(methods),
     });
   }
+  function discard() {
+    const previous = beforeDictation.current;
+    if (!previous) return;
+    controller.abort();
+    setMessage('Dictado descartado. Puedes volver a intentarlo.');
+    setHeard('');
+    store(previous);
+    beforeDictation.current = null;
+    setCanDiscard(false);
+  }
   function suggest(index: number, value: string) {
     write(index, value);
     store({ ...current.current, assisted: true });
@@ -157,6 +171,8 @@ export function useReviewInput(props: GameProps) {
     abort: () => controller.abort(),
     write,
     suggest,
+    discard,
+    canDiscard,
     check: () => check(),
     unblock: () => setBlocked(false),
   };

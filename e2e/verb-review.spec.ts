@@ -49,6 +49,7 @@ async function speechBrowser(page: Page, recognition = true) {
         active = false;
         start() {
           this.active = true;
+          Object.assign(window, { reviewRecognition: this });
           state.languages.push(this.lang);
           queueMicrotask(() => {
             if (!this.active) return;
@@ -118,7 +119,9 @@ async function start(page: Page, verb = 'buy', language = 'es') {
     .getByRole('combobox', { name: 'Idioma de la pista', exact: true })
     .selectOption(language);
   await card.getByRole('button', { name: 'Jugar ahora' }).click();
-  await expect(page.getByRole('heading', { name: 'Repaso de verbos', level: 1, exact: true })).toBeVisible();
+  await expect(
+    page.getByRole('heading', { name: 'Repaso de verbos', level: 1, exact: true }),
+  ).toBeVisible();
 }
 async function answer(page: Page, values: string[]) {
   for (const [index, label] of ['Infinitivo', 'Pasado', 'Participio'].entries())
@@ -129,6 +132,92 @@ async function finish(page: Page) {
   await page.getByRole('button', { name: 'Terminar sesión', exact: true }).click();
   await page.waitForURL(/summary=/);
 }
+test('review cards focus their inputs and discarding dictation restores the previous draft', async ({
+  page,
+}) => {
+  await speechBrowser(page);
+  await page.goto('/settings');
+  await page
+    .getByLabel('Comprobación de respuestas dictadas', { exact: true })
+    .selectOption('manual');
+  await page.getByRole('button', { name: 'Guardar preferencias', exact: true }).click();
+  await expect(page.getByText('Preferencias guardadas.', { exact: true })).toBeVisible();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await start(page);
+  await page
+    .locator('.vr-column')
+    .first()
+    .click({ position: { x: 8, y: 8 } });
+  await expect(page.getByRole('textbox', { name: 'Infinitivo', exact: true })).toBeFocused();
+  await page.getByRole('textbox', { name: 'Infinitivo', exact: true }).fill('by');
+  const mic = page.getByRole('button', {
+    name: /^(Dictar las tres formas|Repetir dictado de las tres formas)$/,
+  });
+  await mic.focus();
+  await page.keyboard.down('Space');
+  await expect(page.locator('.vr-dock')).toHaveAttribute('data-state', 'listening');
+  await expect(page.getByRole('button', { name: 'Terminar dictado' })).toHaveCount(0);
+  await page.evaluate(() => {
+    const interim = Object.assign([{ transcript: 'buy bought bought' }], { isFinal: false });
+    (window as any).reviewRecognition.onresult({ resultIndex: 0, results: [interim] });
+  });
+  await expect(page.getByRole('textbox', { name: 'Participio', exact: true })).toHaveValue(
+    'bought',
+  );
+  await expect(page.locator('.vr-main-mic')).toHaveAttribute('aria-pressed', 'true');
+  await page.keyboard.up('Space');
+  await expect(page.getByRole('textbox', { name: 'Pasado', exact: true })).toHaveValue('bought');
+  await mic.focus();
+  await page.keyboard.down('Space');
+  await expect(page.locator('.vr-repeat')).toHaveAttribute('aria-pressed', 'true');
+  await page.keyboard.up('Space');
+  await expect(page.locator('.vr-dock')).toHaveAttribute('data-state', 'idle');
+  await page.getByRole('button', { name: 'Descartar dictado', exact: true }).click();
+  // Discarding the repeated dictation recovers the previous spoken draft.
+  await expect(page.getByRole('textbox', { name: 'Infinitivo', exact: true })).toHaveValue('buy');
+  await expect(page.getByRole('button', { name: 'Descartar dictado', exact: true })).toHaveCount(0);
+  await page.reload();
+  await expect(page.getByRole('button', { name: 'Descartar dictado', exact: true })).toHaveCount(0);
+  // Capture from a partially written draft again, then verify its restoration.
+  await page.getByRole('textbox', { name: 'Infinitivo', exact: true }).fill('by');
+  await page.getByRole('textbox', { name: 'Pasado', exact: true }).fill('');
+  await page.getByRole('textbox', { name: 'Participio', exact: true }).fill('');
+  // Assistive technology activates a button rather than holding a pointer.
+  await mic.dispatchEvent('click', { detail: 0 });
+  await expect(page.locator('.vr-dock')).toHaveAttribute('data-state', 'listening');
+  await mic.dispatchEvent('click', { detail: 0 });
+  await expect(page.locator('.vr-dock')).toHaveAttribute('data-state', 'idle');
+  await page.getByRole('button', { name: 'Descartar dictado', exact: true }).click();
+  await expect(page.getByRole('textbox', { name: 'Infinitivo', exact: true })).toHaveValue('by');
+  await expect(page.getByRole('textbox', { name: 'Pasado', exact: true })).toHaveValue('');
+  expect((await records(page)).attempts).toHaveLength(0);
+  await expect(page.getByRole('button', { name: 'Comprobar', exact: true })).toBeDisabled();
+  for (const width of [320, 390, 768, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
+      true,
+    );
+  }
+  if (test.info().project.name === 'chromium') {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.screenshot({
+      path: '/tmp/verbquest-review-integrated-mobile.png',
+      fullPage: true,
+      animations: 'disabled',
+    });
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    await page.evaluate(() => {
+      document.documentElement.dataset.theme = 'dark';
+    });
+    await page.waitForTimeout(250);
+    await page.screenshot({
+      path: '/tmp/verbquest-review-integrated-dark.png',
+      fullPage: true,
+      animations: 'disabled',
+    });
+  }
+  expect((await new AxeBuilder({ page }).include('main').analyze()).violations).toEqual([]);
+});
 test('keyboard review restores a paused draft, corrects columns and repeats until solved', async ({
   page,
 }) => {
@@ -146,6 +235,14 @@ test('keyboard review restores a paused draft, corrects columns and repeats unti
   await answer(page, ['buy', 'buy', 'bought']);
   await expect(page.locator('.vr-column.is-incorrect')).toHaveCount(1);
   await expect(page.locator('.vr-column.is-correct')).toHaveCount(2);
+  await page.evaluate(() => {
+    document.documentElement.dataset.theme = 'dark';
+  });
+  const pastLabel = page.locator('.vr-column.is-incorrect label');
+  await expect(pastLabel).toHaveCSS('color', 'rgb(255, 153, 174)');
+  await page.evaluate(() => {
+    document.documentElement.dataset.theme = 'light';
+  });
   await expect
     .poll(async () =>
       page.evaluate(() => (window as any).reviewSpeech.spoken.includes('buy. bought. bought')),

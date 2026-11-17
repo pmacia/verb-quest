@@ -1,3 +1,4 @@
+import { Icon } from '../../shared/ui/Icon';
 import { VerbReviewGame } from './VerbReviewGame';
 import { AudioDetectiveGame } from './AudioDetectiveGame';
 import { SentenceGapGame } from './SentenceGapGame';
@@ -164,14 +165,23 @@ export function SessionShell({ session }: { session: StudySession }) {
                 : WrittenRecallExercise;
   return (
     <>
-      <div className="page-heading">
+      <div className={`page-heading${question.review ? ' vr-session-heading' : ''}`}>
         <div>
           <span className="eyebrow">{skillLabels[question.skill].toUpperCase()} · PASO A PASO</span>
-          <h1>{modeLabels[question.mode]}</h1>
+          <h1>
+            {modeLabels[question.mode]}
+            {question.review && (
+              <span className="dot" aria-hidden="true">
+                .
+              </span>
+            )}
+          </h1>
         </div>
         <div className="actions">
           <button
-            className="secondary"
+            className={question.review ? 'secondary vr-session-action' : 'secondary'}
+            aria-label="Pausar"
+            title="Pausar sesión"
             disabled={busy}
             onClick={() =>
               void saveAction(async () => {
@@ -181,16 +191,22 @@ export function SessionShell({ session }: { session: StudySession }) {
               })
             }
           >
-            Pausar
+            {question.review ? <Icon name="pause" size={18} /> : 'Pausar'}
           </button>
-          <button className="secondary" disabled={busy} onClick={() => void saveAction(finish)}>
-            Terminar sesión
+          <button
+            className={question.review ? 'secondary vr-session-action' : 'secondary'}
+            aria-label="Terminar sesión"
+            title="Terminar sesión"
+            disabled={busy}
+            onClick={() => void saveAction(finish)}
+          >
+            {question.review ? <Icon name="stop" size={18} /> : 'Terminar sesión'}
           </button>
         </div>
       </div>
       <section className={`panel session-card${question.review ? ' vr-session' : ''}`}>
-        <div className="row small muted">
-          <span>
+        <div className={question.review ? 'vr-session-ribbon' : 'row small muted'}>
+          <span className={question.review ? 'vr-session-tag' : undefined}>
             {question.mode === 'verb_review' ? 'Repaso libre · tres formas' : 'Tu sesión de hoy'}
           </span>
           <span>
@@ -206,12 +222,14 @@ export function SessionShell({ session }: { session: StudySession }) {
             aria-label="Avance de la sesión"
           />
         )}
-        <h2
-          className="question-prompt"
-          lang={question.review?.language ?? (question.mode === 'sentence_gap' ? 'en' : 'es')}
-        >
-          {question.prompt}
-        </h2>
+        {question.mode !== 'verb_review' && (
+          <h2
+            className="question-prompt"
+            lang={question.review?.language ?? (question.mode === 'sentence_gap' ? 'en' : 'es')}
+          >
+            {question.prompt}
+          </h2>
+        )}
         {(!feedback || question.mode === 'verb_review') && (
           <Exercise
             key={`exercise:${question.id}`}
@@ -232,7 +250,7 @@ export function SessionShell({ session }: { session: StudySession }) {
             }}
           />
         )}
-        <p role="status" className="small muted">
+        <p role="status" className={question.review ? 'vr-session-save-status' : 'small muted'}>
           {busy ? 'Guardando respuesta…' : ''}
         </p>
         {error && (
@@ -262,30 +280,41 @@ export function SessionShell({ session }: { session: StudySession }) {
             )}
           </div>
         )}
-        {(feedback || revealedQuestionId === question.id) && (
-          <AudioControls
-            key={`solution-audio:${question.id}`}
-            text={getSolutionAudioText(question)}
-            label="Escuchar solución"
-            dialect={question.review?.dialect}
-            forceDialect={!!question.review}
-            iconOnly
-            autoPlay={feedback?.autoAudio ?? true}
-          />
-        )}
-        {feedback && (
-          <button
-            disabled={busy}
-            onClick={() =>
-              void saveAction(async () => {
-                if (session.cursor >= session.queue.length) await finish();
-                else setFeedback(null);
-              })
-            }
-          >
-            {session.cursor >= session.queue.length ? 'Ver resumen' : 'Siguiente pregunta'} →
-          </button>
-        )}
+        <div className={question.review ? 'vr-result-controls' : undefined}>
+          {(feedback || revealedQuestionId === question.id) && (
+            <AudioControls
+              key={`solution-audio:${question.id}`}
+              text={getSolutionAudioText(question)}
+              label="Escuchar solución"
+              dialect={question.review?.dialect}
+              forceDialect={!!question.review}
+              iconOnly
+              autoPlay={feedback?.autoAudio ?? true}
+            />
+          )}
+          {feedback && (
+            <button
+              className={question.review ? 'vr-next' : undefined}
+              disabled={busy}
+              onClick={() =>
+                void saveAction(async () => {
+                  if (session.cursor >= session.queue.length) await finish();
+                  else setFeedback(null);
+                })
+              }
+            >
+              {question.review && (
+                <span>
+                  <Icon name="arrow" size={25} />
+                </span>
+              )}
+              <span>
+                {session.cursor >= session.queue.length ? 'Ver resumen' : 'Siguiente pregunta'}
+                {!question.review && ' →'}
+              </span>
+            </button>
+          )}
+        </div>
       </section>
     </>
   );

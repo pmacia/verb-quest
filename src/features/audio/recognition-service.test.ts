@@ -11,6 +11,8 @@ class Engine implements RecognitionEngine {
   continuous = false;
   maxAlternatives = 1;
   onstart: (() => void) | null = null;
+  onaudiostart: (() => void) | null = null;
+  onaudioend: (() => void) | null = null;
   onend: (() => void) | null = null;
   onerror: ((event: { error: string }) => void) | null = null;
   onresult: ((event: RecognitionResultEvent) => void) | null = null;
@@ -32,6 +34,58 @@ const result = (isFinal: boolean, ...texts: string[]) =>
   );
 afterEach(() => vi.useRealTimers());
 describe('recognition controller', () => {
+  it('does not show listening until the browser confirms audio capture', () => {
+    const { engine, callbacks } = setup();
+    engine.onstart?.();
+    expect(callbacks.onState).toHaveBeenLastCalledWith('preparing');
+    engine.onaudiostart?.();
+    expect(callbacks.onState).toHaveBeenLastCalledWith('listening');
+    engine.onaudioend?.();
+    expect(callbacks.onState).toHaveBeenLastCalledWith('processing');
+  });
+  it('recovers when a second recognition session starts without opening audio', () => {
+    vi.useFakeTimers();
+    const { engine, callbacks, controller } = setup();
+    engine.onstart?.();
+    engine.onaudiostart?.();
+    controller.stop();
+    engine.onend?.();
+    callbacks.onState.mockClear();
+    callbacks.onIssue.mockClear();
+    controller.start('en-GB', callbacks);
+    engine.onstart?.();
+    vi.advanceTimersByTime(8001);
+    expect(callbacks.onState).not.toHaveBeenCalledWith('listening');
+    expect(callbacks.onState).toHaveBeenLastCalledWith('idle');
+    expect(callbacks.onIssue).toHaveBeenCalledWith(
+      expect.stringContaining('no ha abierto el micrófono'),
+    );
+    expect(callbacks.onFinal).not.toHaveBeenCalled();
+  });
+  it('recovers when the browser claims audio started but never sends any text', () => {
+    vi.useFakeTimers();
+    const { engine, callbacks } = setup();
+    engine.onstart?.();
+    engine.onaudiostart?.();
+    vi.advanceTimersByTime(8001);
+    expect(callbacks.onState).toHaveBeenLastCalledWith('idle');
+    expect(callbacks.onIssue).toHaveBeenCalledWith(
+      expect.stringContaining('no está enviando texto'),
+    );
+    expect(engine.abort).toHaveBeenCalledOnce();
+    expect(callbacks.onFinal).not.toHaveBeenCalled();
+  });
+  it('ignores late audio events and does not reopen listening after release', () => {
+    const { engine, controller, callbacks } = setup();
+    engine.onstart?.();
+    controller.stop();
+    engine.onaudiostart?.();
+    expect(callbacks.onState).not.toHaveBeenCalledWith('listening');
+    const lateAudio = engine.onaudiostart;
+    controller.abort();
+    lateAudio?.();
+    expect(callbacks.onState).toHaveBeenLastCalledWith('idle');
+  });
   it('starts synchronously with dialect and requests multiple alternatives', () => {
     const { engine } = setup();
     expect(engine.start).toHaveBeenCalledOnce();

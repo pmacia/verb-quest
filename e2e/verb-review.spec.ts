@@ -6,6 +6,8 @@ async function speechBrowser(page: Page, recognition = true) {
       const state = {
         alternatives: ['buy bought bought'],
         issue: '',
+        audioUnavailable: false,
+        noTranscription: false,
         languages: [] as string[],
         spoken: [] as string[],
       };
@@ -43,6 +45,8 @@ async function speechBrowser(page: Page, recognition = true) {
       class Recognition {
         lang = '';
         onstart: any;
+        onaudiostart: any;
+        onaudioend: any;
         onend: any;
         onerror: any;
         onresult: any;
@@ -54,13 +58,21 @@ async function speechBrowser(page: Page, recognition = true) {
           queueMicrotask(() => {
             if (!this.active) return;
             if (state.issue) this.onerror?.({ error: state.issue });
-            else this.onstart?.();
+            else {
+              this.onstart?.();
+              if (!state.audioUnavailable && this.active) this.onaudiostart?.();
+            }
           });
         }
         stop() {
           if (!this.active) return;
           this.active = false;
           queueMicrotask(() => {
+            this.onaudioend?.();
+            if (state.audioUnavailable || state.noTranscription) {
+              this.onend?.();
+              return;
+            }
             const result = Object.assign(
               state.alternatives.map((transcript) => ({ transcript })),
               { isFinal: true },
@@ -406,3 +418,40 @@ test('be with both past forms goes directly to OK after release despite secondar
   expect(attempts[0].coverageTargetIds).toContain('pastSimple:was');
   expect(attempts[0].coverageTargetIds).toContain('pastSimple:were');
 });
+
+for (const missing of ['audio', 'transcription'] as const)
+  test(`a second session without ${missing} recovers and offers native keyboard dictation`, async ({
+    page,
+  }) => {
+    await speechBrowser(page);
+    await start(page);
+    await page.getByRole('button', { name: 'Dictar las tres formas', exact: true }).click();
+    await expect(page.getByRole('heading', { name: '¡Bien recordado!' })).toBeVisible();
+    await finish(page);
+    await start(page);
+    await page.getByRole('textbox', { name: 'Infinitivo', exact: true }).fill('buy');
+    await page.evaluate((missing) => {
+      (window as any).reviewSpeech.audioUnavailable = missing === 'audio';
+      (window as any).reviewSpeech.noTranscription = missing === 'transcription';
+    }, missing);
+    const mic = page.getByRole('button', { name: 'Dictar las tres formas', exact: true });
+    await mic.focus();
+    await page.keyboard.down('Space');
+    await expect(page.locator('.vr-dock')).toHaveAttribute(
+      'data-state',
+      missing === 'audio' ? 'preparing' : 'listening',
+    );
+    await expect(
+      page
+        .getByRole('status')
+        .filter({
+          hasText: missing === 'audio' ? 'no ha abierto el micrófono' : 'no está enviando texto',
+        }),
+    ).toBeVisible({ timeout: 11000 });
+    await page.keyboard.up('Space');
+    await expect(page.locator('.vr-dock')).toHaveAttribute('data-state', 'idle');
+    await page.getByRole('button', { name: 'Usar dictado del teclado', exact: true }).click();
+    await expect(page.getByRole('textbox', { name: 'Pasado', exact: true })).toBeFocused();
+    await expect(page.getByRole('textbox', { name: 'Infinitivo', exact: true })).toHaveValue('buy');
+    expect((await records(page)).attempts).toHaveLength(1);
+  });

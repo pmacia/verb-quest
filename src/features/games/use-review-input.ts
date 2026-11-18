@@ -33,6 +33,7 @@ export function useReviewInput(props: GameProps) {
   const [heard, setHeard] = useState('');
   const [canDiscard, setCanDiscard] = useState(false);
   const [blocked, setBlocked] = useState(false);
+  const [captureUnavailable, setCaptureUnavailable] = useState(false);
   const alive = useRef(true);
   const sending = useRef(false);
   const latest = useRef({ onSubmit, onReviewDraft });
@@ -71,6 +72,7 @@ export function useReviewInput(props: GameProps) {
   }
   function start(index?: number) {
     if (disabled || reviewFeedback || blocked || !controller.supported) return;
+    setCaptureUnavailable(false);
     getSpeechService().cancel();
     const before = current.current;
     beforeDictation.current = before;
@@ -123,12 +125,16 @@ export function useReviewInput(props: GameProps) {
         if (alive.current) {
           setMessage(text);
           setHeard('');
+          setCaptureUnavailable(
+            text.includes('no ha abierto el micrófono') || text.includes('no está enviando texto'),
+          );
           if (text.includes('permiso')) setBlocked(true);
         }
       },
     });
   }
   function write(index: number, value: string) {
+    setCaptureUnavailable(false);
     controller.abort();
     setMessage('');
     setHeard('');
@@ -166,6 +172,7 @@ export function useReviewInput(props: GameProps) {
     heard,
     supported: controller.supported,
     blocked,
+    captureUnavailable,
     start,
     stop: () => controller.stop(),
     abort: () => controller.abort(),

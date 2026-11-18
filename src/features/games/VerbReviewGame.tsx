@@ -322,6 +322,17 @@ export function VerbReviewGame(props: GameProps) {
                 teclado si está disponible.
               </p>
             )}
+            {input.captureUnavailable && (
+              <div className="vr-fallback">
+                <button type="button" className="secondary" onClick={focusWriting}>
+                  <Icon name="edit" size={17} /> Usar dictado del teclado
+                </button>
+                <p>
+                  Se abrirá un campo. Puedes usar el micrófono del teclado del móvil, con el teclado
+                  en inglés, o escribir.
+                </p>
+              </div>
+            )}
             {input.blocked && (
               <button type="button" className="secondary vr-retry" onClick={input.unblock}>
                 Volver a probar el micrófono

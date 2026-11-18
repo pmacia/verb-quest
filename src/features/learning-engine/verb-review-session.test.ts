@@ -60,7 +60,7 @@ it('retries errors after pending questions and keeps retrying until solved', asy
   await submitAnswer(r, response(current, ['buy', 'bought', 'bought']), clock);
   const done = (await r.sessions.get(s.id))!;
   expect(done.cursor).toBe(done.queue.length);
-  expect((await r.attempts.toArray()).at(-1)?.assisted).toBe(true);
+  expect((await r.attempts.get(done.attemptIds.at(-1)!))?.assisted).toBe(true);
   r.close();
 });
 it('does not record a voice discrepancy without confirmation', async () => {

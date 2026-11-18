@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useApp } from '../../app/app-context';
 import type { InputMethod, ReviewDraft } from '../../shared/domain/types';
 import { createRecognitionController, type RecognitionState } from '../audio/recognition-service';
+import { resolveReviewCaptureMode } from '../audio/review-capture-mode';
 import { getSpeechService } from '../audio/speech-service';
 import { resolveReviewSpeech, speechDraftValues } from '../question-engine/verb-review';
 import type { GameProps } from './exercises';
@@ -13,6 +14,7 @@ const overall = (methods: InputMethod[]): InputMethod =>
       : 'mixed';
 export function useReviewInput(props: GameProps) {
   const { settings } = useApp();
+  const captureMode = resolveReviewCaptureMode(settings.reviewCapture);
   const { question, onSubmit, disabled, reviewFeedback, onReviewDraft } = props;
   const [draft, setDraft] = useState<ReviewDraft>(
     () =>
@@ -36,18 +38,29 @@ export function useReviewInput(props: GameProps) {
   const [captureUnavailable, setCaptureUnavailable] = useState(false);
   const alive = useRef(true);
   const sending = useRef(false);
+  const generation = useRef(0);
+  const warmingUp = useRef(false);
   const latest = useRef({ onSubmit, onReviewDraft });
   latest.current = { onSubmit, onReviewDraft };
   useEffect(() => {
     alive.current = true;
     return () => {
       alive.current = false;
-      controller.abort();
+      abort();
     };
   }, [controller]);
   useEffect(() => {
-    if (disabled || reviewFeedback) controller.abort();
+    if (disabled || reviewFeedback) abort();
   }, [disabled, reviewFeedback, controller]);
+  function abort() {
+    generation.current++;
+    if (warmingUp.current) {
+      warmingUp.current = false;
+      getSpeechService().cancel();
+    }
+    controller.abort();
+    if (alive.current) setState('idle');
+  }
   function store(next: ReviewDraft) {
     current.current = next;
     setDraft(next);
@@ -55,7 +68,7 @@ export function useReviewInput(props: GameProps) {
   }
   async function check(value = current.current) {
     if (sending.current || disabled || reviewFeedback) return;
-    controller.abort();
+    abort();
     sending.current = true;
     try {
       await latest.current.onSubmit({
@@ -71,7 +84,16 @@ export function useReviewInput(props: GameProps) {
     }
   }
   function start(index?: number) {
-    if (disabled || reviewFeedback || blocked || !controller.supported) return;
+    if (
+      disabled ||
+      reviewFeedback ||
+      blocked ||
+      !controller.supported ||
+      warmingUp.current ||
+      state !== 'idle'
+    )
+      return;
+    const token = ++generation.current;
     setCaptureUnavailable(false);
     getSpeechService().cancel();
     const before = current.current;
@@ -86,12 +108,12 @@ export function useReviewInput(props: GameProps) {
     setField(index);
     setHeard('');
     setMessage('');
-    controller.start(question.review?.dialect === 'us' ? 'en-US' : 'en-GB', {
-      onState: (value) => {
-        if (alive.current) setState(value);
+    const callbacks = {
+      onState: (value: RecognitionState) => {
+        if (alive.current && generation.current === token) setState(value);
       },
-      onInterim: (text) => {
-        if (!alive.current || !text.trim()) return;
+      onInterim: (text: string) => {
+        if (!alive.current || generation.current !== token || !text.trim()) return;
         setHeard(text);
         store({
           ...before,
@@ -100,8 +122,8 @@ export function useReviewInput(props: GameProps) {
           inputMethod: overall(captureMethods),
         });
       },
-      onFinal: (alternatives) => {
-        if (!alive.current) return;
+      onFinal: (alternatives: string[]) => {
+        if (!alive.current || generation.current !== token) return;
         const result = resolveReviewSpeech(question, alternatives, before.values, index, methods);
         const next = {
           ...before,
@@ -121,8 +143,8 @@ export function useReviewInput(props: GameProps) {
               : 'Revisa lo que he entendido. Puedes repetir, editar o comprobar tu respuesta.',
           );
       },
-      onIssue: (text) => {
-        if (alive.current) {
+      onIssue: (text: string) => {
+        if (alive.current && generation.current === token) {
           setMessage(text);
           setHeard('');
           setCaptureUnavailable(
@@ -131,11 +153,44 @@ export function useReviewInput(props: GameProps) {
           if (text.includes('permiso')) setBlocked(true);
         }
       },
-    });
+    };
+    const launch = () =>
+      controller.start(question.review?.dialect === 'us' ? 'en-US' : 'en-GB', callbacks, {
+        continuous: captureMode === 'hold',
+      });
+    if (captureMode === 'hold') launch();
+    else {
+      warmingUp.current = true;
+      setState('preparing');
+      setMessage('Escucha «Tu turno» y después di las formas seguidas.');
+      void getSpeechService()
+        .play({
+          text: 'Tu turno',
+          language: 'es',
+          voiceURI: settings.voiceURI,
+          preferredDialect: settings.dialect,
+          volume: settings.volume,
+          rate: settings.rate,
+        })
+        .then((result) => {
+          if (!alive.current || generation.current !== token) return;
+          warmingUp.current = false;
+          if (result.status === 'played') {
+            setMessage('');
+            launch();
+          } else {
+            setState('idle');
+            setMessage(
+              'No se ha podido preparar el dictado compatible. Puedes usar el micrófono del teclado.',
+            );
+            setCaptureUnavailable(true);
+          }
+        });
+    }
   }
   function write(index: number, value: string) {
     setCaptureUnavailable(false);
-    controller.abort();
+    abort();
     setMessage('');
     setHeard('');
     const before = current.current;
@@ -153,7 +208,7 @@ export function useReviewInput(props: GameProps) {
   function discard() {
     const previous = beforeDictation.current;
     if (!previous) return;
-    controller.abort();
+    abort();
     setMessage('Dictado descartado. Puedes volver a intentarlo.');
     setHeard('');
     store(previous);
@@ -167,6 +222,7 @@ export function useReviewInput(props: GameProps) {
   return {
     draft,
     state,
+    captureMode,
     field,
     message,
     heard,
@@ -175,7 +231,7 @@ export function useReviewInput(props: GameProps) {
     captureUnavailable,
     start,
     stop: () => controller.stop(),
-    abort: () => controller.abort(),
+    abort,
     write,
     suggest,
     discard,

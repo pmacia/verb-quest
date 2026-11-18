@@ -34,6 +34,17 @@ const result = (isFinal: boolean, ...texts: string[]) =>
   );
 afterEach(() => vi.useRealTimers());
 describe('recognition controller', () => {
+  it('allows phrase capture without changing the original continuous default', () => {
+    const engine = new Engine();
+    const controller = createRecognitionController(() => engine);
+    controller.start(
+      'en-GB',
+      { onState: vi.fn(), onFinal: vi.fn(), onIssue: vi.fn() },
+      { continuous: false },
+    );
+    expect(engine.continuous).toBe(false);
+    controller.abort();
+  });
   it('does not show listening until the browser confirms audio capture', () => {
     const { engine, callbacks } = setup();
     engine.onstart?.();

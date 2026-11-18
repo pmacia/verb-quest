@@ -23,6 +23,7 @@ export function VerbReviewGame(props: GameProps) {
   );
   const fields = useRef<Array<HTMLInputElement | null>>([]);
   const recording = input.state !== 'idle';
+  const compatible = input.captureMode === 'compatible';
   const feedback = props.reviewFeedback
     ? evaluateReview(props.question, props.reviewFeedback)
     : undefined;
@@ -43,8 +44,12 @@ export function VerbReviewGame(props: GameProps) {
       : input.state === 'processing'
         ? 'Procesando…'
         : input.state === 'listening'
-          ? 'Suelta al terminar'
-          : 'Mantén para hablar';
+          ? compatible
+            ? 'Habla; termina al acabar'
+            : 'Suelta al terminar'
+          : compatible
+            ? 'Toca para hablar'
+            : 'Mantén para hablar';
   function focusWriting() {
     input.abort();
     (fields.current.find((field) => !field?.value) ?? fields.current[0])?.focus();
@@ -73,19 +78,20 @@ export function VerbReviewGame(props: GameProps) {
               ? 'vr-side-action vr-repeat vr-mic'
               : 'vr-mic vr-main-mic'
         }
-        aria-label={label}
-        title={label}
+        aria-label={compatible && recording && input.field === field ? 'Cancelar dictado' : label}
+        title={compatible && recording && input.field === field ? 'Cancelar dictado' : label}
         aria-pressed={recording && input.field === field}
         disabled={
           props.disabled ||
           !!feedback ||
           input.blocked ||
-          (recording && (input.field !== field || input.state === 'processing'))
+          (recording && (input.field !== field || (!compatible && input.state === 'processing')))
         }
         onContextMenu={(event) => event.preventDefault()}
         onPointerDown={(event) => {
           if (event.button !== 0) return;
           event.preventDefault();
+          if (compatible) return;
           try {
             event.currentTarget.setPointerCapture(event.pointerId);
           } catch {
@@ -96,12 +102,19 @@ export function VerbReviewGame(props: GameProps) {
         }}
         onPointerUp={(event) => {
           event.preventDefault();
-          input.stop();
+          if (!compatible) input.stop();
         }}
-        onPointerCancel={input.stop}
-        onLostPointerCapture={input.stop}
-        onBlur={input.stop}
+        onPointerCancel={() => {
+          if (!compatible) input.stop();
+        }}
+        onLostPointerCapture={() => {
+          if (!compatible) input.stop();
+        }}
+        onBlur={() => {
+          if (!compatible) input.stop();
+        }}
         onKeyDown={(event) => {
+          if (compatible) return;
           if ([' ', 'Enter'].includes(event.key)) {
             event.preventDefault();
             if (!event.repeat) {
@@ -111,12 +124,21 @@ export function VerbReviewGame(props: GameProps) {
           }
         }}
         onKeyUp={(event) => {
+          if (compatible) return;
           if ([' ', 'Enter'].includes(event.key)) {
             event.preventDefault();
             input.stop();
           }
         }}
         onClick={(event) => {
+          if (compatible) {
+            if (recording) input.abort();
+            else {
+              dockHadCheck.current = showCheck;
+              input.start(field);
+            }
+            return;
+          }
           if (event.detail === 0) {
             if (recording && input.field === field) input.stop();
             else {
@@ -129,12 +151,15 @@ export function VerbReviewGame(props: GameProps) {
         {repeat ? (
           <>
             <span className="vr-side-circle">
-              <Icon name="mic" size={20} />
+              <Icon name={compatible && recording ? 'close' : 'mic'} size={20} />
             </span>
-            <span>Repetir</span>
+            <span>{compatible && recording ? 'Cancelar' : 'Repetir'}</span>
           </>
         ) : (
-          <Icon name="mic" size={field === undefined ? 30 : 17} />
+          <Icon
+            name={compatible && recording && input.field === field ? 'close' : 'mic'}
+            size={field === undefined ? 30 : 17}
+          />
         )}
       </button>
     );
@@ -341,7 +366,7 @@ export function VerbReviewGame(props: GameProps) {
             <div className="vr-footer">
               <span>
                 {props.question.review?.dialect === 'us' ? 'Inglés americano' : 'Inglés británico'}{' '}
-                ·{' '}
+                · {compatible ? 'Un toque' : 'Mantener pulsado'} ·{' '}
                 {settings.reviewCheck === 'manual' ? 'Revisión manual' : 'Comprobación automática'}
               </span>
               <button type="button" onClick={showHelp} aria-controls={`${id}-help`}>
@@ -351,10 +376,12 @@ export function VerbReviewGame(props: GameProps) {
             <details className="vr-help" ref={help} id={`${id}-help`}>
               <summary>Ayuda con el micrófono</summary>
               <p>
-                Mantén el botón mientras hablas y suéltalo al terminar. Con un lector de pantalla,
-                activa el botón para empezar y actívalo de nuevo para terminar. Si la escucha se
-                corta, conserva las casillas y continúa en una de ellas. El dictado puede necesitar
-                Internet y utilizar el servicio del navegador. Puedes usar siempre el teclado.
+                {compatible
+                  ? 'Toca el micrófono, escucha «Tu turno» y di las formas seguidas. El navegador terminará al acabar la frase. Puedes cancelar con el mismo botón; no necesitas mantenerlo pulsado.'
+                  : 'Mantén el botón mientras hablas y suéltalo al terminar. Con un lector de pantalla, activa el botón para empezar y actívalo de nuevo para terminar.'}{' '}
+                Si la escucha se corta, conserva las casillas y continúa en una de ellas. El dictado
+                puede necesitar Internet y utilizar el servicio del navegador. Puedes usar siempre
+                el teclado.
               </p>
             </details>
           </>

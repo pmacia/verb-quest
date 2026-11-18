@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useApp } from '../../app/app-context';
+import { resolveReviewCaptureMode } from '../audio/review-capture-mode';
 import { getSpeechService, type VoiceInfo } from '../audio/speech-service';
 import { updateSettings, resetProgress, deleteAllLocalData } from './settings-service';
 import { exportBackup } from '../persistence/backup';
@@ -111,6 +112,29 @@ export function SettingsPage() {
             <Icon name="mic" size={20} /> Voz y repaso de verbos
           </h2>
           <div className="form-grid">
+            <label>
+              Activación del micrófono
+              <select
+                aria-label="Activación del micrófono"
+                value={s.reviewCapture ?? 'auto'}
+                onChange={(e) =>
+                  change({ reviewCapture: e.target.value as AppSettings['reviewCapture'] })
+                }
+              >
+                <option value="auto">Automática según dispositivo</option>
+                <option value="hold">Mantener pulsado (original)</option>
+                <option value="compatible">Un toque y fin de frase (compatible)</option>
+              </select>
+              <small>
+                En este dispositivo:{' '}
+                {resolveReviewCaptureMode(s.reviewCapture) === 'compatible'
+                  ? 'un toque y fin de frase'
+                  : 'mantener pulsado'}
+                . Automática usa el modo compatible en iPhone/iPad. En compatible escucharás «Tu
+                turno» antes de hablar; la captura termina al acabar la frase. Puedes cancelarla en
+                cualquier momento.
+              </small>
+            </label>
             <label>
               Comprobación de respuestas dictadas
               <select

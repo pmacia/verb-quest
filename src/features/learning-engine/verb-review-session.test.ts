@@ -116,6 +116,7 @@ it('review question snapshots, drafts and voice preferences survive a full backu
   const { r, p, s } = await setup();
   const { saveReviewDraft } = await import('./session-service');
   const { exportBackup, previewRestore, restoreBackup } = await import('../persistence/backup');
+  await r.settings.update(p.id, { reviewCapture: 'compatible' });
   await saveReviewDraft(r, s.id, {
     questionId: s.queue[0].id,
     values: ['buy', '', ''],
@@ -130,6 +131,7 @@ it('review question snapshots, drafts and voice preferences survive a full backu
   expect((await target.sessions.get(s.id))?.reviewDraft?.values).toEqual(['buy', '', '']);
   expect((await target.sessions.get(s.id))?.queue[0].review?.dialect).toBe('uk');
   expect((await target.settings.get(p.id))?.reviewCheck).toBe('automatic');
+  expect((await target.settings.get(p.id))?.reviewCapture).toBe('compatible');
   await submitAnswer(
     r,
     response(s, ['by', 'bought', 'bought'], {

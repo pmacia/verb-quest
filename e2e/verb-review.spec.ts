@@ -8,6 +8,9 @@ async function speechBrowser(page: Page, recognition = true) {
         issue: '',
         audioUnavailable: false,
         noTranscription: false,
+        delayCue: false,
+        stops: 0,
+        aborts: 0,
         languages: [] as string[],
         spoken: [] as string[],
       };
@@ -35,6 +38,10 @@ async function speechBrowser(page: Page, recognition = true) {
           resume() {},
           speak(utterance: any) {
             state.spoken.push(utterance.text);
+            if (utterance.text === 'Tu turno' && state.delayCue) {
+              Object.assign(window, { reviewCue: utterance });
+              return;
+            }
             queueMicrotask(() => {
               utterance.onstart?.();
               utterance.onend?.();
@@ -65,6 +72,10 @@ async function speechBrowser(page: Page, recognition = true) {
           });
         }
         stop() {
+          state.stops++;
+          this.finishPhrase();
+        }
+        finishPhrase() {
           if (!this.active) return;
           this.active = false;
           queueMicrotask(() => {
@@ -82,6 +93,7 @@ async function speechBrowser(page: Page, recognition = true) {
           });
         }
         abort() {
+          state.aborts++;
           this.active = false;
         }
       }
@@ -442,11 +454,9 @@ for (const missing of ['audio', 'transcription'] as const)
       missing === 'audio' ? 'preparing' : 'listening',
     );
     await expect(
-      page
-        .getByRole('status')
-        .filter({
-          hasText: missing === 'audio' ? 'no ha abierto el micrófono' : 'no está enviando texto',
-        }),
+      page.getByRole('status').filter({
+        hasText: missing === 'audio' ? 'no ha abierto el micrófono' : 'no está enviando texto',
+      }),
     ).toBeVisible({ timeout: 11000 });
     await page.keyboard.up('Space');
     await expect(page.locator('.vr-dock')).toHaveAttribute('data-state', 'idle');
@@ -455,3 +465,109 @@ for (const missing of ['audio', 'transcription'] as const)
     await expect(page.getByRole('textbox', { name: 'Infinitivo', exact: true })).toHaveValue('buy');
     expect((await records(page)).attempts).toHaveLength(1);
   });
+
+async function captureSetting(page: Page, mode: string) {
+  await page.goto('/settings');
+  await page.getByLabel('Activación del micrófono', { exact: true }).selectOption(mode);
+  await page.getByRole('button', { name: 'Guardar preferencias', exact: true }).click();
+  await expect(page.getByText('Preferencias guardadas.', { exact: true })).toBeVisible();
+}
+test('compatible capture uses a cue, natural phrase endings and preserves the original mode', async ({
+  page,
+}) => {
+  await speechBrowser(page);
+  await captureSetting(page, 'compatible');
+  await page
+    .getByLabel('Comprobación de respuestas dictadas', { exact: true })
+    .selectOption('manual');
+  await page.getByRole('button', { name: 'Guardar preferencias', exact: true }).click();
+  await expect(page.getByText('Preferencias guardadas.', { exact: true })).toBeVisible();
+  await start(page);
+  await expect(page.getByText('Toca para hablar', { exact: true })).toBeVisible();
+  for (let attempt = 0; attempt < 2; attempt++) {
+    await page
+      .getByRole('button', {
+        name: attempt ? 'Repetir dictado de las tres formas' : 'Dictar las tres formas',
+        exact: true,
+      })
+      .click();
+    await expect(page.locator('.vr-dock')).toHaveAttribute('data-state', 'listening');
+    expect(await page.evaluate(() => (window as any).reviewRecognition.continuous)).toBe(false);
+    expect(await page.evaluate(() => (window as any).reviewSpeech.stops)).toBe(0);
+    await page.evaluate(() => (window as any).reviewRecognition.finishPhrase());
+    await expect(page.locator('.vr-dock')).toHaveAttribute('data-state', 'idle');
+    await expect(page.getByRole('textbox', { name: 'Pasado', exact: true })).toHaveValue('bought');
+  }
+  expect(
+    await page.evaluate(
+      () => (window as any).reviewSpeech.spoken.filter((s: string) => s === 'Tu turno').length,
+    ),
+  ).toBe(2);
+  expect((await records(page)).attempts).toHaveLength(0);
+  await page.getByRole('button', { name: 'Comprobar', exact: true }).click();
+  await expect(page.getByRole('heading', { name: '¡Bien recordado!' })).toBeVisible();
+  await finish(page);
+  await page.goto('/settings');
+  await expect(page.getByLabel('Activación del micrófono', { exact: true })).toHaveValue(
+    'compatible',
+  );
+  await captureSetting(page, 'hold');
+  await start(page);
+  await page.getByRole('button', { name: 'Dictar las tres formas', exact: true }).click();
+  await page.getByRole('button', { name: 'Comprobar', exact: true }).click();
+  await expect(page.getByRole('heading', { name: '¡Bien recordado!' })).toBeVisible();
+  expect(await page.evaluate(() => (window as any).reviewSpeech.stops)).toBeGreaterThan(0);
+});
+test('compatible capture cancels pending cues and active microphones without late restarts', async ({
+  page,
+}) => {
+  await speechBrowser(page);
+  await captureSetting(page, 'compatible');
+  await start(page);
+  await page.evaluate(() => {
+    (window as any).reviewSpeech.delayCue = true;
+  });
+  await page.getByRole('button', { name: 'Dictar las tres formas', exact: true }).click();
+  await expect(page.locator('.vr-dock')).toHaveAttribute('data-state', 'preparing');
+  await page.getByRole('button', { name: 'Cancelar dictado', exact: true }).click();
+  await page.evaluate(() => (window as any).reviewCue.onend?.());
+  expect(await page.evaluate(() => (window as any).reviewSpeech.languages)).toEqual([]);
+  await page.evaluate(() => {
+    (window as any).reviewSpeech.delayCue = false;
+  });
+  await page.getByRole('button', { name: 'Dictar las tres formas', exact: true }).click();
+  await expect(page.locator('.vr-dock')).toHaveAttribute('data-state', 'listening');
+  await page.getByRole('button', { name: 'Cancelar dictado', exact: true }).click();
+  await expect(page.locator('.vr-dock')).toHaveAttribute('data-state', 'idle');
+  expect((await records(page)).attempts).toHaveLength(0);
+  expect(await page.evaluate(() => (window as any).reviewSpeech.aborts)).toBe(1);
+  await page.evaluate(() => {
+    (window as any).reviewSpeech.delayCue = true;
+  });
+  await page.getByRole('button', { name: 'Dictar las tres formas', exact: true }).click();
+  await expect(page.locator('.vr-dock')).toHaveAttribute('data-state', 'preparing');
+  await page.getByRole('link', { name: 'Juegos', exact: true }).click();
+  await expect(page.getByRole('heading', { name: /Otra forma de aprender/ })).toBeVisible();
+  await page.evaluate(() => (window as any).reviewCue.onend?.());
+  expect(await page.evaluate(() => (window as any).reviewSpeech.languages)).toHaveLength(1);
+});
+
+test('automatic capture detects a desktop-like iPad and a manual hold choice overrides it', async ({
+  page,
+}) => {
+  await speechBrowser(page);
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, 'platform', { get: () => 'MacIntel' });
+    Object.defineProperty(navigator, 'maxTouchPoints', { get: () => 5 });
+  });
+  await start(page);
+  await expect(page.getByText('Toca para hablar', { exact: true })).toBeVisible();
+  await page.getByRole('button', { name: 'Dictar las tres formas', exact: true }).click();
+  await expect(page.locator('.vr-dock')).toHaveAttribute('data-state', 'listening');
+  await page.evaluate(() => (window as any).reviewRecognition.finishPhrase());
+  await expect(page.getByRole('heading', { name: '¡Bien recordado!' })).toBeVisible();
+  await finish(page);
+  await captureSetting(page, 'hold');
+  await start(page);
+  await expect(page.getByText('Mantén para hablar', { exact: true })).toBeVisible();
+});

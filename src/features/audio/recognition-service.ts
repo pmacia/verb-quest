@@ -64,7 +64,7 @@ export function createRecognitionController(factory: RecognitionFactory | null =
   }
   return {
     supported: factory !== null,
-    start(lang: string, callbacks: RecognitionCallbacks) {
+    start(lang: string, callbacks: RecognitionCallbacks, options: { continuous?: boolean } = {}) {
       abort();
       if (!factory) {
         callbacks.onIssue('Este navegador no ofrece dictado. Puedes responder con el teclado.');
@@ -262,7 +262,7 @@ export function createRecognitionController(factory: RecognitionFactory | null =
         engine.interimResults = true;
         engine.maxAlternatives = 3;
         try {
-          engine.continuous = true;
+          engine.continuous = options.continuous ?? true;
         } catch {
           /* Optional in some engines. */
         }

@@ -3,6 +3,21 @@ import { openAppDatabase } from '../persistence/repositories';
 import { bootstrap } from '../persistence/bootstrap';
 import { dataset } from '../../../tests/fixtures/dataset';
 import { updateSettings, resetProgress } from './settings-service';
+import { validate } from '../../shared/domain/validation';
+it('persists capture modes and keeps legacy settings valid for import', async () => {
+  const r = await openAppDatabase(crypto.randomUUID());
+  const p = await bootstrap(r, dataset, { now: () => '2026-11-18T12:00:00Z' });
+  for (const reviewCapture of ['auto', 'hold', 'compatible'] as const) {
+    const settings = await updateSettings(r, p.id, { reviewCapture });
+    expect(settings.reviewCapture).toBe(reviewCapture);
+    expect(validate('settings', settings).ok).toBe(true);
+  }
+  const legacy = (await r.settings.get(p.id))!;
+  delete legacy.reviewCapture;
+  expect(validate('settings', legacy).ok).toBe(true);
+  await expect(updateSettings(r, p.id, { reviewCapture: 'invalid' as any })).rejects.toThrow();
+  r.close();
+});
 it('settings persist and reject invalid volume or timezone', async () => {
   const r = await openAppDatabase(crypto.randomUUID());
   const p = await bootstrap(r, dataset, { now: () => '2026-10-29T00:00:00Z' });

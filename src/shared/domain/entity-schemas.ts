@@ -87,6 +87,7 @@ export const entitySchemas = {
   profile: object({ id: string, name: string, timeZone: string, createdAt: instant }),
   settings: object(
     {
+      reviewCapture: enumeration('auto', 'hold', 'compatible'),
       reviewCheck: enumeration('automatic', 'manual'),
       reviewLanguage: enumeration('es', 'en'),
       strictIpa: boolean,
@@ -116,7 +117,14 @@ export const entitySchemas = {
         maxRetryPerQuestion: { const: 1 },
       }),
     },
-    ['strictIpa', 'showSources', 'showTechnicalDetails', 'reviewCheck', 'reviewLanguage'],
+    [
+      'strictIpa',
+      'showSources',
+      'showTechnicalDetails',
+      'reviewCheck',
+      'reviewLanguage',
+      'reviewCapture',
+    ],
   ),
   list: object({
     id: string,

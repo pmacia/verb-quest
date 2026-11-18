@@ -9,6 +9,7 @@ export async function updateSettings(
   if (!current) throw Error('Preferencias no encontradas');
   const s = { ...current, ...patch, profileId };
   if (
+    (s.reviewCapture !== undefined && !['auto', 'hold', 'compatible'].includes(s.reviewCapture)) ||
     (s.reviewCheck !== undefined && !['automatic', 'manual'].includes(s.reviewCheck)) ||
     (s.reviewLanguage !== undefined && !['es', 'en'].includes(s.reviewLanguage)) ||
     (s.strictIpa !== undefined && typeof s.strictIpa !== 'boolean') ||

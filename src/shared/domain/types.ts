@@ -297,6 +297,7 @@ export interface StudySession {
   completedAt: ISOInstant | null;
 }
 export interface AppSettings {
+  reviewCapture?: 'auto' | 'hold' | 'compatible';
   reviewCheck?: 'automatic' | 'manual';
   reviewLanguage?: 'es' | 'en';
   strictIpa?: boolean;

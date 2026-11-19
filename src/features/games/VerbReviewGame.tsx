@@ -1,4 +1,4 @@
-import { useId, useMemo, useRef } from 'react';
+import { useId, useMemo, useRef, useState } from 'react';
 import { useApp } from '../../app/app-context';
 import { Icon } from '../../shared/ui/Icon';
 import { AudioControls } from '../audio/AudioControls';
@@ -22,13 +22,18 @@ export function VerbReviewGame(props: GameProps) {
     [verbs],
   );
   const fields = useRef<Array<HTMLInputElement | null>>([]);
+  const [selectedField, setSelectedField] = useState<number | null>(null);
   const recording = input.state !== 'idle';
   const compatible = input.captureMode === 'compatible';
   const feedback = props.reviewFeedback
     ? evaluateReview(props.question, props.reviewFeedback)
     : undefined;
-  const values =
-    props.reviewFeedback && Array.isArray(props.reviewFeedback.answer)
+  const revealed = !!props.reviewFeedback?.revealed;
+  const values = revealed
+    ? (props.question.review?.forms ?? []).map((form) =>
+        form.answers.map((answer) => answer.value).join(' / '),
+      )
+    : props.reviewFeedback && Array.isArray(props.reviewFeedback.answer)
       ? props.reviewFeedback.answer
       : input.draft.values;
   const complete = values.every((value) => value.trim());
@@ -37,7 +42,11 @@ export function VerbReviewGame(props: GameProps) {
     values.some((value) => value.trim()) && input.draft.inputMethod !== 'keyboard';
   const canDiscard = input.canDiscard && hasDictation;
   const dockHadCheck = useRef(false);
-  const showCheck = recording ? dockHadCheck.current : !voiceAvailable || complete || hasDictation;
+  const dockHadRepeat = useRef(false);
+  const showCheck = recording ? dockHadCheck.current : !voiceAvailable || complete;
+  const repeatLeft = recording
+    ? dockHadRepeat.current
+    : voiceAvailable && complete && !input.captureUnavailable;
   const micHint =
     input.state === 'preparing'
       ? 'Preparando…'
@@ -98,6 +107,7 @@ export function VerbReviewGame(props: GameProps) {
             /* Capture is optional. */
           }
           dockHadCheck.current = showCheck;
+          dockHadRepeat.current = repeatLeft;
           input.start(field);
         }}
         onPointerUp={(event) => {
@@ -119,6 +129,7 @@ export function VerbReviewGame(props: GameProps) {
             event.preventDefault();
             if (!event.repeat) {
               dockHadCheck.current = showCheck;
+              dockHadRepeat.current = repeatLeft;
               input.start(field);
             }
           }
@@ -135,6 +146,7 @@ export function VerbReviewGame(props: GameProps) {
             if (recording) input.abort();
             else {
               dockHadCheck.current = showCheck;
+              dockHadRepeat.current = repeatLeft;
               input.start(field);
             }
             return;
@@ -143,6 +155,7 @@ export function VerbReviewGame(props: GameProps) {
             if (recording && input.field === field) input.stop();
             else {
               dockHadCheck.current = showCheck;
+              dockHadRepeat.current = repeatLeft;
               input.start(field);
             }
           }
@@ -209,7 +222,7 @@ export function VerbReviewGame(props: GameProps) {
                 : undefined;
             return (
               <div
-                className={`vr-column${result ? (result.correct ? ' is-correct' : ' is-incorrect') : ''}`}
+                className={`vr-column${revealed ? ' is-revealed' : result ? (result.correct ? ' is-correct' : ' is-incorrect') : ''}`}
                 key={index}
                 onClick={(event) => {
                   if (!feedback && !(event.target as HTMLElement).closest('button'))
@@ -238,12 +251,34 @@ export function VerbReviewGame(props: GameProps) {
                     lang="en"
                     readOnly={!!feedback}
                     disabled={props.disabled}
-                    onFocus={input.abort}
+                    onFocus={() => {
+                      setSelectedField(index);
+                      input.abort();
+                    }}
+                    aria-describedby={
+                      selectedField === index && !feedback && voiceAvailable
+                        ? `${id}-${index}-hint`
+                        : undefined
+                    }
                     onChange={(event) => input.write(index, event.target.value)}
                   />
-                  {!feedback && voiceAvailable && microphone(index)}
+                  {!feedback &&
+                    voiceAvailable &&
+                    (selectedField === index || (recording && input.field === index)) &&
+                    microphone(index)}
                 </div>
-                {result && (
+                {!feedback && voiceAvailable && selectedField === index && (
+                  <p className="vr-field-hint" id={`${id}-${index}-hint`}>
+                    {compatible ? 'Toca' : 'Mantén pulsado'} el micrófono para dictar solo{' '}
+                    {reviewFormLabels[index].toLowerCase()}.
+                  </p>
+                )}
+                {revealed && (
+                  <p className="vr-column-result">
+                    <Icon name="book" size={16} /> Solución
+                  </p>
+                )}
+                {result && !revealed && (
                   <p className="vr-column-result">
                     <Icon name={result.correct ? 'check' : 'close'} size={16} />
                     {result.correct ? (
@@ -281,18 +316,22 @@ export function VerbReviewGame(props: GameProps) {
                 if ((event.target as HTMLElement).closest('button')) event.preventDefault();
               }}
             >
-              <button
-                type="button"
-                className="vr-side-action"
-                disabled={props.disabled || recording}
-                aria-label={canDiscard ? 'Descartar dictado' : 'Escribir'}
-                onClick={canDiscard ? input.discard : focusWriting}
-              >
-                <span className="vr-side-circle">
-                  <Icon name={canDiscard ? 'close' : 'edit'} size={20} />
-                </span>
-                <span>{canDiscard ? 'Descartar' : 'Escribir'}</span>
-              </button>
+              {repeatLeft ? (
+                microphone(undefined, true)
+              ) : (
+                <button
+                  type="button"
+                  className="vr-side-action"
+                  disabled={props.disabled || recording}
+                  aria-label="Escribir"
+                  onClick={focusWriting}
+                >
+                  <span className="vr-side-circle">
+                    <Icon name="edit" size={20} />
+                  </span>
+                  <span>Escribir</span>
+                </button>
+              )}
               <div className="vr-central">
                 {showCheck ? (
                   <button
@@ -312,28 +351,19 @@ export function VerbReviewGame(props: GameProps) {
                   {recording ? micHint : showCheck ? 'Comprobar' : micHint}
                 </span>
               </div>
-              {showCheck && voiceAvailable ? (
-                microphone(undefined, true)
-              ) : !showCheck ? (
-                <button
-                  type="submit"
-                  className="vr-side-action vr-side-check"
-                  aria-label="Comprobar"
-                  disabled={props.disabled || recording || !complete}
-                >
-                  <span className="vr-side-circle">
-                    <Icon name="check" size={20} />
-                  </span>
-                  <span>Comprobar</span>
-                </button>
-              ) : (
-                <button type="button" className="vr-side-action" onClick={showHelp}>
-                  <span className="vr-side-circle">
-                    <Icon name="info" size={20} />
-                  </span>
-                  <span>Ayuda</span>
-                </button>
-              )}
+              <button
+                type="button"
+                className="vr-side-action vr-reveal"
+                aria-label="No lo sé"
+                title="Ver y escuchar la solución"
+                disabled={props.disabled}
+                onClick={() => void input.reveal()}
+              >
+                <span className="vr-side-circle">
+                  <Icon name="book" size={20} />
+                </span>
+                <span>No lo sé</span>
+              </button>
             </div>
             <p className="vr-status" role="status">
               {input.heard
@@ -348,15 +378,20 @@ export function VerbReviewGame(props: GameProps) {
               </p>
             )}
             {input.captureUnavailable && (
-              <div className="vr-fallback">
-                <button type="button" className="secondary" onClick={focusWriting}>
-                  <Icon name="edit" size={17} /> Usar dictado del teclado
-                </button>
-                <p>
-                  Se abrirá un campo. Puedes usar el micrófono del teclado del móvil, con el teclado
-                  en inglés, o escribir.
-                </p>
-              </div>
+              <p className="vr-fallback">
+                Pulsa «Escribir» y usa el micrófono del teclado del móvil, con el teclado en inglés,
+                o escribe.
+              </p>
+            )}
+            {canDiscard && (
+              <button
+                type="button"
+                className="vr-discard"
+                disabled={props.disabled || recording}
+                onClick={input.discard}
+              >
+                <Icon name="close" size={14} /> Descartar dictado
+              </button>
             )}
             {input.blocked && (
               <button type="button" className="secondary vr-retry" onClick={input.unblock}>

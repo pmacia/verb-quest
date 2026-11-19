@@ -2,13 +2,17 @@ import { evaluateReview } from './verb-review';
 import type { Question, AnswerInput } from '../../shared/domain/types';
 export const normalizeAnswer = (s: string) => s.normalize('NFC').trim().toLocaleLowerCase('en');
 export function evaluateAnswer(question: Question, input: AnswerInput) {
-  if (question.mode === 'verb_review')
+  if (question.mode === 'verb_review') {
+    const review = evaluateReview(question, input);
     return {
-      ...evaluateReview(question, input),
+      ...review,
+      correct: !input.revealed && review.correct,
+      coverageTargetIds: input.revealed ? [] : review.coverageTargetIds,
       assisted: input.hintsUsed || input.revealed || !!question.retryOf,
       evidenceKind: question.evidenceKind,
       acceptedAnswers: question.acceptedAnswers,
     };
+  }
   const answer = Array.isArray(input.answer) ? input.answer.join(' ') : input.answer;
   let matchingCorrect = false;
   if (question.matchingPairs && Array.isArray(input.answer)) {

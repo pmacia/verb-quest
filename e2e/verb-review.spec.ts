@@ -127,6 +127,7 @@ async function records(page: Page) {
       attempts: await rows('attempts'),
       sessions: await rows('sessions'),
       progress: await rows('progress'),
+      xp: await rows('xpLedger'),
     };
     db.close();
     return data;
@@ -156,6 +157,52 @@ async function finish(page: Page) {
   await page.getByRole('button', { name: 'Terminar sesión', exact: true }).click();
   await page.waitForURL(/summary=/);
 }
+test('No lo sé reveals and reads the solution without an earned correct answer', async ({
+  page,
+}) => {
+  await speechBrowser(page);
+  await page.setViewportSize({ width: 390, height: 844 });
+  await start(page);
+  await expect(page.locator('.vr-dock button')).toHaveCount(3);
+  if (test.info().project.name === 'chromium')
+    await page.screenshot({
+      path: '/tmp/verbquest-controls-initial.png',
+      fullPage: true,
+      animations: 'disabled',
+    });
+  await expect(page.getByRole('button', { name: 'Dictar Participio', exact: true })).toHaveCount(0);
+  await page.getByRole('textbox', { name: 'Participio', exact: true }).focus();
+  await expect(page.getByRole('button', { name: 'Dictar Participio', exact: true })).toBeVisible();
+  for (const [index, label] of ['Infinitivo', 'Pasado', 'Participio'].entries())
+    await page
+      .getByRole('textbox', { name: label, exact: true })
+      .fill(['buy', 'bought', 'bought'][index]);
+  await page.getByRole('button', { name: 'No lo sé', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Vamos a aprenderlo' })).toBeVisible();
+  await expect(page.locator('.vr-column.is-revealed')).toHaveCount(3);
+  await expect(page.locator('.vr-column.is-correct, .vr-column.is-incorrect')).toHaveCount(0);
+  await expect(page.getByRole('textbox', { name: 'Pasado', exact: true })).toHaveValue('bought');
+  await expect
+    .poll(() =>
+      page.evaluate(() => (window as any).reviewSpeech.spoken.includes('buy. bought. bought')),
+    )
+    .toBe(true);
+  const data = await records(page);
+  expect(data.attempts).toHaveLength(1);
+  expect(data.attempts[0]).toMatchObject({ correct: false, revealed: true, assisted: true });
+  expect(data.progress[0]).toMatchObject({ state: 'needs_review', stage: 0, coverage: [] });
+  expect(data.sessions[0].queue[1].retryOf).toBe(data.sessions[0].queue[0].id);
+  expect(data.xp).toHaveLength(0);
+  expect((await new AxeBuilder({ page }).include('main').analyze()).violations).toEqual([]);
+  if (test.info().project.name === 'chromium')
+    await page.screenshot({
+      path: '/tmp/verbquest-controls-revealed.png',
+      fullPage: true,
+      animations: 'disabled',
+    });
+  await page.getByRole('button', { name: /Siguiente pregunta/ }).click();
+  await expect(page.getByRole('textbox', { name: 'Infinitivo', exact: true })).toHaveValue('');
+});
 test('review cards focus their inputs and discarding dictation restores the previous draft', async ({
   page,
 }) => {
@@ -215,7 +262,8 @@ test('review cards focus their inputs and discarding dictation restores the prev
   await expect(page.getByRole('textbox', { name: 'Infinitivo', exact: true })).toHaveValue('by');
   await expect(page.getByRole('textbox', { name: 'Pasado', exact: true })).toHaveValue('');
   expect((await records(page)).attempts).toHaveLength(0);
-  await expect(page.getByRole('button', { name: 'Comprobar', exact: true })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Comprobar', exact: true })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'No lo sé', exact: true })).toBeEnabled();
   for (const width of [320, 390, 768, 1440]) {
     await page.setViewportSize({ width, height: 900 });
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
@@ -328,6 +376,7 @@ test('automatic voice checks the visible transcript and leaves incorrect primary
   await page.evaluate(() => {
     (window as any).reviewSpeech.alternatives = ['bought'];
   });
+  await page.getByRole('textbox', { name: 'Participio', exact: true }).focus();
   await page.getByRole('button', { name: 'Dictar Participio', exact: true }).click();
   await expect(page.getByRole('textbox', { name: 'Participio', exact: true })).toHaveValue(
     'bought',
@@ -460,7 +509,10 @@ for (const missing of ['audio', 'transcription'] as const)
     ).toBeVisible({ timeout: 11000 });
     await page.keyboard.up('Space');
     await expect(page.locator('.vr-dock')).toHaveAttribute('data-state', 'idle');
-    await page.getByRole('button', { name: 'Usar dictado del teclado', exact: true }).click();
+    await expect(
+      page.getByRole('button', { name: 'Usar dictado del teclado', exact: true }),
+    ).toHaveCount(0);
+    await page.getByRole('button', { name: 'Escribir', exact: true }).click();
     await expect(page.getByRole('textbox', { name: 'Pasado', exact: true })).toBeFocused();
     await expect(page.getByRole('textbox', { name: 'Infinitivo', exact: true })).toHaveValue('buy');
     expect((await records(page)).attempts).toHaveLength(1);
@@ -570,4 +622,34 @@ test('automatic capture detects a desktop-like iPad and a manual hold choice ove
   await captureSetting(page, 'hold');
   await start(page);
   await expect(page.getByText('Mantén para hablar', { exact: true })).toBeVisible();
+});
+
+test('No lo sé cancels a compatible cue and ignores its late completion', async ({ page }) => {
+  await speechBrowser(page);
+  await captureSetting(page, 'compatible');
+  await start(page);
+  await page.evaluate(() => {
+    (window as any).reviewSpeech.delayCue = true;
+  });
+  await page.getByRole('button', { name: 'Dictar las tres formas', exact: true }).click();
+  await expect(page.locator('.vr-dock')).toHaveAttribute('data-state', 'preparing');
+  await page.getByRole('button', { name: 'No lo sé', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Vamos a aprenderlo' })).toBeVisible();
+  await page.evaluate(() => (window as any).reviewCue.onend?.());
+  expect(await page.evaluate(() => (window as any).reviewSpeech.languages)).toHaveLength(0);
+  const data = await records(page);
+  expect(data.attempts).toHaveLength(1);
+  expect(data.attempts[0].revealed).toBe(true);
+  expect(data.xp).toHaveLength(0);
+});
+test('No lo sé remains available while holding the original microphone', async ({ page }) => {
+  await speechBrowser(page);
+  await start(page);
+  await page.getByRole('button', { name: 'Dictar las tres formas', exact: true }).focus();
+  await page.keyboard.down('Space');
+  await expect(page.locator('.vr-dock')).toHaveAttribute('data-state', 'listening');
+  await page.getByRole('button', { name: 'No lo sé', exact: true }).click();
+  await page.keyboard.up('Space');
+  await expect(page.getByRole('heading', { name: 'Vamos a aprenderlo' })).toBeVisible();
+  expect((await records(page)).attempts).toHaveLength(1);
 });

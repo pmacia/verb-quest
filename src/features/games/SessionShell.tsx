@@ -260,15 +260,17 @@ export function SessionShell({ session }: { session: StudySession }) {
         )}
         {feedback && (
           <div
-            className={`feedback ${feedback.correct === false ? 'incorrect' : 'correct'}`}
+            className={`feedback ${question.review && feedback.reviewResponse?.revealed ? 'revealed' : feedback.correct === false ? 'incorrect' : 'correct'}`}
             role="status"
           >
             <h3>
-              {feedback.correct === null
-                ? 'Valoración guardada'
-                : feedback.correct
-                  ? '¡Bien recordado!'
-                  : 'Vamos a darle otra vuelta'}
+              {question.review && feedback.reviewResponse?.revealed
+                ? 'Vamos a aprenderlo'
+                : feedback.correct === null
+                  ? 'Valoración guardada'
+                  : feedback.correct
+                    ? '¡Bien recordado!'
+                    : 'Vamos a darle otra vuelta'}
             </h3>
             <p>{feedback.text}</p>
             {feedback.correct === false && (

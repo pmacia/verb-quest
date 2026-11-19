@@ -43,6 +43,15 @@ it('checks all three written columns in order without fuzzy corrections', () => 
   expect(evaluateAnswer(q, input(['by', 'bought', 'bought'])).correct).toBe(false);
   expect(evaluateAnswer(q, input(['bought', 'buy', 'bought'])).correct).toBe(false);
 });
+it('revealing a review solution never credits a correct answer or coverage', () => {
+  const result = evaluateAnswer(question(), {
+    ...input(['buy', 'bought', 'bought']),
+    revealed: true,
+  });
+  expect(result.correct).toBe(false);
+  expect('coverageTargetIds' in result ? result.coverageTargetIds : undefined).toEqual([]);
+  expect(result.assisted).toBe(true);
+});
 it('accepts controlled speech homophones without conflating different tense forms', () => {
   expect(evaluateAnswer(question(), input(['by', 'bought', 'bought'], 'voice')).correct).toBe(true);
   const verb = {

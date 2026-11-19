@@ -66,18 +66,18 @@ export function useReviewInput(props: GameProps) {
     setDraft(next);
     latest.current.onReviewDraft?.(next);
   }
-  async function check(value = current.current) {
+  async function check(value = current.current, revealed = false) {
     if (sending.current || disabled || reviewFeedback) return;
     abort();
     sending.current = true;
     try {
       await latest.current.onSubmit({
-        answer: value.values,
+        answer: revealed ? ['', '', ''] : value.values,
         inputMethod: value.inputMethod,
         fieldMethods: value.fieldMethods,
         voiceConfirmed: true,
-        hintsUsed: value.assisted,
-        revealed: false,
+        hintsUsed: value.assisted || revealed,
+        revealed,
       });
     } finally {
       sending.current = false;
@@ -237,6 +237,7 @@ export function useReviewInput(props: GameProps) {
     discard,
     canDiscard,
     check: () => check(),
+    reveal: () => check(current.current, true),
     unblock: () => setBlocked(false),
   };
 }

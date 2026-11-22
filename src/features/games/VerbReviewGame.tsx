@@ -1,4 +1,4 @@
-import { useId, useMemo, useRef, useState } from 'react';
+import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { useApp } from '../../app/app-context';
 import { Icon } from '../../shared/ui/Icon';
 import { AudioControls } from '../audio/AudioControls';
@@ -12,6 +12,13 @@ export function VerbReviewGame(props: GameProps) {
   const { verbs, settings } = useApp();
   const id = useId();
   const help = useRef<HTMLDetailsElement>(null);
+  const confirmationPanel = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (input.confirmation) {
+      confirmationPanel.current?.focus();
+      confirmationPanel.current?.scrollIntoView({ block: 'center', behavior: 'auto' });
+    }
+  }, [input.confirmation]);
   const vocabulary = useMemo(
     () =>
       verbs.flatMap((verb) => [
@@ -218,7 +225,8 @@ export function VerbReviewGame(props: GameProps) {
               !feedback &&
               (input.draft.fieldMethods?.[index] ?? input.draft.inputMethod) !== 'keyboard' &&
               !recording
-                ? reviewSuggestion(props.question, value, index, vocabulary)
+                ? (input.suggestions[index] ??
+                  reviewSuggestion(props.question, value, index, vocabulary))
                 : undefined;
             return (
               <div
@@ -297,7 +305,7 @@ export function VerbReviewGame(props: GameProps) {
                     className="vr-suggestion"
                     onClick={() => input.suggest(index, suggestion)}
                   >
-                    Usar «{suggestion}»{' '}
+                    ¿Querías decir «{suggestion}»?{' '}
                     <span className="sr-only">en {reviewFormLabels[index]} como ayuda</span>
                   </button>
                 )}
@@ -307,6 +315,50 @@ export function VerbReviewGame(props: GameProps) {
         </div>
         {!feedback && (
           <>
+            {input.confirmation && (
+              <div
+                className="vr-confirmation"
+                ref={confirmationPanel}
+                tabIndex={-1}
+                role="group"
+                aria-label="Confirmar lo que has dicho"
+              >
+                <p>
+                  ¿Has dicho <strong lang="en">{input.confirmation.join(' · ')}</strong>?
+                </p>
+                <p>
+                  El dictado puede haberse confundido. Confírmalo solo si son las formas que has
+                  dicho.
+                </p>
+                <div className="vr-confirmation-actions">
+                  <button
+                    type="button"
+                    onClick={() => void input.confirm()}
+                    disabled={props.disabled}
+                  >
+                    <Icon name="check" size={17} /> Sí, eso he dicho
+                  </button>
+                  <button
+                    type="button"
+                    className="secondary"
+                    onClick={() => {
+                      input.cancelConfirmation();
+                      focusWriting();
+                    }}
+                  >
+                    Seguir editando
+                  </button>
+                  <button
+                    type="button"
+                    className="secondary"
+                    onClick={() => void input.checkOriginal()}
+                    disabled={props.disabled}
+                  >
+                    Evaluar mi respuesta original
+                  </button>
+                </div>
+              </div>
+            )}
             <div
               className="vr-dock"
               data-state={input.state}

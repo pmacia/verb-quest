@@ -63,7 +63,7 @@ export const normalizeReview = (value: string) =>
     .trim();
 const homophones: Record<string, string[]> = {
   buy: ['by', 'bye'],
-  be: ['bee'],
+  be: ['bee', 'b'],
   been: ['bean', 'bin'],
   write: ['right', 'rite'],
   wrote: ['rote'],
@@ -88,6 +88,8 @@ function matchSpoken(value: string, expected: string, form: FormKey, method: Inp
   const target = normalizeReview(expected);
   if (value === target) return true;
   if (method === 'keyboard') return false;
+  // Only join a short split transcription when it spells the expected form exactly.
+  if (value.split(' ').length <= 3 && value.replace(/ /g, '') === target) return true;
   return (
     target === 'read' ? (form === 'base' ? ['reed'] : ['red']) : (homophones[target] ?? [])
   ).includes(value);
@@ -147,6 +149,30 @@ function splitSpeech(text: string, question: Question): string[] {
   )
     return [tokens[0], `${tokens[1]} / ${tokens[2]}`, tokens[3]];
   if (tokens.length <= 3) return Array.from({ length: 3 }, (_, i) => tokens[i] ?? '');
+  // Try every bounded three-column partition. Consume ALL tokens; never search
+  // for the expected words inside an otherwise unrelated utterance.
+  if (tokens.length <= 9) {
+    const candidates: { values: string[]; score: number }[] = [];
+    for (let first = 1; first < tokens.length; first++)
+      for (let second = first + 1; second < tokens.length; second++) {
+        const values = [
+          tokens.slice(0, first).join(' '),
+          tokens.slice(first, second).join(' '),
+          tokens.slice(second).join(' '),
+        ];
+        if (values.some((value) => value.split(' ').length > 3)) continue;
+        const evaluation = evaluateReview(question, { answer: values, inputMethod: 'voice' });
+        const score = evaluation.columns.reduce(
+          (total, column, index) =>
+            total + (column.correct ? 0 : reviewSuggestion(question, values[index], index) ? 1 : 5),
+          0,
+        );
+        candidates.push({ values, score });
+      }
+    candidates.sort((a, b) => a.score - b.score);
+    if (candidates[0]?.score < 5 && candidates[0].score < (candidates[1]?.score ?? Infinity))
+      return candidates[0].values;
+  }
   return [text, '', ''];
 }
 export function speechDraftValues(
@@ -181,6 +207,19 @@ export function resolveReviewSpeech(
     automatic,
     values: automatic ? evaluation.columns.map((column) => column.canonical) : displayed,
     fieldMethods,
+    suggestions: displayed.map((value, index) => {
+      if (fieldMethods[index] === 'keyboard' || evaluation.columns[index]?.correct)
+        return undefined;
+      const options = new Set<string>();
+      const suggestion = recognitionConfusion(question, value, index);
+      if (suggestion) options.add(suggestion);
+      for (const alternative of alternatives.slice(1, 12)) {
+        const candidate = speechDraftValues(question, alternative, values, field);
+        const checked = evaluateReview(question, { answer: candidate, fieldMethods });
+        if (checked.correct) options.add(checked.columns[index].canonical);
+      }
+      return options.size === 1 ? [...options][0] : undefined;
+    }),
   };
 }
 export function reviewSuggestion(
@@ -190,6 +229,8 @@ export function reviewSuggestion(
   knownForms: string[] = [],
 ): string | undefined {
   const token = normalizeReview(value);
+  const confusion = recognitionConfusion(question, value, index);
+  if (confusion) return confusion;
   if (
     token.length < 4 ||
     knownForms.some((form) => normalizeReview(form) === token) ||
@@ -213,4 +254,14 @@ export function reviewSuggestion(
       (answer) => distance(token, normalizeReview(answer.value)) === 1,
     ) ?? [];
   return matches.length === 1 ? matches[0].value : undefined;
+}
+
+function recognitionConfusion(question: Question, value: string, index: number) {
+  // Different English words: confirmation only, never an automatic equivalence.
+  if (
+    normalizeReview(value) === 'being' &&
+    question.review?.forms[index]?.answers.some((a) => a.value === 'been')
+  )
+    return 'been';
+  return undefined;
 }

@@ -507,3 +507,9 @@ Los textos y audios de diccionarios de referencia pertenecen a sus titulares; se
 Si una pestaña abierta durante una actualización del código muestra **«Aplicación no preparada»**, recarga la página (`⌘R` en macOS). No borres IndexedDB ni el almacenamiento del sitio: esa pantalla no significa que hayas perdido tus datos.
 
 El contexto compartido vive en `src/app/app-context.ts`, separado del componente proveedor, y conserva su identidad durante la recarga en caliente de Vite. Tras cambios en el arranque o en este contexto, ejecuta `npm run test:dev-hmr`: abre una copia temporal de la aplicación con Vite real, sustituye ambos módulos y comprueba que el contexto, la pantalla y las preferencias guardadas siguen funcionando. No modifica el código del checkout, el servidor de desarrollo abierto ni los datos del navegador habitual.
+
+### Interpretación del dictado en Repaso de verbos
+
+El repaso comprueba las formas recordadas, no califica la pronunciación. Reconoce homófonos controlados (por ejemplo, `b` por `be`) y separaciones que forman exactamente la palabra esperada (`a woke` por `awoke`). Consume toda la frase y mantiene el orden de las tres formas; no ignora palabras sobrantes. Se puede responder con `was`, `were` o ambas variantes en la casilla de pasado.
+
+Las confusiones dudosas (`being` por `been`), errores de una letra y transcripciones alternativas se ofrecen como sugerencias. No provocan un acierto automático. Si «Comprobar» encuentra una interpretación válida, pregunta al estudiante si eso es lo que ha dicho: puede confirmarla como respuesta asistida, seguir editando o evaluar el texto original. Los campos escritos no reciben equivalencias de voz. El dictado sigue dependiendo del navegador y no garantiza evaluar sonidos ni detectar todas las confusiones de acento.

@@ -4,7 +4,12 @@ import type { InputMethod, ReviewDraft } from '../../shared/domain/types';
 import { createRecognitionController, type RecognitionState } from '../audio/recognition-service';
 import { resolveReviewCaptureMode } from '../audio/review-capture-mode';
 import { getSpeechService } from '../audio/speech-service';
-import { resolveReviewSpeech, speechDraftValues } from '../question-engine/verb-review';
+import {
+  evaluateReview,
+  reviewSuggestion,
+  resolveReviewSpeech,
+  speechDraftValues,
+} from '../question-engine/verb-review';
 import type { GameProps } from './exercises';
 const overall = (methods: InputMethod[]): InputMethod =>
   methods.every((m) => m === 'keyboard')
@@ -13,7 +18,7 @@ const overall = (methods: InputMethod[]): InputMethod =>
       ? 'voice'
       : 'mixed';
 export function useReviewInput(props: GameProps) {
-  const { settings } = useApp();
+  const { settings, verbs } = useApp();
   const captureMode = resolveReviewCaptureMode(settings.reviewCapture);
   const { question, onSubmit, disabled, reviewFeedback, onReviewDraft } = props;
   const [draft, setDraft] = useState<ReviewDraft>(
@@ -33,6 +38,17 @@ export function useReviewInput(props: GameProps) {
   const [field, setField] = useState<number | undefined>();
   const [message, setMessage] = useState('');
   const [heard, setHeard] = useState('');
+  const [suggestions, setSuggestions] = useState<Array<string | undefined>>([]);
+  const [confirmation, setConfirmation] = useState<string[] | null>(null);
+  const vocabulary = useMemo(
+    () =>
+      verbs.flatMap((verb) => [
+        verb.forms.base.value,
+        ...verb.forms.pastSimple.variants.map((v) => v.value),
+        ...verb.forms.pastParticiple.variants.map((v) => v.value),
+      ]),
+    [verbs],
+  );
   const [canDiscard, setCanDiscard] = useState(false);
   const [blocked, setBlocked] = useState(false);
   const [captureUnavailable, setCaptureUnavailable] = useState(false);
@@ -66,8 +82,32 @@ export function useReviewInput(props: GameProps) {
     setDraft(next);
     latest.current.onReviewDraft?.(next);
   }
-  async function check(value = current.current, revealed = false) {
+  async function check(value = current.current, revealed = false, original = false) {
     if (sending.current || disabled || reviewFeedback) return;
+    if (
+      !revealed &&
+      !original &&
+      !evaluateReview(question, {
+        answer: value.values,
+        fieldMethods: value.fieldMethods,
+        inputMethod: value.inputMethod,
+      }).correct
+    ) {
+      const proposed = value.values.map((text, index) =>
+        (value.fieldMethods?.[index] ?? value.inputMethod) === 'keyboard'
+          ? text
+          : (suggestions[index] ?? reviewSuggestion(question, text, index, vocabulary) ?? text),
+      );
+      const interpreted = evaluateReview(question, {
+        answer: proposed,
+        fieldMethods: value.fieldMethods,
+        inputMethod: value.inputMethod,
+      });
+      if (interpreted.correct) {
+        setConfirmation(interpreted.columns.map((column) => column.canonical));
+        return;
+      }
+    }
     abort();
     sending.current = true;
     try {
@@ -93,6 +133,8 @@ export function useReviewInput(props: GameProps) {
       state !== 'idle'
     )
       return;
+    setConfirmation(null);
+    setSuggestions([]);
     const token = ++generation.current;
     setCaptureUnavailable(false);
     getSpeechService().cancel();
@@ -132,6 +174,7 @@ export function useReviewInput(props: GameProps) {
           inputMethod: overall(result.fieldMethods),
         };
         store(next);
+        setSuggestions(result.suggestions);
         setHeard('');
         if (result.automatic && automatic) {
           setMessage('Respuesta reconocida.');
@@ -189,6 +232,10 @@ export function useReviewInput(props: GameProps) {
     }
   }
   function write(index: number, value: string) {
+    setConfirmation(null);
+    setSuggestions((previous) =>
+      previous.map((suggestion, i) => (i === index ? undefined : suggestion)),
+    );
     setCaptureUnavailable(false);
     abort();
     setMessage('');
@@ -206,6 +253,8 @@ export function useReviewInput(props: GameProps) {
     });
   }
   function discard() {
+    setConfirmation(null);
+    setSuggestions([]);
     const previous = beforeDictation.current;
     if (!previous) return;
     abort();
@@ -221,6 +270,20 @@ export function useReviewInput(props: GameProps) {
   }
   return {
     draft,
+    suggestions,
+    confirmation,
+    cancelConfirmation: () => setConfirmation(null),
+    checkOriginal: () => {
+      setConfirmation(null);
+      return check(current.current, false, true);
+    },
+    confirm: () => {
+      if (!confirmation) return;
+      const next = { ...current.current, values: confirmation, assisted: true };
+      setConfirmation(null);
+      store(next);
+      return check(next, false, true);
+    },
     state,
     captureMode,
     field,

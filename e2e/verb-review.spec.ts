@@ -653,3 +653,66 @@ test('No lo sé remains available while holding the original microphone', async 
   await expect(page.getByRole('heading', { name: 'Vamos a aprenderlo' })).toBeVisible();
   expect((await records(page)).attempts).toHaveLength(1);
 });
+
+test('ambiguous been stays editable and requires assisted confirmation', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await speechBrowser(page);
+  await page.setViewportSize({ width: 390, height: 844 });
+  await start(page, 'be');
+  await page.evaluate(() => {
+    (window as any).reviewSpeech.alternatives = ['b was being'];
+  });
+  await page.getByRole('button', { name: 'Dictar las tres formas', exact: true }).click();
+  await expect(page.getByRole('textbox', { name: 'Participio', exact: true })).toHaveValue('being');
+  expect((await records(page)).attempts).toHaveLength(0);
+  await page.getByRole('button', { name: 'Comprobar', exact: true }).click();
+  await expect(page.getByRole('group', { name: 'Confirmar lo que has dicho' })).toBeVisible();
+  await expect(page.getByRole('group', { name: 'Confirmar lo que has dicho' })).toBeFocused();
+  expect((await new AxeBuilder({ page }).include('main').analyze()).violations).toEqual([]);
+  if (test.info().project.name === 'chromium')
+    await page.screenshot({ path: '/tmp/review-speech-confirmation.png' });
+  await page.evaluate(() => document.documentElement.setAttribute('data-theme', 'dark'));
+  expect((await new AxeBuilder({ page }).include('main').analyze()).violations).toEqual([]);
+  expect((await records(page)).attempts).toHaveLength(0);
+  await page.getByRole('button', { name: 'Sí, eso he dicho', exact: true }).click();
+  await expect(page.getByRole('heading', { name: '¡Bien recordado!' })).toBeVisible();
+  const attempts = (await records(page)).attempts;
+  expect(attempts).toHaveLength(1);
+  expect(attempts[0].assisted).toBe(true);
+  await expect(page.getByRole('textbox', { name: 'Participio', exact: true })).toHaveValue('been');
+});
+
+test('editing a doubtful transcript clears confirmation and never repairs a typed wrong answer', async ({
+  page,
+}) => {
+  await speechBrowser(page);
+  await start(page, 'be');
+  await page.evaluate(() => {
+    (window as any).reviewSpeech.alternatives = ['be was being'];
+  });
+  await page.getByRole('button', { name: 'Dictar las tres formas', exact: true }).click();
+  await page.getByRole('button', { name: 'Comprobar', exact: true }).click();
+  await page.getByRole('button', { name: 'Seguir editando', exact: true }).click();
+  await expect(page.getByRole('group', { name: 'Confirmar lo que has dicho' })).toHaveCount(0);
+  await page.getByRole('textbox', { name: 'Participio', exact: true }).fill('went');
+  await page.getByRole('button', { name: 'Comprobar', exact: true }).click();
+  await expect(page.locator('.vr-column.is-incorrect')).toHaveCount(1);
+  expect((await records(page)).attempts).toHaveLength(1);
+});
+
+test('the learner can reject a recognition suggestion and evaluate the original', async ({
+  page,
+}) => {
+  await speechBrowser(page);
+  await start(page, 'buy');
+  await page.evaluate(() => {
+    (window as any).reviewSpeech.alternatives = ['buy bot bought', 'buy bought bought'];
+  });
+  await page.getByRole('button', { name: 'Dictar las tres formas', exact: true }).click();
+  await page.getByRole('button', { name: 'Comprobar', exact: true }).click();
+  expect((await records(page)).attempts).toHaveLength(0);
+  await page.getByRole('button', { name: 'Evaluar mi respuesta original', exact: true }).click();
+  await expect(page.getByRole('textbox', { name: 'Pasado', exact: true })).toHaveValue('bot');
+  await expect(page.locator('.vr-column.is-incorrect')).toHaveCount(1);
+  expect((await records(page)).attempts).toHaveLength(1);
+});

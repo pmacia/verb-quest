@@ -687,3 +687,27 @@ html[data-theme='dark'] .vr-session {
     color: var(--blue);
   }
 }
+
+/* Inline speech interpretation: uncertainty is a question, never an error. */
+.vr-confirmation {
+  padding: 1rem;
+  margin-block: 1rem;
+  border: 1px solid color-mix(in srgb, var(--blue) 30%, var(--surface));
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--blue) 7%, var(--surface));
+  color: var(--text);
+}
+.vr-session .vr-confirmation p {
+  color: var(--text);
+  margin: 0 0 0.6rem;
+}
+.vr-confirmation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.vr-confirmation-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}

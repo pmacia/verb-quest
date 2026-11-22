@@ -188,3 +188,51 @@ it('requires review when more alternatives arrive than can be safely evaluated',
       .automatic,
   ).toBe(false);
 });
+
+it('interprets split words and letter names without dropping extra speech', async () => {
+  const { resolveReviewSpeech, makeReviewQuestion } = await import('./verb-review');
+  const be = question(dataset.verbs.find((v) => v.id === 'be')!);
+  expect(resolveReviewSpeech(be, ['b was bean']).automatic).toBe(true);
+  for (const [base, past, participle, transcript] of [
+    ['awake', 'awoke', 'awoken', 'awake a woke a woken'],
+    ['arise', 'arose', 'arisen', 'arise arose a risen'],
+  ]) {
+    const verb = {
+      ...buy,
+      forms: {
+        base: { value: base },
+        pastSimple: { variants: [{ value: past }] },
+        pastParticiple: { variants: [{ value: participle }] },
+      },
+    };
+    const result = resolveReviewSpeech(makeReviewQuestion(verb, 'uk', 'es')!, [transcript]);
+    expect(result.automatic).toBe(true);
+    expect(result.values).toEqual([base, past, participle]);
+  }
+  expect(resolveReviewSpeech(be, ['be was been hello']).automatic).toBe(false);
+  expect(resolveReviewSpeech(be, ['been was be']).automatic).toBe(false);
+});
+it('keeps ambiguous speech visible and proposes explicit confirmation', async () => {
+  const { resolveReviewSpeech } = await import('./verb-review');
+  const be = question(dataset.verbs.find((v) => v.id === 'be')!);
+  const result = resolveReviewSpeech(be, ['b was being']);
+  expect(result.automatic).toBe(false);
+  expect(result.values).toEqual(['b', 'was', 'being']);
+  expect(result.suggestions[2]).toBe('been');
+  expect(evaluateAnswer(be, input(['be', 'was', 'being'], 'voice')).correct).toBe(false);
+});
+it('offers secondary interpretations without automatically replacing the primary answer', async () => {
+  const { resolveReviewSpeech } = await import('./verb-review');
+  const result = resolveReviewSpeech(question(), ['buy bot bought', 'buy bought bought']);
+  expect(result.automatic).toBe(false);
+  expect(result.values).toEqual(['buy', 'bot', 'bought']);
+  expect(result.suggestions[1]).toBe('bought');
+  const mixed = resolveReviewSpeech(question(), ['bought'], ['by', 'bought', ''], 2);
+  expect(mixed.automatic).toBe(false);
+  expect(mixed.suggestions[0]).toBeUndefined();
+});
+
+it('does not promote another real verb into a typo suggestion without vocabulary', async () => {
+  const { resolveReviewSpeech } = await import('./verb-review');
+  expect(resolveReviewSpeech(question(), ['buy brought bought']).suggestions[1]).toBeUndefined();
+});

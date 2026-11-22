@@ -15,8 +15,13 @@ export function registerAppUpdates(input: {
   }
   return () => {};
 }
+export class ActiveSessionUpdateError extends Error {
+  constructor() {
+    super('Pausa o termina la sesión antes de actualizar.');
+    this.name = 'ActiveSessionUpdateError';
+  }
+}
 export async function activateUpdate() {
-  if (!canUpdate || !(await canUpdate()))
-    throw Error('Pausa o termina la sesión antes de actualizar.');
+  if (!canUpdate || !(await canUpdate())) throw new ActiveSessionUpdateError();
   await update?.(true);
 }

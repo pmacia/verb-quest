@@ -314,7 +314,7 @@ Abre `http://127.0.0.1:4173`, realiza una primera carga completa con conexión y
 
 En una dirección de red por HTTP puedes usar la aplicación mientras el servidor sea accesible, pero el service worker no estará disponible. Para PWA/offline desde otros dispositivos se necesita un alojamiento HTTPS. El audio tampoco queda garantizado offline: algunas voces son remotas.
 
-Las actualizaciones se anuncian y requieren una acción explícita. Pausa o termina la sesión antes de activar una actualización. Instalar la PWA no sustituye a guardar copias de seguridad.
+Las actualizaciones se anuncian y requieren una acción explícita. Puedes pausar la sesión para retomarla después o confirmar su cierre definitivo desde el aviso. Las respuestas ya guardadas se conservan en ambos casos. Guarda copias de seguridad aunque instales la PWA.
 
 Más información en [Offline y almacenamiento](docs/offline-and-storage.md).
 

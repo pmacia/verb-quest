@@ -7,7 +7,7 @@ export function Dialog({
   children,
 }: {
   title: string;
-  onClose: () => void;
+  onClose?: () => void;
   children: ReactNode;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
@@ -26,23 +26,25 @@ export function Dialog({
       aria-label={title}
       onCancel={(event) => {
         event.preventDefault();
-        onClose();
+        onClose?.();
       }}
       onClick={(e) => {
-        if (e.target === ref.current) onClose();
+        if (e.target === ref.current) onClose?.();
       }}
     >
       <header className="row">
         <h2>{title}</h2>
-        <button
-          type="button"
-          className="icon-button dialog-close"
-          aria-label="Cerrar"
-          title="Cerrar diálogo"
-          onClick={onClose}
-        >
-          <Icon name="close" size={16} />
-        </button>
+        {onClose && (
+          <button
+            type="button"
+            className="icon-button dialog-close"
+            aria-label="Cerrar"
+            title="Cerrar diálogo"
+            onClick={onClose}
+          >
+            <Icon name="close" size={16} />
+          </button>
+        )}
       </header>
       {children}
     </dialog>
